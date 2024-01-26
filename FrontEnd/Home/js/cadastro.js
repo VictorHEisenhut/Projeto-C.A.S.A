@@ -1,3 +1,17 @@
+select = document.getElementById("paises")
+fetch('http://localhost:5145/api/Paises',{
+                headers: { 
+                           'Content-Type': 'application/json'
+                          }
+              })
+        .then(data => {return data.json();})
+        .then(post => {
+            post.forEach(element => {
+                
+                pais = `<option value="${element.pais}">${element.pais}</option>`
+                select.innerHTML += pais
+            });
+        });   
 async function cadastrar()
     {
         let nome = document.getElementById("nome").value

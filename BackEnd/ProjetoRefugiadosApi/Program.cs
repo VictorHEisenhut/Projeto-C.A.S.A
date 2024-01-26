@@ -29,6 +29,8 @@ namespace ProjetoRefugiadosApi
 
             app.UseHttpsRedirection();
 
+            app.UseCors(option => { option.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod(); });
+
             app.UseAuthorization();
 
 
