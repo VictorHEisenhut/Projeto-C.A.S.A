@@ -1,0 +1,6 @@
+@ProjetoRefugiadosApi_HostAddress = http://localhost:5145
+
+GET {{ProjetoRefugiadosApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
