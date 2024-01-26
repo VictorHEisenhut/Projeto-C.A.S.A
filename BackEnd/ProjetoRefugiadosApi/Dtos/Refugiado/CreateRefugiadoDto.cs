@@ -1,12 +1,11 @@
 ﻿using ProjetoRefugiados.Models.Enums;
+using ProjetoRefugiados.Models;
 using System.ComponentModel.DataAnnotations;
 
-namespace ProjetoRefugiados.Models
+namespace ProjetoRefugiadosApi.Dtos.Refugiado
 {
-    public class Refugiado
+    public class CreateRefugiadoDto
     {
-        [Key]
-        public int Id { get; set; }
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
         [EmailAddress]
@@ -20,11 +19,7 @@ namespace ProjetoRefugiados.Models
         public EstadoCivil EstadoCivil { get; set; }
         public Genero Genero { get; set; }
         public Escolaridade Escolaridade { get; set; }
-        public Paises Pais { get; set; }
         public int PaisId { get; set; }
-        public Documento Documento { get; set; }
         public int DocumentoId { get; set; }
-        public string Role { get; set; } = "usuarios";
-
     }
 }
