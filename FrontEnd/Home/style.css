@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 2rem;
+}
+
+header a{
+    font-size: 1.15rem;
+    margin: 0 10px;
+}
+
+header select{
+    padding: 0.75rem;
+}
+
+#body_login{
+    background-color: #141314;
+    color: #fcfcfc;
+}
+
+#main_login{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#div_login{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 0 15% 0 0;
+    
+}
+
+#div_form_login{
+    margin: 0 -100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#titulo_login{
+    font-size: 54px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 2rem;
+}
+
+#img_login{
+    margin: 0 0 0 0;
+    /*width: 50%;*/
+}
+
+#label_login{
+    font-size: 1.15rem;
+}
+
+.div_form_login_flex{
+    margin: 0.5rem;
+}
+
+#btn_login{
+    padding: 20px 34%;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+
+.input_login{
+    padding: 20px 50% 20px 1rem;
+    border: solid #fcfcfc 2px;
+    background-color: #141314;
+    text-align: start;
+
+    color: #fcfcfc;
+}
