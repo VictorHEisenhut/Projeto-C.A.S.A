@@ -20,6 +20,7 @@ namespace ProjetoRefugiados.Models
         public int PaisId { get; set; }
         public Documento Documento { get; set; }
         public int DocumentoId { get; set; }
+        public string Role { get; set; }
 
     }
 }
