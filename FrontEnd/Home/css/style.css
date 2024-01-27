@@ -84,3 +84,12 @@ header select{
 
     color: #fcfcfc;
 }
+.fundo{
+    background-color: #141314;
+}
+.borda{
+    border-radius: 10px;
+}
+.link{
+    text-decoration: none;
+}

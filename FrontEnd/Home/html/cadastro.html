@@ -6,18 +6,19 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
-<body>
+<body class="fundo">
     <section id="section_banner_home">
         <div>
           <header>
-            <h2 id="headerTitle">Lorem</h2> 
+            <h2 id="headerTitle" class="text-white">Lorem</h2> 
             <div>
-              <a id="homeLink">Home</a>
-              <a id="documentsLink">Documents</a>
-              <a id="placesLink">Places</a>
-              <a id="languageLink">Language</a>
-              <a id="donateLink" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Donate</a>
+              <a class="text-white link" id="homeLink">Home</a>
+              <a class="text-white link" id="documentsLink">Documents</a>
+              <a class="text-white link" id="placesLink">Places</a>
+              <a class="text-white link" id="languageLink">Language</a>
+              <a class="text-white link" id="donateLink" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Donate</a>
               <select onchange="changeLanguage(this.value)">
                 <option value="en">English</option>
                 <option value="pt">Português</option>
@@ -29,56 +30,88 @@
           </header>
         </div>
     </section>
-    <div class="col-md-4">
-        <label for="nome" class="control-label" >Digite seu nome</label>
-        <input type="text" class="form-control rounded-pill" id ="nome" placeholder="Digite nome">
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row justify-content-center align-items-center text-center">
+        <div class="col-md-3">
+            <label for="nome" class="control-label text-white" >Digite seu nome</label>
+            <input type="text" class="form-control rounded-pill" id ="nome" placeholder="Digite nome">
+        </div>
+        <div class="col-md-3">
+            <label for="sobrenome" class="control-label text-white" >Digite seu sobrenome</label>
+            <input type="text" class="form-control rounded-pill" id ="sobrenome" placeholder="Digite sobrenome">
+        </div>
+        <div class="col-md-3">
+            <label for="email" class="control-label text-white" >Digite seu email</label>
+            <input type="email" class="form-control rounded-pill" id ="email" placeholder="Digite email">
+        </div>
     </div>
-    <div class="col-md-4">
-        <label for="sobrenome" class="control-label" >Digite seu sobrenome</label>
-        <input type="text" class="form-control rounded-pill" id ="sobrenome" placeholder="Digite sobrenome">
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row justify-content-center align-items-center text-center">
+        <div class="col-md-5">
+            <label for="senha" class="control-label text-white" >Digite sua senha</label>
+            <input type="password" class="form-control rounded-pill" id ="senha" placeholder="Digite senha">
+        </div>
     </div>
-    <div class="col-md-4">
-        <label for="email" class="control-label" >Digite seu email</label>
-        <input type="email" class="form-control rounded-pill" id ="email" placeholder="Digite email">
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row justify-content-center align-items-center text-center">
+        <div class="col-md-3">
+            <label for="dataN" class="control-label text-white" >Selecione sua data de nascimento</label>
+            <input type="date" class="form-control rounded-pill" id ="dataN">
+        </div>
+        <div class="col-md-3">
+            <label for="fone" class="control-label text-white" >Digite seu número de telefone</label>
+            <input type="tel" class="form-control rounded-pill" id ="fone" placeholder="Digite telefone">
+        </div>
     </div>
-    <div class="col-md-4">
-        <label for="senha" class="control-label" >Digite sua senha</label>
-        <input type="password" class="form-control rounded-pill" id ="senha" placeholder="Digite senha">
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row mx-5">
+        <div class="col text-center"><label class="text-white" for="estadoCivil">Selecione seu estado civíl</label></div>
+        <div class="col text-center"><label class="text-white" for="genero">Selecione seu gênero</label></div>
+        <div class="col text-center"><label class="text-white" for="escolaridade">Selecione sua escolaridade</label></div>
+        <div class="col text-center"><label class="text-white" for="paisId">Selecione seu país de origem</label></div>
     </div>
-    <div class="col-md-4">
-        <label for="dataN" class="control-label" >Selecione sua data de nascimento</label>
-        <input type="date" class="form-control rounded-pill" id ="dataN">
-    </div>
-    <div class="col-md-4">
-        <label for="fone" class="control-label" >Digite seu número de telefone</label>
-        <input type="tel" class="form-control rounded-pill" id ="fone" placeholder="Digite telefone">
-    </div>
-    <label for="estadoCivil">Selecione seu estado civíl</label>
-    <select name="estadoCivil">
-        <option value="solteiro">Solteiro/a</option>
-        <option value="casado">Casado/a</option>
-        <option value="viuvo">Viúvo/a</option>
-        <option value="separado">Separado/a</option>
-        <option value="divorciado">Divorciado/a</option>
-    </select>
-    <label for="genero">Selecione seu gênero</label>
-    <select name="genero">
-        <option value="masculino">Masculino</option>
-        <option value="feminino">Feminino</option>
-    </select>
-    <label for="escolaridade">Selecione sua escolaridade</label>
-    <select name="escolaridade">
-        <option value="ensinoFI">Ensino fundamental incompleto</option>
-        <option value="ensinoFC">Ensino fundamental completo</option>
-        <option value="ensinoMI">Ensino médio incompleto</option>
-        <option value="ensinoMC">Ensino médio completo</option>
-        <option value="ensinoSI">Ensino superior incompleto</option>
-        <option value="ensinoS">Ensino superior completo</option>
-    </select>
-    <label for="paisId">Selecione seu país de origem</label>
-    <select name="paisId" id="paises">
-        
-    </select>
+    <div class="row mx-5">
+        <div class="col text-center">
+        <select class="col-md-10 borda" name="estadoCivil">
+            <option value="solteiro">Solteiro/a</option>
+            <option value="casado">Casado/a</option>
+            <option value="viuvo">Viúvo/a</option>
+            <option value="separado">Separado/a</option>
+            <option value="divorciado">Divorciado/a</option>
+        </select></div>
+        <div class="col text-center">
+        <select class="col-md-10 borda" name="genero">
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+        </select></div>
+        <div class="col text-center">
+        <select class="col-md-10 borda" name="escolaridade">
+            <option value="ensinoFI">Ensino fundamental incompleto</option>
+            <option value="ensinoFC">Ensino fundamental completo</option>
+            <option value="ensinoMI">Ensino médio incompleto</option>
+            <option value="ensinoMC">Ensino médio completo</option>
+            <option value="ensinoSI">Ensino superior incompleto</option>
+            <option value="ensinoS">Ensino superior completo</option>
+        </select></div>
+        <div class="col text-center">
+        <select class="col-md-10 borda" name="paisId" id="paises">
+
+        </select>
+        </div>
+      </div>
+    
 </body>
 <script src="../js/traducao.js"></script>
 <script src="../js/cadastro.js"></script>
