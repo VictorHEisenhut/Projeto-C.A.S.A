@@ -11,7 +11,7 @@
 <body class="fundo">
     <section id="section_banner_home">
         <div>
-          <header>
+          <header style="background-image: url('ImageHeader.jpeg')">
             <h2 id="headerTitle" class="text-white">Lorem</h2> 
             <div>
               <a class="text-white link" id="homeLink">Home</a>
@@ -36,7 +36,7 @@
     <br>
     <div class="row justify-content-center align-items-center text-center">
         <div class="col-md-3">
-            <label for="nome" class="control-label text-white" >Digite seu nome</label>
+            <label for="nome" class="control-label text-white" id="nameLabel">Digite seu nome</label>
             <input type="text" class="form-control rounded-pill" id ="nome" placeholder="Digite nome">
         </div>
         <div class="col-md-3">
@@ -111,6 +111,11 @@
         </select>
         </div>
       </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="text-center"><button class="btn btn-outline-light" onclick="cadastrar()">Cadastrar</button></div>
     
 </body>
 <script src="../js/traducao.js"></script>
