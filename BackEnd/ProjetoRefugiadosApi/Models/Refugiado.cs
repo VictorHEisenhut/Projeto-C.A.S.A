@@ -1,4 +1,5 @@
 ﻿using ProjetoRefugiados.Models.Enums;
+using ProjetoRefugiadosApi.Dtos.Documento;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProjetoRefugiados.Models
@@ -24,7 +25,7 @@ namespace ProjetoRefugiados.Models
         public int PaisId { get; set; }
         public Documento Documento { get; set; }
         public int DocumentoId { get; set; }
-        public string Role { get; set; } = "usuarios";
+        public string Role { get; set; } = "usuario";
 
     }
 }

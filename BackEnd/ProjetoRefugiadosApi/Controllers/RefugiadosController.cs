@@ -83,7 +83,6 @@ namespace ProjetoRefugiadosApi.Controllers
         public async Task<ActionResult<Refugiado>> PostRefugiado(CreateRefugiadoDto refugiadoDto)
         {
             var refugiado = _mapper.Map<Refugiado>(refugiadoDto);
-            refugiado.Documento = await _context.Documentos.FirstOrDefaultAsync(d => d.Id == refugiadoDto.DocumentoId);
             refugiado.Pais = await _context.Paises.FirstOrDefaultAsync(p => p.Id == refugiadoDto.PaisId);
             
 

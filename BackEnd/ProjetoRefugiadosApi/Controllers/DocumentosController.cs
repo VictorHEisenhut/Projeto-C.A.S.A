@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProjetoRefugiados.Models;
 using ProjetoRefugiadosApi.Data;
+using ProjetoRefugiadosApi.Dtos.Documento;
 
 namespace ProjetoRefugiadosApi.Controllers
 {
@@ -15,10 +17,12 @@ namespace ProjetoRefugiadosApi.Controllers
     public class DocumentosController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly IMapper _mapper;
 
-        public DocumentosController(AppDbContext context)
+        public DocumentosController(AppDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/Documentos
@@ -76,8 +80,10 @@ namespace ProjetoRefugiadosApi.Controllers
         // POST: api/Documentos
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Documento>> PostDocumento(Documento documento)
+        public async Task<ActionResult<Documento>> PostDocumento(CreateDocumentoDto documentoDto)
         {
+            var documento = _mapper.Map<Documento>(documentoDto);
+
             _context.Documentos.Add(documento);
             await _context.SaveChangesAsync();
 

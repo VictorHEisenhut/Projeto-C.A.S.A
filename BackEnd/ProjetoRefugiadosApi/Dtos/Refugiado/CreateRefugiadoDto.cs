@@ -1,6 +1,7 @@
 ﻿using ProjetoRefugiados.Models.Enums;
 using ProjetoRefugiados.Models;
 using System.ComponentModel.DataAnnotations;
+using ProjetoRefugiadosApi.Dtos.Documento;
 
 namespace ProjetoRefugiadosApi.Dtos.Refugiado
 {
@@ -20,6 +21,6 @@ namespace ProjetoRefugiadosApi.Dtos.Refugiado
         public Genero Genero { get; set; }
         public Escolaridade Escolaridade { get; set; }
         public int PaisId { get; set; }
-        public int DocumentoId { get; set; }
+        public CreateDocumentoDto Documento { get; set; }
     }
 }
