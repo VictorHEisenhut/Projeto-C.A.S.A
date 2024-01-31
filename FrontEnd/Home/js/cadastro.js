@@ -1,5 +1,5 @@
-select = document.getElementById("paises")
-fetch('http://localhost:5145/api/Paises',{
+select = document.getElementById("pais")
+fetch('https://localhost:7288/api/Paises',{
                 headers: { 
                            'Content-Type': 'application/json'
                           }
@@ -8,7 +8,7 @@ fetch('http://localhost:5145/api/Paises',{
         .then(post => {
             post.forEach(element => {
                 
-                pais = `<option value="${element.pais}">${element.pais}</option>`
+                pais = `<option value=${element.id}>${element.pais}</option>`
                 select.innerHTML += pais
             });
         });   
@@ -20,12 +20,21 @@ async function cadastrar()
         let senha = document.getElementById("senha").value
         let dataN = document.getElementById("dataN").value
         let fone = document.getElementById("fone").value
-        let estadoCivil = document.getElementById("estadoCivil").value
-        let genero = document.getElementById("genero").value
-        let escolaridade = document.getElementById("escolaridade").value
-        let paisId = document.getElementById("paisId").value
-        let documento = document.getElementById("documento").value
-        let role = "usuario"
+
+        let estadoCivil = document.getElementById("estadoCivil")
+        estadoCivil.addEventListener('change', function(){})
+        var auxEC = parseInt(estadoCivil.value);
+        let genero = document.getElementById("genero")
+        genero.addEventListener('change', function(){})
+        var auxG = parseInt(genero.value);
+        let escolaridade = document.getElementById("escolaridade")
+        escolaridade.addEventListener('change', function(){})
+        var auxE = parseInt(escolaridade.value);
+        let paisId = document.getElementById("pais")
+        paisId.addEventListener('change', function(){})
+        var auxP = parseInt(paisId.value);
+        //let documentoId = document.getElementById("documento").value
+        let documentoId = 1
         let obj = 
         {
             nome: nome,
@@ -34,18 +43,17 @@ async function cadastrar()
             senha: senha,
             dataNascimento: dataN,
             telefone: fone,
-            estadoCivil: estadoCivil,
-            genero: genero,
-            escolaridade: escolaridade,
-            paisId: paisId,
-            documento: documento,
-            role: role
+            estadoCivil: auxEC,
+            genero: auxG,
+            escolaridade: auxE,
+            paisId: auxP,
+            documentoId: documentoId,
         }
-        
-        await fetch('http://localhost:5210/api/Users',
+        console.log(obj)
+        await fetch('https://localhost:7288/api/Refugiados',
         {
             method: "POST",
-            headers: {'Authorization': 'Bearer ' + token,'Content-Type' : 'application/json'},
+            headers: {'Authorization': 'Bearer '},
             body: JSON.stringify(obj)
         })
         
@@ -71,7 +79,7 @@ async function cadastrar()
           paisLabel:'Selecione seu país de origem',
           solteiroLabel:'Solteiro/a',
           casadoLabel:'Casado/a',
-          viuviLabel:'Viúvo/a',
+          viuvoLabel:'Viúvo/a',
           separadoLabel:'Separado/a',
           divorciadoLabel:'Divorciado/a',
           masculinoLabel:'Masculino',
@@ -103,7 +111,7 @@ async function cadastrar()
           paisLabel:'Enter you country',
           solteiroLabel:'Single',
           casadoLabel:'Married',
-          viuviLabel:'Widow/er',
+          viuvoLabel:'Widow/er',
           separadoLabel:'Separeted',
           divorciadoLabel:'Divorced',
           masculinoLabel:'Male',
@@ -136,7 +144,7 @@ async function cadastrar()
           paisLabel: 'Ingrese su país',
           solteiroLabel: 'Soltero',
           casadoLabel: 'Casado',
-          viuviLabel: 'Viudo/a',
+          viuvoLabel: 'Viudo/a',
           separadoLabel: 'Separado/a',
           divorciadoLabel: 'Divorciado/a',
           masculinoLabel: 'Masculino',
@@ -168,7 +176,7 @@ async function cadastrar()
         paisLabel: "Entrez votre pays",
         solteiroLabel: "Célibataire",
         casadoLabel: "Marié",
-        viuviLabel: "Veuf/Veuve",
+        viuvoLabel: "Veuf/Veuve",
         separadoLabel: "Séparé(e)",
         divorciadoLabel: "Divorcé(e)",
         masculinoLabel: "Homme",
@@ -200,7 +208,7 @@ async function cadastrar()
         paisLabel: 'أدخل بلدك',
         solteiroLabel: 'أعزب',
         casadoLabel: 'متزوج',
-        viuviLabel: 'أرمل/ة',
+        viuvoLabel: 'أرمل/ة',
         separadoLabel: 'منفصل/ة',
         divorciadoLabel: 'مطلق/ة',
         masculinoLabel: 'ذكر',

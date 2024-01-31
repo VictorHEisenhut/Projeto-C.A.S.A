@@ -11,7 +11,7 @@
 <body class="fundo">
     <section id="section_banner_home">
         <div>
-          <header style="background-image: url('ImageHeader.jpeg')">
+          <header style="background-image: url('/imagens/ImageHeader.jpeg')">
             <h2 id="headerTitle" class="text-white">Lorem</h2> 
             <div>
               <a class="text-white link" id="homeLink">Home</a>
@@ -67,38 +67,39 @@
         <div class="line_inputs">
             <div class="div_inputs_cad">
                 <label for="estadoCivil" id="estadoCivilLabel">Selecione seu estado civíl</label>
-                <select name="estadoCivil">
-                    <option value="solteiro" id="solteiroLabel">Solteiro/a</option>
-                    <option value="casado" id="casadoLabel">Casado/a</option>
-                    <option value="viuvo" id="viuviLabel">Viúvo/a</option>
-                    <option value="separado" id="separadoLabel">Separado/a</option>
-                    <option value="divorciado" id="divorciadoLabel">Divorciado/a</option>
+                <select class="col-md-10 borda" id="estadoCivil">
+                    <option>Selecione seu estado civíl</option>
+                    <option value= 1  id="solteiroLabel">Solteiro/a</option>
+                    <option value= 2  id="casadoLabel">Casado/a</option>
+                    <option value= 3  id="separadoLabel">Separado/a</option>
+                    <option value= 4  id="divorciadoLabel">Divorciado/a</option>
+                    <option value= 5  id="viuvoLabel">Viúvo/a</option>
                 </select>
             </div>
             <div class="div_inputs_cad">
                 <label for="genero" id="generoLabel">Selecione seu gênero</label>
-                <select name="genero">
-                    
-                    <option value="masculino" id="masculinoLabel">Masculino</option>
-                    <option value="feminino" id="femininoLabel">Feminino</option>
+                <select class="col-md-10 borda" id="genero">
+                    <option>Selecione seu gênero</option>
+                    <option value= 1 id="masculinoLabel">Masculino</option>
+                    <option value= 2 id="femininoLabel">Feminino</option>
                 </select>
             </div>
             <div class="div_inputs_cad">
                 <label for="escolaridade" id="escolaridadeLabel">Selecione sua escolaridade</label>
-                <select name="escolaridade">
-                    
-                    <option value="ensinoFI" id="ensinoFILabel">Ensino fundamental incompleto</option>
-                    <option value="ensinoFC" id="ensinoFCLabel">Ensino fundamental completo</option>
-                    <option value="ensinoMI" id="ensinoMILabel">Ensino médio incompleto</option>
-                    <option value="ensinoMC" id="ensinoMCLabel">Ensino médio completo</option>
-                    <option value="ensinoSI" id="ensinoSILabel">Ensino superior incompleto</option>
-                    <option value="ensinoSC" id="ensinoSCLabel">Ensino superior completo</option>
+                <select class="col-md-10 borda" id="escolaridade">
+                    <option>Selecione sua escolaridade</option>
+                    <option value= 1 id="ensinoFCLabel">Ensino fundamental completo</option>
+                    <option value= 2 id="ensinoFILabel">Ensino fundamental incompleto</option>
+                    <option value= 3 id="ensinoMCLabel">Ensino médio completo</option>
+                    <option value= 4 id="ensinoMILabel">Ensino médio incompleto</option>
+                    <option value= 5 id="ensinoSCLabel">Ensino superior completo</option>
+                    <option value= 6 id="ensinoSILabel">Ensino superior incompleto</option>
                 </select>
             </div>
             <div class="div_inputs_cad">
                 <div><label for="paisId" id="paisLabel">Selecione seu país de origem</label></div>
-                <select name="paisId" id="paises">
-                    <option>Brazil</option>
+                <select class="col-md-10 borda" id="pais">
+                    <option>Selecione seu país</option>
                 </select>
             </div>
         </div>
