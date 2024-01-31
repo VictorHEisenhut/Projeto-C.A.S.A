@@ -30,92 +30,80 @@
           </header>
         </div>
     </section>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="row justify-content-center align-items-center text-center">
-        <div class="col-md-3">
-            <label for="nome" class="control-label text-white" id="nameLabel">Digite seu nome</label>
-            <input type="text" class="form-control rounded-pill" id ="nome">
+    <section>
+        <div class="line_inputs">
+            <div class="div_inputs_cad">
+                <label for="nome" class="label_inputs_cad" id="nameLabel">Digite seu nome</label>
+                <input type="text" id ="nome">
+            </div>
+            <div class="div_inputs_cad">
+                <label for="sobrenome" class="label_inputs_cad" id="sobreLabel">Digite seu sobrenome</label>
+                <input type="text" id ="sobrenome">
+            </div>
+            <div class="div_inputs_cad">
+                <label for="email" class="label_inputs_cad"  id="emailLabel" >Digite seu email</label>
+                <input type="email" id ="email">
+            </div>
         </div>
-        <div class="col-md-3">
-            <label for="sobrenome" class="control-label text-white" id="sobreLabel">Digite seu sobrenome</label>
-            <input type="text" class="form-control rounded-pill" id ="sobrenome">
-        </div>
-        <div class="col-md-3">
-            <label for="email" class="control-label text-white" id="emailLabel" >Digite seu email</label>
-            <input type="email" class="form-control rounded-pill" id ="email">
-        </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="row justify-content-center align-items-center text-center">
-        <div class="col-md-5">
-            <label for="senha" class="control-label text-white" id="senhaLabel" >Digite sua senha</label>
-            <input type="password" class="form-control rounded-pill" id ="senha">
-        </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="row justify-content-center align-items-center text-center">
-        <div class="col-md-3">
-            <label for="dataN" class="control-label text-white" id="nascLabel" >Selecione sua data de nascimento</label>
-            <input type="date" class="form-control rounded-pill" id ="dataN">
-        </div>
-        <div class="col-md-3">
-            <label for="fone" class="control-label text-white" id="numeroLabel" >Digite seu número de telefone</label>
-            <input type="tel" class="form-control rounded-pill" id ="fone">
-        </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="row mx-5">
-        <div class="col text-center"><label class="text-white" for="estadoCivil" id="estadoCivilLabel">Selecione seu estado civíl</label></div>
-        <div class="col text-center"><label class="text-white" for="genero" id="generoLabel">Selecione seu gênero</label></div>
-        <div class="col text-center"><label class="text-white" for="escolaridade" id="escolaridadeLabel">Selecione sua escolaridade</label></div>
-        <div class="col text-center"><label class="text-white" for="paisId" id="paisLabel">Selecione seu país de origem</label></div>
-    </div>
-    <div class="row mx-5">
-        <div class="col text-center">
-        <select class="col-md-10 borda" name="estadoCivil">
-            <option value="solteiro" id="solteiroLabel">Solteiro/a</option>
-            <option value="casado" id="casadoLabel">Casado/a</option>
-            <option value="viuvo" id="viuviLabel">Viúvo/a</option>
-            <option value="separado" id="separadoLabel">Separado/a</option>
-            <option value="divorciado" id="divorciadoLabel">Divorciado/a</option>
-        </select></div>
-        <div class="col text-center">
-        <select class="col-md-10 borda" name="genero">
-            <option value="masculino" id="masculinoLabel">Masculino</option>
-            <option value="feminino" id="femininoLabel">Feminino</option>
-        </select></div>
-        <div class="col text-center">
-        <select class="col-md-10 borda" name="escolaridade">
-            <option value="ensinoFI" id="ensinoFILabel">Ensino fundamental incompleto</option>
-            <option value="ensinoFC" id="ensinoFCLabel">Ensino fundamental completo</option>
-            <option value="ensinoMI" id="ensinoMILabel">Ensino médio incompleto</option>
-            <option value="ensinoMC" id="ensinoMCLabel">Ensino médio completo</option>
-            <option value="ensinoSI" id="ensinoSILabel">Ensino superior incompleto</option>
-            <option value="ensinoSC" id="ensinoSCLabel">Ensino superior completo</option>
-        </select></div>
-        <div class="col text-center">
-        <select class="col-md-10 borda" name="paisId" id="paises">
+        <div class="line_inputs">
+            <div>
+                <div class="div_inputs_cad">
+                    <label for="senha" class="label_inputs_cad" id="senhaLabel" >Digite sua senha</label>
+                    <input type="password" id ="senha">
+                </div>
+            </div>
+            <div>
+                <div class="div_inputs_cad">
+                    <label for="dataN" class="label_inputs_cad" id="nascLabel" >Selecione sua data de nascimento</label>
+                    <input type="date" id ="dataN">
+                </div>
+            </div>
 
-        </select>
+            <div class="div_inputs_cad">
+                <label for="fone" class="label_inputs_cad" id="numeroLabel" >Digite seu número de telefone</label>
+                <input type="tel" id ="fone">
+            </div>
         </div>
-      </div>
-      <br>
-      <br>
-      <br>
-      <br>
-      <div class="text-center"><button id="botaoLabel" class="btn btn-outline-light" onclick="cadastrar()">Cadastrar</button></div>
+        <div class="line_inputs">
+            <div class="div_inputs_cad">
+                <label for="estadoCivil" id="estadoCivilLabel">Selecione seu estado civíl</label>
+                <select name="estadoCivil">
+                    <option value="solteiro" id="solteiroLabel">Solteiro/a</option>
+                    <option value="casado" id="casadoLabel">Casado/a</option>
+                    <option value="viuvo" id="viuviLabel">Viúvo/a</option>
+                    <option value="separado" id="separadoLabel">Separado/a</option>
+                    <option value="divorciado" id="divorciadoLabel">Divorciado/a</option>
+                </select>
+            </div>
+            <div class="div_inputs_cad">
+                <label for="genero" id="generoLabel">Selecione seu gênero</label>
+                <select name="genero">
+                    
+                    <option value="masculino" id="masculinoLabel">Masculino</option>
+                    <option value="feminino" id="femininoLabel">Feminino</option>
+                </select>
+            </div>
+            <div class="div_inputs_cad">
+                <label for="escolaridade" id="escolaridadeLabel">Selecione sua escolaridade</label>
+                <select name="escolaridade">
+                    
+                    <option value="ensinoFI" id="ensinoFILabel">Ensino fundamental incompleto</option>
+                    <option value="ensinoFC" id="ensinoFCLabel">Ensino fundamental completo</option>
+                    <option value="ensinoMI" id="ensinoMILabel">Ensino médio incompleto</option>
+                    <option value="ensinoMC" id="ensinoMCLabel">Ensino médio completo</option>
+                    <option value="ensinoSI" id="ensinoSILabel">Ensino superior incompleto</option>
+                    <option value="ensinoSC" id="ensinoSCLabel">Ensino superior completo</option>
+                </select>
+            </div>
+            <div class="div_inputs_cad">
+                <div><label for="paisId" id="paisLabel">Selecione seu país de origem</label></div>
+                <select name="paisId" id="paises">
+                    <option>Brazil</option>
+                </select>
+            </div>
+        </div>
+        <div class="text-center"><button id="botaoLabel" onclick="cadastrar()">Cadastrar</button></div>
+    </section>
     
 </body>
 <script src="../js/cadastro.js"></script>

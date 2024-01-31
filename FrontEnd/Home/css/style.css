@@ -85,11 +85,38 @@ header select{
     color: #fcfcfc;
 }
 .fundo{
-    background-color: #141314;
+    background-color: #f6f6f6;
 }
 .borda{
     border-radius: 10px;
 }
 .link{
     text-decoration: none;
+}
+
+.div_inputs_cad{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.line_inputs{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: Start;
+}
+
+.label_inputs_cad{
+    color: #141314;
+}
+
+.div_inputs_cad label{
+    font-size: 1.25rem;
+}
+
+.div_inputs_cad input{
+    padding: 0 12rem;
 }
