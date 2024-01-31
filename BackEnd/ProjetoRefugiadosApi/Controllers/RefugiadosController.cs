@@ -29,7 +29,15 @@ namespace ProjetoRefugiadosApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Refugiado>>> GetRefugiados()
         {
-            return await _context.Refugiados.ToListAsync();
+            var refugiados = await _context.Refugiados.ToListAsync();
+            foreach (var refugiado in refugiados)
+            {
+                refugiado.Pais = await _context.Paises.FirstOrDefaultAsync(p => p.Id == refugiado.PaisId);
+                refugiado.Documento = await _context.Documentos.FirstOrDefaultAsync(d => d.Id == refugiado.DocumentoId);
+            }
+
+            return refugiados;
+
         }
 
         // GET: api/Refugiados/5
@@ -37,6 +45,8 @@ namespace ProjetoRefugiadosApi.Controllers
         public async Task<ActionResult<Refugiado>> GetRefugiado(int id)
         {
             var refugiado = await _context.Refugiados.FindAsync(id);
+            refugiado.Pais = await _context.Paises.FirstOrDefaultAsync(p => p.Id == refugiado.PaisId);
+            refugiado.Documento = await _context.Documentos.FirstOrDefaultAsync(d => d.Id == refugiado.DocumentoId);
 
             if (refugiado == null)
             {
@@ -51,6 +61,9 @@ namespace ProjetoRefugiadosApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutRefugiado(int id, Refugiado refugiado)
         {
+            refugiado.Pais = await _context.Paises.FirstOrDefaultAsync(p => p.Id == refugiado.PaisId);
+            refugiado.Documento = await _context.Documentos.FirstOrDefaultAsync(d => d.Id == refugiado.DocumentoId);
+
             if (id != refugiado.Id)
             {
                 return BadRequest();
@@ -82,6 +95,7 @@ namespace ProjetoRefugiadosApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Refugiado>> PostRefugiado(CreateRefugiadoDto refugiadoDto)
         {
+
             var refugiado = _mapper.Map<Refugiado>(refugiadoDto);
             refugiado.Pais = await _context.Paises.FirstOrDefaultAsync(p => p.Id == refugiadoDto.PaisId);
             
@@ -97,6 +111,9 @@ namespace ProjetoRefugiadosApi.Controllers
         public async Task<IActionResult> DeleteRefugiado(int id)
         {
             var refugiado = await _context.Refugiados.FindAsync(id);
+            refugiado.Pais = await _context.Paises.FirstOrDefaultAsync(p => p.Id == refugiado.PaisId);
+            refugiado.Documento = await _context.Documentos.FirstOrDefaultAsync(d => d.Id == refugiado.DocumentoId);
+
             if (refugiado == null)
             {
                 return NotFound();
