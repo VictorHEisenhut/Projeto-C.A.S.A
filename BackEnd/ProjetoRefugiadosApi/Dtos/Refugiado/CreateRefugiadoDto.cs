@@ -2,6 +2,7 @@
 using ProjetoRefugiados.Models;
 using System.ComponentModel.DataAnnotations;
 using ProjetoRefugiadosApi.Dtos.Documento;
+using Microsoft.VisualBasic;
 
 namespace ProjetoRefugiadosApi.Dtos.Refugiado
 {

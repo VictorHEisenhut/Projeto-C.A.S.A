@@ -16,7 +16,8 @@ namespace ProjetoRefugiados.Models
         [DataType(DataType.Password)]
         [Required]
         public string Senha { get; set; }
-        public DateTime DataNascimento { get; set; }
+        public DateOnly DataNascimento { get; set; }
+        [DataType(DataType.PhoneNumber)]
         public string Telefone { get; set; }
         public EstadoCivil EstadoCivil { get; set; }
         public Genero Genero { get; set; }
