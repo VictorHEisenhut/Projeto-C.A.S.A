@@ -33,8 +33,15 @@ async function cadastrar()
         let paisId = document.getElementById("pais")
         paisId.addEventListener('change', function(){})
         var auxP = parseInt(paisId.value);
-        //let documentoId = document.getElementById("documento").value
-        let documentoId = 1
+        let cpf = document.getElementById("cpf").value
+        let rg = document.getElementById("rg").value
+        let cnh = document.getElementById("cnh").value
+        let registroEmigrante = document.getElementById("registroEmigrante").value
+        let crnm = document.getElementById("crnm").value
+        let rne = document.getElementById("rne").value
+        let dprnm = document.getElementById("dprnm").value
+        let protocoleRefugio = document.getElementById("protocoleRefugio").value
+
         let obj = 
         {
             nome: nome,
@@ -47,13 +54,23 @@ async function cadastrar()
             genero: auxG,
             escolaridade: auxE,
             paisId: auxP,
-            documentoId: documentoId,
+            documento: 
+            {
+              cpf: cpf,
+              rg: rg,
+              cnh: cnh,
+              registroEmigrante: registroEmigrante,
+              crnm: crnm,
+              rne: rne,
+              dprnm: dprnm,
+              protocoleRefugio: protocoleRefugio
+            }
         }
         console.log(obj)
         await fetch('https://localhost:7288/api/Refugiados',
         {
             method: "POST",
-            headers: {'Authorization': 'Bearer '},
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(obj)
         })
         
