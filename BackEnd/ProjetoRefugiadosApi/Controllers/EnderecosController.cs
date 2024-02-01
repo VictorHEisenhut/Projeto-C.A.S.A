@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using ProjetoRefugiados.Models;
 using ProjetoRefugiadosApi.Data;
 using ProjetoRefugiadosApi.Dtos.Endereco;
+using ProjetoRefugiadosApi.Validations;
 
 namespace ProjetoRefugiadosApi.Controllers
 {
@@ -18,6 +19,7 @@ namespace ProjetoRefugiadosApi.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
+        private readonly EnderecoValidation _validator = new();
 
         public EnderecosController(AppDbContext context, IMapper mapper)
         {
@@ -83,6 +85,13 @@ namespace ProjetoRefugiadosApi.Controllers
         public async Task<ActionResult<Endereco>> PostEndereco(CreateEnderecoDto enderecoDto)
         {
             var endereco = _mapper.Map<Endereco>(enderecoDto);
+
+            var resposta = _validator.Validate(endereco);
+
+            if (!resposta.IsValid)
+            {
+                return BadRequest(resposta.Errors);
+            }
 
             _context.Enderecos.Add(endereco);
             await _context.SaveChangesAsync();
