@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using ProjetoRefugiados.Models;
 using ProjetoRefugiadosApi.Data;
 using ProjetoRefugiadosApi.Dtos.Refugiado;
+using ProjetoRefugiadosApi.Validations;
 
 namespace ProjetoRefugiadosApi.Controllers
 {
@@ -18,6 +19,8 @@ namespace ProjetoRefugiadosApi.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
+        private readonly RefugiadoValidation _validator = new();
+
 
         public RefugiadosController(AppDbContext context, IMapper mapper)
         {
@@ -95,10 +98,14 @@ namespace ProjetoRefugiadosApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Refugiado>> PostRefugiado(CreateRefugiadoDto refugiadoDto)
         {
-
             var refugiado = _mapper.Map<Refugiado>(refugiadoDto);
             refugiado.Pais = await _context.Paises.FirstOrDefaultAsync(p => p.Id == refugiadoDto.PaisId);
             
+            var resposta = _validator.Validate(refugiado);
+            if (!resposta.IsValid)
+            {
+                return BadRequest(resposta.Errors);
+            }
 
             _context.Refugiados.Add(refugiado);
             await _context.SaveChangesAsync();

@@ -18,7 +18,7 @@ namespace ProjetoRefugiadosApi.Dtos.Refugiado
         public string Senha { get; set; }
        
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateOnly DataNascimento { get; set; }
         public string Telefone { get; set; }
         public EstadoCivil EstadoCivil { get; set; }
