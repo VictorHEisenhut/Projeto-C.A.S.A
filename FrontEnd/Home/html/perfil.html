@@ -3,28 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Perfil</title>
 </head>
 <body>
+    <header style="background-image: url('/imagens/ImageHeader.jpeg')">
+        <h2 id="headerTitle" class="text-white">Lorem</h2> 
+        <div>
+          <a href="index.html" class="text-white link" id="homeLink">Home</a>
+          <a class="text-white link" id="documentsLink">Documents</a>
+          <a class="text-white link" id="placesLink">Places</a>
+          <a href="login.html" id="homeLink">Login</a>
+          <a class="text-white link" id="languageLink">Language</a>
+          <a class="text-white link" id="donateLink" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Donate</a>
+          <select onchange="changeLanguage(this.value)">
+            <option value="pt">Português</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="ar">العربية</option>
+          </select>
+        </div>
+      </header>
     <div>
+        <label for="nome" class="label_inputs_cad" id="nameLabel">Nome</label>
         <input disabled id="nome" type="text">
+        <label for="sobrenome" class="label_inputs_cad" id="sobreLabel">Sobrenome</label>
         <input disabled id="sobrenome" type="text">
+        <label for="email" class="label_inputs_cad" id="emailLabel">Email</label>
         <input disabled id="email" type="text">
+        <label for="senha" class="label_inputs_cad" id="senhaLabel">Senha</label>
         <input disabled id="senha" type="text">
+        <label for="dataNascimento" class="label_inputs_cad" id="nascLabel">Data de nascimento</label>
         <input disabled id="dataNascimento" type="text">
+        <label for="telefone" class="label_inputs_cad" id="numeroLabel">Telefone</label>
         <input disabled id="telefone" type="text">
+        <label for="estadoCivil" class="label_inputs_cad" id="estadoCivilLabel">Estado Civíl</label>
         <input disabled id="estadoCivil" type="text">
+        <label for="genero" class="label_inputs_cad" id="generoLabel">Gênero</label>
         <input disabled id="genero" type="text">
+        <label for="escolaridade" class="label_inputs_cad" id="escolaridadeLabel">Escolaridade</label>
         <input disabled id="escolaridade" type="text">
+        <label for="paisId" class="label_inputs_cad" id="paisLabel">País</label>
         <input disabled id="paisId" type="text">
+        <label for="cpf" class="label_inputs_cad">CPF</label>
         <input disabled id="cpf" type="text">
+        <label for="rg" class="label_inputs_cad">RG</label>
         <input disabled id="rg" type="text">
+        <label for="cnh" class="label_inputs_cad">CNH</label>
         <input disabled id="cnh" type="text">
-        <input disabled id="registroEmigrante" type="text">
+        <label for="crnm" class="label_inputs_cad">CRNM</label>
         <input disabled id="crnm" type="text">
+        <label for="rne" class="label_inputs_cad">RNE</label>
         <input disabled id="rne" type="text">
-        <input disabled id="dprnm" type="text">
-        <input disabled id="protocoleRefugio" type="text">
     </div>
 </body>
 <script src="/js/perfil.js"></script></html>

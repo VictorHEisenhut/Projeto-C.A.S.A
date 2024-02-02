@@ -130,7 +130,12 @@ async function cadastrar()
           ensinoMCLabel:'Ensino médio completo',
           ensinoSILabel:'Ensino superior incompleto',
           ensinoSCLabel:'Ensino superior completo',
-          botaoLabel: 'Cadastrar'
+          botaoLabel: 'Cadastrar',
+          cpfLabel: 'Digite seu CPF',
+          rgLabel: 'Digite seu rg',
+          cnhLabel:'Digite seu cnh',
+          crnmLabel:'Digite seu crnm',
+          rneLabel:'Digite seu rne',
         },
         en: {
           headerTitle: 'Lorem',
@@ -162,8 +167,12 @@ async function cadastrar()
           ensinoMCLabel:'Complete high school',
           ensinoSILabel:'Incomplete college',
           ensinoSCLabel:'Complete college',
-          botaoLabel: 'Sing up'
-
+          botaoLabel: 'Sing up',
+          cpfLabel: 'Enter your CPF',
+          rgLabel: 'Enter your rg',
+          cnhLabel:'Enter your cnh',
+          crnmLabel:'Enter your crnm',
+          rneLabel:'Enter your rne',
         },
         es: {
           headerTitle: 'Lorem',
@@ -195,7 +204,12 @@ async function cadastrar()
           ensinoMCLabel: 'Secundaria completa',
           ensinoSILabel: 'Universidad incompleta',
           ensinoSCLabel: 'Universidad completa',
-          botaoLabel: 'Registrarse'
+          botaoLabel: 'Registrarse',
+          cpfLabel: 'Ingrese su CPF',
+          rgLabel: 'Ingrese su rg',
+          cnhLabel:'Ingrese su cnh',
+          crnmLabel:'Ingrese su crnm',
+          rneLabel:'Ingrese su rne',
         },
       fr: {
         headerTitle: 'Lorem',
@@ -227,7 +241,12 @@ async function cadastrar()
         ensinoMCLabel: "École secondaire complète",
         ensinoSILabel: "Université incomplète",
         ensinoSCLabel: "Université complète",
-        botaoLabel: "S'inscrire"
+        botaoLabel: "S'inscrire",
+        cpfLabel: 'Entrez votre CPF',
+        rgLabel: 'Entrez votre rg',
+        cnhLabel:'Entrez votre cnh',
+        crnmLabel:'Entrez votre crnm',
+        rneLabel:'Entrez votre rne',
       },
       ar: {
         headerTitle: 'Lorem',

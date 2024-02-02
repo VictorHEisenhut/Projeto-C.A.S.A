@@ -43,3 +43,94 @@ const result = Promise.resolve(valores);
             document.getElementById("dprnm").value = value.dprnm
             document.getElementById("protocoleRefugio").value = value.protocoleRefugio
         })
+
+
+const translations = {
+    pt: {
+      headerTitle: 'Lorem',
+      homeLink: 'Home',
+      documentsLink: 'Documentos',
+      placesLink: 'Locais',
+      languageLink: 'Idioma',
+      donateLink: 'Doe',
+      nameLabel: 'Nome',
+      sobreLabel:'Sobrenome',
+      emailLabel: 'Email',
+      senhaLabel: 'Senha',
+      nascLabel:'Data de nascimento',
+      numeroLabel: 'Telefone',
+      estadoCivilLabel: 'Estado civíl',
+      generoLabel:'Gênero',
+      escolaridadeLabel:'Escolaridade',
+      paisLabel:'País'
+    },
+    en: {
+      headerTitle: 'Lorem',
+      homeLink: 'Home',
+      documentsLink: 'Documents',
+      placesLink: 'Places',
+      languageLink: 'Language',
+      donateLink: 'Donate',
+      nameLabel: 'Name',
+      sobreLabel:'Last name',
+      emailLabel: 'Email',
+      senhaLabel: 'Password',
+      nascLabel:'birthday',
+      numeroLabel: 'Phone number',
+      estadoCivilLabel: 'Marital status',
+      generoLabel:'Gender',
+      escolaridadeLabel:'Level of education',
+      paisLabel:'Country'
+    },
+    es: {
+      headerTitle: 'Lorem',
+      homeLink: 'Home',
+      documentsLink: 'Documentos',
+      placesLink: 'Lugares',
+      languageLink: 'Idioma',
+      donateLink: 'Donar',
+      nameLabel: 'Nombre',
+      sobreLabel:'Apellido',
+      emailLabel: 'Correo electrónico',
+      senhaLabel: 'Contraseña',
+      nascLabel:'Fecha de nacimiento',
+      numeroLabel: 'Teléfono',
+      estadoCivilLabel: 'Estado civil',
+      generoLabel:'Género',
+      escolaridadeLabel:'Nivel de educación',
+      paisLabel:'País'
+    },
+  fr: {
+    headerTitle: 'Lorem',
+    homeLink: 'Accueil',
+    documentsLink: 'Documents',
+    placesLink: 'Lieux',
+    languageLink: 'Langue',
+    donateLink: 'Don',
+    nameLabel: 'Nom',
+    sobreLabel:'Nom de famille',
+    emailLabel: 'E-mail',
+    senhaLabel: 'Mot de passe',
+    nascLabel:'Date de naissance',
+    numeroLabel: 'Téléphone',
+    estadoCivilLabel: 'État civil',
+    generoLabel:'Genre',
+    escolaridadeLabel:"Niveau d'éducation",
+    paisLabel:'Pays'
+  },
+  ar: {
+    headerTitle: 'Lorem',
+    homeLink: 'الصفحة الرئيسية',
+    documentsLink: 'وثائق',
+    placesLink: 'أماكن',
+    languageLink: 'اللغة',
+    donateLink: 'تبرع',
+  }
+  };
+
+  function changeLanguage(lang) {
+    const elements = Object.keys(translations[lang]);
+    elements.forEach(element => {
+      document.getElementById(element).innerText = translations[lang][element];
+    });
+  }

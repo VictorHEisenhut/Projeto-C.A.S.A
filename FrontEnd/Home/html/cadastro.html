@@ -14,9 +14,10 @@
           <header style="background-image: url('/imagens/ImageHeader.jpeg')">
             <h2 id="headerTitle" class="text-white">Lorem</h2> 
             <div>
-              <a class="text-white link" id="homeLink">Home</a>
+              <a href="index.html" class="text-white link" id="homeLink">Home</a>
               <a class="text-white link" id="documentsLink">Documents</a>
               <a class="text-white link" id="placesLink">Places</a>
+              <a href="login.html" id="homeLink">Login</a>
               <a class="text-white link" id="languageLink">Language</a>
               <a class="text-white link" id="donateLink" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Donate</a>
               <select onchange="changeLanguage(this.value)">
@@ -116,24 +117,12 @@
             <input type="text" id ="cnh">
         </div>
         <div class="div_inputs_cad">
-            <label for="registroEmigrante" class="label_inputs_cad" id="registroEmigranteLabel">Digite seu registro de imigrante</label>
-            <input type="text" id ="registroEmigrante">
-        </div>
-        <div class="div_inputs_cad">
             <label for="crnm" class="label_inputs_cad" id="crnmLabel">Digite seu crnm</label>
             <input type="text" id ="crnm">
         </div>
         <div class="div_inputs_cad">
             <label for="rne" class="label_inputs_cad" id="rneLabel">Digite seu rne</label>
             <input type="text" id ="rne">
-        </div>
-        <div class="div_inputs_cad">
-            <label for="dprnm" class="label_inputs_cad" id="dprnmLabel">Digite seu dprnm</label>
-            <input type="text" id ="dprnm">
-        </div>
-        <div class="div_inputs_cad">
-            <label for="protocoleRefugio" class="label_inputs_cad" id="protocoleRefugioLabel">Digite seu protocole de refugio</label>
-            <input type="text" id ="protocoleRefugio">
         </div>
         <div class="text-center"><button id="botaoLabel" onclick="cadastrar()">Cadastrar</button></div>
     </section>
