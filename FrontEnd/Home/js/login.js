@@ -14,4 +14,5 @@ async function logar(){
     .then(resp => {
         localStorage.setItem('token', resp.token)
     })
+    window.location.href = "./perfil.html"
   }
