@@ -6,7 +6,9 @@ using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using ProjetoRefugiados.Models;
+using ProjetoRefugiadosApi.Config;
 using ProjetoRefugiadosApi.Data;
 using ProjetoRefugiadosApi.Dtos.Refugiado;
 using ProjetoRefugiadosApi.Validations;
@@ -111,6 +113,21 @@ namespace ProjetoRefugiadosApi.Controllers
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetRefugiado", new { id = refugiado.Id }, refugiado);
+        }
+
+        [HttpPost("Login")]
+        public async Task<ActionResult<dynamic>> Login(LoginRefugiadoDto refugiadoDto)
+        {
+            string token = "";
+            var users = await _context.Refugiados.ToListAsync();
+            var userLogado = (from u in users where u.Email == refugiadoDto.Email & u.Senha == refugiadoDto.Senha select u).ToList();
+
+            if (!userLogado.IsNullOrEmpty())
+            {
+                token = AdicionarToken.GenerateToken(userLogado[0]);
+            }
+
+            return new { token = token };
         }
 
         // DELETE: api/Refugiados/5

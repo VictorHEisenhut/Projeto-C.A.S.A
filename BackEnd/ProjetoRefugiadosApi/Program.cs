@@ -1,5 +1,9 @@
 
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using ProjetoRefugiadosApi.Config;
 using ProjetoRefugiadosApi.Data;
+using System.Text;
 
 namespace ProjetoRefugiadosApi
 {
@@ -20,6 +24,25 @@ namespace ProjetoRefugiadosApi
 
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+            var key = Encoding.ASCII.GetBytes(Configuracoes.Secret);
+            builder.Services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -33,8 +56,8 @@ namespace ProjetoRefugiadosApi
 
             app.UseCors(option => { option.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod(); });
 
+            app.UseAuthentication();
             app.UseAuthorization();
-
 
             app.MapControllers();
 

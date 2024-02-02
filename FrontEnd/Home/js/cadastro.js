@@ -34,13 +34,37 @@ async function cadastrar()
         paisId.addEventListener('change', function(){})
         var auxP = parseInt(paisId.value);
         let cpf = document.getElementById("cpf").value
+        if(cpf == ""){
+          cpf = null
+        }
         let rg = document.getElementById("rg").value
+        if(rg == ""){
+          rg = null
+        }
         let cnh = document.getElementById("cnh").value
+        if(cnh == ""){
+          cnh = null
+        }
         let registroEmigrante = document.getElementById("registroEmigrante").value
+        if(registroEmigrante == ""){
+          registroEmigrante = null
+        }
         let crnm = document.getElementById("crnm").value
+        if(crnm == ""){
+          crnm = null
+        }
         let rne = document.getElementById("rne").value
+        if(rne == ""){
+          rne = null
+        }
         let dprnm = document.getElementById("dprnm").value
+        if(dprnm == ""){
+          dprnm = null
+        }
         let protocoleRefugio = document.getElementById("protocoleRefugio").value
+        if(protocoleRefugio == ""){
+          protocoleRefugio = null
+        }
 
         let obj = 
         {
@@ -72,10 +96,9 @@ async function cadastrar()
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(obj)
-        })
-        
+        })       
     }
-
+    
     const translations = {
         pt: {
           headerTitle: 'Lorem',
