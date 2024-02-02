@@ -4,11 +4,6 @@ namespace ProjetoRefugiadosApi.Dtos.Endereco
 {
     public class CreateEnderecoDto
     {
-        public string? Nome { get; set; }
-        public string? Descricao { get; set; }
-        public string? Telefone { get; set; }
-        [EmailAddress]
-        public string? Email { get; set; }
         public string Estado { get; set; }
         public string Cidade { get; set; }
         public string Bairro { get; set; }

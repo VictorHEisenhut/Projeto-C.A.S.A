@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjetoRefugiadosApi.Data;
 
@@ -10,9 +11,11 @@ using ProjetoRefugiadosApi.Data;
 namespace ProjetoRefugiadosApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240202194745_RemovendoCamposEmailNomeTelefoneDeEndereco")]
+    partial class RemovendoCamposEmailNomeTelefoneDeEndereco
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -82,6 +85,15 @@ namespace ProjetoRefugiadosApi.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Crnm")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Dprnm")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ProtocoleRefugio")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("RegistroEmigrante")
                         .HasColumnType("longtext");
 
                     b.Property<string>("Rg")
@@ -188,9 +200,6 @@ namespace ProjetoRefugiadosApi.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("EnderecoId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Escolaridade")
                         .HasColumnType("int");
 
@@ -226,8 +235,6 @@ namespace ProjetoRefugiadosApi.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("DocumentoId");
-
-                    b.HasIndex("EnderecoId");
 
                     b.HasIndex("PaisId");
 
@@ -275,12 +282,6 @@ namespace ProjetoRefugiadosApi.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProjetoRefugiados.Models.Endereco", "Endereco")
-                        .WithMany()
-                        .HasForeignKey("EnderecoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("ProjetoRefugiados.Models.Paises", "Pais")
                         .WithMany()
                         .HasForeignKey("PaisId")
@@ -288,8 +289,6 @@ namespace ProjetoRefugiadosApi.Migrations
                         .IsRequired();
 
                     b.Navigation("Documento");
-
-                    b.Navigation("Endereco");
 
                     b.Navigation("Pais");
                 });

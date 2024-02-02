@@ -7,9 +7,9 @@ namespace ProjetoRefugiadosApi.Validations
     {
         public EnderecoValidation()
         {
-            RuleFor(endereco => endereco.Descricao).Length(3, 50).WithMessage("Descrição de um endereço deve conter entre 3 e 50 caracteres").When(r => r.Descricao != null);
-            RuleFor(endereco => endereco.Telefone).Length(11).WithMessage("Telefone inválido, verifique se contém o DDD").When(r => r.Telefone != null);
-            RuleFor(endereco => endereco.Nome).Length(3, 30).WithMessage("Nome de um endereço deve conter entre 3 e 30 caracteres").When(r => r.Nome != null);
+            //RuleFor(endereco => endereco.Descricao).Length(3, 50).WithMessage("Descrição de um endereço deve conter entre 3 e 50 caracteres").When(r => r.Descricao != null);
+            //RuleFor(endereco => endereco.Telefone).Length(11).WithMessage("Telefone inválido, verifique se contém o DDD").When(r => r.Telefone != null);
+            //RuleFor(endereco => endereco.Nome).Length(3, 30).WithMessage("Nome de um endereço deve conter entre 3 e 30 caracteres").When(r => r.Nome != null);
             RuleFor(endereco => endereco.Bairro).NotNull().WithMessage("Bairro Inválido.").Length(3, 30).WithMessage("Bairro deve conter entre 3 e 30 caracteres.");
             RuleFor(endereco => endereco.Cidade).NotNull().WithMessage("Cidade inválida.").Length(3, 30).WithMessage("Cidade deve conter entre 3 e 30 caracteres.");
             RuleFor(endereco => endereco.Estado).NotNull().WithMessage("Estado inválido.").Length(3, 30).WithMessage("Estado deve conter entre 3 e 30 caracteres.");

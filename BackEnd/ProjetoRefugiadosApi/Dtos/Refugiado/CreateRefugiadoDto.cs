@@ -3,6 +3,7 @@ using ProjetoRefugiados.Models;
 using System.ComponentModel.DataAnnotations;
 using ProjetoRefugiadosApi.Dtos.Documento;
 using Microsoft.VisualBasic;
+using ProjetoRefugiadosApi.Dtos.Endereco;
 
 namespace ProjetoRefugiadosApi.Dtos.Refugiado
 {
@@ -26,5 +27,6 @@ namespace ProjetoRefugiadosApi.Dtos.Refugiado
         public Escolaridade Escolaridade { get; set; }
         public int PaisId { get; set; }
         public CreateDocumentoDto Documento { get; set; }
+        public CreateEnderecoDto Endereco { get; set; }
     }
 }
