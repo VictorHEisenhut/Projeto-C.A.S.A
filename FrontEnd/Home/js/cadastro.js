@@ -15,11 +15,53 @@ fetch('https://localhost:7288/api/Paises',{
 async function cadastrar()
     {
         let nome = document.getElementById("nome").value
+        const cornome = document.getElementById("nome")
+        if(nome == ""){
+          cornome.style.borderColor = "red"
+        }
+        else{
+          cornome.style.borderColor = "black"
+        }
         let sobrenome = document.getElementById("sobrenome").value
+        const corsobrenome = document.getElementById("sobrenome")
+        if(sobrenome == ""){
+          corsobrenome.style.borderColor = "red"
+        }
+        else{
+          corsobrenome.style.borderColor = "black"
+        }
         let email = document.getElementById("email").value
+        const coremail = document.getElementById("email")
+        if(email == "" ){
+          coremail.style.borderColor = "red"
+        }
+        else{
+          coremail.style.borderColor = "black"
+        }
         let senha = document.getElementById("senha").value
+        const corsenha = document.getElementById("senha")
+        if(senha == "" || senha.length < 8 || senha.length>16){
+          corsenha.style.borderColor = "red"
+        }
+        else{
+          corsenha.style.borderColor = "black"
+        }
         let dataN = document.getElementById("dataN").value
+        const cordataN = document.getElementById("dataN")
+        if(dataN == ""){
+          cordataN.style.borderColor = "red"
+        }
+        else{
+          cordataN.style.borderColor = "black"
+        }
         let fone = document.getElementById("fone").value
+        const corfone = document.getElementById("fone")
+        if(fone == "" || fone.length != 11){
+          corfone.style.borderColor = "red"
+        }
+        else{
+          corfone.style.borderColor = "black"
+        }
 
         let estadoCivil = document.getElementById("estadoCivil")
         estadoCivil.addEventListener('change', function(){})
@@ -34,36 +76,103 @@ async function cadastrar()
         paisId.addEventListener('change', function(){})
         var auxP = parseInt(paisId.value);
         let cpf = document.getElementById("cpf").value
+        const corcpf = document.getElementById("cpf")
         if(cpf == ""){
           cpf = null
+          corcpf.style.borderColor = "red"
+        }
+        else{
+          corcpf.style.borderColor = "black"
         }
         let rg = document.getElementById("rg").value
+        const corrg = document.getElementById("rg")
         if(rg == ""){
           rg = null
+          corrg.style.borderColor = "red"
+        }
+        else{
+          corrg.style.borderColor = "black"
         }
         let cnh = document.getElementById("cnh").value
+        const corcnh = document.getElementById("cnh")
         if(cnh == ""){
           cnh = null
+          corcnh.style.borderColor = "red"
         }
-        let registroEmigrante = document.getElementById("registroEmigrante").value
-        if(registroEmigrante == ""){
-          registroEmigrante = null
+        else{
+          corcnh.style.borderColor = "black"
         }
         let crnm = document.getElementById("crnm").value
+        const corcrnm = document.getElementById("crnm")
         if(crnm == ""){
           crnm = null
+          corcrnm.style.borderColor = "red"
+        }
+        else{
+          corcrnm.style.borderColor = "black"
         }
         let rne = document.getElementById("rne").value
+        const corrne = document.getElementById("rne")
         if(rne == ""){
           rne = null
+          corrne.style.borderColor = "red"
         }
-        let dprnm = document.getElementById("dprnm").value
-        if(dprnm == ""){
-          dprnm = null
+        else{
+          corrne.style.borderColor = "black"
         }
-        let protocoleRefugio = document.getElementById("protocoleRefugio").value
-        if(protocoleRefugio == ""){
-          protocoleRefugio = null
+        let estado = document.getElementById("estado").value
+        const corestado = document.getElementById("estado")
+        if(estado == ""){
+          estado = null
+          corestado.style.borderColor = "red"
+        }
+        else{
+          corestado.style.borderColor = "black"
+        }
+        let cidade = document.getElementById("cidade").value
+        const corcidade = document.getElementById("cidade")
+        if(cidade == ""){
+          cidade = null
+          corcidade.style.borderColor = "red"
+        }
+        else{
+          corcidade.style.borderColor = "black"
+        }
+        let bairro = document.getElementById("bairro").value
+        const corbairro = document.getElementById("bairro")
+        if(bairro == ""){
+          bairro = null
+          corbairro.style.borderColor = "red"
+        }
+        else{
+          corbairro.style.borderColor = "black"
+        }
+        let rua = document.getElementById("rua").value
+        const corrua = document.getElementById("rua")
+        if(rua == ""){
+          rua = null
+          corrua.style.borderColor = "red"
+        }
+        else{
+          corrua.style.borderColor = "black"
+        }
+        let numero = document.getElementById("numero").value
+        const cornumero = document.getElementById("numero")
+        if(numero == ""){
+          numero = null
+          cornumero.style.borderColor = "red"
+        }
+        else{
+          cornumero.style.borderColor = "black"
+        }
+        let cep = document.getElementById("cep").value
+        const corcep = document.getElementById("cep")
+        if(cep == ""){
+          cep = null
+          corcep.style.borderColor = "red"
+        }
+        else{
+          corcep.style.borderColor = "black"
         }
 
         let obj = 
@@ -83,11 +192,17 @@ async function cadastrar()
               cpf: cpf,
               rg: rg,
               cnh: cnh,
-              registroEmigrante: registroEmigrante,
               crnm: crnm,
-              rne: rne,
-              dprnm: dprnm,
-              protocoleRefugio: protocoleRefugio
+              rne: rne
+            },
+            endereco: 
+            {
+              estado: estado,
+              cidade: cidade,
+              bairro: bairro,
+              rua: rua,
+              numero: numero,
+              cep:cep
             }
         }
         console.log(obj)
@@ -278,7 +393,12 @@ async function cadastrar()
         ensinoMCLabel: 'مدرسة ثانوية كاملة',
         ensinoSILabel: 'كلية غير مكتملة',
         ensinoSCLabel: 'كلية كاملة',
-        botaoLabel: 'تسجيل'
+        botaoLabel: 'تسجيل',
+        cpfLabel: 'أدخل CPF',
+        rgLabel: 'أدخل rg',
+        cnhLabel:'أدخل cnh',
+        crnmLabel:'أدخل crnm',
+        rneLabel:'أدخل rne',
       }
       };
     
