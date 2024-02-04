@@ -1,6 +1,6 @@
 async function logar(){
     let email = document.getElementById("email").value
-      let senha = document.getElementById("senha").value
+    let senha = document.getElementById("senha").value
       let obj ={
         email:email,
         senha:senha

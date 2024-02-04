@@ -12,6 +12,20 @@ fetch('https://localhost:7288/api/Paises',{
                 select.innerHTML += pais
             });
         });   
+
+        function dadosEndereco() {
+          let cep = document.getElementById('cep').value
+          fetch(`https://viacep.com.br/ws/${cep}/json/`)
+              .then((dados) => dados.json())
+              .then((response) => {
+                  document.getElementById('rua').value = response.logradouro
+                  document.getElementById('bairro').value = response.bairro
+                  document.getElementById('cidade').value = response.localidade
+                  document.getElementById("estado").value = response.uf
+              }
+              )
+              .catch((erro) => console.log(erro))
+      }
 async function cadastrar()
     {
         let nome = document.getElementById("nome").value
@@ -120,6 +134,17 @@ async function cadastrar()
         else{
           corrne.style.borderColor = "black"
         }
+
+        let cep = document.getElementById('cep').value
+        const corcep = document.getElementById("cep")
+        if(cep == ""){
+          cep = null
+          corcep.style.borderColor = "red"
+        }
+        else{
+          corcep.style.borderColor = "black"
+        }
+
         let estado = document.getElementById("estado").value
         const corestado = document.getElementById("estado")
         if(estado == ""){
@@ -129,6 +154,7 @@ async function cadastrar()
         else{
           corestado.style.borderColor = "black"
         }
+
         let cidade = document.getElementById("cidade").value
         const corcidade = document.getElementById("cidade")
         if(cidade == ""){
@@ -138,6 +164,7 @@ async function cadastrar()
         else{
           corcidade.style.borderColor = "black"
         }
+
         let bairro = document.getElementById("bairro").value
         const corbairro = document.getElementById("bairro")
         if(bairro == ""){
@@ -147,6 +174,7 @@ async function cadastrar()
         else{
           corbairro.style.borderColor = "black"
         }
+
         let rua = document.getElementById("rua").value
         const corrua = document.getElementById("rua")
         if(rua == ""){
@@ -156,23 +184,16 @@ async function cadastrar()
         else{
           corrua.style.borderColor = "black"
         }
+
         let numero = document.getElementById("numero").value
         const cornumero = document.getElementById("numero")
-        if(numero == ""){
-          numero = null
+        var auxN = parseInt(numero);
+        if(auxN == 0){
+          auxN = null
           cornumero.style.borderColor = "red"
         }
         else{
           cornumero.style.borderColor = "black"
-        }
-        let cep = document.getElementById("cep").value
-        const corcep = document.getElementById("cep")
-        if(cep == ""){
-          cep = null
-          corcep.style.borderColor = "red"
-        }
-        else{
-          corcep.style.borderColor = "black"
         }
 
         let obj = 
@@ -201,7 +222,7 @@ async function cadastrar()
               cidade: cidade,
               bairro: bairro,
               rua: rua,
-              numero: numero,
+              numero: auxN,
               cep:cep
             }
         }
@@ -211,8 +232,23 @@ async function cadastrar()
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(obj)
-        })       
-    }
+        })
+        
+        let login ={
+          email:email,
+          senha:senha
+        }
+        //await fetch('https://localhost:7288/api/Refugiados/Login',
+        //{
+        //    method: "POST",
+        //    headers: {'Content-Type': 'application/json'},
+        //    body: JSON.stringify(login)
+        //}).then(data => data.json())
+        //.then(resp => {
+        //    localStorage.setItem('token', resp.token)
+        //})
+        //window.location.href = "./perfil.html"       
+        }
     
     const translations = {
         pt: {

@@ -34,16 +34,18 @@ const result = Promise.resolve(valores);
             document.getElementById("genero").value = value.genero
             document.getElementById("escolaridade").value = value.escolaridade
             document.getElementById("paisId").value = value.paisId
-            document.getElementById("cpf").value = value.cpf
-            document.getElementById("rg").value = value.rg
-            document.getElementById("cnh").value = value.cnh
-            document.getElementById("registroEmigrante").value = value.registroEmigrante
-            document.getElementById("crnm").value = value.crnm
-            document.getElementById("rne").value = value.rne
-            document.getElementById("dprnm").value = value.dprnm
-            document.getElementById("protocoleRefugio").value = value.protocoleRefugio
+            document.getElementById("cpf").value = value.documento.cpf
+            document.getElementById("rg").value = value.documento.rg
+            document.getElementById("cnh").value = value.documento.cnh
+            document.getElementById("crnm").value = value.documento.crnm
+            document.getElementById("rne").value = value.documento.rne
+            document.getElementById("cep").value = value.endereco.cep
+            document.getElementById("estado").value = value.endereco.estado
+            document.getElementById("cidade").value = value.endereco.cidade
+            document.getElementById("bairro").value = value.endereco.bairro
+            document.getElementById("rua").value = value.endereco.rua
+            document.getElementById("numero").value = value.endereco.numero
         })
-
 
 const translations = {
     pt: {
