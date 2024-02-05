@@ -9,17 +9,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body class="fundo">
-    <section id="section_banner_home">
-        <div>
-          <header style="background-image: url('/imagens/ImageHeader.jpeg')">
+    <section id="section_banner_cad">
+        <div style="background-image: url('../imagens/ImageHeader.jpeg'); padding: 3rem; background-repeat: no-repeat; background-size: 100%;">
+          <header>
             <h2 id="headerTitle" class="text-white">Lorem</h2> 
             <div>
-              <a href="index.html" class="text-white link" id="homeLink">Home</a>
-              <a class="text-white link" id="documentsLink">Documents</a>
-              <a class="text-white link" id="placesLink">Places</a>
-              <a href="login.html" id="homeLink">Login</a>
-              <a class="text-white link" id="languageLink">Language</a>
-              <a class="text-white link" id="donateLink" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Donate</a>
               <select onchange="changeLanguage(this.value)">
                 <option value="pt">Português</option>
                 <option value="en">English</option>
@@ -31,7 +25,16 @@
           </header>
         </div>
     </section>
-    <section>
+    <section class="section_div_cad">
+        <div class="texts_div_cad">
+            <div>
+                <h2>Lorem</h2>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod malesuada tellus, id iaculis purus cursus nec. Nulla faucibus lacus a efficitur commodo. Mauris sed velit turpis.</p>
+            </div>
+        </div>
+
         <div class="line_inputs">
             <div class="div_inputs_cad">
                 <label for="nome" class="label_inputs_cad" id="nameLabel">Digite seu nome</label>
@@ -41,52 +44,100 @@
                 <label for="sobrenome" class="label_inputs_cad" id="sobreLabel">Digite seu sobrenome</label>
                 <input type="text" id ="sobrenome">
             </div>
-            <div class="div_inputs_cad">
-                <label for="email" class="label_inputs_cad"  id="emailLabel" >Digite seu email</label>
-                <input type="email" id ="email">
-            </div>
         </div>
-        <div class="line_inputs">
-            <div>
-                <div class="div_inputs_cad">
-                    <label for="senha" class="label_inputs_cad" id="senhaLabel" >Digite sua senha</label>
-                    <input type="password" id ="senha">
-                </div>
-            </div>
-            <div>
-                <div class="div_inputs_cad">
-                    <label for="dataN" class="label_inputs_cad" id="nascLabel" >Selecione sua data de nascimento</label>
-                    <input type="date" id ="dataN">
-                </div>
+       <div class="line_inputs">  
+            <div class="div_inputs_cad">
+                <div><label for="paisId" id="paisLabel" class="label_inputs_cad" >Selecione seu país de origem</label></div>
+                <select class="col-md-10 borda" id="pais">
+                    <option>Selecione seu país</option>
+                </select>
             </div>
 
+            <div class="div_inputs_cad"><!--Traduzir-->
+                <label for="estadoCivil" id="estadoCivilLabel" class="label_inputs_cad" >Possue cidadania Brasileira?</label>
+                <select class="col-md-10 borda" id="estadoCivil">
+                    <option value= 1  id="solteiroLabel">Sim</option>
+                    <option value= 2  id="casadoLabel">Não</option>
+                    <option value= 3  id="separadoLabel">Em processo</option>
+                </select>
+            </div>
+            
+        </div>
+        <div class="line_inputs"><!--Deixar que ele apenas acesse isso se ele for brasileiro-->
+            
             <div class="div_inputs_cad">
-                <label for="fone" class="label_inputs_cad" id="numeroLabel" >Digite seu número de telefone</label>
-                <input type="tel" id ="fone" placeholder="(00)00000-0000">
+                        <label for="dataN" class="label_inputs_cad" id="nascLabel">Data de nascimento</label>
+                        <input type="date" id ="dataN">
+            </div>
+            
+            <div class="div_inputs_cad">
+                <label for="cpf" class="label_inputs_cad" id="cpfLabel">Digite seu CPF</label>
+                <input type="text" id ="cpf">
+            </div>
+        </div>
+        <span class="linha"></span>
+    </section>
+    <section class="section_div_cad">
+        <div class="texts_div_cad">
+            <div>
+                <h2>Lorem</h2>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod malesuada tellus, id iaculis purus cursus nec. Nulla faucibus lacus a efficitur commodo. Mauris sed velit turpis.</p>
             </div>
         </div>
         <div class="line_inputs">
             <div class="div_inputs_cad">
-                <label for="estadoCivil" id="estadoCivilLabel">Selecione seu estado civíl</label>
-                <select class="col-md-10 borda" id="estadoCivil">
-                    <option>Selecione seu estado civíl</option>
-                    <option value= 1  id="solteiroLabel">Solteiro/a</option>
-                    <option value= 2  id="casadoLabel">Casado/a</option>
-                    <option value= 3  id="separadoLabel">Separado/a</option>
-                    <option value= 4  id="divorciadoLabel">Divorciado/a</option>
-                    <option value= 5  id="viuvoLabel">Viúvo/a</option>
-                </select>
+                <label for="registroEmigrante" class="label_inputs_cad" id="registroEmigranteLabel">Digite seu Registro de Imigrante</label>
+                <input type="text" id ="registroEmigrante">
             </div>
             <div class="div_inputs_cad">
-                <label for="genero" id="generoLabel">Selecione seu gênero</label>
-                <select class="col-md-10 borda" id="genero">
-                    <option>Selecione seu gênero</option>
-                    <option value= 1 id="masculinoLabel">Masculino</option>
-                    <option value= 2 id="femininoLabel">Feminino</option>
-                </select>
+                <label for="crnm" class="label_inputs_cad" id="crnmLabel">Digite seu CRNM</label>
+                <input type="text" id ="crnm">
+            </div>
+        </div>
+        <div class="line_inputs">
+            <div class="div_inputs_cad">
+                <label for="rne" class="label_inputs_cad" id="rneLabel">Digite seu RNE</label>
+                <input type="text" id ="rne">
             </div>
             <div class="div_inputs_cad">
-                <label for="escolaridade" id="escolaridadeLabel">Selecione sua escolaridade</label>
+                <label for="dprnm" class="label_inputs_cad" id="dprnmLabel">Digite seu DPRNM</label>
+                <input type="text" id ="dprnm">
+            </div>
+        </div>  
+        
+        <div class="line_inputs">
+            <div class="div_inputs_cad">
+                <label for="protocoleRefugio" class="label_inputs_cad" id="protocoleRefugioLabel">Digite seu Protocolo de Refúgio</label>
+                <input type="text" id ="protocoleRefugio">
+            </div>
+        </div> 
+        <div class="line_inputs">
+            <div class="div_inputs_cad">
+                    <label for="estadoCivil" id="estadoCivilLabel" class="label_inputs_cad" >Selecione seu estado civíl</label>
+                    <select class="col-md-10 borda" id="estadoCivil">
+                        <option>Selecione seu estado civíl</option>
+                        <option value= 1  id="solteiroLabel">Solteiro/a</option>
+                        <option value= 2  id="casadoLabel">Casado/a</option>
+                        <option value= 3  id="separadoLabel">Separado/a</option>
+                        <option value= 4  id="divorciadoLabel">Divorciado/a</option>
+                        <option value= 5  id="viuvoLabel">Viúvo/a</option>
+                    </select>
+            </div>
+            <div class="div_inputs_cad">
+                    <label for="genero" id="generoLabel" class="label_inputs_cad">Selecione seu gênero</label>
+                    <select class="col-md-10 borda" id="genero">
+                        <option>Selecione seu gênero</option>
+                        <option value= 1 id="masculinoLabel">Masculino</option>
+                        <option value= 2 id="femininoLabel">Feminino</option>
+                    </select>
+            </div>
+        </div>
+
+        <div class="line_inputs">
+            <div class="div_inputs_cad">
+                <label for="escolaridade" id="escolaridadeLabel" class="label_inputs_cad">Selecione sua Escolaridade</label>
                 <select class="col-md-10 borda" id="escolaridade">
                     <option>Selecione sua escolaridade</option>
                     <option value= 1 id="ensinoFCLabel">Ensino fundamental completo</option>
@@ -97,61 +148,96 @@
                     <option value= 6 id="ensinoSILabel">Ensino superior incompleto</option>
                 </select>
             </div>
-            <div class="div_inputs_cad">
-                <div><label for="paisId" id="paisLabel">Selecione seu país de origem</label></div>
-                <select class="col-md-10 borda" id="pais">
-                    <option>Selecione seu país</option>
-                </select>
+            <div class="div_inputs_cad"><!--Traduzir e Linkar com o Back-->
+                <label for="rne" class="label_inputs_cad" id="rneLabel">Digite sua Formação</label>
+                <input type="text" id ="rne">
             </div>
         </div>
-        <h1>Documentos</h1>
-        <div class="div_inputs_cad">
-            <label for="cpf" class="label_inputs_cad" id="cpfLabel">Digite seu CPF</label>
-            <input type="text" id ="cpf">
-        </div>
-        <div class="div_inputs_cad">
-            <label for="rg" class="label_inputs_cad" id="rgLabel">Digite seu rg</label>
-            <input type="text" id ="rg">
-        </div>
-        <div class="div_inputs_cad">
-            <label for="cnh" class="label_inputs_cad" id="cnhLabel">Digite seu cnh</label>
-            <input type="text" id ="cnh">
-        </div>
-        <div class="div_inputs_cad">
-            <label for="crnm" class="label_inputs_cad" id="crnmLabel">Digite seu crnm</label>
-            <input type="text" id ="crnm">
-        </div>
-        <div class="div_inputs_cad">
-            <label for="rne" class="label_inputs_cad" id="rneLabel">Digite seu rne</label>
-            <input type="text" id ="rne">
-        </div>
-        <h1>Endereço</h1>
-        <div class="div_inputs_cad">
-            <label for="cep" class="label_inputs_cad" id="cepLabel">Digite seu cep</label>
-            <input type="text" id="cep" onblur="dadosEndereco()">
-        </div>
-        <div class="div_inputs_cad">
-            <label for="estado" class="label_inputs_cad" id="estadoLabel">Digite seu estado</label>
-            <input type="text" id="estado" >
-        </div>
-        <div class="div_inputs_cad">
-            <label for="cidade" class="label_inputs_cad" id="cidadeLabel">Digite sua cidade</label>  
-            <input type="text" id="cidade" >
-        </div>
-        <div class="div_inputs_cad">
-            <label for="bairro" class="label_inputs_cad" id="bairroLabel">Digite seu bairro</label>
-            <input type="text" id="bairro" >
-        </div>
-        <div class="div_inputs_cad">
-            <label for="rua" class="label_inputs_cad" id="ruaLabel">Digite seu rua</label>
-            <input type="text" id="rua">
-        </div>
-        <div class="div_inputs_cad">
-            <label for="numero" class="label_inputs_cad" id="numeroCasaLabel">Digite seu numero</label>
-            <input type="number" id="numero" >
-        </div>
+        <span class="linha"></span>
+    </section>
 
-        <div class="text-center"><button id="botaoLabel" onclick="cadastrar()">Cadastrar</button></div>
+        
+        <div class="texts_div_cad">
+            <div>
+                <h2>Lorem</h2>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod malesuada tellus, id iaculis purus cursus nec. Nulla faucibus lacus a efficitur commodo. Mauris sed velit turpis.</p>
+            </div>
+        </div>
+        <section class="section_div_cad"><!--Alterar os "for", Traduzir e Linkar com o Back-->
+            <div class="line_inputs">
+                <div class="div_inputs_cad">
+                    <label for="cep" class="label_inputs_cad" id="cepLabel">Digite seu CEP</label>
+                    <input type="text" id="cep" onblur="dadosEndereco()">
+                </div>
+                <div class="div_inputs_cad">
+                    <label for="estado" class="label_inputs_cad" id="estadoLabel">Digite sua UF(Unidade Federativa)</label>
+                    <input type="text" id="estado" >
+                </div>
+            </div>
+            <div class="line_inputs">
+                <div class="div_inputs_cad">
+                    <label for="cidade" class="label_inputs_cad" id="cidadeLabel">Digite sua Cidade</label>  
+                    <input type="text" id="cidade" >
+                </div>
+                <div class="div_inputs_cad">
+                    <label for="bairro" class="label_inputs_cad" id="bairroLabel">Digite seu Bairro</label>
+                    <input type="text" id="bairro" >
+                </div>
+            </div>
+            <div class="line_inputs">
+                <div class="div_inputs_cad">
+                    <label for="rua" class="label_inputs_cad" id="ruaLabel">Digite seu rua</label>
+                    <input type="text" id="rua">
+                </div>
+                <div class="div_inputs_cad">
+                    <label for="numero" class="label_inputs_cad" id="numeroCasaLabel">Digite seu numero</label>
+                    <input type="number" id="numero" >
+                </div>
+            </div>
+            <div class="div_inputs_cad">
+                <label for="rne" class="label_inputs_cad" id="rneLabel">Adicionais</label>
+                <textarea>
+
+                </textarea>
+            </div>
+            <span class="linha"></span>
+        </section>
+
+        <div class="texts_div_cad">
+            <div>
+                <h2>Lorem</h2>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod malesuada tellus, id iaculis purus cursus nec. Nulla faucibus lacus a efficitur commodo. Mauris sed velit turpis.</p>
+            </div>
+        </div>
+        
+        <section class="section_div_cad">
+            <div class="line_inputs">
+                <div class="div_inputs_cad">
+                    <label for="email" class="label_inputs_cad"  id="emailLabel" >Digite seu email</label>
+                    <input type="email" id ="email">
+                </div>
+                    <div class="div_inputs_cad">
+                        <label for="senha" class="label_inputs_cad" id="senhaLabel" >Digite sua senha</label>
+                        <input type="password" id ="senha">
+                    </div>
+                </div>
+                
+            </div>
+            <div class="line_inputs">
+                <div class="div_inputs_cad">
+                    <label for="senha" class="label_inputs_cad" id="senhaLabel" >Confirme sua senha</label>
+                    <input type="password" id ="senha">
+                </div>
+                <div class="div_inputs_cad">
+                    <label for="fone" class="label_inputs_cad" id="numeroLabel" >Digite seu número de telefone</label>
+                    <input type="tel" id ="fone" placeholder="(00)00000-0000">
+                </div>
+            </div>
+            <div class="text-center"><button id="botaoLabel" onclick="cadastrar()"><a style="color: #f6f6f6;">Cadastrar</a></button></div>
     </section>
     
 </body>

@@ -94,31 +94,70 @@ header select{
     text-decoration: none;
 }
 
+.line_inputs{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: Start;
+    align-items: center;
+}
+
 .div_inputs_cad{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     margin: 1rem;
-}
-
-.line_inputs{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: Start;
+    max-width: 40%;
 }
 
 .label_inputs_cad{
+    font-size: 1.25rem;
     color: #141314;
 }
 
-.div_inputs_cad label{
-    font-size: 1.25rem;
+.div_inputs_cad input{
+    padding: 0.5rem 12rem;
+    background: transparent;
+    border: #141314 1px solid;
 }
 
-.div_inputs_cad input{
-    padding: 0 12rem;
+.div_inputs_cad select{
+    padding: 0.5rem 7.5rem;
+    background: transparent;
+    border: #141314 1px solid;
+    border-radius: 0;
+    color: #141314;
+}
+
+.linha{
+    border-bottom: #141314 1.5px solid;
+    padding: 0 50%;
+}
+
+.texts_div_cad h2{
+    color: rgb(117, 205, 255, 60%);
+}
+
+.texts_div_cad{
+    margin-left: 1rem;
+}
+
+#botaoLabel{
+    margin: 3rem 0 5rem 0;
+    padding: 1rem 5rem;
+    border: none;
+    color: #f6f6f6;
+    background-color: rgb(117, 205, 255, 60%);
+    transition: 1s;
+}
+
+#botaoLabel:hover{
+    background-color: rgb(117, 205, 255, 100%);
+}
+
+.section_div_cad{
+    margin: 0 0 2rem 0;
 }
 
 
