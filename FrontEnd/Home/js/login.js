@@ -5,7 +5,7 @@ async function logar(){
         email:email,
         senha:senha
       }
-    await fetch('https://localhost:7288/api/Refugiados/Login',
+    await fetch('http://localhost:5145/api/Refugiados/Login',
     {
         method: "POST",
         headers: {'Content-Type': 'application/json'},

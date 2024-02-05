@@ -13,7 +13,7 @@ function parseJwt (token) {
 let idRefugiado = parseJwt(token);
 
 
-let valores = fetch(`https://localhost:7288/api/Refugiados/${idRefugiado.nameid}`,
+let valores = fetch(`http://localhost:5145/api/Refugiados/${idRefugiado.nameid}`,
 {
     headers: {'Authorization': 'Bearer ' + token,
              'Content-Type' : 'application/json'},

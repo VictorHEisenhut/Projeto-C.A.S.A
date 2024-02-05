@@ -1,5 +1,5 @@
 select = document.getElementById("pais")
-fetch('https://localhost:7288/api/Paises',{
+fetch('http://localhost:5145/api/Paises',{
                 headers: { 
                            'Content-Type': 'application/json'
                           }
@@ -89,50 +89,26 @@ async function cadastrar()
         let paisId = document.getElementById("pais")
         paisId.addEventListener('change', function(){})
         var auxP = parseInt(paisId.value);
+        
         let cpf = document.getElementById("cpf").value
-        const corcpf = document.getElementById("cpf")
         if(cpf == ""){
           cpf = null
-          corcpf.style.borderColor = "red"
-        }
-        else{
-          corcpf.style.borderColor = "black"
         }
         let rg = document.getElementById("rg").value
-        const corrg = document.getElementById("rg")
         if(rg == ""){
           rg = null
-          corrg.style.borderColor = "red"
-        }
-        else{
-          corrg.style.borderColor = "black"
         }
         let cnh = document.getElementById("cnh").value
-        const corcnh = document.getElementById("cnh")
         if(cnh == ""){
           cnh = null
-          corcnh.style.borderColor = "red"
-        }
-        else{
-          corcnh.style.borderColor = "black"
         }
         let crnm = document.getElementById("crnm").value
-        const corcrnm = document.getElementById("crnm")
         if(crnm == ""){
           crnm = null
-          corcrnm.style.borderColor = "red"
-        }
-        else{
-          corcrnm.style.borderColor = "black"
         }
         let rne = document.getElementById("rne").value
-        const corrne = document.getElementById("rne")
         if(rne == ""){
           rne = null
-          corrne.style.borderColor = "red"
-        }
-        else{
-          corrne.style.borderColor = "black"
         }
 
         let cep = document.getElementById('cep').value
@@ -188,7 +164,7 @@ async function cadastrar()
         let numero = document.getElementById("numero").value
         const cornumero = document.getElementById("numero")
         var auxN = parseInt(numero);
-        if(auxN == 0){
+        if(numero <= 0 ){
           auxN = null
           cornumero.style.borderColor = "red"
         }
@@ -227,17 +203,17 @@ async function cadastrar()
             }
         }
         console.log(obj)
-        await fetch('https://localhost:7288/api/Refugiados',
+        await fetch('http://localhost:5145/api/Refugiados',
         {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(obj)
         })
         
-        let login ={
-          email:email,
-          senha:senha
-        }
+        //let login ={
+        //  email:email,
+        //  senha:senha
+        //}
         //await fetch('https://localhost:7288/api/Refugiados/Login',
         //{
         //    method: "POST",
