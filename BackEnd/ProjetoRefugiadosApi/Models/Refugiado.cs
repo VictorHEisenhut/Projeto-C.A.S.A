@@ -28,6 +28,10 @@ namespace ProjetoRefugiados.Models
         public int DocumentoId { get; set; }
         public Endereco Endereco { get; set; }
         public int EnderecoId { get; set; }
+        public string? TokenVerificacao { get; set; }
+        public DateTime? DataVerificacao { get; set; }
+        public string? TokenResetSenha { get; set; }
+        public DateTime? ResetTokenExpira { get; set; }
         public string Role { get; set; } = "usuario";
 
     }

@@ -17,7 +17,9 @@ namespace ProjetoRefugiadosApi.Dtos.Refugiado
         [DataType(DataType.Password)]
         [Required]
         public string Senha { get; set; }
-       
+        [Required, Compare("Senha")]
+        public string ConfirmSenha { get; set; }
+
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateOnly DataNascimento { get; set; }
