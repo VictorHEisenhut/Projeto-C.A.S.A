@@ -14,7 +14,7 @@ namespace ProjetoRefugiadosApi.Data
         public DbSet<PostoDeSaude> PostosDeSaude { get; set; }
         public DbSet<Abrigo> Abrigos { get; set; }
 
-        static readonly string connectionString = @"Server=localhost;Database=refugiadosDb;Uid=root;Pwd=admin";
+        static readonly string connectionString = @"Server=viaduct.proxy.rlwy.net;Port=53694;Database=railway;User ID=root;Password=-HCD36H2fa6e1bC3BhCC1DdFgg51bBDA;";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
