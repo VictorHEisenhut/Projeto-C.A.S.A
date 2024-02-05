@@ -39,6 +39,8 @@ namespace ProjetoRefugiadosApi.Controllers
             {
                 refugiado.Pais = await _context.Paises.FirstOrDefaultAsync(p => p.Id == refugiado.PaisId);
                 refugiado.Documento = await _context.Documentos.FirstOrDefaultAsync(d => d.Id == refugiado.DocumentoId);
+                refugiado.Endereco = await _context.Enderecos.FirstOrDefaultAsync(e => e.Id == refugiado.EnderecoId);
+
             }
 
             return refugiados;
@@ -52,6 +54,7 @@ namespace ProjetoRefugiadosApi.Controllers
             var refugiado = await _context.Refugiados.FindAsync(id);
             refugiado.Pais = await _context.Paises.FirstOrDefaultAsync(p => p.Id == refugiado.PaisId);
             refugiado.Documento = await _context.Documentos.FirstOrDefaultAsync(d => d.Id == refugiado.DocumentoId);
+            refugiado.Endereco = await _context.Enderecos.FirstOrDefaultAsync(e => e.Id == refugiado.EnderecoId);
 
             if (refugiado == null)
             {
@@ -68,6 +71,7 @@ namespace ProjetoRefugiadosApi.Controllers
         {
             refugiado.Pais = await _context.Paises.FirstOrDefaultAsync(p => p.Id == refugiado.PaisId);
             refugiado.Documento = await _context.Documentos.FirstOrDefaultAsync(d => d.Id == refugiado.DocumentoId);
+            refugiado.Endereco = await _context.Enderecos.FirstOrDefaultAsync(e => e.Id == refugiado.EnderecoId);
 
             if (id != refugiado.Id)
             {
@@ -137,6 +141,7 @@ namespace ProjetoRefugiadosApi.Controllers
             var refugiado = await _context.Refugiados.FindAsync(id);
             refugiado.Pais = await _context.Paises.FirstOrDefaultAsync(p => p.Id == refugiado.PaisId);
             refugiado.Documento = await _context.Documentos.FirstOrDefaultAsync(d => d.Id == refugiado.DocumentoId);
+            refugiado.Endereco = await _context.Enderecos.FirstOrDefaultAsync(e => e.Id == refugiado.EnderecoId);
 
             if (refugiado == null)
             {
