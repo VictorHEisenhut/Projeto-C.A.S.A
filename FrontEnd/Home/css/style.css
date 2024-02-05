@@ -120,3 +120,110 @@ header select{
 .div_inputs_cad input{
     padding: 0 12rem;
 }
+
+
+
+
+
+
+.fundo{
+    background-color: #f6f6f6;
+}
+.borda{
+    border-radius: 10px;
+}
+.link{
+    text-decoration: none;
+}
+
+.div_inputs_perfil{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem;
+    max-width: 80%;
+}
+
+.label_inputs_perfil{
+    font-size: 1.25rem;
+    color: #141314;
+}
+
+.div_inputs_perfil label{
+    font-size: 1.25rem;
+}
+
+.div_inputs_perfil input{
+    padding: 0.5rem 20rem;
+    background: transparent;
+    border: #141314 1px solid;
+}
+
+.linha_perfil{
+    padding: 1px 50%;
+    border-bottom: #141314 1px solid;
+}
+
+.section_perfil{
+    margin: 0 0 2rem 0;
+}
+
+.btn_perfil{
+    padding: 1rem;
+}
+
+
+.line_btn{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.div_btn_perfil button{
+    background-color: #f6f6f6;
+    color: #141314;
+    border: #141314 1px solid;
+    margin: 1rem;
+    transition: 1s;
+}
+
+.div_btn_perfil button:hover{
+    background-color: #141314;
+    color: #f6f6f6;
+    border: #141314 1px solid;
+}
+
+
+#btn_deletar{
+    background-color: rgb(146, 75, 75);
+    color: #f6f6f6;
+    border: rgb(146, 75, 75) 1px solid;
+    transition: 1s;
+}
+
+
+#btn_deletar:hover{
+    background-color: rgb(197, 67, 67);
+    border: rgb(197, 67, 67) 1px solid;
+}
+
+#btn_alterar{
+    background-color: #f6f6f6;
+    color:  rgb(75, 100, 146);
+    border: rgb(75, 100, 146) 1px solid;
+    transition: 1s;
+}
+
+
+#btn_alterar:hover{
+    background-color: rgb(75, 100, 146);
+    color: #f6f6f6;
+    border: rgb(75, 100, 146) 1px solid;
+}
+
+.text_div_perfil{
+    margin-left: 1rem;
+}

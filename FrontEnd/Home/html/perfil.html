@@ -7,7 +7,7 @@
     <title>Perfil</title>
 </head>
 <body>
-    <header style="background-image: url('/imagens/ImageHeader.jpeg')">
+    <header style="background-image: url('/imagens/ImageHeader.jpeg'); margin-bottom: 3rem;">
         <h2 id="headerTitle" class="text-white">Lorem</h2> 
         <div>
           <a href="index.html" class="text-white link" id="homeLink">Home</a>
@@ -25,91 +25,160 @@
           </select>
         </div>
       </header>
-      <div class="div_inputs_cad">
-        <label for="nome" class="label_inputs_cad" id="nameLabel">Nome</label>
-        <input disabled id="nome" type="text">
+      
+      <div class="text_div_perfil">
+        <h1>Informções Gerais</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
       </div>
-      <div class="div_inputs_cad">
-        <label for="sobrenome" class="label_inputs_cad" id="sobreLabel">Sobrenome</label>
-        <input disabled id="sobrenome" type="text">
+      <section class="section_perfil">
+        <div class="line_inputs">
+          <div class="div_inputs_perfil">
+            <label for="nome" class="label_inputs_perfil" id="nameLabel">Nome</label>
+            <input disabled id="nome" type="text">
+          </div>
+          <div class="div_inputs_perfil">
+            <label for="sobrenome" class="label_inputs_perfil" id="sobreLabel">Sobrenome</label>
+            <input disabled id="sobrenome" type="text">
+          </div>
+        </div>
+
+        <div class="line_inputs">
+          <div class="div_inputs_perfil">
+            <label for="email" class="label_inputs_perfil" id="emailLabel">Email</label>
+            <input disabled id="email" type="text">
+          </div>
+          <div class="div_inputs_perfil">
+            <label for="telefone" class="label_inputs_perfil" id="numeroLabel">Telefone</label>
+            <input disabled id="telefone" type="text">
+          </div>
+        </div>
+
+        <div class="line_inputs">
+          <div class="div_inputs_perfil">
+            <label for="dataNascimento" class="label_inputs_perfil" id="nascLabel">Data de nascimento</label>
+            <input disabled id="dataNascimento" type="text">
+          </div>
+          <div class="div_inputs_perfil">
+            <label for="genero" class="label_inputs_perfil" id="generoLabel">Gênero</label>
+            <input disabled id="genero" type="text">
+          </div>
+        </div>
+
+        <div class="line_inputs">
+          <div class="div_inputs_perfil">
+            <label for="estadoCivil" class="label_inputs_perfil" id="estadoCivilLabel">Estado Civíl</label>
+            <input disabled id="estadoCivil" type="text">
+          </div>
+          
+          <div class="div_inputs_perfil">
+            <label for="escolaridade" class="label_inputs_perfil" id="escolaridadeLabel">Escolaridade</label>
+            <input disabled id="escolaridade" type="text">
+          </div>
+        </div>
+        <span class="linha_perfil"></span>
+      </section>
+      
+      
+
+      <div class="text_div_perfil">
+        <h1>Documentos</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
       </div>
-      <div class="div_inputs_cad">
-        <label for="email" class="label_inputs_cad" id="emailLabel">Email</label>
-        <input disabled id="email" type="text">
-      </div>
-      <div class="div_inputs_cad">
-        <label for="senha" class="label_inputs_cad" id="senhaLabel">Senha</label>
-        <input disabled id="senha" type="text">
-      </div>
-      <div class="div_inputs_cad">
-        <label for="dataNascimento" class="label_inputs_cad" id="nascLabel">Data de nascimento</label>
-        <input disabled id="dataNascimento" type="text">
-      </div>
-      <div class="div_inputs_cad">
-        <label for="telefone" class="label_inputs_cad" id="numeroLabel">Telefone</label>
-        <input disabled id="telefone" type="text">
-      </div>
-      <div class="div_inputs_cad">
-        <label for="estadoCivil" class="label_inputs_cad" id="estadoCivilLabel">Estado Civíl</label>
-        <input disabled id="estadoCivil" type="text">
-      </div>
-      <div class="div_inputs_cad">
-        <label for="genero" class="label_inputs_cad" id="generoLabel">Gênero</label>
-        <input disabled id="genero" type="text">
-      </div>
-      <div class="div_inputs_cad">
-        <label for="escolaridade" class="label_inputs_cad" id="escolaridadeLabel">Escolaridade</label>
-        <input disabled id="escolaridade" type="text">
-      </div>
-      <div class="div_inputs_cad">
-        <label for="paisId" class="label_inputs_cad" id="paisLabel">País</label>
+
+      <section class="section_perfil">
+        <div class="line_inputs">
+          <div class="div_inputs_perfil">
+        <label for="paisId" class="label_inputs_perfil" id="paisLabel">País</label>
         <input disabled id="paisId" type="text">
+        </div>
+        
+        <div class="div_inputs_perfil">
+          <label for="cpf" class="label_inputs_perfil">CPF</label>
+          <input disabled id="cpf" type="text">
+        </div>
       </div>
-      <h1>Documentos</h1>
-      <div class="div_inputs_cad">
-        <label for="cpf" class="label_inputs_cad">CPF</label>
-        <input disabled id="cpf" type="text">
+      
+      <div class="line_inputs">
+        <div class="div_inputs_perfil">
+          <label for="rg" class="label_inputs_perfil">RG</label>
+          <input disabled id="rg" type="text">
+        </div>
+        <div class="div_inputs_perfil">
+          <label for="cnh" class="label_inputs_perfil">CNH</label>
+          <input disabled id="cnh" type="text">
+        </div>
       </div>
-      <div class="div_inputs_cad">
-        <label for="rg" class="label_inputs_cad">RG</label>
-        <input disabled id="rg" type="text">
+      
+      <div class="line_inputs">
+        <div class="div_inputs_perfil">
+          <label for="crnm" class="label_inputs_perfil">CRNM</label>
+          <input disabled id="crnm" type="text">
+        </div>
+        <div class="div_inputs_perfil">
+          <label for="rne" class="label_inputs_perfil">RNE</label>
+          <input disabled id="rne" type="text">
+        </div>
       </div>
-      <div class="div_inputs_cad">
-        <label for="cnh" class="label_inputs_cad">CNH</label>
-        <input disabled id="cnh" type="text">
+      <span class="linha_perfil"></span>
+      </section>
+      
+
+      
+
+      <div class="text_div_perfil">
+        <h1>Endereço</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
       </div>
-      <div class="div_inputs_cad">
-        <label for="crnm" class="label_inputs_cad">CRNM</label>
-        <input disabled id="crnm" type="text">
+      <section class="section_perfil">
+        <div class="line_inputs">
+          <div class="div_inputs_perfil">
+            <label for="cep" class="label_inputs_perfil">CEP</label>
+            <input disabled id="cep" type="text">
+          </div>
+          <div class="div_inputs_perfil">
+            <label for="estado" class="label_inputs_perfil">Estado</label>
+            <input disabled id="estado" type="text">
+          </div>
+        </div>
+        
+        <div class="line_inputs">
+          <div class="div_inputs_perfil">
+            <label for="cidade" class="label_inputs_perfil">Cidade</label>
+            <input disabled id="cidade" type="text">
+          </div>
+          <div class="div_inputs_perfil">
+            <label for="bairro" class="label_inputs_perfil">Bairro</label>
+            <input disabled id="bairro" type="text">
+          </div>
+        </div>
+      
+        <div class="line_inputs">
+          <div class="div_inputs_perfil">
+            <label for="rua" class="label_inputs_perfil">Rua</label>
+            <input disabled id="rua" type="text">
+          </div>
+          <div class="div_inputs_perfil">
+            <label for="numero" class="label_inputs_perfil">Numero</label>
+            <input disabled id="numero" type="text">
+          </div>
+        </div>
+      </section>
+      
+      <div class="line_btn">
+        <div class="div_btn_perfil">
+          <button  id="btn_alterar" class="btn_perfil">Modificar Conta</button>
+        </div>
+        <div class="div_btn_perfil">
+          <button class="btn_perfil">Log out</button>
+        </div>
+        <div class="div_btn_perfil">
+          <button id="btn_deletar" class="btn_perfil">Deletar Conta</button>
+        </div>
       </div>
-      <div class="div_inputs_cad">
-        <label for="rne" class="label_inputs_cad">RNE</label>
-        <input disabled id="rne" type="text">
-      </div>
-      <h1>Endereço</h1>
-      <div class="div_inputs_cad">
-        <label for="cep" class="label_inputs_cad">CEP</label>
-        <input disabled id="cep" type="text">
-      </div>
-      <div class="div_inputs_cad">
-        <label for="estado" class="label_inputs_cad">Estado</label>
-        <input disabled id="estado" type="text">
-      </div>
-      <div class="div_inputs_cad">
-        <label for="cidade" class="label_inputs_cad">Cidade</label>
-        <input disabled id="cidade" type="text">
-      </div>
-      <div class="div_inputs_cad">
-        <label for="bairro" class="label_inputs_cad">Bairro</label>
-        <input disabled id="bairro" type="text">
-      </div>
-      <div class="div_inputs_cad">
-        <label for="rua" class="label_inputs_cad">Rua</label>
-        <input disabled id="rua" type="text">
-      </div>
-      <div class="div_inputs_cad">
-        <label for="numero" class="label_inputs_cad">Numero</label>
-        <input disabled id="numero" type="text">
-      </div>
+      
+      
 </body>
 <script src="/js/perfil.js"></script></html>
