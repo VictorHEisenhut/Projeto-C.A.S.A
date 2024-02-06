@@ -19,13 +19,61 @@ fetch('http://localhost:5145/api/Paises',{
               .then((dados) => dados.json())
               .then((response) => {
                   document.getElementById('rua').value = response.logradouro
+                  if(response.logradouro == ""){
+                    document.getElementById("rua").removeAttribute("disabled");
+                  }
+                  else{
+                    document.getElementById("rua").setAttribute("disabled","");
+                  }
                   document.getElementById('bairro').value = response.bairro
+                  if(response.bairro == ""){
+                    document.getElementById("bairro").removeAttribute("disabled");
+                  }
+                  else{
+                    document.getElementById("bairro").setAttribute("disabled","");
+                  }
                   document.getElementById('cidade').value = response.localidade
                   document.getElementById("estado").value = response.uf
               }
               )
               .catch((erro) => console.log(erro))
       }
+      function possuiDocumento(){
+        document.getElementById("documentosTabela").removeAttribute("hidden");
+      }
+      function naopossuiDocumento(){
+        document.getElementById("documentosTabela").setAttribute("hidden","");
+        let cpf = document.getElementById("cpf");
+        cpf.value = "";
+        let crnm = document.getElementById("crnm");
+        crnm.value = "";
+        let rne = document.getElementById("rne");
+        rne.value = "";
+        let rg = document.getElementById("rg");
+        rg.value = "";
+        let cnh = document.getElementById("cnh");
+        cnh.value = "";
+      }
+
+      function possuiEndereco(){
+        document.getElementById("enderecosTabela").removeAttribute("hidden");
+      }
+      function naopossuiEndereco(){
+        document.getElementById("enderecosTabela").setAttribute("hidden","");
+        let cep = document.getElementById("cep");
+        cep.value = "";
+        let estado = document.getElementById("estado");
+        estado.value = "";
+        let cidade = document.getElementById("cidade");
+        cidade.value = "";
+        let bairro = document.getElementById("bairro");
+        bairro.value = "";
+        let rua = document.getElementById("rua");
+        rua.value = "";
+        let numero = document.getElementById("numero");
+        numero.value = "";
+      }
+
 async function cadastrar()
     {
         let nome = document.getElementById("nome").value
@@ -53,12 +101,24 @@ async function cadastrar()
           coremail.style.borderColor = "black"
         }
         let senha = document.getElementById("senha").value
+        let senhaConfirma = document.getElementById("senhaConfirma").value
+        if(senha != senhaConfirma){
+          senha = ""
+          senhaConfirma = ""
+          document.getElementById("senhasNaoCoincidem").removeAttribute("hidden");
+        }
+        else{
+          document.getElementById("senhasNaoCoincidem").setAttribute("hidden","");
+        }
         const corsenha = document.getElementById("senha")
+        const corsenhaC = document.getElementById("senhaConfirma")
         if(senha == "" || senha.length < 8 || senha.length>16){
           corsenha.style.borderColor = "red"
+          corsenhaC.style.borderColor = "red"
         }
         else{
           corsenha.style.borderColor = "black"
+          corsenhaC.style.borderColor = "black"
         }
         let dataN = document.getElementById("dataN").value
         const cordataN = document.getElementById("dataN")
@@ -178,6 +238,7 @@ async function cadastrar()
             sobrenome: sobrenome,
             email: email,
             senha: senha,
+            confirmSenha:senhaConfirma,
             dataNascimento: dataN,
             telefone: fone,
             estadoCivil: auxEC,
@@ -228,12 +289,6 @@ async function cadastrar()
     
     const translations = {
         pt: {
-          headerTitle: 'Lorem',
-          homeLink: 'Home',
-          documentsLink: 'Documentos',
-          placesLink: 'Locais',
-          languageLink: 'Idioma',
-          donateLink: 'Doe',
           nameLabel: 'Digite seu nome',
           sobreLabel:'Digite seu sobrenome',
           emailLabel: 'Digite seu email',
@@ -265,12 +320,6 @@ async function cadastrar()
           rneLabel:'Digite seu rne',
         },
         en: {
-          headerTitle: 'Lorem',
-          homeLink: 'Home',
-          documentsLink: 'Documents',
-          placesLink: 'Places',
-          languageLink: 'Language',
-          donateLink: 'Donate',
           nameLabel: 'Enter your name',
           sobreLabel:'Enter your last name',
           emailLabel: 'Enter you email',
@@ -302,12 +351,6 @@ async function cadastrar()
           rneLabel:'Enter your rne',
         },
         es: {
-          headerTitle: 'Lorem',
-          homeLink: 'Home',
-          documentsLink: 'Documentos',
-          placesLink: 'Lugares',
-          languageLink: 'Idioma',
-          donateLink: 'Donar',
           nameLabel: 'Ingrese su nombre',
           sobreLabel: 'Ingrese su apellido',
           emailLabel: 'Ingrese su correo electrónico',
@@ -339,12 +382,6 @@ async function cadastrar()
           rneLabel:'Ingrese su rne',
         },
       fr: {
-        headerTitle: 'Lorem',
-        homeLink: 'Accueil',
-        documentsLink: 'Documents',
-        placesLink: 'Lieux',
-        languageLink: 'Langue',
-        donateLink: 'Don',
         nameLabel: "Entrez votre nom",
         sobreLabel: "Entrez votre nom de famille",
         emailLabel: "Entrez votre adresse e-mail",
@@ -376,12 +413,6 @@ async function cadastrar()
         rneLabel:'Entrez votre rne',
       },
       ar: {
-        headerTitle: 'Lorem',
-        homeLink: 'الصفحة الرئيسية',
-        documentsLink: 'وثائق',
-        placesLink: 'أماكن',
-        languageLink: 'اللغة',
-        donateLink: 'تبرع',
         nameLabel: 'أدخل اسمك',
         sobreLabel: 'أدخل اسمك الأخير',
         emailLabel: 'أدخل بريدك الإلكتروني',
