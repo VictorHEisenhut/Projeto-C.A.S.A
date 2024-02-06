@@ -138,17 +138,46 @@ async function cadastrar()
         }
 
         let estadoCivil = document.getElementById("estadoCivil")
+        const corestadoCivil = document.getElementById("estadoCivil")
         estadoCivil.addEventListener('change', function(){})
         var auxEC = parseInt(estadoCivil.value);
+        if(estadoCivil.value == "Selecione seu estado civíl"){
+          corestadoCivil.style.border = "solid red"
+        }
+        else{
+          corestadoCivil.style = "default"
+        }
         let genero = document.getElementById("genero")
+        const corgenero = document.getElementById("genero")
         genero.addEventListener('change', function(){})
         var auxG = parseInt(genero.value);
+        if(genero.value == "Selecione seu gênero"){
+          corgenero.style.border = "solid red"
+        }
+        else{
+          corgenero.style = "default"
+        }
         let escolaridade = document.getElementById("escolaridade")
+        const corescolaridade = document.getElementById("escolaridade")
         escolaridade.addEventListener('change', function(){})
         var auxE = parseInt(escolaridade.value);
+        if(escolaridade.value == "Selecione sua escolaridade"){
+          corescolaridade.style.border = "solid red"
+        }
+        else{
+          corescolaridade.style = "default"
+        }
         let paisId = document.getElementById("pais")
+        const corpaisId = document.getElementById("pais")
         paisId.addEventListener('change', function(){})
         var auxP = parseInt(paisId.value);
+        if(paisId.value == "Selecione seu país"){
+          corpaisId.style.border = "solid red"
+          console.log("ok")
+        }
+        else{
+          corpaisId.style = "default"
+        }
         
         let cpf = document.getElementById("cpf").value
         if(cpf == ""){

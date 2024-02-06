@@ -34,10 +34,12 @@
                 <section class="section_div_cad">
                     <div class="line_inputs">
                         <div class="div_inputs_cad">
+                            <h5>Verifique se digitou corretamente seu endereço de email</h5>
                             <label for="email" class="label_inputs_cad"  id="emailLabel" >Digite seu email</label>
                             <input type="email" id ="email">
                         </div>
                             <div class="div_inputs_cad">
+                                <h5>Deve conter: Mínimo 8 dígitos, Máximo 16 dígitos, Ao menos um número, Ao menos uma letra maiúscula e uma minúscula</h5>
                                 <label for="senha" class="label_inputs_cad" id="senhaLabel" >Digite sua senha</label>
                                 <input type="password" id ="senha" maxlength="16" minlength="8">
                             </div>
@@ -46,10 +48,12 @@
                     </div>
                     <div class="line_inputs">
                         <div class="div_inputs_cad">
-                            <label for="fone" class="label_inputs_cad" id="numeroLabel" >Digite seu número de telefone (11 dígitos)</label>
+                            <h5>11 dígitos</h5>
+                            <label for="fone" class="label_inputs_cad" id="numeroLabel" >Digite seu número de telefone</label>
                             <input type="tel" id ="fone" placeholder="(00)00000-0000" maxlength="11" minlength="11">
                         </div>
                         <div class="div_inputs_cad">
+                            <h5>Verifique se ambas as senhas estão iguais</h5>
                             <label for="senhaConfirma" class="label_inputs_cad" id="senhaConfirmaLabel" >Confirme sua senha</label>
                             <input type="password" id ="senhaConfirma" maxlength="16" minlength="8">
                     </div>
@@ -74,20 +78,20 @@
                 <input type="text" id ="sobrenome">
             </div>
         </div>
+        <div class="line_inputs"><!--Deixar que ele apenas acesse isso se ele for brasileiro-->
+            
+            <div class="div_inputs_cad">
+                <label for="dataN" class="label_inputs_cad" id="nascLabel">Data de nascimento</label>
+                <input type="date" id ="dataN">
+            </div>
+            
+        </div>
         <div class="line_inputs">  
             <div class="div_inputs_cad">
                 <div><label for="paisId" id="paisLabel" class="label_inputs_cad" >Selecione seu país de origem</label></div>
                 <select class="col-md-10 borda" id="pais">
                     <option>Selecione seu país</option>
                 </select>
-            </div>
-            
-        </div>
-        <div class="line_inputs"><!--Deixar que ele apenas acesse isso se ele for brasileiro-->
-            
-            <div class="div_inputs_cad">
-                <label for="dataN" class="label_inputs_cad" id="nascLabel">Data de nascimento</label>
-                <input type="date" id ="dataN">
             </div>
             
         </div>
@@ -186,7 +190,7 @@
                 <h2>Endereço</h2>
             </div>
             <div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod malesuada tellus, id iaculis purus cursus nec. Nulla faucibus lacus a efficitur commodo. Mauris sed velit turpis.</p>
+                <p>Primeiro digite seu CEP</p>
             </div>
         </div>
         <div class="line_inputs">
