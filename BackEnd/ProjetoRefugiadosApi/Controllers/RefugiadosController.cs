@@ -4,15 +4,22 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 using AutoMapper;
+using MailKit.Security;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using MimeKit.Text;
+using MimeKit;
 using ProjetoRefugiados.Models;
 using ProjetoRefugiadosApi.Config;
 using ProjetoRefugiadosApi.Data;
 using ProjetoRefugiadosApi.Dtos.Refugiado;
 using ProjetoRefugiadosApi.Validations;
+using static Org.BouncyCastle.Math.EC.ECCurve;
+using MailKit.Net.Smtp;
+using NuGet.Common;
+using System.Web;
 
 namespace ProjetoRefugiadosApi.Controllers
 {
@@ -22,13 +29,15 @@ namespace ProjetoRefugiadosApi.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
+        private readonly IConfiguration _config;
         private readonly RefugiadoValidation _validator = new();
 
 
-        public RefugiadosController(AppDbContext context, IMapper mapper)
+        public RefugiadosController(AppDbContext context, IMapper mapper, IConfiguration config)
         {
             _context = context;
             _mapper = mapper;
+            _config = config;
         }
 
         // GET: api/Refugiados
@@ -66,7 +75,6 @@ namespace ProjetoRefugiadosApi.Controllers
         }
 
         // PUT: api/Refugiados/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutRefugiado(int id, Refugiado refugiado)
         {
@@ -101,7 +109,6 @@ namespace ProjetoRefugiadosApi.Controllers
         }
 
         // POST: api/Refugiados
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Refugiado>> PostRefugiado(CreateRefugiadoDto refugiadoDto)
         {
@@ -124,9 +131,13 @@ namespace ProjetoRefugiadosApi.Controllers
             _context.Refugiados.Add(refugiado);
             await _context.SaveChangesAsync();
 
-            string body = $"<i>{refugiado.TokenVerificacao}</i>";
-            RedirectToAction("EnviarEmail", "EmailController", new {body = body, toEmail = refugiado.Email});
-            return CreatedAtAction("GetRefugiado", new { id = refugiado.Id }, refugiado);
+            string tokenEncoded = HttpUtility.UrlEncode(refugiado.TokenVerificacao);
+            string tokenUrl = Url.ActionLink("Verificar", "Refugiados", new { token = tokenEncoded }, Request.Scheme);
+
+            EnviarEmail($"<a href='{tokenUrl}'> <h3>Verifique sua conta clicando neste link.</h3> </a> ", refugiado.Email);
+
+            return Ok($"Usuário registrado com sucesso. Um e-mail de verificação foi enviado para {refugiado.Email}.");
+            //return CreatedAtAction("GetRefugiado", new { id = refugiado.Id }, refugiado);
         }
 
         [HttpPost("Login")]
@@ -153,15 +164,20 @@ namespace ProjetoRefugiadosApi.Controllers
             return new { token = token };
         }
 
-        [HttpPost("Verificar")]
-        public async Task<ActionResult<dynamic>> Verificar(string token)
+        [HttpGet("Verificar")]
+        public async Task<ActionResult<string>> Verificar([FromQuery]string token)
         {
+            token = HttpUtility.UrlDecode(token);
+
             var user = await _context.Refugiados.FirstOrDefaultAsync(r => r.TokenVerificacao == token);
-            //var userLogado = (from u in users where u.Email == refugiadoDto.Email & u.Senha == refugiadoDto.Senha select u).ToList();
 
             if (user == null)
             {
                 return BadRequest("Token inválido.");
+            }
+            if (user.DataVerificacao != null)
+            {
+                return BadRequest("Usuário já verificado.");
             }
             user.DataVerificacao = DateTime.Now;
             await _context.SaveChangesAsync();
@@ -240,6 +256,24 @@ namespace ProjetoRefugiadosApi.Controllers
         private string CreateRandomToken()
         {
             return Convert.ToHexString(RandomNumberGenerator.GetBytes(64));
+        }
+
+        [NonAction]
+        public void EnviarEmail(string body, string toEmail)
+        {
+            var email = new MimeMessage();
+            email.From.Add(MailboxAddress.Parse(_config.GetSection("EmailUsername").Value));
+            email.To.Add(MailboxAddress.Parse(toEmail));
+            email.Subject = "Confirmation Account Token";
+            email.Body = new TextPart(TextFormat.Html) { Text = body };
+            using var smtp = new SmtpClient();
+
+            smtp.Connect(_config.GetSection("EmailHost").Value, Convert.ToInt32(_config.GetSection("EmailPort").Value), SecureSocketOptions.StartTls);
+            smtp.Authenticate(_config.GetSection("EmailUsername").Value, _config.GetSection("EmailPassword").Value);
+            smtp.Send(email);
+            
+            smtp.Disconnect(true);
+
         }
     }
 }
