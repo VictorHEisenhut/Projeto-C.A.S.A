@@ -191,7 +191,7 @@ namespace ProjetoRefugiadosApi.Controllers
             return Ok("Usuário verificado.");
         }
 
-        [HttpPost("esqueci-senha")]
+        [HttpGet("esqueci-senha")]
         public async Task<ActionResult<dynamic>> EsqueciSenha(string email)
         {
             var user = await _context.Refugiados.FirstOrDefaultAsync(r => r.Email == email);
@@ -205,6 +205,9 @@ namespace ProjetoRefugiadosApi.Controllers
             user.TokenResetSenha = CreateRandomToken();
             user.ResetTokenExpira = DateTime.Now.AddDays(1);
             await _context.SaveChangesAsync();
+
+
+            EnviarEmail($"<a href='http://127.0.0.1:5500/html/resetSenha.html?token={user.TokenResetSenha}'> <h3>Altere sua senha clicando neste link.</h3> </a> ", user.Email);
 
             return Ok("Você pode agora resetar sua senha.");
         }
@@ -308,5 +311,22 @@ namespace ProjetoRefugiadosApi.Controllers
 
         }
 
+        [NonAction]
+        public void EnviarEmailResetSenha(string body, string toEmail)
+        {
+            var email = new MimeMessage();
+            email.From.Add(MailboxAddress.Parse(_config.GetSection("EmailUsername").Value));
+            email.To.Add(MailboxAddress.Parse(toEmail));
+            email.Subject = "Reset your password";
+            email.Body = new TextPart(TextFormat.Html) { Text = body };
+            using var smtp = new SmtpClient();
+
+            smtp.Connect(_config.GetSection("EmailHost").Value, Convert.ToInt32(_config.GetSection("EmailPort").Value), SecureSocketOptions.StartTls);
+            smtp.Authenticate(_config.GetSection("EmailUsername").Value, _config.GetSection("EmailPassword").Value);
+            smtp.Send(email);
+
+            smtp.Disconnect(true);
+
+        }
     }
 }

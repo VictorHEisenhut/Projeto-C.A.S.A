@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
-  </head>
-  <body id="body_login">
+    <title>Resetar senha</title>
+</head>
+<body id="body_login">
     <main id="main_login">
             <img id="img_login" src="../imagens/Pessoas_Login.png">
         <div id="div_login">
             
-            <h1 id="titulo_login">Login</h1>
+            <h1 id="titulo_login">Reset Senha</h1>
 
             <div id="div_form_login">
 
                 <div class="div_form_login_flex">
-                    <input type="email" id="email" class="input_login" name="email" placeholder="Email">
+                    <input type="password" id="senha" class="input_login" name="senha" placeholder="Senha">
                 </div>
                 
                 <div class="div_form_login_flex">
-                    <input type="password" id="senha" class="input_login" name="senha" placeholder="Senha">
-                    <br><a href="/html/esqueciSenha.html">Esqueci minha senha</a>
+                    <input type="password" id="confirmSenha" class="input_login" name="confirmSenha" placeholder="Confirmar senha">
                 </div>
                
                 <div class="div_form_login_flex">
-                    <div class="text-center"><button id="btn_login" onclick="logar()">Logar</button></div>
+                    <div class="text-center"><button id="btn_login" onclick="resetSenha()">Alterar senha</button></div>
                     <br><br><a href="cadastro.html" style="font-size: 1.15rem; margin: 0 30%;">Criar uma conta</a>
                 </div>
             </form>
@@ -36,6 +34,6 @@
         </div>
 
     </main>
-	<script src="/js/login.js"></script>
-  </body>
+	<script src="/js/resetSenha.js"></script>
+</body>
 </html>
