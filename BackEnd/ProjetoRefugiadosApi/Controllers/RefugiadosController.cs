@@ -117,16 +117,20 @@ namespace ProjetoRefugiadosApi.Controllers
                 return BadRequest("Email já cadastrado!");
             }
 
-            var refugiado = _mapper.Map<Refugiado>(refugiadoDto);
-            refugiado.Pais = await _context.Paises.FirstOrDefaultAsync(p => p.Id == refugiadoDto.PaisId);
-
-            refugiado.TokenVerificacao = CreateRandomToken();
-
-            var resposta = _validator.Validate(refugiado);
+            var resposta = _validator.Validate(refugiadoDto);
             if (!resposta.IsValid)
             {
                 return BadRequest(resposta.Errors);
             }
+
+            CreateSenhaHash(refugiadoDto.Senha, out byte[] senhaHash, out byte[] senhaSalt);
+
+            var refugiado = _mapper.Map<Refugiado>(refugiadoDto);
+            refugiado.Pais = await _context.Paises.FirstOrDefaultAsync(p => p.Id == refugiadoDto.PaisId);
+            refugiado.SenhaHash = senhaHash;
+            refugiado.SenhaSalt = senhaSalt;
+            refugiado.TokenVerificacao = CreateRandomToken();
+
 
             _context.Refugiados.Add(refugiado);
             await _context.SaveChangesAsync();
@@ -140,6 +144,8 @@ namespace ProjetoRefugiadosApi.Controllers
             //return CreatedAtAction("GetRefugiado", new { id = refugiado.Id }, refugiado);
         }
 
+        
+
         [HttpPost("Login")]
         public async Task<ActionResult<dynamic>> Login(LoginRefugiadoDto refugiadoDto)
         {
@@ -151,7 +157,7 @@ namespace ProjetoRefugiadosApi.Controllers
             {
                 return BadRequest("Usuário inválido.");
             }
-            if (user.Senha != refugiadoDto.Senha)
+            if (!VerifySenhaHash(refugiadoDto.Senha, user.SenhaHash, user.SenhaSalt))
             {
                 return BadRequest("Senha inválida.");
             }
@@ -195,6 +201,7 @@ namespace ProjetoRefugiadosApi.Controllers
             {
                 return BadRequest("Usuário não encontrado.");
             }
+
             user.TokenResetSenha = CreateRandomToken();
             user.ResetTokenExpira = DateTime.Now.AddDays(1);
             await _context.SaveChangesAsync();
@@ -219,7 +226,10 @@ namespace ProjetoRefugiadosApi.Controllers
                 return BadRequest(resposta.Errors.FirstOrDefault());
             }
 
-            user.Senha = reset.Senha;
+            CreateSenhaHash(reset.Senha, out byte[] senhaHash, out byte[] senhaSalt);
+
+            user.SenhaHash = senhaHash;
+            user.SenhaSalt = senhaSalt;
             user.ResetTokenExpira = null;
             user.TokenResetSenha = null;
 
@@ -253,6 +263,28 @@ namespace ProjetoRefugiadosApi.Controllers
             return _context.Refugiados.Any(e => e.Id == id);
         }
 
+        private void CreateSenhaHash(string senha, out byte[] senhaHash, out byte[] senhaSalt)
+        {
+            using (var hmac = new HMACSHA512())
+            {
+                {
+                    senhaSalt = hmac.Key;
+                    senhaHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(senha));
+                }
+            }
+        }
+
+        private bool VerifySenhaHash(string senha, byte[] senhaHash, byte[] senhaSalt)
+        {
+            using (var hmac = new HMACSHA512(senhaSalt))
+            {
+                {
+                    var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(senha));
+                    return computedHash.SequenceEqual(senhaHash);
+                }
+            }
+        }
+
         private string CreateRandomToken()
         {
             return Convert.ToHexString(RandomNumberGenerator.GetBytes(64));
@@ -275,5 +307,6 @@ namespace ProjetoRefugiadosApi.Controllers
             smtp.Disconnect(true);
 
         }
+
     }
 }

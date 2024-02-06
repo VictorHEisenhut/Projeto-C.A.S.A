@@ -2,10 +2,11 @@
 using FluentValidation;
 using NuGet.Packaging;
 using ProjetoRefugiados.Models;
+using ProjetoRefugiadosApi.Dtos.Refugiado;
 
 namespace ProjetoRefugiadosApi.Validations
 {
-    public class RefugiadoValidation : AbstractValidator<Refugiado>
+    public class RefugiadoValidation : AbstractValidator<CreateRefugiadoDto>
     {
         public RefugiadoValidation()
         {

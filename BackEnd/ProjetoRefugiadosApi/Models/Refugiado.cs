@@ -15,7 +15,9 @@ namespace ProjetoRefugiados.Models
         public string Email { get; set; }
         [DataType(DataType.Password)]
         [Required]
-        public string Senha { get; set; }
+        //public string Senha { get; set; }
+        public byte[] SenhaHash { get; set; }
+        public byte[] SenhaSalt { get; set; }
         public DateOnly DataNascimento { get; set; }
         [DataType(DataType.PhoneNumber)]
         public string Telefone { get; set; }
