@@ -42,7 +42,7 @@
                             <label for="email" class="label_inputs_cad"  id="emailLabel" >Digite seu email</label>
                             <input type="email" id ="email">
                         </div>
-                            <div class="div_inputs_cad">
+                            <div id="teste" class="div_inputs_cad">
                                 <h5>Deve conter: Mínimo 8 dígitos, Máximo 16 dígitos, Ao menos um número, Ao menos uma letra maiúscula e uma minúscula</h5>
                                 <label for="senha" class="label_inputs_cad" id="senhaLabel" >Digite sua senha</label>
                                 <input type="password" id ="senha" maxlength="16" minlength="8">
@@ -134,16 +134,19 @@
                 </select>
             </div>
         </div>
-        
-        <div class="line_inputs">
-        </div>
-        <label for="documentos">Já possui documentos?</label>
-        <input name="documentos" onclick="possuiDocumento()" type="radio">Sim
-        <input name="documentos" onclick="naopossuiDocumento()" type="radio">Não
         <br>
-        <label for="enderecos">Já possui endereço?</label>
-        <input name="enderecos" onclick="possuiEndereco()" type="radio">Sim
-        <input name="enderecos" onclick="naopossuiEndereco()" type="radio">Não
+        <div class="div_meio">
+            <label for="documentos">Já possui documentos?</label>
+            <input class="input_radio" name="documentos" onclick="possuiDocumento()" type="radio">Sim
+            <input class="input_radio" name="documentos" onclick="naopossuiDocumento()" type="radio">Não
+        </div>
+        <br>
+        <br>
+        <div class="div_meio">
+            <label for="enderecos">Já possui endereço?</label>
+            <input class="input_radio" name="enderecos" onclick="possuiEndereco()" type="radio">Sim
+            <input class="input_radio" name="enderecos" onclick="naopossuiEndereco()" type="radio">Não
+        </div>
 
 
     </section>
