@@ -15,6 +15,8 @@ header{
 header a{
     font-size: 1.15rem;
     margin: 0 10px;
+    color: #f6f6f6;
+    text-decoration: none;
 }
 
 header select{
@@ -84,6 +86,7 @@ header select{
 
     color: #fcfcfc;
 }
+
 .fundo{
     background-color: #f6f6f6;
 }
@@ -163,18 +166,25 @@ header select{
 
 
 
-
-.fundo{
-    background-color: #f6f6f6;
+.option_cad{
+    color: #f6f6f6;    
 }
+
+.input_radio{
+    color: #f6f6f6;  
+}
+
+
+
+
+
+
 .borda{
     border-radius: 10px;
 }
 .link{
     text-decoration: none;
-    color: inherit;
 }
-
 
 .div_inputs_perfil{
     display: flex;
@@ -268,6 +278,190 @@ header select{
     margin-left: 1rem;
 }
 
+
+
+#body_fundo{
+    background-color: #181822;
+    color: #f6f6f6;
+}
+
+#section_banner_home{
+    background-image: url(../imagens/Maos_Home.png);
+    background-size: 100%;
+    background-repeat: no-repeat;   
+}
+
+
+
+
+
+
+
+
+.container-slider {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+.container-images {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+  }
+  
+.slider {
+    opacity: 0;
+    transition: opacity .2s;
+    position: absolute;
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+.on {
+    opacity: 1;
+  }
+  
+#prev-button, #next-button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+#prev-button img, #next-button img {
+    width: 100%;
+    height: 100%;
+  }
+  
+#prev-button {
+    transform: rotate(180deg);
+  }
+
+#texto_refugio{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#firstpharagraph{
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+#firstitle{
+    font-size: 3rem;
+    text-align: center;
+  }
+
+#btn_index_learn_more{
+    text-align: center;
+}
+
+#btn_index_learn_more{
+    margin: 2rem;
+    padding: 1.25rem 5rem;
+    margin-bottom: 10rem;
+}
+
+#btn_index_learn_more_a{
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: #141314;
+}
+
+.div_index_flex_1{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div_index_flex_2{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img_div_flex_index{
+   width: 100%;
+}
+
+.img_div_flex_index img{
+    width: 100%;
+}
+
+.div_index_flex_text{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: start;
+    width: 60%;
+    margin: 3rem;
+}
+
+.div_index_flex_text h2{
+    font-size: 3rem;
+}
+
+.div_index_flex_text p{
+    font-size: 1.25rem;
+}
+
+.div_index_num{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section_index{
+}
+
+
+.link{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.div_inputs_perfil{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.h2_index_flex_2{
+    text-align: end;
+}
+
+.div_index_num h2{
+    font-size: 2rem;
+}
+
+.div_index_num h3{
+    font-size: 5rem;
+}
+
+
+
+
+
+
+
+
 .div_meio{
     justify-content: center;
     text-align: center;
@@ -286,3 +480,4 @@ header select{
     text-align: center;
     transition: all 250ms ease;
 }
+
