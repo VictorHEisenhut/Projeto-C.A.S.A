@@ -164,7 +164,6 @@ header select{
 
 
 
-
 .fundo{
     background-color: #f6f6f6;
 }
@@ -173,7 +172,9 @@ header select{
 }
 .link{
     text-decoration: none;
+    color: inherit;
 }
+
 
 .div_inputs_perfil{
     display: flex;

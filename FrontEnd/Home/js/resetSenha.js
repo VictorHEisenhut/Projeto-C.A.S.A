@@ -2,7 +2,6 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 
 const token = urlParams.get('token')
-console.log(token);
 
 async function resetSenha(){
     let senha = document.getElementById("senha").value

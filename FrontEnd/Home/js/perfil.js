@@ -27,13 +27,25 @@ const result = Promise.resolve(valores);
             document.getElementById("nome").value = value.nome
             document.getElementById("sobrenome").value = value.sobrenome
             document.getElementById("email").value = value.email
-            document.getElementById("senha").value = value.senha
             document.getElementById("dataNascimento").value = value.dataNascimento
             document.getElementById("telefone").value = value.telefone
-            document.getElementById("estadoCivil").value = value.estadoCivil
-            document.getElementById("genero").value = value.genero
-            document.getElementById("escolaridade").value = value.escolaridade
-            document.getElementById("paisId").value = value.paisId
+            if(value.estadoCivil == 1){aux = "Solteiro/a"}
+            else if(value.estadoCivil == 2){aux = "Casado/a"}
+            else if(value.estadoCivil == 3){aux = "Separado/a"}
+            else if(value.estadoCivil == 4){aux = "Divorciado/a"}
+            else if(value.estadoCivil == 5){aux = "Viúvo/a"}
+            document.getElementById("estadoCivil").value = aux
+            if(value.genero == 1){auxGenero = "Masculino"}
+            else{auxGenero = "Feminino"}
+            document.getElementById("genero").value = auxGenero
+            if(value.escolaridade == 1){auxEscolaridade = "Ensino fundamental completo"}
+            else if(value.escolaridade == 2){auxEscolaridade = "Ensino fundamental incompleto"}
+            else if(value.escolaridade == 3){auxEscolaridade = "Ensino médio completo"}
+            else if(value.escolaridade == 4){auxEscolaridade = "Ensino médio incompleto"}
+            else if(value.escolaridade == 5){auxEscolaridade = "Ensino superior completo"}
+            else {auxEscolaridade = "Ensino superior incompleto"}
+            document.getElementById("escolaridade").value = auxEscolaridade
+            document.getElementById("paisId").value = value.pais.pais
             document.getElementById("cpf").value = value.documento.cpf
             document.getElementById("rg").value = value.documento.rg
             document.getElementById("cnh").value = value.documento.cnh

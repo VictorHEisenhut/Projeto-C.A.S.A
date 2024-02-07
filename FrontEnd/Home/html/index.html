@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
   <body>
     <section id="section_banner_home">
         <div>
-          <header>
-            <h2 id="headerTitle">Lorem</h2> 
+          <header style="background-image: url('/imagens/ImageHeader.jpeg'); margin-bottom: 3rem;">
+            <h2 id="headerTitle" class="text-white">Lorem</h2> 
             <div>
-              <a href="index.html" id="homeLink">Home</a>
-              <a id="documentsLink">Documents</a>
-              <a id="placesLink">Places</a>
-              <a href="login.html" id="homeLink">Login</a>
-              <a id="languageLink">Language</a>
-              <a id="donateLink" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Donate</a>
+              <a href="index.html" class="text-white link-light" id="homeLink" >Home</a>
+              <a class="text-white link" id="documentsLink">Documents</a>
+              <a class="text-white link" id="placesLink">Places</a>
+              <a href="login.html" id="homeLink" class="link-light">Login</a>
+              <a class="text-white link" id="languageLink">Language</a>
+              <a class="text-white link" id="donateLink" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Donate</a>
               <select onchange="changeLanguage(this.value)">
                 <option value="pt">Português</option>
                 <option value="en">English</option>

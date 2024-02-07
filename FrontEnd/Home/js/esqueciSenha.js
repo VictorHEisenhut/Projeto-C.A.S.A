@@ -9,4 +9,5 @@ async function esqueciSenha(){
         method: "GET",
         headers: {'Content-Type': 'application/json'},
     })
+    window.location.href = `./esperaConfirmacao.html?email=${email}`
   }
