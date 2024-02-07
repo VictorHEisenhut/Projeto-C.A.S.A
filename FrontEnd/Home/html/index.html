@@ -8,20 +8,21 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
-  <body>
+  <body id="body_fundo">
     <section id="section_banner_home">
         <div>
           <header>
             <h2 id="headerTitle">Lorem</h2> 
             <div>
-              <a id="homeLink">Home</a>
+              <a href="index.html" id="homeLink">Home</a>
               <a id="documentsLink">Documents</a>
               <a id="placesLink">Places</a>
+              <a href="login.html" id="homeLink">Login</a>
               <a id="languageLink">Language</a>
               <a id="donateLink" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Donate</a>
               <select onchange="changeLanguage(this.value)">
-                <option value="en">English</option>
                 <option value="pt">Português</option>
+                <option value="en">English</option>
                 <option value="es">Español</option>
                 <option value="fr">Français</option>
                 <option value="ar">العربية</option>
@@ -29,12 +30,123 @@
             </div>
           </header>
         </div>
-        <div id="texto_refugio">
-          <p id="firstpharagraph">
-            Whether you are a refugee seeking support or someone willing to help, we are here to create a welcoming and supportive community. At Our Refuge, we understand that the journey of a refugee is unique, full of challenges and hopes. Our commitment is to provide resources, emotional support, and essential information to ease this transition.          </p>
+        <div class="container-slider">
+          <button id="prev-button"><span style="color: #fcfcfc; font-size: 3rem;"><</span></button>
+          <div class="container-images">
+            <div class="slider on" id="texto_refugio">
+              <h2 id="firstitle">Bem-Vindo</h2>
+              <p id="firstpharagraph">
+                Whether you are a refugee seeking support or someone willing to help, we are here to create 
+                a welcoming and supportive community. At Our Refuge, we understand that the journey of a refugee is unique, 
+                full of challenges and hopes. Our commitment is to provide resources, emotional support, 
+                and essential information to ease this transition.
+              </p> 
+                <button id="btn_index_learn_more"><a id="btn_index_learn_more_a">Learn More</a></button>
+            </div>
+            <div class="slider" id="texto_refugio">
+              <h2 id="firstitle">Quem-Somos?</h2>
+              <p id="firstpharagraph">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique diam ut pretium posuere. Morbi id tempor dui. 
+                Sed vel nibh elementum, pellentesque nunc eget, accumsan felis.  Morbi quis diam felis. Donec eget augue leo.
+              </p> 
+                <button id="btn_index_learn_more"><a id="btn_index_learn_more_a">Saiba-Mais</a></button>
+            </div>
+          </div>
+          <button id="next-button"><!--<img src="./public/images/arrow.png" alt="next-button">--><span style="color: #fcfcfc; font-size: 3rem;">></span></button>
         </div>
+       
     </section>
+
+    <section class="section_index">
+      <div class="div_index_flex_1">
+        <div class="div_index_flex_text">
+          <h2>Carteira de Trabalho</h2>
+          <p>
+                A carteira de trabalho para refugiados no Brasil é crucial para sua integração socioeconômica, 
+                garantindo direitos trabalhistas, acesso a programas de capacitação e benefícios previdenciários, 
+                permitindo assim uma transição mais suave e promissora para suas novas vidas.
+          </p>
+        </div>
+        <div class="img_div_flex_index">
+          <img src="../imagens/Imagem_Lorem.png">
+        </div>
+      </div>
+    </section>
+
+    <section class="section_index">
+      <div class="div_index_num" style="background-color: #141314; padding: 10%;">
+        <h2>Numeros de Cadastros</h2>
+        <h3>1000+</h3>
+      </div>
+    </section>
+
+    <section class="section_index">
+      <div class="div_index_flex_2">
+        <div class="div_index_flex_text" >
+          <h2 class="h2_index_flex_2">Abrigos</h2>
+          <p>
+            Oferecemos abrigos acolhedores e seguros para refugiados, onde encontram apoio emocional, 
+            assistência jurídica e acesso a serviços básicos. É mais do que um teto sobre suas cabeças; 
+            é um refúgio de esperança e solidariedade, onde podem reconstruir suas vidas e preparar-se para um futuro promissor.
+          </p>
+        </div>
+        <div class="img_div_flex_index">
+          <img src="../imagens/Imagem_Lorem.png">
+        </div>
+      </div>
+    </section>
+
+    <section class="section_index">
+      <div class="div_index_flex_1">
+        <div class="div_index_flex_text">
+          <h2>Lorem Ipsum</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique diam ut pretium posuere. Morbi id tempor dui. 
+            Sed vel nibh elementum, pellentesque nunc eget, accumsan felis.  Morbi quis diam felis. Donec eget augue leo.
+          </p>
+        </div>
+        <div class="img_div_flex_index">
+          <img src="../imagens/Imagem_Lorem.png">
+        </div>
+      </div>
+    </section>
+
+    <section class="section_index" style="background-color: #141314; padding: 10%;">
+      <div class="div_index_num">
+        <h2>Numeros de Abrigos</h2>
+        <h3>1000+</h3>
+      </div>
+    </section>
+
+    <section class="section_index">
+      <div class="div_index_flex_2">
+        <div class="div_index_flex_text">
+          <h2 class="h2_index_flex_2">Lorem Ipsum</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique diam ut pretium posuere. Morbi id tempor dui. 
+            Sed vel nibh elementum, pellentesque nunc eget, accumsan felis.  Morbi quis diam felis. Donec eget augue leo.
+          </p>
+        </div>
+        <div class="img_div_flex_index">
+          <img src="../imagens/Imagem_Lorem.png">
+        </div>
+      </div>
+    </section>
+
+    <section class="section_index">
+      <div class="div_index_flex_1">
+        <div class="div_index_flex_text">
+          <h2>Lorem Ipsum</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique diam ut pretium posuere. Morbi id tempor dui. 
+            Sed vel nibh elementum, pellentesque nunc eget, accumsan felis.  Morbi quis diam felis. Donec eget augue leo.
+          </p>
+        </div>
+        <div class="img_div_flex_index">
+          <img src="../imagens/Imagem_Lorem.png">
+        </div>
+      </div>
+    </section>
+    <script src="../js/index.js"></script>
     <script src="../js/traducao.js">
+      
       
     </script>
   </body>
