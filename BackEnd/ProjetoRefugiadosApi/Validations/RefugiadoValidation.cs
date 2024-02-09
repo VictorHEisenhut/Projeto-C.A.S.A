@@ -14,14 +14,13 @@ namespace ProjetoRefugiadosApi.Validations
             RuleFor(p => p.Senha)
                 .NotEmpty().WithMessage("Sua senha não pode estar vazia.")
                 .MinimumLength(8).WithMessage("Sua senha deve possuir ao mínimo 8 caracteres.")
-                .MaximumLength(16).WithMessage("Sua senha não deve exceder 16 caracteres.")
+                .MaximumLength(50).WithMessage("Sua senha não deve exceder 50 caracteres.")
                 .Matches(@"[A-Z]+").WithMessage("Sua senha deve possuir ao menos uma letra maiúscula.")
                 .Matches(@"[a-z]+").WithMessage("Sua senha deve possuir ao menos uma letra minúscula.")
                 .Matches(@"[0-9]+").WithMessage("Sua senha deve possuir ao menos um número.");
             RuleFor(refugiado => CpfValidation.Validate(refugiado.Documento.Cpf)).Equal(true).WithMessage("CPF inválido").When(r => r.Documento.Cpf != null);
-            //Em comentário para testes:
-            //RuleFor(refugiado => RGValidation.Validate(refugiado.Documento.Rg)).Equal(true).WithMessage("RG inválido");
-            //RuleFor(refugiado => CnhValidation.Validate(refugiado.Documento.Cnh)).Equal(true).WithMessage("CNH inválida");
+            RuleFor(refugiado => RGValidation.Validate(refugiado.Documento.Rg)).Equal(true).WithMessage("RG inválido").When(r => r.Documento.Rg != null);
+            RuleFor(refugiado => CnhValidation.Validate(refugiado.Documento.Cnh)).Equal(true).WithMessage("CNH inválida").When(r => r.Documento.Cnh != null);
             RuleFor(refugiado => refugiado.Genero).NotNull().IsInEnum().WithMessage("Gênero inválido.");
             RuleFor(refugiado => refugiado.EstadoCivil).NotNull().IsInEnum().WithMessage("Estado civil inválido.");
             RuleFor(refugiado => refugiado.Escolaridade).NotNull().IsInEnum().WithMessage("Escolaridade inválida.");

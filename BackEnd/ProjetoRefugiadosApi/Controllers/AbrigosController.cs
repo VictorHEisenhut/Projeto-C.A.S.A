@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using ProjetoRefugiados.Models;
 using ProjetoRefugiadosApi.Data;
 using ProjetoRefugiadosApi.Dtos.Abrigo;
+using ProjetoRefugiadosApi.Validations;
 using ZstdSharp.Unsafe;
 
 namespace ProjetoRefugiadosApi.Controllers
@@ -20,6 +21,7 @@ namespace ProjetoRefugiadosApi.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
+        private readonly AbrigoValidation _validator = new();
 
         public AbrigosController(AppDbContext context, IMapper mapper)
         {
@@ -94,8 +96,15 @@ namespace ProjetoRefugiadosApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Abrigo>> PostAbrigo(CreateAbrigoDto abrigoDto)
         {
+            var resposta = _validator.Validate(abrigoDto);
+            if (!resposta.IsValid)
+            {
+                return BadRequest(resposta.Errors);
+            }
+
             var abrigo = _mapper.Map<Abrigo>(abrigoDto);
             abrigo.Endereco = await _context.Enderecos.FirstOrDefaultAsync(a => a.Id == abrigoDto.EnderecoId);
+
 
             _context.Abrigos.Add(abrigo);
             await _context.SaveChangesAsync();

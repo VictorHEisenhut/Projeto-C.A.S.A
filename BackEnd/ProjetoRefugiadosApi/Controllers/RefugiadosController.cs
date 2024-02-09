@@ -138,7 +138,11 @@ namespace ProjetoRefugiadosApi.Controllers
             string tokenEncoded = HttpUtility.UrlEncode(refugiado.TokenVerificacao);
             string tokenUrl = Url.ActionLink("Verificar", "Refugiados", new { token = tokenEncoded }, Request.Scheme);
 
-            EnviarEmail($"<a href='{tokenUrl}'> <h3>Verifique sua conta clicando neste link.</h3> </a> ", refugiado.Email);
+            EnviarEmail(
+                $"<a href='{tokenUrl}'> <h3>Verifique sua conta clicando neste link.</h3> </a> ", 
+                refugiado.Email,
+                "Link para confirmação de conta"
+                );
 
             return Ok($"Usuário registrado com sucesso. Um e-mail de verificação foi enviado para {refugiado.Email}.");
             //return CreatedAtAction("GetRefugiado", new { id = refugiado.Id }, refugiado);
@@ -207,7 +211,11 @@ namespace ProjetoRefugiadosApi.Controllers
             await _context.SaveChangesAsync();
 
 
-            EnviarEmail($"<a href='http://127.0.0.1:5500/html/resetSenha.html?token={user.TokenResetSenha}'> <h3>Altere sua senha clicando neste link.</h3> </a> ", user.Email);
+            EnviarEmail(
+                $"<a href='http://127.0.0.1:5500/html/resetSenha.html?token={user.TokenResetSenha}'> <h3>Altere sua senha clicando neste link.</h3> </a> ", 
+                user.Email,
+                "Link para alterar senha"
+                );
 
             return Ok("Você pode agora resetar sua senha.");
         }
@@ -294,12 +302,12 @@ namespace ProjetoRefugiadosApi.Controllers
         }
 
         [NonAction]
-        public void EnviarEmail(string body, string toEmail)
+        public void EnviarEmail(string body, string toEmail, string subject)
         {
             var email = new MimeMessage();
             email.From.Add(MailboxAddress.Parse(_config.GetSection("EmailUsername").Value));
             email.To.Add(MailboxAddress.Parse(toEmail));
-            email.Subject = "Confirmation Account Token";
+            email.Subject = subject;
             email.Body = new TextPart(TextFormat.Html) { Text = body };
             using var smtp = new SmtpClient();
 
@@ -307,24 +315,6 @@ namespace ProjetoRefugiadosApi.Controllers
             smtp.Authenticate(_config.GetSection("EmailUsername").Value, _config.GetSection("EmailPassword").Value);
             smtp.Send(email);
             
-            smtp.Disconnect(true);
-
-        }
-
-        [NonAction]
-        public void EnviarEmailResetSenha(string body, string toEmail)
-        {
-            var email = new MimeMessage();
-            email.From.Add(MailboxAddress.Parse(_config.GetSection("EmailUsername").Value));
-            email.To.Add(MailboxAddress.Parse(toEmail));
-            email.Subject = "Reset your password";
-            email.Body = new TextPart(TextFormat.Html) { Text = body };
-            using var smtp = new SmtpClient();
-
-            smtp.Connect(_config.GetSection("EmailHost").Value, Convert.ToInt32(_config.GetSection("EmailPort").Value), SecureSocketOptions.StartTls);
-            smtp.Authenticate(_config.GetSection("EmailUsername").Value, _config.GetSection("EmailPassword").Value);
-            smtp.Send(email);
-
             smtp.Disconnect(true);
 
         }

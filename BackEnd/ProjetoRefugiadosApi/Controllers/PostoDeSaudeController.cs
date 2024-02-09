@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using ProjetoRefugiados.Models;
 using ProjetoRefugiadosApi.Data;
 using ProjetoRefugiadosApi.Dtos.PostosDeSaude;
+using ProjetoRefugiadosApi.Validations;
 using ZstdSharp.Unsafe;
 
 namespace ProjetoRefugiadosApi.Controllers
@@ -20,6 +21,8 @@ namespace ProjetoRefugiadosApi.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
+        private readonly PostoDeSaudeValidation _validator = new();
+
 
         public PostoDeSaudeController(AppDbContext context, IMapper mapper)
         {
@@ -93,8 +96,15 @@ namespace ProjetoRefugiadosApi.Controllers
         [HttpPost]
         public async Task<ActionResult<PostoDeSaude>> PostPostoDeSaude(CreatePostoDeSaudeDto postoDeSaudeDto)
         {
+            var resposta = _validator.Validate(postoDeSaudeDto);
+            if (!resposta.IsValid)
+            {
+                return BadRequest(resposta.Errors);
+            }
+
             var postoDeSaude = _mapper.Map<PostoDeSaude>(postoDeSaudeDto);
             postoDeSaude.Endereco = await _context.Enderecos.FirstOrDefaultAsync(p => p.Id == postoDeSaudeDto.EnderecoId);
+
 
             _context.PostosDeSaude.Add(postoDeSaude);
             await _context.SaveChangesAsync();

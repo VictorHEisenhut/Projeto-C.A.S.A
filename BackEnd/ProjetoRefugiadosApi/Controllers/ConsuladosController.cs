@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using ProjetoRefugiados.Models;
 using ProjetoRefugiadosApi.Data;
 using ProjetoRefugiadosApi.Dtos.Consulado;
+using ProjetoRefugiadosApi.Validations;
 
 namespace ProjetoRefugiadosApi.Controllers
 {
@@ -18,6 +19,7 @@ namespace ProjetoRefugiadosApi.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
+        private readonly ConsuladoValidation _validator = new();
 
         public ConsuladosController(AppDbContext context, IMapper mapper)
         {
@@ -91,6 +93,12 @@ namespace ProjetoRefugiadosApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Consulado>> PostConsulado(CreateConsuladoDto consuladoDto)
         {
+            var resposta = _validator.Validate(consuladoDto);
+            if (!resposta.IsValid)
+            {
+                return BadRequest(resposta.Errors);
+            }
+
             var consulado = _mapper.Map<Consulado>(consuladoDto);
             consulado.Endereco = await _context.Enderecos.FirstOrDefaultAsync(c => c.Id == consuladoDto.EnderecoId);
 
