@@ -87,6 +87,10 @@ header select{
     color: #fcfcfc;
 }
 
+
+
+
+
 .fundo{
     background-color: #f6f6f6;
 }
@@ -120,7 +124,7 @@ header select{
 }
 
 .div_inputs_cad input{
-    padding: 0.5rem 12rem;
+    padding: 0.5rem 25%;
     background: transparent;
     border: #141314 1px solid;
 }
@@ -301,7 +305,7 @@ header select{
 .container-slider {
     display: flex;
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
     align-items: center;
     justify-content: center;
     gap: 1rem;
@@ -385,6 +389,7 @@ header select{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-color: #181822; 
 }
 
 .div_index_flex_2{
@@ -393,6 +398,8 @@ header select{
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
+    
+    background-color: #141314;
 }
 
 .img_div_flex_index{
