@@ -18,7 +18,6 @@
       <a id="languageLink" href="#">Idioma</a>
       <a id="donateLink" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Doe</a>
       <button id="login"><a href="login.html">Login</a></button>
-      <button id="logout" onclick="logout()"><a>Logout</a></button>
       <select onchange="changeLanguage(this.value)">
         <option value="pt">Português</option>
         <option value="en">English</option>
@@ -26,8 +25,15 @@
         <option value="fr">Français</option>
         <option value="ar">العربية</option>
       </select>
+      <button class="openbtn" id="sideBar" onclick="openNav()">&#9776;</button>
     </div>
   </header>
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
+    <a href="perfil.html">Perfil</a>
+    <a href="/html/documentosPerfil.html">Documentos</a>
+    <a id="logout" onclick="logout()">Logout</a>
+  </div>
       <p>Para garantir os seus direitos, é essêncial regularizar sua presença em território nacional!</p>
       <p>Mantenha sua situação documental atualizada!</p>
       <p>Todas pessoas migrantes, têm direito a um cadastro como pessoa física (CPF), a um documento de identidade, e à carteira de trabalho.</p>
@@ -43,4 +49,5 @@
       <p>É Importante levar a certidão de nascimento para comprovar a naturalidade, a filiação e a data de nascimento.</p>
 </body>
 <script src="/js/loginLogout.js"></script>
+<script src="/js/barraDeLadinho.js"></script>
 </html>

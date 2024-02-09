@@ -22,7 +22,6 @@
               <a id="languageLink" href="#">Idioma</a>
               <a id="donateLink" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Doe</a>
               <button id="login"><a href="login.html">Login</a></button>
-              <button id="logout" onclick="logout()"><a>Logout</a></button>
               <select onchange="changeLanguage(this.value)">
                 <option value="pt">Português</option>
                 <option value="en">English</option>
@@ -30,11 +29,22 @@
                 <option value="fr">Français</option>
                 <option value="ar">العربية</option>
               </select>
+              <button class="openbtn" id="sideBar" onclick="openNav()">&#9776;</button>
             </div>
           </header>
+          <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
+            <a href="perfil.html">Perfil</a>
+            <a href="/html/documentosPerfil.html">Documentos</a>
+            <div id="div_btn_logout">
+              <div id="div_div_btn_logout">
+              <a id="logout" onclick="logout()">Logout</a>
+            </div>
+          </div>
+          </div>
         </div>
         <div class="container-slider">
-          <button id="prev-button"><span style="color: #fcfcfc; font-size: 3rem;"><</span></button>
+          <button id="prev-button"><span style="color: #fcfcfc; font-size: 3rem;"></span></button>
           <div class="container-images">
             <div class="slider on" id="texto_refugio">
               <h2 id="firstitle">Bem-Vindo</h2>
@@ -150,5 +160,6 @@
     <script src="../js/index.js"></script>
     <script src="../js/traducao.js"></script>
     <script src="/js/loginLogout.js"></script>
+    <script src="/js/barraDeLadinho.js"></script>
   </body>
 </html>

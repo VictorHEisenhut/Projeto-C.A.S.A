@@ -18,7 +18,6 @@
       <a id="languageLink" href="#">Idioma</a>
       <a id="donateLink" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Doe</a>
       <button id="login"><a href="login.html">Login</a></button>
-      <button id="logout" onclick="logout()"><a>Logout</a></button>
       <select onchange="changeLanguage(this.value)">
         <option value="pt">Português</option>
         <option value="en">English</option>
@@ -26,8 +25,15 @@
         <option value="fr">Français</option>
         <option value="ar">العربية</option>
       </select>
+      <button class="openbtn" id="sideBar" onclick="openNav()">&#9776;</button>
     </div>
   </header>
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
+    <a href="perfil.html">Perfil</a>
+    <a href="/html/documentosPerfil.html">Documentos</a>
+    <a id="logout" onclick="logout()">Logout</a>
+  </div>
       
       <div class="text_div_perfil">
         <h1>Informções Gerais</h1>
@@ -82,54 +88,6 @@
         <span class="linha_perfil"></span>
       </section>
       
-      
-
-      <div class="text_div_perfil">
-        <h1>Documentos</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-      </div>
-
-      <section class="section_perfil">
-        <div class="line_inputs">
-          <div class="div_inputs_perfil">
-        <label for="paisId" class="label_inputs_perfil" id="paisLabel">País</label>
-        <input disabled id="paisId" type="text">
-        </div>
-        
-        <div class="div_inputs_perfil">
-          <label for="cpf" class="label_inputs_perfil">CPF</label>
-          <input disabled id="cpf" type="text">
-        </div>
-      </div>
-      
-      <div class="line_inputs">
-        <div class="div_inputs_perfil">
-          <label for="rg" class="label_inputs_perfil">RG</label>
-          <input disabled id="rg" type="text">
-        </div>
-        <div class="div_inputs_perfil">
-          <label for="cnh" class="label_inputs_perfil">CNH</label>
-          <input disabled id="cnh" type="text">
-        </div>
-      </div>
-      
-      <div class="line_inputs">
-        <div class="div_inputs_perfil">
-          <label for="crnm" class="label_inputs_perfil">CRNM</label>
-          <input disabled id="crnm" type="text">
-        </div>
-        <div class="div_inputs_perfil">
-          <label for="rne" class="label_inputs_perfil">RNE</label>
-          <input disabled id="rne" type="text">
-        </div>
-      </div>
-      <span class="linha_perfil"></span>
-      </section>
-      
-
-      
-
       <div class="text_div_perfil">
         <h1>Endereço</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -175,9 +133,6 @@
           <button  id="btn_alterar" class="btn_perfil">Modificar Conta</button>
         </div>
         <div class="div_btn_perfil">
-          <button class="btn_perfil">Log out</button>
-        </div>
-        <div class="div_btn_perfil">
           <button id="btn_deletar" class="btn_perfil">Deletar Conta</button>
         </div>
       </div>
@@ -186,4 +141,5 @@
 </body>
 <script src="/js/perfil.js"></script>
 <script src="/js/loginLogout.js"></script>
+<script src="/js/barraDeLadinho.js"></script>
 </html>

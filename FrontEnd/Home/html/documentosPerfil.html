@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styleP.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Documentos</title>
+</head>
+<body>
+    <header style="background-image: url('/imagens/ImageHeader.jpeg'); margin-bottom: 3rem;">
+        <h2 id="headerTitle">Lorem</h2> 
+        <div>
+          <a href="index.html" id="homeLink">Home</a>
+          <a id="documentsLink" href="DicasEdocumentos.html">Documentos</a>
+          <a id="placesLink" href="enderecos.html">Lugares</a>
+          <a id="languageLink" href="#">Idioma</a>
+          <a id="donateLink" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Doe</a>
+          <button id="login"><a href="login.html">Login</a></button>
+          <select onchange="changeLanguage(this.value)">
+            <option value="pt">Português</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="ar">العربية</option>
+          </select>
+          <button class="openbtn" id="sideBar" onclick="openNav()">&#9776;</button>
+        </div>
+      </header>
+      <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
+        <a href="perfil.html">Perfil</a>
+        <a href="/html/documentosPerfil.html">Documentos</a>
+        <a id="logout" onclick="logout()">Logout</a>
+      </div>
+
+      <div class="text_div_perfil">
+        <h1>Documentos</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      </div>
+
+      <section class="section_perfil">
+        
+        <div class="div_inputs_perfil">
+          <label for="cpf" class="label_inputs_perfil">CPF</label>
+          <input disabled id="cpf" type="text">
+        </div>
+      </div>
+      
+      <div class="line_inputs">
+        <div class="div_inputs_perfil">
+          <label for="rg" class="label_inputs_perfil">RG</label>
+          <input disabled id="rg" type="text">
+        </div>
+        <div class="div_inputs_perfil">
+          <label for="cnh" class="label_inputs_perfil">CNH</label>
+          <input disabled id="cnh" type="text">
+        </div>
+      </div>
+      
+      <div class="line_inputs">
+        <div class="div_inputs_perfil">
+          <label for="crnm" class="label_inputs_perfil">CRNM</label>
+          <input disabled id="crnm" type="text">
+        </div>
+        <div class="div_inputs_perfil">
+          <label for="rne" class="label_inputs_perfil">RNE</label>
+          <input disabled id="rne" type="text">
+        </div>
+      </div>
+      <span class="linha_perfil"></span>
+      </section>
+</body>
+<script src="/js/barraDeLadinho.js"></script>
+<script src="/js/documentos.js"></script>
+</html>
