@@ -32,7 +32,8 @@ header select{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
 
 #div_login{
@@ -40,18 +41,23 @@ header select{
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
-    padding: 0 15% 0 0;
+    padding: 0 0 0 0;
     
 }
 
 #div_form_login{
-    margin: 0 -100%;
+    margin: 0 100%;
 
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
+}
+
+#img_login_div{
+    max-width: 50%;
 }
 
 #titulo_login{
@@ -61,11 +67,12 @@ header select{
 }
 
 #img_login{
-    margin: 0 0 0 0;
+    margin: 0;
+    width: 100%;
 }
 
 #label_login{
-    font-size: 1.15rem;
+    font-size: 1rem;
 }
 
 .div_form_login_flex{
@@ -73,13 +80,13 @@ header select{
 }
 
 #btn_login{
-    padding: 20px 34%;
-    font-size: 1.25rem;
+    padding: 5px 10rem;
+    font-size: 1rem;
     text-transform: uppercase;
 }
 
 .input_login{
-    padding: 20px 50% 20px 1rem;
+    padding: 0.5rem 10rem 0.5rem 1rem;
     border: solid #fcfcfc 2px;
     background-color: #141314;
     text-align: start;
