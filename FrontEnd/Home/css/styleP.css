@@ -1,0 +1,21 @@
+#logout{
+    font-size: 1.15rem;
+    padding: 0.5rem;
+    background-color: rgb(201, 55, 55);
+    border: none;
+    color: white;
+}
+#logout:hover{
+    background-color: rgb(160, 21, 21);
+}
+
+#login{
+    font-size: 1.15rem;
+    padding: 0.5rem;
+    background-color: rgb(78, 167, 78);
+    border: none;
+    color: white;
+}
+#login:hover{
+    background-color: rgb(20, 90, 20);
+}
