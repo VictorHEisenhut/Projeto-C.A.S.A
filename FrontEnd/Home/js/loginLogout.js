@@ -8,5 +8,5 @@ else{
 
 function logout(){
     localStorage.removeItem('token')
-    location.reload()
+    window.location.href = "/html/index.html"
 }

@@ -157,6 +157,10 @@ namespace ProjetoRefugiadosApi.Controllers
             var user = await _context.Refugiados.FirstOrDefaultAsync(r => r.Email == refugiadoDto.Email);
             //var userLogado = (from u in users where u.Email == refugiadoDto.Email & u.Senha == refugiadoDto.Senha select u).ToList();
 
+            if (refugiadoDto.Email == null || refugiadoDto.Senha == null)
+            {
+                return BadRequest("Campos inválidos.");
+            }
             if (user == null)
             {
                 return BadRequest("Usuário inválido.");
@@ -217,7 +221,7 @@ namespace ProjetoRefugiadosApi.Controllers
                 "Link para alterar senha"
                 );
 
-            return Ok("Você pode agora resetar sua senha.");
+            return Ok("Foi enviado um email com um link para resetar sua senha.");
         }
 
         [HttpPost("reset-senha")]
