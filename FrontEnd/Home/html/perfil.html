@@ -32,11 +32,15 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
     <a href="perfil.html">Perfil</a>
     <a href="/html/documentosPerfil.html">Documentos</a>
-    <a id="logout" onclick="logout()">Logout</a>
+    <div id="div_btn_logout">
+      <div id="div_div_btn_logout">
+      <a id="logout" onclick="logout()">Logout</a>
+    </div>
+  </div>
   </div>
       
       <div class="text_div_perfil">
-        <h1>Informções Gerais</h1>
+        <h1>Informações Gerais</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
       </div>
@@ -85,21 +89,20 @@
             <input disabled id="escolaridade" type="text">
           </div>
         </div>
+        <div class="line_inputs">
+          <div class="div_inputs_perfil">
+        <label for="paisId" class="label_inputs_perfil" id="paisLabel">País</label>
+        <input disabled id="paisId" type="text">
+        </div>
         <span class="linha_perfil"></span>
       </section>
+
       
       <div class="text_div_perfil">
         <h1>Endereço</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
       </div>
-      
-      <section class="section_perfil">
-        <div class="line_inputs">
-          <div class="div_inputs_perfil">
-        <label for="paisId" class="label_inputs_perfil" id="paisLabel">País</label>
-        <input disabled id="paisId" type="text">
-        </div>
 
       <section class="section_perfil">
         <div class="line_inputs">
