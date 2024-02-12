@@ -33,9 +33,9 @@
         </div>-->
     </section>
     <main class="d-flex justify-content-start">
-        <img id="img_cad" src="../imagens/Imagem_Cad.png">
+       
         <section>
-                <h2>Cadastro</h2>
+                <h2 style="margin-left: 2rem;">Cadastro</h2>
             <fieldset id="fieldset_cad">
                 <section class="section_div_cad">
                     <div class="texts_div_cad">
@@ -153,7 +153,7 @@
                     
                 </div>
 
-                <div class="div_meio">
+                <!--<div class="div_meio">
                     <label for="documentos">Já possui documentos?</label>
                     <input class="input_radio" name="documentos" onclick="possuiDocumento()" type="radio">Sim
                     <input class="input_radio" name="documentos" onclick="naopossuiDocumento()" type="radio">Não
@@ -162,8 +162,9 @@
                     <label for="enderecos">Já possui endereço?</label>
                     <input class="input_radio" name="enderecos" onclick="possuiEndereco()" type="radio"><lable>Sim</lable>
                     <input class="input_radio" name="enderecos" onclick="naopossuiEndereco()" type="radio"><lable>Não</lable>
+                </div>-->
             </section>
-            <section class="section_div_cad" hidden id="documentosTabela">
+            <section class="section_div_cad" id="documentosTabela">
                 <span class="linha"></span>
                 <div class="texts_div_cad">
                     <div>
@@ -203,7 +204,7 @@
             </section>
             
             
-            <section class="section_div_cad" id="enderecosTabela" hidden>
+            <section class="section_div_cad" id="enderecosTabela" style="border: none;">
                 <span class="linha"></span>
                 <div class="texts_div_cad">
                     <div>
@@ -248,7 +249,8 @@
                 <span class="linha"></span>
                 <div class="text-center"><button id="botaoLabel" onclick="cadastrar()"><a style="color: #f6f6f6;">Cadastrar</a></button></div>
             </fieldset>
-        </section>
+        </section> 
+        <img id="img_cad" src="../imagens/Imagem_Cad.png">
     </main>
         
         <!--<div class="texts_div_cad">
