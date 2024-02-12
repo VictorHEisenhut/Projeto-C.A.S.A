@@ -597,7 +597,6 @@ header select{
   
 .on {
     opacity: 1;
-    position: relative;
   }
   
 #prev-button, #next-button {
