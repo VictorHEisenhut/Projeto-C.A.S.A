@@ -132,7 +132,7 @@ header select{
 }
 
 #div_form_Es{
-    margin: 0 100%;
+    margin: 0 75%;
 
     display: flex;
     flex-wrap: wrap;
@@ -193,6 +193,90 @@ header select{
 
 
 
+#body_RS{
+    background-color: #141314;
+    color: #fcfcfc;
+    overflow: hidden;
+}
+
+#div_RS{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 0 0 0;
+}
+
+#div_form_RS{
+    margin: 0 75%;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+.div_form_RS_flex_links{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#img_RS_div{
+    max-width: 54%;
+}
+
+#titulo_RS{
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#img_RS{
+    margin: 0;
+    width: 54%;
+}
+
+#label_RS{
+    font-size: 1rem;
+}
+
+.div_form_RS_flex{
+    margin: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn_RS{
+    padding: 5px 5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.input_RS{
+    padding: 0.5rem 5rem 0.5rem 1rem;
+    border: solid #fcfcfc 2px;
+    background-color: #141314;
+    text-align: start;
+
+    color: #fcfcfc;
+}
+
+
+
+
+
+/*
 .fundo{
     background-color: #f6f6f6;
 }
@@ -279,6 +363,88 @@ header select{
 .input_radio{
     color: #f6f6f6;  
 }
+*/
+
+.body_cad{
+    background-color: #181822;
+    color: #f6f6f6;
+}
+
+#fieldset_cad{
+    max-width: 100%;
+}
+.div_inputs_cad{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 0 0.5rem 2rem;
+    max-width: 60%;
+}
+
+.div_inputs_cad h5{
+    font-size: 0.75rem;
+    font-weight: bolder;
+}
+
+.label_inputs_cad{
+    font-size: 1rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #f6f6f6;
+    text-transform: uppercase;
+}
+
+.div_inputs_cad input{
+    padding: 0.5rem 50% 0.5rem 1rem;
+    background: transparent;
+    border: #f6f6f6 1px solid;
+    color: #f6f6f6;
+}
+
+.div_inputs_cad select{
+    padding: 0.5rem 50% 0.5rem 1rem;
+    background: transparent;
+    border: #f6f6f6 1px solid;
+    border-radius: 0;
+    color: #f6f6f6;
+}
+
+.texts_div_cad{
+    margin-left: 1rem;
+}   
+
+.section_div_cad{
+    margin-top: 5%;
+    padding-bottom: 3%;
+    border-bottom: 1px solid #fcfcfc;
+}
+.select_cad{
+    border-radius: none;
+}
+
+.select_cad option{
+    color: #181822;
+}
+.checkbox_div div{
+    margin-right: 5%;
+}
+.checkbox_div input{
+    margin-right: 0.5rem;
+}
+.checkbox_div label{
+    margin-right: 0.5rem;
+}
+#img_cad{
+    width: 60%;
+}
+
+.main_cad{
+    overflow: hidden;
+}
+
+
+
+
 
 
 
@@ -413,7 +579,7 @@ header select{
     gap: 1rem;
   }
   
-.container-images {
+.container-imagens {
     position: relative;
     display: flex;
     align-items: center;

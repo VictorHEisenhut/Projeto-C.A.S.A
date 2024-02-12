@@ -7,32 +7,30 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <title>Resetar senha</title>
 </head>
-<body id="body_login">
-    <main id="main_login">
-            <img id="img_login" src="../imagens/Pessoas_Login.png">
-        <div id="div_login">
-            
-            <h1 id="titulo_login">Reset Senha</h1>
-
-            <div id="div_form_login">
-
-                <div class="div_form_login_flex">
-                    <input type="password" id="senha" class="input_login" name="senha" placeholder="Senha">
+<body id="body_RS">
+    <main style="display: flex;" class="d-flex justify-content-start" >
+        <img id="img_RS" src="../imagens/Pessoas_Login.png">
+        <div id="div_RS">
+            <h1 id="titulo_RS">Reset Senha</h1>
+            <div id="div_form_RS">
+                
+                <div class="div_form_RS_flex">
+                    <input type="password" id="senha" class="input_RS" name="senha" placeholder="Senha">
                 </div>
                 
-                <div class="div_form_login_flex">
-                    <input type="password" id="confirmSenha" class="input_login" name="confirmSenha" placeholder="Confirmar senha">
+                <div class="div_form_RS_flex">
+                    <input type="password" id="confirmSenha" class="input_RS" name="confirmSenha" placeholder="Confirmar senha">
                 </div>
-               
-                <div class="div_form_login_flex">
-                    <div class="text-center"><button id="btn_login" onclick="resetSenha()">Alterar senha</button></div>
-                    <br><br><a href="index.html" class="link" style="font-size: 1.15rem; margin: 0 30%;">Voltar ao Início</a>
+                
+                <div class="div_form_RS_flex">
+                    <div class="text-center"><button id="btn_RS" onclick="resetSenha()">Alterar senha</button></div>
+                    <div class="div_form_RS_flex">
+                        <a href="index.html" class="link" style="font-size: 1.15rem;">Voltar ao Início</a> 
+                    </div>
                 </div>
             </form>
             </div>
-
         </div>
-
     </main>
 	<script src="/js/resetSenha.js"></script>
 </body>
