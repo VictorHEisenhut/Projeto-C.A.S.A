@@ -13,9 +13,16 @@
     <h2 id="headerTitle">Lorem</h2> 
     <div>
       <a href="index.html" id="homeLink">Home</a>
-      <a id="documentsLink" href="DicasEdocumentos.html">Documentos</a>
-      <a id="placesLink" href="enderecos.html">Lugares</a>
-      <a id="languageLink" href="#">Idioma</a>
+          <a id="documentsLink" href="DicasEdocumentos.html">Documentos</a>
+          <a id="languageLink" href="#">Idioma</a>
+          <div class="dropdown">
+            <button class="dropbtn">Endereços</button>
+            <div class="dropdown-content">
+                <a class="enderecosDropDown" href="abrigos.html">Abrigos</a>
+                <a class="enderecosDropDown" href="consulados.html">Consulados</a>
+                <a class="enderecosDropDown" href="postosDeSaude.html">Postos de saúde</a>
+            </div>
+          </div>
       <a id="donateLink" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Doe</a>
       <button id="login"><a href="login.html">Login</a></button>
       <select onchange="changeLanguage(this.value)">
