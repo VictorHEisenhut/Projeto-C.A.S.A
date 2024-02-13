@@ -1,5 +1,5 @@
 selectPosto = document.getElementById("postos")
-fetch('http://localhost:5145/api/Abrigos',{
+fetch('http://localhost:5145/api/PostoDeSaude',{
                 headers: { 
                            'Content-Type': 'application/json'
                           }
