@@ -23,13 +23,18 @@
             <div id="div_form_login">
 
                 <div class="div_form_login_flex">
-                    <input type="email" id="email" class="input_login" name="email" placeholder="Email">
+                    <input type="email" id="email" class="input_login " name="email" placeholder="Email">
                 </div>
                 
                 <div class="div_form_login_flex">
-                    <input type="password" id="senha" class="input_login" name="senha" placeholder="Senha">
+                    <div class="input-group">
+                        <input type="password"  id="senha" class="input_login form-control" name="senha" placeholder="Senha">
+                        <button type="button" class="btn btn-outline-light" id="tooglePass" onclick="togglePass()">MOSTRAR</button>
+                    </div>
                     <br><a href="/html/esqueciSenha.html" class="link-light">Esqueci minha senha</a>
                 </div>
+
+                
                
                 <div class="div_form_login_flex">
                     <div class="justify-content-center"><button id="btn_login" onclick="logar()">Logar</button></div>

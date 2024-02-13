@@ -48,3 +48,19 @@ async function logar(){
         window.location.href = "./perfil.html"
       }
   }
+
+
+function togglePass() {
+
+  const input = document.getElementById("senha");
+  const button = document.getElementById("togglePass");
+
+  if (input.type == "password") {
+    input.type = "text";
+    button.textContent = "MOSTRAR";
+  } else {
+    input.type = "password";
+    button.textContent = "ESCONDER";
+  }
+}
+
