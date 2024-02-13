@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ProjetoRefugiados.Models;
 using ProjetoRefugiadosApi.Dtos.Documento;
+using ProjetoRefugiadosApi.Dtos.Refugiado;
 
 namespace ProjetoRefugiadosApi.Profiles
 {
@@ -10,6 +11,9 @@ namespace ProjetoRefugiadosApi.Profiles
         {
             CreateMap<Documento, CreateDocumentoDto>();
             CreateMap<CreateDocumentoDto, Documento>();
+
+            CreateMap<UpdateDocumentoDto, Documento>();
+            CreateMap<Documento, UpdateDocumentoDto>();
         }
     }
 }

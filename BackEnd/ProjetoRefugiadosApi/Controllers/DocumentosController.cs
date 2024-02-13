@@ -49,8 +49,12 @@ namespace ProjetoRefugiadosApi.Controllers
         // PUT: api/Documentos/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutDocumento(int id, Documento documento)
+        public async Task<IActionResult> PutDocumento(int id, UpdateDocumentoDto documentoDto)
         {
+            var documento = await _context.Documentos.FirstOrDefaultAsync(d => d.Id == id);
+
+            documento = _mapper.Map(documentoDto, documento);
+
             if (id != documento.Id)
             {
                 return BadRequest();

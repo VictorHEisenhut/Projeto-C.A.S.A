@@ -76,11 +76,11 @@ namespace ProjetoRefugiadosApi.Controllers
 
         // PUT: api/Refugiados/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutRefugiado(int id, Refugiado refugiado)
+        public async Task<IActionResult> PutRefugiado(int id, UpdateRefugiadoDto refugiadoDto)
         {
-            refugiado.Pais = await _context.Paises.FirstOrDefaultAsync(p => p.Id == refugiado.PaisId);
-            refugiado.Documento = await _context.Documentos.FirstOrDefaultAsync(d => d.Id == refugiado.DocumentoId);
-            refugiado.Endereco = await _context.Enderecos.FirstOrDefaultAsync(e => e.Id == refugiado.EnderecoId);
+            Refugiado refugiado = await _context.Refugiados.FirstOrDefaultAsync(r => r.Id == id);
+
+            refugiado = _mapper.Map(refugiadoDto, refugiado);
 
             if (id != refugiado.Id)
             {

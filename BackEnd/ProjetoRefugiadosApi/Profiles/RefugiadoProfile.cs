@@ -10,6 +10,9 @@ namespace ProjetoRefugiadosApi.Profiles
         {
             CreateMap<Refugiado, CreateRefugiadoDto>();
             CreateMap<CreateRefugiadoDto, Refugiado>();
+
+            CreateMap<UpdateRefugiadoDto, Refugiado>();
+            CreateMap<Refugiado, UpdateRefugiadoDto>();
         }
     }
 }
