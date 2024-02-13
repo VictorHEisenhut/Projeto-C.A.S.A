@@ -768,3 +768,21 @@ header select{
     color: white;
     opacity: 1;
 }
+
+#postos{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+}
+
+.list-group-item{
+    width: 100%;
+}
+
+.card_postos{
+    width: 30rem;
+    height: 25rem;
+    margin: 1rem;
+}
