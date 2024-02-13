@@ -22,6 +22,7 @@ let valores = fetch(`http://localhost:5145/api/Refugiados/${idRefugiado.nameid}`
 .then(result => {
 return result;
 });
+
 const result = Promise.resolve(valores);
         result.then(value => {
             document.getElementById("nome").value = value.nome
@@ -53,6 +54,257 @@ const result = Promise.resolve(valores);
             document.getElementById("rua").value = value.endereco.rua
             document.getElementById("numero").value = value.endereco.numero
         })
+
+        function dadosEndereco() {
+          let cep = document.getElementById('cep').value
+          fetch(`https://viacep.com.br/ws/${cep}/json/`)
+              .then((dados) => dados.json())
+              .then((response) => {
+                  document.getElementById('rua').value = response.logradouro
+                  if(response.logradouro == ""){
+                    document.getElementById("rua").removeAttribute("disabled");
+                  }
+                  else{
+                    document.getElementById("rua").setAttribute("disabled","");
+                  }
+                  document.getElementById('bairro').value = response.bairro
+                  if(response.bairro == ""){
+                    document.getElementById("bairro").removeAttribute("disabled");
+                  }
+                  else{
+                    document.getElementById("bairro").setAttribute("disabled","");
+                  }
+                  document.getElementById('cidade').value = response.localidade
+                  document.getElementById("estado").value = response.uf
+              }
+              )
+              .catch((erro) => console.log(erro))
+      }
+
+var senhaEditar = document.getElementById('senhaEditar');
+senhaEditar.style.display = 'none';
+var erroAoEditar = document.getElementById('erroAoEditar');
+erroAoEditar.style.display = 'none';
+var voltarDepoideEditar = document.getElementById('voltarDepoideEditar');
+voltarDepoideEditar.style.display = 'none';
+function senhaParaEditar(){
+  senhaEditar.style.display = 'block';
+}
+function confirmaEditar(){
+  senhaEditar.style.display = 'none';
+  document.getElementById("nome").removeAttribute("disabled")
+  document.getElementById("sobrenome").removeAttribute("disabled")
+  document.getElementById("dataNascimento").removeAttribute("disabled")
+  document.getElementById("telefone").removeAttribute("disabled")
+  document.getElementById("estadoCivil").removeAttribute("disabled")
+  document.getElementById("estadoCivil").setAttribute("hidden","")
+  document.getElementById("estadoCivilEditar").removeAttribute("hidden")
+  document.getElementById("genero").removeAttribute("disabled")
+  document.getElementById("genero").setAttribute("hidden","")
+  document.getElementById("generoEditar").removeAttribute("hidden")
+  document.getElementById("escolaridade").removeAttribute("disabled")
+  document.getElementById("escolaridade").setAttribute("hidden","")
+  document.getElementById("escolaridadeEditar").removeAttribute("hidden")
+  document.getElementById("cep").removeAttribute("disabled")
+  document.getElementById("numero").removeAttribute("disabled")
+
+  document.getElementById("btnConfirmar").removeAttribute("hidden")
+  document.getElementById("btnIniciarEditar").setAttribute("hidden","")
+}
+function voltar(){
+  senhaEditar.style.display = 'none';
+  erroAoEditar.style.display = 'none';
+  voltarDepoideEditar.style.display = 'none';
+}
+
+
+async function editar()
+    {
+        let nome = document.getElementById("nome").value
+        const cornome = document.getElementById("nome")
+        if(nome == ""){
+          cornome.style.borderColor = "red"
+        }
+        else{
+          cornome.style.borderColor = "black"
+        }
+        let sobrenome = document.getElementById("sobrenome").value
+        const corsobrenome = document.getElementById("sobrenome")
+        if(sobrenome == ""){
+          corsobrenome.style.borderColor = "red"
+        }
+        else{
+          corsobrenome.style.borderColor = "black"
+        }
+        let email = document.getElementById("email").value
+        const coremail = document.getElementById("email")
+        if(email == "" ){
+          coremail.style.borderColor = "red"
+        }
+        else{
+          coremail.style.borderColor = "black"
+        }
+        let dataN = document.getElementById("dataNascimento").value
+        const cordataN = document.getElementById("dataNascimento")
+        if(dataN == ""){
+          cordataN.style.borderColor = "red"
+        }
+        else{
+          cordataN.style.borderColor = "black"
+        }
+        let fone = document.getElementById("telefone").value
+        const corfone = document.getElementById("telefone")
+        if(fone == "" || fone.length != 11){
+          corfone.style.borderColor = "red"
+        }
+        else{
+          corfone.style.borderColor = "black"
+        }
+
+        let estadoCivil = document.getElementById("estadoCivilSelect")
+        const corestadoCivil = document.getElementById("estadoCivilSelect")
+        estadoCivil.addEventListener('change', function(){})
+        var auxEC = parseInt(estadoCivil.value);
+        if(estadoCivil.value == "Selecione seu estado civíl"){
+          corestadoCivil.style.border = "solid red"
+        }
+        else{
+          corestadoCivil.style = "default"
+        }
+        let genero = document.getElementById("generoSelect")
+        const corgenero = document.getElementById("generoSelect")
+        genero.addEventListener('change', function(){})
+        var auxG = parseInt(genero.value);
+        if(genero.value == "Selecione seu gênero"){
+          corgenero.style.border = "solid red"
+        }
+        else{
+          corgenero.style = "default"
+        }
+        let escolaridade = document.getElementById("escolaridadeSelect")
+        const corescolaridade = document.getElementById("escolaridadeSelect")
+        escolaridade.addEventListener('change', function(){})
+        var auxE = parseInt(escolaridade.value);
+        if(escolaridade.value == "Selecione sua escolaridade"){
+          corescolaridade.style.border = "solid red"
+        }
+        else{
+          corescolaridade.style = "default"
+        }
+
+        let cep = document.getElementById('cep').value
+        const corcep = document.getElementById("cep")
+        if(cep == ""){
+          cep = null
+          corcep.style.borderColor = "red"
+        }
+        else{
+          corcep.style.borderColor = "black"
+        }
+
+        let estado = document.getElementById("estado").value
+        const corestado = document.getElementById("estado")
+        if(estado == ""){
+          estado = null
+          corestado.style.borderColor = "red"
+        }
+        else{
+          corestado.style.borderColor = "black"
+        }
+
+        let cidade = document.getElementById("cidade").value
+        const corcidade = document.getElementById("cidade")
+        if(cidade == ""){
+          cidade = null
+          corcidade.style.borderColor = "red"
+        }
+        else{
+          corcidade.style.borderColor = "black"
+        }
+
+        let bairro = document.getElementById("bairro").value
+        const corbairro = document.getElementById("bairro")
+        if(bairro == ""){
+          bairro = null
+          corbairro.style.borderColor = "red"
+        }
+        else{
+          corbairro.style.borderColor = "black"
+        }
+
+        let rua = document.getElementById("rua").value
+        const corrua = document.getElementById("rua")
+        if(rua == ""){
+          rua = null
+          corrua.style.borderColor = "red"
+        }
+        else{
+          corrua.style.borderColor = "black"
+        }
+
+        let numero = document.getElementById("numero").value
+        const cornumero = document.getElementById("numero")
+        var auxN = parseInt(numero);
+        if(numero <= 0 ){
+          auxN = null
+          cornumero.style.borderColor = "red"
+        }
+        else{
+          cornumero.style.borderColor = "black"
+        }
+
+        let obj = 
+        {
+            nome: nome,
+            sobrenome: sobrenome,
+            dataNascimento: dataN,
+            telefone: fone,
+            estadoCivil: auxEC,
+            genero: auxG,
+            escolaridade: auxE,
+            endereco: 
+            {
+              estado: estado,
+              cidade: cidade,
+              bairro: bairro,
+              rua: rua,
+              numero: auxN,
+              cep:cep
+            }
+        }
+        console.log(obj)
+        console.log(idRefugiado.nameid)
+        if(numero <= 0 ||rua == ""||bairro == ""||cidade == ""||estado == ""||cep == ""||escolaridade.value == "Selecione sua escolaridade"||genero.value == "Selecione seu gênero"||estadoCivil.value == "Selecione seu estado civíl"||fone == "" || fone.length != 11||dataN == ""||email == ""||nome == ""||sobrenome == ""){
+          erroAoEditar.style.display = 'block';
+        }
+        else{
+          await fetch(`http://localhost:5145/api/Refugiados/${idRefugiado.nameid}`,
+          {
+              method: "PUT",
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify(obj)
+          })
+              document.getElementById("nome").setAttribute("disabled","")
+              document.getElementById("sobrenome").setAttribute("disabled","")
+              document.getElementById("dataNascimento").setAttribute("disabled","")
+              document.getElementById("telefone").setAttribute("disabled","")
+              document.getElementById("estadoCivil").setAttribute("disabled","")
+              document.getElementById("estadoCivil").removeAttribute("hidden")
+              document.getElementById("estadoCivilEditar").setAttribute("hidden","")
+              document.getElementById("genero").setAttribute("disabled","")
+              document.getElementById("genero").removeAttribute("hidden")
+              document.getElementById("generoEditar").setAttribute("hidden","")
+              document.getElementById("escolaridade").setAttribute("disabled","")
+              document.getElementById("escolaridade").removeAttribute("hidden")
+              document.getElementById("escolaridadeEditar").setAttribute("hidden","")
+              document.getElementById("cep").setAttribute("disabled","")
+              document.getElementById("numero").setAttribute("disabled","")
+
+              document.getElementById("btnIniciarEditar").removeAttribute("hidden")
+              document.getElementById("btnConfirmar").setAttribute("hidden","")
+              voltarDepoideEditar.style.display = 'block';
+        }
+        }
 
 const translations = {
     pt: {

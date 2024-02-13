@@ -77,11 +77,18 @@
         <div class="line_inputs">
           <div class="div_inputs_perfil">
             <label for="dataNascimento" class="label_inputs_perfil" id="nascLabel">Data de nascimento</label>
-            <input disabled id="dataNascimento" type="text">
+            <input disabled id="dataNascimento" type="date">
           </div>
           <div class="div_inputs_perfil">
             <label for="genero" class="label_inputs_perfil" id="generoLabel">Gênero</label>
             <input disabled id="genero" type="text">
+            <div hidden class="div_inputs_perfil" id="generoEditar">
+              <select id="generoSelect">
+                <option>Selecione seu gênero</option>
+                <option value= 1 id="masculinoLabel">Masculino</option>
+                <option value= 2 id="femininoLabel">Feminino</option>
+              </select>
+          </div>
           </div>
         </div>
 
@@ -89,11 +96,32 @@
           <div class="div_inputs_perfil">
             <label for="estadoCivil" class="label_inputs_perfil" id="estadoCivilLabel">Estado Civíl</label>
             <input disabled id="estadoCivil" type="text">
+            <div hidden class="div_inputs_perfil" id="estadoCivilEditar">
+              <select id="estadoCivilSelect">
+                  <option>Selecione seu estado civíl</option>
+                  <option value= 1  id="solteiroLabel">Solteiro/a</option>
+                  <option value= 2  id="casadoLabel">Casado/a</option>
+                  <option value= 3  id="separadoLabel">Separado/a</option>
+                  <option value= 4  id="divorciadoLabel">Divorciado/a</option>
+                  <option value= 5  id="viuvoLabel">Viúvo/a</option>
+              </select>
+          </div>
           </div>
           
           <div class="div_inputs_perfil">
             <label for="escolaridade" class="label_inputs_perfil" id="escolaridadeLabel">Escolaridade</label>
             <input disabled id="escolaridade" type="text">
+            <div hidden class="div_inputs_perfil" id="escolaridadeEditar">
+              <select id="escolaridadeSelect">
+                <option>Selecione sua escolaridade</option>
+                <option value= 1 id="ensinoFCLabel">Ensino fundamental completo</option>
+                <option value= 2 id="ensinoFILabel">Ensino fundamental incompleto</option>
+                <option value= 3 id="ensinoMCLabel">Ensino médio completo</option>
+                <option value= 4 id="ensinoMILabel">Ensino médio incompleto</option>
+                <option value= 5 id="ensinoSCLabel">Ensino superior completo</option>
+                <option value= 6 id="ensinoSILabel">Ensino superior incompleto</option>
+              </select>
+          </div>
           </div>
         </div>
         <div class="line_inputs">
@@ -115,7 +143,7 @@
         <div class="line_inputs">
           <div class="div_inputs_perfil">
             <label for="cep" class="label_inputs_perfil">CEP</label>
-            <input disabled id="cep" type="text">
+            <input disabled id="cep" type="text" onblur="dadosEndereco()">
           </div>
           <div class="div_inputs_perfil">
             <label for="estado" class="label_inputs_perfil">Estado</label>
@@ -147,14 +175,39 @@
       </section>
       
       <div class="line_btn">
-        <div class="div_btn_perfil">
-          <button  id="btn_alterar" class="btn_perfil">Modificar Conta</button>
+        <div class="div_btn_perfil" id="btnIniciarEditar">
+          <button onclick="senhaParaEditar()"  id="btn_alterar" class="btn_perfil">Modificar Conta</button>
+        </div>
+        <div hidden class="div_btn_perfil" id="btnConfirmar">
+          <button onclick="editar()"  id="btn_alterar" class="btn_perfil">Confirmar alterações</button>
         </div>
         <div class="div_btn_perfil">
           <button id="btn_deletar" class="btn_perfil">Deletar Conta</button>
         </div>
       </div>
       
+      <div class="password-screen" id="senhaEditar">
+        <div class="password-screen">
+          <p>Você tem certeza que deseja editar suas informações?</p>
+          <button id="btn_alterar" onclick="confirmaEditar()">Sim</button>
+          <button id="btn_deletar" onclick="voltar()">Não</button>
+        </div>
+    </div>
+    
+
+    <div class="password-screen" id="erroAoEditar">
+      <div class="password-screen">
+        <p>Confira se preencheu todas as informações.</p>
+        <button id="btn_voltar" onclick="voltar()">Voltar</button>
+      </div>
+  </div>
+
+  <div class="password-screen" id="voltarDepoideEditar">
+    <div class="password-screen">
+      <p>Suas informações foram alteradas com sucesso!</p>
+      <button id="btn_voltar" onclick="voltar()">Voltar</button>
+    </div>
+</div>
       
 </body>
 <script src="/js/perfil.js"></script>
