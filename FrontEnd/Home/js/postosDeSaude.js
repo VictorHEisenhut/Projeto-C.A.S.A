@@ -8,7 +8,7 @@ fetch('http://localhost:5145/api/PostoDeSaude',{
         .then(post => {
             post.forEach(element => {
                 
-                postos = `<div class="card border-secondary" style="width: 18rem;">
+                postos = `<div class="card border-secondary card_postos">
                 <div class="card-body">
                 <h5 class="card-title">Postos de saúde</h5>
                 <p class="card-text">${element.nome}</p>
