@@ -233,7 +233,7 @@ async function cadastrar()
         let numero = document.getElementById("numero").value
         const cornumero = document.getElementById("numero")
         var auxN = parseInt(numero);
-        if(numero <= 0 ){
+        if(numero < 0 ){
           auxN = null
           cornumero.style.borderColor = "red"
         }

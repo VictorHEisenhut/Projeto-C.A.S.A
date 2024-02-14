@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/styleP.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Cadastro Consulados</title>
+</head>
+<body class="body_cad">
+    <section class="section_div_cad" id="enderecosTabela" style="border: none;">
+        <div class="texts_div_cad">
+            <div>
+                <h2>Endereço</h2>
+            </div>
+        </div>
+        <div class="line_inputs">
+            <div class="div_inputs_cad">
+                <label for="cep" class="label_inputs_cad" id="cepLabel">CEP do consulado</label>
+                <input type="text" id="cep" maxlength="9" minlength="9" placeholder="00000-000" onblur="dadosEndereco()">
+                <h5>CEP deve conter hífen</h5>
+            </div>
+            <div class="div_inputs_cad">
+                <label for="estado" class="label_inputs_cad" id="estadoLabel">Estado do consulado</label>
+                <input type="text" id="estado">
+            </div>
+            </div>
+            <div class="line_inputs">
+                <div class="div_inputs_cad">
+                    <label for="cidade" class="label_inputs_cad" id="cidadeLabel">Cidade do consulado</label>  
+                    <input type="text" id="cidade">
+                </div>
+                <div class="div_inputs_cad">
+                    <label for="bairro" class="label_inputs_cad" id="bairroLabel">Bairro do consulado</label>
+                    <input type="text" id="bairro">
+                </div>
+            </div>
+            <div class="line_inputs">
+                <div class="div_inputs_cad">
+                    <label for="rua" class="label_inputs_cad" id="ruaLabel">Rua do consulado</label>
+                    <input type="text" id="rua">
+                </div>
+                <div class="div_inputs_cad">
+                    <label for="numero" class="label_inputs_cad" id="numeroCasaLabel">Número do consulado</label>
+                    <input type="number" id="numero">
+                </div>
+            </div>
+        </section>
+
+        <section class="section_div_cad" id="enderecosTabela" style="border: none;">
+            <div class="texts_div_cad">
+                <div>
+                    <h2>Informações do consulado</h2>
+                </div>
+            </div>
+            <div class="line_inputs">
+                <div class="div_inputs_cad">
+                    <label for="nome" class="label_inputs_cad" id="nomeLabel">Nome do consulado</label>
+                    <input type="text" id="nome">
+                </div>
+                <div class="div_inputs_cad">
+                    <label for="telefone" class="label_inputs_cad" id="telefoneLabel">Número/s de telefone do consulado</label>
+                    <input type="text" id="telefone">
+                </div>
+                </div>
+                <div class="line_inputs">
+                    <div class="div_inputs_cad">
+                        <label for="email" class="label_inputs_cad" id="emailLabel">Email do consulado</label>  
+                        <input type="email" id="email">
+                    </div>
+                </div>
+            </section>
+            
+            <div class="text-center"><button onclick="cadastrar()">Cadastrar</button></div>
+            <br>
+</body>
+<script src="/js/cadastroConsulados.js"></script>
+</html>
