@@ -38,40 +38,20 @@ fetch('http://localhost:5145/api/Paises',{
               )
               .catch((erro) => console.log(erro))
       }
-      function possuiDocumento(){
-        document.getElementById("documentosTabela").removeAttribute("hidden");
-      }
-      function naopossuiDocumento(){
-        document.getElementById("documentosTabela").setAttribute("hidden","");
-        let cpf = document.getElementById("cpf");
-        cpf.value = "";
-        let crnm = document.getElementById("crnm");
-        crnm.value = "";
-        let rne = document.getElementById("rne");
-        rne.value = "";
-        let rg = document.getElementById("rg");
-        rg.value = "";
-        let cnh = document.getElementById("cnh");
-        cnh.value = "";
-      }
 
-      function possuiEndereco(){
-        document.getElementById("enderecosTabela").removeAttribute("hidden");
-      }
-      function naopossuiEndereco(){
-        document.getElementById("enderecosTabela").setAttribute("hidden","");
-        let cep = document.getElementById("cep");
-        cep.value = "";
-        let estado = document.getElementById("estado");
-        estado.value = "";
-        let cidade = document.getElementById("cidade");
-        cidade.value = "";
-        let bairro = document.getElementById("bairro");
-        bairro.value = "";
-        let rua = document.getElementById("rua");
-        rua.value = "";
-        let numero = document.getElementById("numero");
-        numero.value = "";
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
       }
 
 async function cadastrar()
@@ -82,7 +62,7 @@ async function cadastrar()
           cornome.style.borderColor = "red"
         }
         else{
-          cornome.style.borderColor = "black"
+          cornome.style.borderColor = "#f6f6f6"
         }
         let sobrenome = document.getElementById("sobrenome").value
         const corsobrenome = document.getElementById("sobrenome")
@@ -90,7 +70,7 @@ async function cadastrar()
           corsobrenome.style.borderColor = "red"
         }
         else{
-          corsobrenome.style.borderColor = "black"
+          corsobrenome.style.borderColor = "#f6f6f6"
         }
         let email = document.getElementById("email").value
         const coremail = document.getElementById("email")
@@ -98,7 +78,7 @@ async function cadastrar()
           coremail.style.borderColor = "red"
         }
         else{
-          coremail.style.borderColor = "black"
+          coremail.style.borderColor = "#f6f6f6"
         }
         let senha = document.getElementById("senha").value
         let senhaConfirma = document.getElementById("senhaConfirma").value
@@ -117,8 +97,8 @@ async function cadastrar()
           corsenhaC.style.borderColor = "red"
         }
         else{
-          corsenha.style.borderColor = "black"
-          corsenhaC.style.borderColor = "black"
+          corsenha.style.borderColor = "#f6f6f6"
+          corsenhaC.style.borderColor = "#f6f6f6"
         }
         let dataN = document.getElementById("dataN").value
         const cordataN = document.getElementById("dataN")
@@ -126,7 +106,7 @@ async function cadastrar()
           cordataN.style.borderColor = "red"
         }
         else{
-          cordataN.style.borderColor = "black"
+          cordataN.style.borderColor = "#f6f6f6"
         }
         let fone = document.getElementById("fone").value
         const corfone = document.getElementById("fone")
@@ -134,7 +114,7 @@ async function cadastrar()
           corfone.style.borderColor = "red"
         }
         else{
-          corfone.style.borderColor = "black"
+          corfone.style.borderColor = "#f6f6f6"
         }
 
         let estadoCivil = document.getElementById("estadoCivil")
@@ -207,7 +187,7 @@ async function cadastrar()
           corcep.style.borderColor = "red"
         }
         else{
-          corcep.style.borderColor = "black"
+          corcep.style.borderColor = "#f6f6f6"
         }
 
         let estado = document.getElementById("estado").value
@@ -217,7 +197,7 @@ async function cadastrar()
           corestado.style.borderColor = "red"
         }
         else{
-          corestado.style.borderColor = "black"
+          corestado.style.borderColor = "#f6f6f6"
         }
 
         let cidade = document.getElementById("cidade").value
@@ -227,7 +207,7 @@ async function cadastrar()
           corcidade.style.borderColor = "red"
         }
         else{
-          corcidade.style.borderColor = "black"
+          corcidade.style.borderColor = "#f6f6f6"
         }
 
         let bairro = document.getElementById("bairro").value
@@ -237,7 +217,7 @@ async function cadastrar()
           corbairro.style.borderColor = "red"
         }
         else{
-          corbairro.style.borderColor = "black"
+          corbairro.style.borderColor = "#f6f6f6"
         }
 
         let rua = document.getElementById("rua").value
@@ -247,7 +227,7 @@ async function cadastrar()
           corrua.style.borderColor = "red"
         }
         else{
-          corrua.style.borderColor = "black"
+          corrua.style.borderColor = "#f6f6f6"
         }
 
         let numero = document.getElementById("numero").value
@@ -258,7 +238,7 @@ async function cadastrar()
           cornumero.style.borderColor = "red"
         }
         else{
-          cornumero.style.borderColor = "black"
+          cornumero.style.borderColor = "#f6f6f6"
         }
 
         let obj = 

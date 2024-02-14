@@ -322,12 +322,12 @@ header select{
     border-radius: 0;
     color: #141314;
 }
-
+*/
 .linha{
-    border-bottom: #141314 1.5px solid;
+    border-bottom: white 1.5px solid;
     padding: 0 50%;
 }
-
+/*
 .texts_div_cad h2{
     color: rgb(117, 205, 255, 60%);
 }
@@ -416,7 +416,6 @@ header select{
 .section_div_cad{
     margin-top: 5%;
     padding-bottom: 3%;
-    border-bottom: 1px solid #fcfcfc;
 }
 .select_cad{
     border-radius: none;

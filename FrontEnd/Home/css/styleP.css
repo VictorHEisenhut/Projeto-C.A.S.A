@@ -132,6 +132,42 @@
     height: 50%;
     z-index: 9999;
 }
+
+.accordion {
+  background-color: #181822;
+  color: #f6f6f6;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #262630;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: #181822;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion:after {
+  content: '\02795';
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796";
+}
   
   @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}
