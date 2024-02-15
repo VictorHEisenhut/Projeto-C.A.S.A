@@ -40,7 +40,7 @@ window.addEventListener('load', function() {
   });   
 
   // Exiba o conteúdo do site
-  selectAbrigo.style.display = 'block';
+  selectAbrigo.style.display = 'flex';
 });
 
         function linkEndereco(rua,numero,bairro,cidade,estado,cep){

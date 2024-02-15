@@ -1,4 +1,9 @@
 selectPosto = document.getElementById("postos")
+
+window.addEventListener('load', function() {
+  // Oculte a loading screen
+  var loadingScreen = document.getElementById('loadingScreen');
+
 fetch('http://localhost:5145/api/PostoDeSaude',{
                 headers: { 
                            'Content-Type': 'application/json'
@@ -29,9 +34,13 @@ fetch('http://localhost:5145/api/PostoDeSaude',{
                 </svg> Link endereço</button>
               </div>
               </div>`
+              loadingScreen.style.display = 'none';
               selectPosto.innerHTML += postos
             });
         });   
+
+  selectPosto.style.display = 'flex';
+});
 
         function linkEndereco(rua,numero,bairro,cidade,estado,cep){
             window.open(`https://www.google.com.br/maps/place/R.+${rua},+${numero}+${bairro},+${cidade}+${estado},+${cep}`,'_blank')
