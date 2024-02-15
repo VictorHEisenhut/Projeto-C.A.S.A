@@ -74,6 +74,23 @@ namespace ProjetoRefugiadosApi.Controllers
             return refugiado;
         }
 
+        
+        [HttpGet("Email/{email}")]
+        public async Task<ActionResult<Refugiado>> GetRefugiadoByEmail(string email)
+        {
+            var refugiado = await _context.Refugiados.FirstOrDefaultAsync(r => r.Email == email);
+            refugiado.Pais = await _context.Paises.FirstOrDefaultAsync(p => p.Id == refugiado.PaisId);
+            refugiado.Documento = await _context.Documentos.FirstOrDefaultAsync(d => d.Id == refugiado.DocumentoId);
+            refugiado.Endereco = await _context.Enderecos.FirstOrDefaultAsync(e => e.Id == refugiado.EnderecoId);
+
+            if (refugiado == null)
+            {
+                return NotFound();
+            }
+
+            return refugiado;
+        }
+
         // PUT: api/Refugiados/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutRefugiado(int id, UpdateRefugiadoDto refugiadoDto)

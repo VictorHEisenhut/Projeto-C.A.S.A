@@ -54,7 +54,8 @@ fetch('http://localhost:5145/api/Paises',{
         });
       }
 
-async function cadastrar()
+
+      async function cadastrar()
     {
         let nome = document.getElementById("nome").value
         const cornome = document.getElementById("nome")
@@ -273,12 +274,22 @@ async function cadastrar()
             }
         }
         console.log(obj)
-        await fetch('http://localhost:5145/api/Refugiados',
-        {
-            method: "POST",
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(obj)
-        })
+        try {
+          const response = await fetch('http://localhost:5145/api/Refugiados', {
+              method: "POST",
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify(obj)
+          });
+  
+          if (await response.ok) {
+              showModal();
+              console.log("Cadastro bem-sucedido.");
+            } else {
+              console.log("Erro ao cadastrar:", await response.text());
+          }
+      } catch (error) {
+          console.error("Erro ao cadastrar:", error);
+      }
         
         //let login ={
         //  email:email,
@@ -295,6 +306,37 @@ async function cadastrar()
         //})
         //window.location.href = "./perfil.html"       
         }
+
+        async function showModal() {
+          var modalObj = document.getElementById("successModal");
+          var bg = document.getElementById("modalBackground");
+          var close = document.getElementById("modalClose");
+          var btnClose = document.getElementById("btnModalClose");
+
+              modalObj.style.display = "block"
+
+              bg.classList.add("modal-backdrop")
+              bg.classList.add("fade")
+              bg.classList.add("show")
+
+          btnClose.onclick = function(){
+            modalObj.style.display = "none"
+            bg.classList.remove("modal-backdrop")
+            bg.classList.remove("fade")
+            bg.classList.remove("show")
+            window.location.href = "./login.html"
+          }
+
+          close.onclick = function(){
+            modalObj.style.display = "none"
+            bg.classList.remove("modal-backdrop")
+            bg.classList.remove("fade")
+            bg.classList.remove("show")
+            window.location.href = "./login.html"
+          }
+
+        }
+
     
     const translations = {
         pt: {
