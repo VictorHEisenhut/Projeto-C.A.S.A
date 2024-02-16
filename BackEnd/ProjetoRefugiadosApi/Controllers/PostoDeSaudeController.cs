@@ -44,6 +44,17 @@ namespace ProjetoRefugiadosApi.Controllers
             return await _context.PostosDeSaude.ToListAsync();
         }
 
+        [HttpGet("Pages")]
+        public async Task<ActionResult<IEnumerable<PostoDeSaude>>> GetPagesPostos([FromQuery] int pageNumber, [FromQuery] int pageSize)
+        {
+            List<PostoDeSaude> lista = await _context.PostosDeSaude.AsNoTracking().Skip(pageNumber * pageSize).Take(pageSize).ToListAsync();
+            foreach (PostoDeSaude posto in lista)
+            {
+                posto.Endereco = await _context.Enderecos.FirstOrDefaultAsync(c => c.Id == posto.EnderecoId);
+            }
+            return lista;
+        }
+
         // GET: api/PostoDeSaude/5
         [HttpGet("{id}")]
         public async Task<ActionResult<PostoDeSaude>> GetPostoDeSaude(int id)

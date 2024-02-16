@@ -4,7 +4,7 @@ window.addEventListener('load', function() {
   // Oculte a loading screen
   var loadingScreen = document.getElementById('loadingScreen');
 
-fetch('http://localhost:5145/api/PostoDeSaude',{
+fetch('http://localhost:5145/api/PostoDeSaude/Pages?pageNumber=0&pageSize=6',{
                 headers: { 
                            'Content-Type': 'application/json'
                           }
