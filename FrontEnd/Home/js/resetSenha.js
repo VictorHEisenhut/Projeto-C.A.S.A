@@ -36,17 +36,63 @@ async function resetSenha(){
         body: JSON.stringify(obj)
     }).then(response => {
       if (!response.ok) {
-        response.text().then(t => {
-          alert(t)
-        })      
+        showModal(false)      
       }
       else{
-        response.text().then(t => {
-          alert(t)
-        })   
-        window.location.href = "./login.html"
         corSenha.style.borderColor = "white"    
         corConfirmSenha.style.borderColor = "white"    
+        showModal(true)
       }
     })
+  }
+
+  async function showModal(status) {
+    
+    var modalObj = document.getElementById("successModal");
+    var bg = document.getElementById("modalBackground");
+    var close = document.getElementById("modalClose");
+    var btnClose = document.getElementById("btnModalClose");
+    var div = document.getElementById("divText")
+    var label = document.getElementById("successModalLabel")
+
+        modalObj.style.display = "block"
+
+        bg.classList.add("modal-backdrop")
+        bg.classList.add("fade")
+        bg.classList.add("show")
+    if (token == null) {
+      label.innerHTML = "Erro de token"
+      div.innerHTML = "Token para reset de senha inválido."
+    }
+    else if(status == false){
+        label.innerHTML = "Erro"
+        div.innerHTML = "Senhas inválidas."
+      }  
+      else{
+        label.innerHTML = "Sucesso"
+        div.innerHTML = "Senha alterada com sucesso."
+    }
+
+    btnClose.onclick = function(){
+      modalObj.style.display = "none"
+      bg.classList.remove("modal-backdrop")
+      bg.classList.remove("fade")
+      bg.classList.remove("show")
+
+      if(status){
+        window.location.href = "./login.html"
+      }
+    }
+
+    close.onclick = function(){
+      modalObj.style.display = "none"
+      bg.classList.remove("modal-backdrop")
+      bg.classList.remove("fade")
+      bg.classList.remove("show")
+
+      if(status){
+        window.location.href = "./login.html"
+      }
+    }
+
   }
