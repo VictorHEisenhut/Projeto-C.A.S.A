@@ -55,6 +55,32 @@
 
 .dropdown:hover .dropdown-content {display: block;}
 
+.adminSidebar {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  padding-top: 10px;
+  transition: 0.5s;
+}
+
+.adminSidebar a {
+  padding: 8px 8px 8px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.adminSidebar a:hover {
+  color: #f1f1f1;
+}
+
 .sidebar {
     height: 100%;
     width: 0;
@@ -167,6 +193,16 @@
 
 .active:after {
   content: "\2796";
+}
+
+.logoCentralisada{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div_inputs_cad_right{
+  align-items: end;
 }
   
   @media screen and (max-height: 450px) {
