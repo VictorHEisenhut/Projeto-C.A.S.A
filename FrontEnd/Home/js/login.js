@@ -31,11 +31,16 @@ async function logar(){
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(obj)
         }).then(data => {
-          if (data.status > 300) {
+          if (data.status >= 300) {
             data.text().then(t => {
-              alert(t)
+            if(t == "Usuário não verificado."){
+                showModal()
+              }
             })
+            
+            showModal(true)
           }
+          
           
           return data.json()
         })
@@ -49,6 +54,50 @@ async function logar(){
       }
   }
 
+  async function showModal(status) {
+    
+    var modalObj = document.getElementById("successModal");
+    var bg = document.getElementById("modalBackground");
+    var close = document.getElementById("modalClose");
+    var btnClose = document.getElementById("btnModalClose");
+    var div = document.getElementById("divText")
+    var label = document.getElementById("successModalLabel")
+    var btnEmail = document.getElementById("btnEmail")
+
+        modalObj.style.display = "block"
+
+        bg.classList.add("modal-backdrop")
+        bg.classList.add("fade")
+        bg.classList.add("show")
+
+    if(status == null){
+        label.innerHTML = "Email não verificado"
+        div.innerHTML = "Seu email ainda não está verificado, verifique seu email"
+        btnEmail.removeAttribute("hidden", "hidden")
+    }  
+    else{
+        label.innerHTML = "Erro"
+        div.innerHTML = "Email ou senha inválidos"
+        btnEmail.setAttribute("hidden", "hidden")
+    }
+
+    btnClose.onclick = function(){
+      modalObj.style.display = "none"
+      bg.classList.remove("modal-backdrop")
+      bg.classList.remove("fade")
+      bg.classList.remove("show")
+      window.location.href = "./login.html"
+    }
+
+    close.onclick = function(){
+      modalObj.style.display = "none"
+      bg.classList.remove("modal-backdrop")
+      bg.classList.remove("fade")
+      bg.classList.remove("show")
+      window.location.href = "./login.html"
+    }
+
+  }
 
 function togglePass() {
 
@@ -57,10 +106,10 @@ function togglePass() {
 
   if (input.type == "password") {
     input.type = "text";
-    button.textContent = "MOSTRAR";
+    button.innerHTML = "ESCONDER";
   } else {
     input.type = "password";
-    button.textContent = "ESCONDER";
+    button.innerHTML = "MOSTRAR";
   }
 }
 
