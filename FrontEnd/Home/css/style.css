@@ -322,11 +322,11 @@ header select{
     border-radius: 0;
     color: #141314;
 }
-*/
+
 .linha{
     border-bottom: white 1.5px solid;
     padding: 0 50%;
-}
+}*/
 /*
 .texts_div_cad h2{
     color: rgb(117, 205, 255, 60%);
@@ -434,11 +434,22 @@ header select{
     margin-right: 0.5rem;
 }
 #img_cad{
-    width: 60%;
+    width: 100%;
+    background-image: url(../imagens/Imagem_Cad.png);
+    background-repeat: no-repeat;
 }
-
 .main_cad{
     overflow: hidden;
+}
+
+.cad_formulario{
+    width: 100%;
+}
+#btnCad{
+    padding: 1rem 5rem;
+    border: none;
+    background-color: #4a84b4;
+    color: #f6f6f6;
 }
 
 
