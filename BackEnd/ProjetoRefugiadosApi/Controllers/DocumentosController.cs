@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -25,14 +26,12 @@ namespace ProjetoRefugiadosApi.Controllers
             _mapper = mapper;
         }
 
-        // GET: api/Documentos
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Documento>>> GetDocumentos()
         {
             return await _context.Documentos.ToListAsync();
         }
 
-        // GET: api/Documentos/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Documento>> GetDocumento(int id)
         {
@@ -46,8 +45,6 @@ namespace ProjetoRefugiadosApi.Controllers
             return documento;
         }
 
-        // PUT: api/Documentos/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutDocumento(int id, UpdateDocumentoDto documentoDto)
         {
@@ -81,8 +78,6 @@ namespace ProjetoRefugiadosApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Documentos
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Documento>> PostDocumento(CreateDocumentoDto documentoDto)
         {
@@ -94,8 +89,8 @@ namespace ProjetoRefugiadosApi.Controllers
             return CreatedAtAction("GetDocumento", new { id = documento.Id }, documento);
         }
 
-        // DELETE: api/Documentos/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> DeleteDocumento(int id)
         {
             var documento = await _context.Documentos.FindAsync(id);

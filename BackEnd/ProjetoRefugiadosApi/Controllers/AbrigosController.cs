@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -29,7 +30,6 @@ namespace ProjetoRefugiadosApi.Controllers
             _mapper = mapper;
         }
 
-        // GET: api/Abrigos
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Abrigo>>> GetAbrigos()
         {
@@ -42,7 +42,6 @@ namespace ProjetoRefugiadosApi.Controllers
             return abrigos;
         }
 
-        // GET: api/Abrigos/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Abrigo>> GetAbrigo(int id)
         {
@@ -58,9 +57,8 @@ namespace ProjetoRefugiadosApi.Controllers
             return abrigo;
         }
 
-        // PUT: api/Abrigos/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> PutAbrigo(int id, Abrigo abrigo)
         {
             abrigo.Endereco = await _context.Enderecos.FirstOrDefaultAsync(a => a.Id == abrigo.EnderecoId);
@@ -91,9 +89,8 @@ namespace ProjetoRefugiadosApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Abrigos
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public async Task<ActionResult<Abrigo>> PostAbrigo(CreateAbrigoDto abrigoDto)
         {
             var resposta = _validator.Validate(abrigoDto);
@@ -112,8 +109,8 @@ namespace ProjetoRefugiadosApi.Controllers
             return CreatedAtAction("GetAbrigo", new { id = abrigo.Id }, abrigo);
         }
 
-        // DELETE: api/Abrigos/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> DeleteAbrigo(int id)
         {
             var abrigo = await _context.Abrigos.FindAsync(id);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -28,7 +29,6 @@ namespace ProjetoRefugiadosApi.Controllers
             return await _context.Paises.ToListAsync();
         }
 
-        // GET: api/Paises/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Paises>> GetPaises(int id)
         {
@@ -42,9 +42,8 @@ namespace ProjetoRefugiadosApi.Controllers
             return paises;
         }
 
-        // PUT: api/Paises/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> PutPaises(int id, Paises paises)
         {
             if (id != paises.Id)
@@ -73,9 +72,8 @@ namespace ProjetoRefugiadosApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Paises
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public async Task<ActionResult<Paises>> PostPaises(Paises paises)
         {
             _context.Paises.Add(paises);
@@ -84,8 +82,8 @@ namespace ProjetoRefugiadosApi.Controllers
             return CreatedAtAction("GetPaises", new { id = paises.Id }, paises);
         }
 
-        // DELETE: api/Paises/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> DeletePaises(int id)
         {
             var paises = await _context.Paises.FindAsync(id);

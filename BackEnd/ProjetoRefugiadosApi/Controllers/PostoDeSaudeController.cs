@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -58,9 +59,8 @@ namespace ProjetoRefugiadosApi.Controllers
             return postoDeSaude;
         }
 
-        // PUT: api/PostoDeSaude/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> PutPostoDeSaude(int id, PostoDeSaude postoDeSaude)
         {
             postoDeSaude.Endereco = await _context.Enderecos.FirstOrDefaultAsync(c => c.Id == postoDeSaude.EnderecoId);
@@ -91,9 +91,8 @@ namespace ProjetoRefugiadosApi.Controllers
             return NoContent();
         }
 
-        // POST: api/PostoDeSaude
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public async Task<ActionResult<PostoDeSaude>> PostPostoDeSaude(CreatePostoDeSaudeDto postoDeSaudeDto)
         {
             var resposta = _validator.Validate(postoDeSaudeDto);
@@ -112,8 +111,8 @@ namespace ProjetoRefugiadosApi.Controllers
             return CreatedAtAction("GetPostoDeSaude", new { id = postoDeSaude.Id }, postoDeSaude);
         }
 
-        // DELETE: api/PostoDeSaude/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> DeletePostoDeSaude(int id)
         {
             var postoDeSaude = await _context.PostosDeSaude.FindAsync(id);

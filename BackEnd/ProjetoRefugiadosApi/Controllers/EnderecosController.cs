@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -27,14 +28,12 @@ namespace ProjetoRefugiadosApi.Controllers
             _mapper = mapper;
         }
 
-        // GET: api/Enderecos
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Endereco>>> GetEnderecos()
         {
             return await _context.Enderecos.ToListAsync();
         }
 
-        // GET: api/Enderecos/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Endereco>> GetEndereco(int id)
         {
@@ -48,8 +47,6 @@ namespace ProjetoRefugiadosApi.Controllers
             return endereco;
         }
 
-        // PUT: api/Enderecos/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutEndereco(int id, Endereco endereco)
         {
@@ -79,8 +76,6 @@ namespace ProjetoRefugiadosApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Enderecos
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Endereco>> PostEndereco(CreateEnderecoDto enderecoDto)
         {
@@ -99,8 +94,8 @@ namespace ProjetoRefugiadosApi.Controllers
             return CreatedAtAction("GetEndereco", new { id = endereco.Id }, endereco);
         }
 
-        // DELETE: api/Enderecos/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> DeleteEndereco(int id)
         {
             var endereco = await _context.Enderecos.FindAsync(id);

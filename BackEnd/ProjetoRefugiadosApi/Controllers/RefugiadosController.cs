@@ -20,6 +20,7 @@ using static Org.BouncyCastle.Math.EC.ECCurve;
 using MailKit.Net.Smtp;
 using NuGet.Common;
 using System.Web;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ProjetoRefugiadosApi.Controllers
 {
@@ -40,8 +41,8 @@ namespace ProjetoRefugiadosApi.Controllers
             _config = config;
         }
 
-        // GET: api/Refugiados
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public async Task<ActionResult<IEnumerable<Refugiado>>> GetRefugiados()
         {
             var refugiados = await _context.Refugiados.ToListAsync();
@@ -57,7 +58,6 @@ namespace ProjetoRefugiadosApi.Controllers
 
         }
 
-        // GET: api/Refugiados/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Refugiado>> GetRefugiado(int id)
         {
@@ -91,7 +91,6 @@ namespace ProjetoRefugiadosApi.Controllers
             return refugiado;
         }
 
-        // PUT: api/Refugiados/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutRefugiado(int id, UpdateRefugiadoDto refugiadoDto)
         {
@@ -125,7 +124,6 @@ namespace ProjetoRefugiadosApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Refugiados
         [HttpPost]
         public async Task<ActionResult<Refugiado>> PostRefugiado(CreateRefugiadoDto refugiadoDto)
         {
@@ -172,7 +170,6 @@ namespace ProjetoRefugiadosApi.Controllers
         {
             string token = "";
             var user = await _context.Refugiados.FirstOrDefaultAsync(r => r.Email == refugiadoDto.Email);
-            //var userLogado = (from u in users where u.Email == refugiadoDto.Email & u.Senha == refugiadoDto.Senha select u).ToList();
 
             if (refugiadoDto.Email == null || refugiadoDto.Senha == null)
             {
@@ -270,7 +267,6 @@ namespace ProjetoRefugiadosApi.Controllers
             return Ok("Senha alterada com sucesso.");
         }
 
-        // DELETE: api/Refugiados/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteRefugiado(int id)
         {

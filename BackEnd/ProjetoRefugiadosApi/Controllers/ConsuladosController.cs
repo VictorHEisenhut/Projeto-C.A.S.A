@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -27,7 +28,6 @@ namespace ProjetoRefugiadosApi.Controllers
             _mapper = mapper;
         }
 
-        // GET: api/Consulados
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Consulado>>> GetConsulados()
         {
@@ -40,7 +40,6 @@ namespace ProjetoRefugiadosApi.Controllers
             return consulados;
         }
 
-        // GET: api/Consulados/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Consulado>> GetConsulado(int id)
         {
@@ -55,9 +54,8 @@ namespace ProjetoRefugiadosApi.Controllers
             return consulado;
         }
 
-        // PUT: api/Consulados/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> PutConsulado(int id, Consulado consulado)
         {
             consulado.Endereco = await _context.Enderecos.FirstOrDefaultAsync(c => c.Id == consulado.EnderecoId);
@@ -88,9 +86,8 @@ namespace ProjetoRefugiadosApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Consulados
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public async Task<ActionResult<Consulado>> PostConsulado(CreateConsuladoDto consuladoDto)
         {
             var resposta = _validator.Validate(consuladoDto);
@@ -108,8 +105,8 @@ namespace ProjetoRefugiadosApi.Controllers
             return CreatedAtAction("GetConsulado", new { id = consulado.Id }, consulado);
         }
 
-        // DELETE: api/Consulados/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> DeleteConsulado(int id)
         {
             var consulado = await _context.Consulados.FindAsync(id);
