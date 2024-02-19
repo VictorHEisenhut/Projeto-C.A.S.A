@@ -86,7 +86,6 @@ async function logar(){
       bg.classList.remove("modal-backdrop")
       bg.classList.remove("fade")
       bg.classList.remove("show")
-      window.location.href = "./login.html"
     }
 
     close.onclick = function(){
@@ -94,7 +93,6 @@ async function logar(){
       bg.classList.remove("modal-backdrop")
       bg.classList.remove("fade")
       bg.classList.remove("show")
-      window.location.href = "./login.html"
     }
 
   }

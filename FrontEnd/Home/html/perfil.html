@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/styleP.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>    <link rel="stylesheet" href="/css/styleP.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" type="imagex/png" href="/imagens/iconeCASA.ico">
     <title>Perfil</title>
@@ -183,7 +185,7 @@
           <button onclick="editar()"  id="btn_alterar" class="btn_perfil">Confirmar alterações</button>
         </div>
         <div class="div_btn_perfil">
-          <button id="btn_deletar" class="btn_perfil">Deletar Conta</button>
+          <button id="btn_deletar" class="btn_perfil" onclick="showModal()">Deletar Conta</button>
         </div>
       </div>
       
@@ -209,9 +211,31 @@
       <button id="btn_voltar" onclick="voltar()">Voltar</button>
     </div>
 </div>
-      
+
+<div class="modal fade show" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" style="padding-right: 0px; display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="successModalLabel" style="color: black;" ></h1>
+        <button type="button" class="btn-close" id="modalClose" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="divText" style="color: black;">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="btnModalClose">Cancelar</button>
+        <button type="button" class="btn btn-danger" id="btnDelete" onclick="confirmaDeletar()">Deletar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="modalBackground" class=""></div>
+
 </body>
+
 <script src="/js/perfil.js"></script>
 <script src="/js/permissoes.js"></script>
-<script src="/js/rightSideBar.js"></script>
+<script src="/js/rightSideBar.js"></script>  
+
 </html>

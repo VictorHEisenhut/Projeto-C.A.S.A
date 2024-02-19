@@ -306,6 +306,81 @@ async function editar()
         }
         }
 
+        
+        async function confirmaDeletar(){
+          await fetch(`http://localhost:5145/api/Refugiados/${idRefugiado.nameid}`,
+        {
+            method: "DELETE",
+            headers: {'Content-Type': 'application/json'},
+        })
+        .then(response => {
+          if (!response.ok) {
+            showModal(false)  
+                response.text().then(t => console.log(t))
+          }
+          else{
+            showModal(true)
+          }
+        })
+        }
+
+        async function showModal(status) {
+          
+          var modalObj = document.getElementById("successModal");
+          var bg = document.getElementById("modalBackground");
+          var close = document.getElementById("modalClose");
+          var btnClose = document.getElementById("btnModalClose");
+          var div = document.getElementById("divText")
+          var label = document.getElementById("successModalLabel")
+          var btnDelete = document.getElementById("btnDelete")
+      
+              modalObj.style.display = "block"
+      
+              bg.classList.add("modal-backdrop")
+              bg.classList.add("fade")
+              bg.classList.add("show")
+      
+          if(status == null){
+              label.innerHTML = "Você tem certeza?"
+              div.innerHTML = "Ao clicar em deletar, sua conta e todos seus dados serão excluídos!"
+      }  
+          else if(status == false){
+              label.innerHTML = "Erro"
+              div.innerHTML = "Falha ao deletar conta."
+              btnDelete.setAttribute("hidden", "hidden")
+      }
+          else{
+            label.innerHTML = "Sucesso"
+            div.innerHTML = "Conta deletada com sucesso."
+            btnDelete.setAttribute("hidden", "hidden")
+          }
+      
+          btnClose.onclick = function(){
+            modalObj.style.display = "none"
+            bg.classList.remove("modal-backdrop")
+            bg.classList.remove("fade")
+            bg.classList.remove("show")
+
+            if (status == true) {
+              localStorage.removeItem('token')
+              window.location.href = "/html/index.html"
+            }
+          }
+      
+          close.onclick = function(){
+            modalObj.style.display = "none"
+            bg.classList.remove("modal-backdrop")
+            bg.classList.remove("fade")
+            bg.classList.remove("show")
+
+            if (status == true) {
+              localStorage.removeItem('token')
+              window.location.href = "/html/index.html"
+            }
+          }
+      
+        }
+
 const translations = {
     pt: {
       headerTitle: 'Lorem',
