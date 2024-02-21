@@ -54,7 +54,11 @@ namespace ProjetoRefugiadosApi.Controllers
 
             }
 
-            return refugiados;
+            return Ok(new
+            {
+                total = refugiados.Count,
+                data = refugiados
+            });
 
         }
 
