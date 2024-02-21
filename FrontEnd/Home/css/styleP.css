@@ -55,6 +55,73 @@
 
 .dropdown:hover .dropdown-content {display: block;}
 
+.div_admin_p{
+  width: 100%;
+  color: rgb(146, 141, 141);
+  margin-bottom: 0rem;
+}
+
+#p_refugiados_numero{
+  font-size: 27px;
+  margin-bottom: 0rem;
+}
+#p_abrigos_numero{
+  font-size: 27px;
+  margin-bottom: 0rem;
+}
+#p_consulados_numero{
+  font-size: 27px;
+  margin-bottom: 0rem;
+}
+#p_postos_numero{
+  font-size: 27px;
+  margin-bottom: 0rem;
+}
+
+.div_admin_body{
+  margin-top: 30%;
+  width: 80%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: rgb(255, 255, 255);
+  transition: 0.5s;
+}
+
+.div_admin_teste{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 100%;
+  color: rgb(15, 15, 15);
+}
+
+.div_admin_infos{
+  width: 25%;
+  height: 75%;
+  margin-left: 2%;
+  margin-right: 2%;
+  text-align: center;
+  box-shadow: 1px 1px 20px 2px #cccbcb;
+}
+
+.div_admin_infos img{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.div_admin_header{
+  height: 35%;
+  width: 80%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: rgb(255, 255, 255);
+  transition: 0.5s;
+}
+
 .adminSidebar {
   height: 100%;
   width: 20%;

@@ -11,7 +11,7 @@ function logout(){
     window.location.href = "/html/index.html"
 }
 
-let token = localStorage.getItem('token')
+let tokenInfo = localStorage.getItem('token')
 
 function parseJwt (token) {
     var base64Url = token.split('.')[1];
@@ -23,13 +23,11 @@ function parseJwt (token) {
     return JSON.parse(jsonPayload);
 }
 
-let InfoConta = parseJwt(token);
+let InfoConta = parseJwt(tokenInfo);
 
 if(InfoConta.role == "admin"){
-    console.log("if")
     let linkDocumentos = document.getElementById("linkDocumentos").style.display = "none";
 }
 else{
-    console.log("else")
     let linkAdmin = document.getElementById("linkAdmin").style.display = "none";
 }

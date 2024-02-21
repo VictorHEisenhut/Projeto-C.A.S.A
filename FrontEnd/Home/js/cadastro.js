@@ -7,7 +7,6 @@ fetch('http://localhost:5145/api/Paises',{
         .then(data => {return data.json();})
         .then(post => {
             post.forEach(element => {
-                
                 pais = `<option value=${element.id}>${element.pais}</option>`
                 select.innerHTML += pais
             });

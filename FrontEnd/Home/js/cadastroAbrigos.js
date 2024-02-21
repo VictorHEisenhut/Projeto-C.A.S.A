@@ -161,7 +161,7 @@ async function cadastroAbrigos(){
         await fetch('http://localhost:5145/api/Abrigos',
             {
                 method: "POST",
-                headers: {/*'Authorization': 'Bearer ' + token,*/'Content-Type': 'application/json'},
+                headers: {'Authorization': 'Bearer ' + token,'Content-Type': 'application/json'},
                 body: JSON.stringify(objAbrigo)
             })
 }
