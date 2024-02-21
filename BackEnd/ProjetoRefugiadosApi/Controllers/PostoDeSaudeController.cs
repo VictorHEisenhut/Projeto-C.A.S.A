@@ -31,7 +31,6 @@ namespace ProjetoRefugiadosApi.Controllers
             _mapper = mapper;
         }
 
-        // GET: api/PostoDeSaude
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PostoDeSaude>>> GetPostosDeSaude()
         {
@@ -41,7 +40,11 @@ namespace ProjetoRefugiadosApi.Controllers
                 posto.Endereco = await _context.Enderecos.FirstOrDefaultAsync(c => c.Id == posto.EnderecoId);
             }
 
-            return await _context.PostosDeSaude.ToListAsync();
+            return Ok(new
+            {
+                total = postos.Count,
+                data = postos
+            });
         }
 
         [HttpGet("Pages")]
@@ -55,7 +58,6 @@ namespace ProjetoRefugiadosApi.Controllers
             return lista;
         }
 
-        // GET: api/PostoDeSaude/5
         [HttpGet("{id}")]
         public async Task<ActionResult<PostoDeSaude>> GetPostoDeSaude(int id)
         {

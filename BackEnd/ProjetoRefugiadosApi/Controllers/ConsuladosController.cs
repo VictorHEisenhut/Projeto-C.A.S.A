@@ -37,7 +37,11 @@ namespace ProjetoRefugiadosApi.Controllers
                 consulado.Endereco = await _context.Enderecos.FirstOrDefaultAsync(c => c.Id == consulado.EnderecoId);
             }
 
-            return consulados;
+            return Ok(new
+            {
+                total = consulados.Count,
+                data = consulados
+            });
         }
 
         [HttpGet("{id}")]

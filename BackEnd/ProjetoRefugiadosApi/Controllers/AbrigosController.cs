@@ -39,7 +39,11 @@ namespace ProjetoRefugiadosApi.Controllers
                 abrigo.Endereco = await _context.Enderecos.FirstOrDefaultAsync(a => a.Id == abrigo.EnderecoId);
             }
 
-            return abrigos;
+            return Ok(new 
+            {
+                total = abrigos.Count,
+                data = abrigos
+            });
         }
 
         [HttpGet("{id}")]
