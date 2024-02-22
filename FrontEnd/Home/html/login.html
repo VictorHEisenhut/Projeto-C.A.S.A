@@ -19,9 +19,9 @@
             <img id="img_login" src="../imagens/Pessoas_Login.png">
         </div>
             
-        <div id="div_login">
-            
-            <h1 id="titulo_login">Login</h1>
+        <div id="section_login">
+          <div id="div_login">
+            <h1 id="titulo_login">Login<span class="bluerain">!</span></h1>
 
             <div id="div_form_login">
 
@@ -31,7 +31,7 @@
                 
                 <div class="div_form_login_flex">
                     <div class="input-group">
-                        <input type="password"  id="senha" class="input_login form-control" name="senha" placeholder="Senha">
+                        <input type="password"  id="senha" class="form-control input_login_password" name="senha" placeholder="Senha">
                         <button type="button" class="btn btn-outline-light" id="togglePass" onclick="togglePass()">MOSTRAR</button>
                     </div>
                     <br><a href="/html/esqueciSenha.html" class="link-light">Esqueci minha senha</a>
@@ -45,12 +45,10 @@
                         <br><a href="cadastro.html" class="link-light" style="font-size: 1.15rem;">Criar uma conta</a> 
                         <br><a href="index.html" class="link-light" style="font-size: 1.15rem;">Voltar ao Início</a>
                     </div>
-                    
                 </div>
-
-            </form>
             </div>
-
+          </div>
+            
         </div>
 
         <div class="modal fade show" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" style="padding-right: 0px; display: none;">
