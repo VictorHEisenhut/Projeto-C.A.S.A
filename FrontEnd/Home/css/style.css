@@ -26,18 +26,28 @@ header select{
     padding: 0.75rem;
 }
 
+
+
+/*Login*/
+
+
 #body_login{
-    background-color: #141314;
+    background-color: #181822;
     color: #fcfcfc;
     overflow: hidden;
 }
 
 #main_login{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+}
+
+#section_login{
+    position: relative;
+    margin: 12.5%;
 }
 
 #div_login{
@@ -46,14 +56,9 @@ header select{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    padding: 0;
-    
 }
 
 #div_form_login{
-    margin: 0 50%;
-
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -71,7 +76,7 @@ header select{
 
 
 #img_login_div{
-    max-width: 54%;
+    max-width: 100%;
 }
 
 #titulo_login{
@@ -97,16 +102,32 @@ header select{
     padding: 5px 10rem;
     font-size: 1rem;
     text-transform: uppercase;
+    border: none;
+    background-color: #4a84b4;
+    height: 3rem;
+    color: #fcfcfc;
+    border-radius: 3px;
 }
 
 .input_login{
     padding: 0.5rem 10rem 0.5rem 1rem;
     border: solid #fcfcfc 2px;
-    background-color: #141314;
+    background-color: transparent;
     text-align: start;
-
     color: #fcfcfc;
 }
+
+.input_login_password{
+    padding: 0.5rem 4rem 0.5rem 1rem;
+    border: solid #fcfcfc 2px;
+    background-color: transparent;
+    text-align: start;
+    color: #fcfcfc;
+}
+
+
+
+/*Esqueci minha Senha*/
 
 
 
@@ -193,7 +214,7 @@ header select{
 }
 
 
-
+/*Resetar Senha*/
 
 
 #body_RS{
@@ -278,95 +299,7 @@ header select{
 
 
 
-
-/*
-.fundo{
-    background-color: #f6f6f6;
-}
-.borda{
-    border-radius: 10px;
-}
-.link{
-    text-decoration: none;
-}
-
-.line_inputs{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: Start;
-    align-items: center;
-}
-
-.div_inputs_cad{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    margin: 1rem;
-    max-width: 40%;
-}
-
-.label_inputs_cad{
-    font-size: 1.25rem;
-    color: #141314;
-}
-
-.div_inputs_cad input{
-    padding: 0.5rem 25%;
-    background: transparent;
-    border: #141314 1px solid;
-}
-
-.div_inputs_cad select{
-    padding: 0.5rem 7.5rem;
-    background: transparent;
-    border: #141314 1px solid;
-    border-radius: 0;
-    color: #141314;
-}
-
-.linha{
-    border-bottom: white 1.5px solid;
-    padding: 0 50%;
-}*/
-/*
-.texts_div_cad h2{
-    color: rgb(117, 205, 255, 60%);
-}
-
-.texts_div_cad{
-    margin-left: 1rem;
-}
-
-#botaoLabel{
-    margin: 3rem 0 5rem 0;
-    padding: 1rem 5rem;
-    border: none;
-    color: #f6f6f6;
-    background-color: rgb(117, 205, 255, 60%);
-    transition: 1s;
-}
-
-#botaoLabel:hover{
-    background-color: rgb(117, 205, 255, 100%);
-}
-
-.section_div_cad{
-    margin: 0 0 2rem 0;
-}
-
-
-
-
-.option_cad{
-    color: #f6f6f6;    
-}
-
-.input_radio{
-    color: #f6f6f6;  
-}
-*/
+/*Cadastro*/
 
 .body_cad{
     background-color: #181822;
@@ -564,13 +497,7 @@ header select{
 }
 
 
-
-
-
-
-
-
-
+/*Pagina Home*/
 
 
 #body_fundo{
@@ -792,13 +719,6 @@ header select{
     border: #f6f6f6 1px solid;
     color: #f6f6f6;
 }
-
-
-
-
-
-
-
 
 .img_div_flex_index{
    width: 100%;
