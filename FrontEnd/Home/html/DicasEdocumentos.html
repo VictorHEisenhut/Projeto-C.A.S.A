@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="/css/styleP.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styleP.css">
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">-->
     <link rel="shortcut icon" type="imagex/png" href="/imagens/iconeCASA.ico">
     <title>Documento necessários</title>
 </head>
 <body class="fundo">
-  <header style="background-image: url('/imagens/ImageHeader.jpeg'); margin-bottom: 3rem;">
+  <header style="background-image: url('../imagens/ImageHeader.jpeg'); margin-bottom: 3rem;">
     <h2 id="headerTitle">Lorem</h2> 
     <div>
       <a href="index.html" id="homeLink">Home</a>
-          <a id="documentsLink" href="DicasEdocumentos.html">Documentos</a>
-          <a id="languageLink" href="#">Idioma</a>
-          <div class="dropdown">
-            <button class="dropbtn">Endereços</button>
-            <div class="dropdown-content">
-                <a class="enderecosDropDown" href="abrigos.html">Abrigos</a>
-                <a class="enderecosDropDown" href="consulados.html">Consulados</a>
-                <a class="enderecosDropDown" href="postosDeSaude.html">Postos de saúde</a>
-            </div>
-          </div>
+      <a id="documentsLink" href="DicasEdocumentos.html">Documentos</a>
+      <a id="languageLink" href="#">Idioma</a>
+      <div class="dropdown">
+        <button class="dropbtn">Endereços</button>
+        <div class="dropdown-content">
+            <a class="enderecosDropDown" href="abrigos.html">Abrigos</a>
+            <a class="enderecosDropDown" href="consulados.html">Consulados</a>
+            <a class="enderecosDropDown" href="postosDeSaude.html">Postos de saúde</a>
+        </div>
+      </div>
       <a id="donateLink" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Doe</a>
       <button id="login"><a href="login.html">Login</a></button>
       <select onchange="changeLanguage(this.value)">
@@ -36,7 +36,7 @@
       <button class="openbtn" id="sideBar" onclick="openNav()">&#9776;</button>
     </div>
   </header>
-  <div id="mySidebar" class="sidebar">
+  <!--<div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
     <a id="linkPerfil" href="perfil.html">Perfil</a>
     <a id="linkDocumentos" href="/html/documentosPerfil.html">Documentos</a>
@@ -45,11 +45,58 @@
       <div id="div_div_btn_logout">
       <a id="logout" onclick="logout()">Logout</a>
     </div>
-  </div>
-  </div>
-      <p>Para garantir os seus direitos, é essêncial regularizar sua presença em território nacional!</p>
-      <p>Mantenha sua situação documental atualizada!</p>
-      <p>Todas pessoas migrantes, têm direito a um cadastro como pessoa física (CPF), a um documento de identidade, e à carteira de trabalho.</p>
+  </div>-->
+  <section id="opcao_ajuda_documentos" style="margin: 2rem 1rem;">
+    <div id="texto_ajuda_documentos">
+      <h3 style="color: #4a84b4; font-size: 3rem;">Cuide da sua Documentação!</h3>
+      <p style="color: #181822; font-size: 1.25rem; width: 50%;">
+      Para garantir os seus direitos, é essêncial regularizar sua presença em território nacional!
+        Mantenha sua situação documental atualizada!
+        Todas pessoas migrantes, têm direito a um cadastro como pessoa física (CPF), a um documento de identidade, e à carteira de trabalho. 
+        Clique nos cards e descubra como podemos ajudar você!
+      </p>
+    </div>
+    <div>
+      <div id="carossel_ajuda_documentos">
+        <div class="opcoes_ajuda_documentos">
+          <span>♦</span>
+          <h4>CPF</h4>
+        </div>
+        <div class="opcoes_ajuda_documentos">
+          <span>♦</span>
+          <h4>CNH</h4>
+        </div>
+        <div class="opcoes_ajuda_documentos">
+          <span>♦</span>
+          <h4>RG</h4>
+        </div>
+        <div class="opcoes_ajuda_documentos">
+          <span>♦</span>
+          <h4>Idioma</h4>
+        </div>
+      </div>
+      <div id="carossel_ajuda_documentos">
+        <div class="opcoes_ajuda_documentos">
+          <span>♦</span>
+          <h4>CPF</h4>
+        </div>
+        <div class="opcoes_ajuda_documentos">
+          <span>♦</span>
+          <h4>CNH</h4>
+        </div>
+        <div class="opcoes_ajuda_documentos">
+          <span>♦</span>
+          <h4>RG</h4>
+        </div>
+        <div class="opcoes_ajuda_documentos">
+          <span>♦</span>
+          <h4>Idioma</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--</div>
+      
       <p>Documentos necessários, para que servem e como emiti-los:</p>
       <p>Cadastro de Pessoa Física (CPF):</p>
       <p>Para oque serve</p>
@@ -59,8 +106,8 @@
       <p>2° Ir a uma unidade física da Receita Federal, possuindo o protocolo, documento de identidade e comprovante de residência.</p>
       <p>Pontos Importantes:</p>
       <p>Caso você não possua documentos do governo brasileiro, como o Protocolo de Refúgio e a CRNM, é necessário levar documentos de identificação admitidos no país de origem</p>
-      <p>É Importante levar a certidão de nascimento para comprovar a naturalidade, a filiação e a data de nascimento.</p>
+      <p>É Importante levar a certidão de nascimento para comprovar a naturalidade, a filiação e a data de nascimento.</p>-->
 </body>
 <script src="/js/permissoes.js"></script>
-<script src="/js/rightSideBar.js"></script>
+<script src="/js/rightSideBar.js"></script>-
 </html>
