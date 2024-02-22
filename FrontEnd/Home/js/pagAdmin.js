@@ -47,3 +47,8 @@ fetch('http://localhost:5145/api/PostoDeSaude',{
         .then(post => {
             postosNumero.innerHTML =  post.total
         });
+
+function logout(){
+    localStorage.removeItem('token')
+    window.location.href = "/html/index.html"
+}
