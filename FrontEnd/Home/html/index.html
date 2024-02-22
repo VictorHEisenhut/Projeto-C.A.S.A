@@ -191,29 +191,34 @@
     <section class="section_index section_form_index">
       <div class="div_index_flex_1">
         <div class="div_index_flex_text">
-          <h2>Contatenos<span class="bluerain">!</span></h2>
-          <form id="form_index" name="meu_form">
+          <h2>Contate-nos<span class="bluerain">!</span></h2>
+          <form id="form_index" name="meu_form" action="https://formsubmit.co/entra21.projeto.casa@gmail.com" method="POST">
             <div class="div_inputs_login">
               <label class="label_inputs_login" id="nameLabel">Nome</label>
-              <input type="text">
+              <input type="text" name="name">
             </div>
             
             <div class="div_inputs_login">
-              <label class="label_inputs_login"  id="emailLabel">Email</label>
-              <input type="email">
+              <label class="label_inputs_login" id="emailLabel">Email</label>
+              <input type="email" name="email">
               <h5>Verifique se digitou corretamente seu endereço de email</h5>
           </div>
 
-          <div class="div_inputs_login">
+          <!-- <div class="div_inputs_login">
               <label class="label_inputs_login" id="numeroLabel" >Telefone</label>
               <input type="tel" cplaceholder="(00)00000-0000" maxlength="11" minlength="11">
               <h5>11 dígitos</h5>
-          </div>
+          </div> -->
             
+          <input type="hidden" name="_autoresponse" value="Seu email foi recebido pela nossa equipe, agradeçemos o contato! :)">
+          <input type="hidden" name="_next" value="http://127.0.0.1:5500/html/index.html">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="box">
+          <input type="hidden" name="_subject" value="Formulário de sugestão recebido!">
+
+          <textarea placeholder="Deixe sua opinião" name="message" id="textarea_form_index"></textarea>
           
-          <textarea placeholder="Deixe sua opnião" id="textarea_form_index"></textarea>
-          
-          <input type="submit" class="learn_more_btn" onclick="Enviar();" value="Enviar" />
+          <input type="submit" class="learn_more_btn" value="Enviar" />
           </form>
       </div>
     </section>

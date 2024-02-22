@@ -65,15 +65,17 @@ namespace ProjetoRefugiadosApi.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Refugiado>> GetRefugiado(int id)
         {
-            var refugiado = await _context.Refugiados.FindAsync(id);
-            refugiado.Pais = await _context.Paises.FirstOrDefaultAsync(p => p.Id == refugiado.PaisId);
-            refugiado.Documento = await _context.Documentos.FirstOrDefaultAsync(d => d.Id == refugiado.DocumentoId);
-            refugiado.Endereco = await _context.Enderecos.FirstOrDefaultAsync(e => e.Id == refugiado.EnderecoId);
+            var refugiado = await _context.Refugiados.FirstOrDefaultAsync(r => r.Id == id);
 
             if (refugiado == null)
             {
                 return NotFound();
             }
+
+            refugiado.Pais = await _context.Paises.FirstOrDefaultAsync(p => p.Id == refugiado.PaisId);
+            refugiado.Documento = await _context.Documentos.FirstOrDefaultAsync(d => d.Id == refugiado.DocumentoId);
+            refugiado.Endereco = await _context.Enderecos.FirstOrDefaultAsync(e => e.Id == refugiado.EnderecoId);
+
 
             return refugiado;
         }
@@ -325,18 +327,20 @@ namespace ProjetoRefugiadosApi.Controllers
         [NonAction]
         public void EnviarEmail(string body, string toEmail, string subject)
         {
+            
             var email = new MimeMessage();
             email.From.Add(MailboxAddress.Parse(_config.GetSection("EmailUsername").Value));
             email.To.Add(MailboxAddress.Parse(toEmail));
             email.Subject = subject;
             email.Body = new TextPart(TextFormat.Html) { Text = body };
             using var smtp = new SmtpClient();
+            {
+                smtp.Connect(_config.GetSection("EmailHost").Value, Convert.ToInt32(_config.GetSection("EmailPort").Value), SecureSocketOptions.StartTls);
+                smtp.Authenticate(_config.GetSection("EmailUsername").Value, _config.GetSection("EmailPassword").Value);
+                smtp.Send(email);
 
-            smtp.Connect(_config.GetSection("EmailHost").Value, Convert.ToInt32(_config.GetSection("EmailPort").Value), SecureSocketOptions.StartTls);
-            smtp.Authenticate(_config.GetSection("EmailUsername").Value, _config.GetSection("EmailPassword").Value);
-            smtp.Send(email);
-            
-            smtp.Disconnect(true);
+                smtp.Disconnect(true);
+            }
 
         }
     }

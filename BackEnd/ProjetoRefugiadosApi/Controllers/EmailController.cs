@@ -28,13 +28,13 @@ namespace ProjetoRefugiadosApi.Controllers
             email.Subject = subject;
             email.Body = new TextPart(TextFormat.Html) { Text = body };
             using var smtp = new SmtpClient();
+            {
+                smtp.Connect(_config.GetSection("EmailHost").Value, Convert.ToInt32(_config.GetSection("EmailPort").Value), SecureSocketOptions.StartTls);
+                smtp.Authenticate(_config.GetSection("EmailUsername").Value, _config.GetSection("EmailPassword").Value);
+                smtp.Send(email);
 
-            smtp.Connect(_config.GetSection("EmailHost").Value, Convert.ToInt32(_config.GetSection("EmailPort").Value), SecureSocketOptions.StartTls);
-            smtp.Authenticate(_config.GetSection("EmailUsername").Value, _config.GetSection("EmailPassword").Value);
-            smtp.Send(email);
-
-            smtp.Disconnect(true);
-
+                smtp.Disconnect(true);
+            }
         }
     }
 }
