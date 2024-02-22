@@ -34,24 +34,28 @@
       </div>
     </div>
   </div>
-  <div class="div_admin_body">
-
-      <table class="table table-bordered">
-        <thead>
-            <tr class="table-dark">
-                <th>Id</th>
-                <th>Nome</th>
-                <th>Sobrenome</th>
-                <th>Email</th>
-                <th>Telefone</th>
-                <th>País</th>
-            </tr>
-        </thead>
-        <tbody id="div_admin_refugiados">
-
-        </tbody>
-    </table>
-
+  <div class="div_admin_body_master">
+    
+    <div class="div_admin_body">
+  
+        <table class="table table-bordered">
+          <thead>
+              <tr class="table-dark">
+                  <th>Id</th>
+                  <th>Nome</th>
+                  <th>Sobrenome</th>
+                  <th>Email</th>
+                  <th>Telefone</th>
+                  <th>País</th>
+                  <th>Excluir</th>
+              </tr>
+          </thead>
+          <tbody id="div_admin_refugiados">
+  
+          </tbody>
+      </table>
+  
+    </div>
   </div>
 
 
@@ -69,6 +73,29 @@
       </div>
       </div>
     </div>
+
+
+    <div class="modal fade show" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" style="padding-right: 0px; display: none;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="successModalLabel" style="color: black;" ></h1>
+            <button type="button" class="btn-close" id="modalClose" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="divText" style="color: black;">
+    
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="btnModalClose">Cancelar</button>
+            <button type="button" class="btn btn-danger" id="btnDelete">Deletar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="modalBackground" class=""></div>
+    
+
 </body>
 <script src="/js/pagAdmin.js"></script>
 </html>
