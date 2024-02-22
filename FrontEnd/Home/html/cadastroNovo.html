@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/cadastronNovo.css" />
+    <script src="../js/cadastroNovo.js" defer></script>
+    <title>Registraion Form</title>
+  </head>
+  <body id="body_cadNovo">
+    <form id="form_cadNovo" action="#">
+      <h1 class="text-center">Cadastro</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Nullam feugiat dolor vitae nunc consectetur, eu pulvinar urna ullamcorper. 
+      </p>
+
+      <div class="form-step form-step-active">
+        <div class="input-group">
+            <label for="nome" class="label_inputs_cad" id="nameLabel">Nome</label>
+            <input type="text" id ="nome">
+        </div>
+        <div class="input-group">
+            <label for="sobrenome" class="label_inputs_cad" id="sobreLabel">Sobrenome</label>
+            <input type="text" id ="sobrenome">
+        </div>
+        <div class="input-group">
+            <label for="dataN" class="label_inputs_cad" id="nascLabel">Data de nascimento</label>
+            <input style="color: #181822;" type="date" id ="dataN">
+        </div>
+        <div class="">
+          <a href="#" class="btn btn-next width-50 ml-auto">Próximo</a>
+        </div>
+      </div>
+      <div class="form-step">
+        <div class="input-group">
+            <label for="fone" class="label_inputs_cad" id="numeroLabel" >Telefone</label>
+            <input type="tel" id ="fone" placeholder="(00)00000-0000" maxlength="11" minlength="11">
+            <h5>11 dígitos</h5>
+        </div>
+        <div class="input-group">
+            <label for="email" class="label_inputs_cad"  id="emailLabel" >Email</label>
+            <input type="email" id ="email">
+            <h5>Verifique se digitou corretamente seu endereço de email</h5>
+        </div>
+        <div class="btns-group">
+          <a href="#" class="btn btn-prev">Anterior</a>
+          <a href="#" class="btn btn-next">Próximo</a>
+        </div>
+      </div>
+      <div class="form-step">
+        <div class="input-group">
+            <div><label for="paisId" id="paisLabel" class="label_inputs_cad" >País de Origem</label></div>
+            <select class="select_cad" id="pais">
+                <option>Selecione seu país</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="genero" id="generoLabel" class="label_inputs_cad">Gênero</label>
+            <select class="select_cad" id="genero">
+                <option>Selecione seu gênero</option>
+                <option value= 1 id="masculinoLabel">Masculino</option>
+                <option value= 2 id="femininoLabel">Feminino</option>
+            </select>
+        </div>
+        
+        <div class="input-group">
+            <label for="estadoCivil" id="estadoCivilLabel" class="label_inputs_cad" >Estado Civíl</label>
+            <select class="select_cad" id="estadoCivil">
+                <option>Selecione seu estado civíl</option>
+                <option value= 1  id="solteiroLabel">Solteiro/a</option>
+                <option value= 2  id="casadoLabel">Casado/a</option>
+                <option value= 3  id="separadoLabel">Separado/a</option>
+                <option value= 4  id="divorciadoLabel">Divorciado/a</option>
+                <option value= 5  id="viuvoLabel">Viúvo/a</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="escolaridade" id="escolaridadeLabel" class="label_inputs_cad">Escolaridade</label>
+            <select class="select_cad" id="escolaridade">
+                <option>Selecione sua escolaridade</option>
+                <option value= 1 id="ensinoFCLabel">Ensino fundamental completo</option>
+                <option value= 2 id="ensinoFILabel">Ensino fundamental incompleto</option>
+                <option value= 3 id="ensinoMCLabel">Ensino médio completo</option>
+                <option value= 4 id="ensinoMILabel">Ensino médio incompleto</option>
+                <option value= 5 id="ensinoSCLabel">Ensino superior completo</option>
+                <option value= 6 id="ensinoSILabel">Ensino superior incompleto</option>
+            </select>
+        </div>
+
+        <div class="btns-group">
+          <a href="#" class="btn btn-prev">Anterior</a>
+          <a href="#" class="btn btn-next">Próximo</a>
+        </div>
+      </div>
+      <div class="form-step">
+        <div class="input-group">
+            <label for="senha" class="label_inputs_cad" id="senhaLabel" >Senha</label>
+            <input type="password" id ="senha" maxlength="16" minlength="8">
+            <h5>Deve conter: Mínimo 8 dígitos, Máximo 16 dígitos, Ao menos um número, Ao menos uma letra maiúscula e uma minúscula</h5>
+        </div>
+        <div class="input-group">
+            <h5>Verifique se ambas as senhas estão iguais</h5>
+            <label for="senhaConfirma" class="label_inputs_cad" id="senhaConfirmaLabel" >Confirmar Senha</label>
+            <input type="password" id ="senhaConfirma" maxlength="16" minlength="8">
+        </div>
+        <div class="btns-group">
+          <a href="#" class="btn btn-prev">Anterior</a>
+          <input id="btn_submit" type="submit" value="Enviar" class="btn"/>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
