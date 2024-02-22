@@ -1,0 +1,118 @@
+:root {
+  --primary-color: #4a84b4;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#body_cadNovo {
+  font-family: Montserrat, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-image: url(../imagens/Fundo_Lorem.png);
+  background-size: 110%;
+}
+
+#form_cadNovo{
+    background-color: rgb(246, 246, 246, 90%);
+    min-width: 50vh;
+    min-height: 70vh;
+    width: clamp(320px, 30%, 430px);
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 0.35rem;
+    padding: 1.5rem;
+}
+
+
+.label_inputs_cad {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.input-group input{
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #181822;
+  border-radius: 0.25rem;
+  color: #181822;
+  background: transparent;
+}
+
+.select_cad{
+    padding: 0.5rem 25% 0.5rem 1rem;
+    width: 100%;
+    background: transparent;
+    border: #ccc 1px solid;
+    border-radius: 0;
+    color: #181822;
+}
+
+
+.width-50 {
+  width: 50%;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Form */
+
+.form-step {
+  display: none;
+  transform-origin: top;
+  animation: animate 0.5s;
+}
+
+.form-step-active {
+  display: block;
+}
+
+.input-group {
+  margin: 2rem 0;
+}
+
+@keyframes animate {
+  from {
+    transform: scale(1, 0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+
+.btns-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.btn {
+  padding: 0.75rem;
+  display: block;
+  text-decoration: none;
+  background-color: var(--primary-color);
+  color: #f3f3f3;
+  text-align: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#btn_submit{
+    border: none;
+}
