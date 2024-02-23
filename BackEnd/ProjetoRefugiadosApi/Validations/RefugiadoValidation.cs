@@ -26,6 +26,7 @@ namespace ProjetoRefugiadosApi.Validations
             RuleFor(refugiado => refugiado.Escolaridade).NotNull().IsInEnum().WithMessage("Escolaridade inválida.");
             RuleFor(refugiado => refugiado.DataNascimento).NotNull().LessThan(DateOnly.FromDateTime(DateTime.Now)).WithMessage("Data de nascimento inválida.");
             RuleFor(refugiado => refugiado.Telefone).NotNull().Length(11).WithMessage("Telefone inválido, verifique se contém o DDD.");
+            RuleFor(refugiado => refugiado.Endereco).SetValidator(new EnderecoValidation());
         }
     }
 }

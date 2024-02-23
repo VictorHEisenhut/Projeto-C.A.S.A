@@ -79,14 +79,19 @@ namespace ProjetoRefugiadosApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Endereco>> PostEndereco(CreateEnderecoDto enderecoDto)
         {
-            var endereco = _mapper.Map<Endereco>(enderecoDto);
-
-            var resposta = _validator.Validate(endereco);
-
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Endereço inválido");
+            }
+            var resposta = _validator.Validate(enderecoDto);
             if (!resposta.IsValid)
             {
                 return BadRequest(resposta.Errors);
             }
+
+            var endereco = _mapper.Map<Endereco>(enderecoDto);
+
+
 
             _context.Enderecos.Add(endereco);
             await _context.SaveChangesAsync();

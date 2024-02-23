@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using ProjetoRefugiados.Models;
+using ProjetoRefugiadosApi.Dtos.Endereco;
 
 namespace ProjetoRefugiadosApi.Validations
 {
-    public class EnderecoValidation : AbstractValidator<Endereco>
+    public class EnderecoValidation : AbstractValidator<CreateEnderecoDto>
     {
         public EnderecoValidation()
         {
