@@ -32,8 +32,6 @@ function prevSlider() {
   showSlider()
 }
 
-btnNext.addEventListener('click', nextSlider)
-btnPrev.addEventListener('click', prevSlider)
 
 function scrollToAjudaMe(){
   var destino = document.getElementById("opcao_ajuda_index");
