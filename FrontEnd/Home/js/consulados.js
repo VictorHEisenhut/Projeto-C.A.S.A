@@ -9,7 +9,7 @@ window.addEventListener('load', function() {
               })
         .then(data => {return data.json();})
         .then(post => {
-            post.forEach(element => {
+            post.data.forEach(element => {
                 
                 consulados = `<div class="card border-secondary card_cons">
                 <div class="card-body">

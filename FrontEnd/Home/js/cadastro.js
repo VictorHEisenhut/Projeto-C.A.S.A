@@ -82,14 +82,14 @@ fetch('http://localhost:5145/api/Paises',{
         }
         let senha = document.getElementById("senha").value
         let senhaConfirma = document.getElementById("senhaConfirma").value
-        if(senha != senhaConfirma){
-          senha = ""
-          senhaConfirma = ""
-          document.getElementById("senhasNaoCoincidem").removeAttribute("hidden");
-        }
-        else{
-          document.getElementById("senhasNaoCoincidem").setAttribute("hidden","");
-        }
+        // if(senha != senhaConfirma){
+        //   senha = ""
+        //   senhaConfirma = ""
+        //   document.getElementById("senhasNaoCoincidem").removeAttribute("hidden");
+        // }
+        // else{
+        //   document.getElementById("senhasNaoCoincidem").setAttribute("hidden","");
+        // }
         const corsenha = document.getElementById("senha")
         const corsenhaC = document.getElementById("senhaConfirma")
         if(senha == "" || senha.length < 8 || senha.length>16){
@@ -153,93 +153,92 @@ fetch('http://localhost:5145/api/Paises',{
         var auxP = parseInt(paisId.value);
         if(paisId.value == "Selecione seu país"){
           corpaisId.style.border = "solid red"
-          console.log("ok")
         }
         else{
           corpaisId.style = "default"
         }
         
-        let cpf = document.getElementById("cpf").value
-        if(cpf == ""){
-          cpf = null
-        }
-        let rg = document.getElementById("rg").value
-        if(rg == ""){
-          rg = null
-        }
-        let cnh = document.getElementById("cnh").value
-        if(cnh == ""){
-          cnh = null
-        }
-        let crnm = document.getElementById("crnm").value
-        if(crnm == ""){
-          crnm = null
-        }
-        let rne = document.getElementById("rne").value
-        if(rne == ""){
-          rne = null
-        }
+        // let cpf = document.getElementById("cpf").value
+        // if(cpf == ""){
+        //   cpf = null
+        // }
+        // let rg = document.getElementById("rg").value
+        // if(rg == ""){
+        //   rg = null
+        // }
+        // let cnh = document.getElementById("cnh").value
+        // if(cnh == ""){
+        //   cnh = null
+        // }
+        // let crnm = document.getElementById("crnm").value
+        // if(crnm == ""){
+        //   crnm = null
+        // }
+        // let rne = document.getElementById("rne").value
+        // if(rne == ""){
+        //   rne = null
+        // }
 
-        let cep = document.getElementById('cep').value
-        const corcep = document.getElementById("cep")
-        if(cep == ""){
-          cep = null
-          corcep.style.borderColor = "red"
-        }
-        else{
-          corcep.style.borderColor = "#f6f6f6"
-        }
+        // let cep = document.getElementById('cep').value
+        // const corcep = document.getElementById("cep")
+        // if(cep == ""){
+        //   cep = null
+        //   corcep.style.borderColor = "red"
+        // }
+        // else{
+        //   corcep.style.borderColor = "#f6f6f6"
+        // }
 
-        let estado = document.getElementById("estado").value
-        const corestado = document.getElementById("estado")
-        if(estado == ""){
-          estado = null
-          corestado.style.borderColor = "red"
-        }
-        else{
-          corestado.style.borderColor = "#f6f6f6"
-        }
+        // let estado = document.getElementById("estado").value
+        // const corestado = document.getElementById("estado")
+        // if(estado == ""){
+        //   estado = null
+        //   corestado.style.borderColor = "red"
+        // }
+        // else{
+        //   corestado.style.borderColor = "#f6f6f6"
+        // }
 
-        let cidade = document.getElementById("cidade").value
-        const corcidade = document.getElementById("cidade")
-        if(cidade == ""){
-          cidade = null
-          corcidade.style.borderColor = "red"
-        }
-        else{
-          corcidade.style.borderColor = "#f6f6f6"
-        }
+        // let cidade = document.getElementById("cidade").value
+        // const corcidade = document.getElementById("cidade")
+        // if(cidade == ""){
+        //   cidade = null
+        //   corcidade.style.borderColor = "red"
+        // }
+        // else{
+        //   corcidade.style.borderColor = "#f6f6f6"
+        // }
 
-        let bairro = document.getElementById("bairro").value
-        const corbairro = document.getElementById("bairro")
-        if(bairro == ""){
-          bairro = null
-          corbairro.style.borderColor = "red"
-        }
-        else{
-          corbairro.style.borderColor = "#f6f6f6"
-        }
+        // let bairro = document.getElementById("bairro").value
+        // const corbairro = document.getElementById("bairro")
+        // if(bairro == ""){
+        //   bairro = null
+        //   corbairro.style.borderColor = "red"
+        // }
+        // else{
+        //   corbairro.style.borderColor = "#f6f6f6"
+        // }
 
-        let rua = document.getElementById("rua").value
-        const corrua = document.getElementById("rua")
-        if(rua == ""){
-          rua = null
-          corrua.style.borderColor = "red"
-        }
-        else{
-          corrua.style.borderColor = "#f6f6f6"
-        }
+        // let rua = document.getElementById("rua").value
+        // const corrua = document.getElementById("rua")
+        // if(rua == ""){
+        //   rua = null
+        //   corrua.style.borderColor = "red"
+        // }
+        // else{
+        //   corrua.style.borderColor = "#f6f6f6"
+        // }
 
-        let numero = document.getElementById("numero").value
-        const cornumero = document.getElementById("numero")
-        var auxN = parseInt(numero);
-        if(numero < 0 ){
-          auxN = null
-          cornumero.style.borderColor = "red"
-        }
-        else{
-          cornumero.style.borderColor = "#f6f6f6"
-        }
+        // let numero = document.getElementById("numero").value
+        // const cornumero = document.getElementById("numero")
+        // var auxN = parseInt(numero);
+        // if(numero < 0 ){
+        //   auxN = null
+        //   cornumero.style.borderColor = "red"
+        // }
+        // else{
+        //   cornumero.style.borderColor = "#f6f6f6"
+        // }
 
         let obj = 
         {
@@ -256,20 +255,20 @@ fetch('http://localhost:5145/api/Paises',{
             paisId: auxP,
             documento: 
             {
-              cpf: cpf,
-              rg: rg,
-              cnh: cnh,
-              crnm: crnm,
-              rne: rne
+              // cpf: cpf,
+              // rg: rg,
+              // cnh: cnh,
+              // crnm: crnm,
+              // rne: rne
             },
             endereco: 
             {
-              estado: estado,
-              cidade: cidade,
-              bairro: bairro,
-              rua: rua,
-              numero: auxN,
-              cep:cep
+              // estado: estado,
+              // cidade: cidade,
+              // bairro: bairro,
+              // rua: rua,
+              // numero: auxN,
+              // cep:cep
             }
         }
         console.log(obj)

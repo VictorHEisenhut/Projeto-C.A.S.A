@@ -35,3 +35,32 @@ function prevSlider() {
 btnNext.addEventListener('click', nextSlider)
 btnPrev.addEventListener('click', prevSlider)
 
+function scrollToAjudaMe(){
+  var destino = document.getElementById("opcao_ajuda_index");
+  var destinoPosition = destino.offsetTop;
+
+  window.scrollTo({
+    top: destinoPosition,
+    behavior: "smooth" 
+  });
+}
+
+function scrollToAjudar(){
+  var destino = document.getElementById("quero_ajudar_index");
+  var destinoPosition = destino.offsetTop;
+
+  window.scrollTo({
+    top: destinoPosition - 225,
+    behavior: "smooth" 
+  });
+}
+
+function scrollToEnviarSugestao(){
+  var destino = document.getElementById("sugestao_index");
+  var destinoPosition = destino.offsetTop;
+
+  window.scrollTo({
+    top: destinoPosition,
+    behavior: "smooth" 
+  });
+}

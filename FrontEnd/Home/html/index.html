@@ -88,8 +88,8 @@
             </p>
           </div>
           <div id="btn_texto_refugiado">
-            <button id="ajudame_btn">Preciso de Ajuda</button>
-            <button id="quero_ajudar_btn">Quero Ajudar</button>
+            <button id="ajudame_btn" onclick="scrollToAjudaMe()" >Preciso de Ajuda</button>
+            <button id="quero_ajudar_btn" onclick="scrollToAjudar()">Quero Ajudar</button>
           </div>
         </div>
        
@@ -147,16 +147,20 @@
       </div>
     </section>
 
-    <section class="section_index">
+    <section class="section_index" id="quero_ajudar_index">
       <div class="div_index_flex_1">
         <div class="div_index_flex_text">
           <h2>Como posso ajudar<span class="bluerain">?</span></h2>
           <p>
             Contamos com o seu valioso apoio para aprimorar a qualidade de vida dos refugiados. 
             Sua colaboração é fundamental para impulsionar iniciativas que fazem a diferença e proporcionam esperança a quem mais precisa.
-            Junte-se a nós nessa causa humanitária e faça parte do impacto positivo que podemos gerar juntos.
+            Junte-se a nós nessa causa humanitária doando ou nos enviado sugestões e faça parte do impacto positivo que podemos gerar juntos.
           </p>
-          <button class="learn_more_btn">Saiba-Mais</button>
+          <div style="display: flex;">
+            <button class="learn_more_btn" style="margin-right: 10px;">Saiba-Mais</button>
+            <button class="learn_more_btn" onclick="scrollToEnviarSugestao()">Envie uma sugestão</button>
+          </div>
+
         </div>
         <div class="img_div_flex_index">
           <!--<img src="../imagens/Imagem_Lorem_2.png">-->
@@ -182,13 +186,13 @@
 
       <section class="section_index section_num_index">
         <div class="div_index_num">
-          <h2>Dinheiro Arecadado</h2>
+          <h2>Dinheiro Arrecadado</h2>
           <span>1000+</span>
         </div>
       </section>
     </section>
 
-    <section class="section_index section_form_index">
+    <section class="section_index section_form_index" id="sugestao_index">
       <div class="div_index_flex_1">
         <div class="div_index_flex_text">
           <h2>Contate-nos<span class="bluerain">!</span></h2>
@@ -224,7 +228,7 @@
     </section>
 
 
-    <script src="../js/index.js"></script>
+    <script src="/js/index.js"></script>
     <script src="../js/traducao.js"></script>
     <script src="/js/permissoes.js"></script>
     <script src="/js/rightSideBar.js"></script>
