@@ -593,8 +593,6 @@ header select{
 }
 
 #opcao_ajuda_index{
-    width: 100%;
-    height: 50vh;
 }
 
 #carossel_ajuda{
@@ -637,6 +635,12 @@ header select{
     box-shadow: #181822 8px 16px;
 }
 
+.section_index{
+    width: 100%;
+    position: relative;
+}
+
+
 .section_num_index{
     display: flex;
     flex-wrap: nowrap;
@@ -645,8 +649,7 @@ header select{
     align-items: center;
 
     background-color: #4a84b4;
-    width: 100%;
-    height: 50vh;
+    padding: 25vh 0;
 }
 
 
@@ -657,9 +660,6 @@ header select{
     justify-content: space-between;
     align-items: center;
     background-color: #181822; 
-
-    width: 100%;
-    height: 50vh;
 }
 
 .div_index_flex_2{
@@ -671,9 +671,6 @@ header select{
     
     background-color: #edecec;
     color: #141314;
-
-    width: 100%;
-    height: 50vh;
 }
 
 #form_index{
