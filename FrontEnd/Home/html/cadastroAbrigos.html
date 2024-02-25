@@ -9,41 +9,56 @@
     <link rel="shortcut icon" type="imagex/png" href="/imagens/iconeCASA.ico">
     <title>Cadastro Abrigos</title>
 </head>
-<body class="body_cad">
-    <section class="section_div_cad" id="enderecosTabela" style="border: none;">
+<body>
+    <div class="adminSidebar">
+        <div class="logoCentralisada"><img src="/imagens/png logo branca.png" width="127px"></div>
+        <a href="index.html">Home</a>
+        <a href="pagAdmin.html">Página admin</a>
+        <a href="cadastroAbrigos.html">Cadastro abrigos</a>
+        <a href="cadastroConsulados.html">Cadastro consulados</a>
+        <a href="cadastroPostos.html">Cadastro Postos de saúde</a>
+        <div id="div_btn_logout">
+          <div id="div_div_btn_logout">
+          <a id="logout" onclick="logout()">Logout</a>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="div_admin_cadastros_body" id="enderecosTabela" style="border: none;">
         <div class="texts_div_cad">
             <div>
                 <h2>Endereço</h2>
             </div>
         </div>
         <div class="line_inputs">
-            <div class="div_inputs_cad">
-                <label for="cep" class="label_inputs_cad" id="cepLabel">Digite seu CEP</label>
+            <div class="div_inputs_cad_admin">
+                <label for="cep" class="label_inputs_cad" id="cepLabel">CEP</label>
                 <input type="text" id="cep" maxlength="9" minlength="9" placeholder="00000-000" onblur="dadosEndereco()">
                 <h5>CEP deve conter hífen</h5>
             </div>
-            <div class="div_inputs_cad">
-                <label for="estado" class="label_inputs_cad" id="estadoLabel">Estado do abrigo</label>
+            <div class="div_inputs_cad_admin">
+                <label for="estado" class="label_inputs_cad" id="estadoLabel">Estado</label>
                 <input type="text" id="estado">
             </div>
             </div>
             <div class="line_inputs">
-                <div class="div_inputs_cad">
-                    <label for="cidade" class="label_inputs_cad" id="cidadeLabel">Cidade do abrigo</label>  
+                <div class="div_inputs_cad_admin">
+                    <label for="cidade" class="label_inputs_cad" id="cidadeLabel">Cidade</label>  
                     <input type="text" id="cidade">
                 </div>
-                <div class="div_inputs_cad">
-                    <label for="bairro" class="label_inputs_cad" id="bairroLabel">Bairro do abrigo</label>
+                <div class="div_inputs_cad_admin">
+                    <label for="bairro" class="label_inputs_cad" id="bairroLabel">Bairro</label>
                     <input type="text" id="bairro">
                 </div>
             </div>
             <div class="line_inputs">
-                <div class="div_inputs_cad">
-                    <label for="rua" class="label_inputs_cad" id="ruaLabel">Rua do abrigo</label>
+                <div class="div_inputs_cad_admin">
+                    <label for="rua" class="label_inputs_cad" id="ruaLabel">Rua</label>
                     <input type="text" id="rua">
                 </div>
-                <div class="div_inputs_cad">
-                    <label for="numero" class="label_inputs_cad" id="numeroCasaLabel">Número do abrigo</label>
+                <div class="div_inputs_cad_admin">
+                    <label for="numero" class="label_inputs_cad" id="numeroCasaLabel">Número</label>
                     <input type="number" id="numero">
                 </div>
             </div>
@@ -56,25 +71,62 @@
                 </div>
             </div>
             <div class="line_inputs">
-                <div class="div_inputs_cad">
+                <div class="div_inputs_cad_admin">
                     <label for="nome" class="label_inputs_cad" id="nomeLabel">Nome do abrigo</label>
                     <input type="text" id="nome">
                 </div>
-                <div class="div_inputs_cad">
+                <div class="div_inputs_cad_admin">
                     <label for="telefone" class="label_inputs_cad" id="telefoneLabel">Número/s de telefone do abrigo</label>
                     <input type="text" id="telefone">
                 </div>
                 </div>
                 <div class="line_inputs">
-                    <div class="div_inputs_cad">
+                    <div class="div_inputs_cad_admin">
                         <label for="email" class="label_inputs_cad" id="emailLabel">Email do abrigo</label>  
                         <input type="email" id="email">
                     </div>
                 </div>
-            </section>
-            
-            <div class="text-center"><button onclick="cadastrar()">Cadastrar</button></div>
-            <br>
+                <br>
+                <div class="text-center"><button id="btn_login" onclick="cadastrar()">Cadastrar</button></div>
+                <br>
+    </div>
+
+    <div class="modal fade show" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" style="padding-right: 0px; display: none;">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="successModalLabel" style="color: black;">Abrigo cadastrado</h1>
+              <button type="button" class="btn-close" id="modalClose" aria-label="Close"></button>
+            </div>
+            <div id="mensagemEmail" class="modal-body" style="color: black;">
+                O abrigo foi cadastrado com sucesso!
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" id="btnModalClose">Fechar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="modal fade show" id="ErrorModal" tabindex="-1" aria-labelledby="ErrorModalLabel" style="padding-right: 0px; display: none;">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="ErrorModalLabel" style="color: black;">Erro!</h1>
+              <button type="button" class="btn-close" id="modalCloseError" aria-label="Close"></button>
+            </div>
+            <div id="MensagemErro" class="modal-body" style="color: black;">
+              Ocorreu algum erro ao cadastrar verifique se alguma informação foi digitada incorretamente.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" id="btnModalCloseError">Fechar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div id="modalBackground" class=""></div>
+
 </body>
 <script src="/js/cadastroAbrigos.js"></script>
 </html>

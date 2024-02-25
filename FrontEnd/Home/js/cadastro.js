@@ -280,7 +280,6 @@ fetch('http://localhost:5145/api/Paises',{
             bg.classList.remove("modal-backdrop")
             bg.classList.remove("fade")
             bg.classList.remove("show")
-            window.location.href = "./login.html"
           }
 
           close.onclick = function(){
@@ -288,7 +287,6 @@ fetch('http://localhost:5145/api/Paises',{
             bg.classList.remove("modal-backdrop")
             bg.classList.remove("fade")
             bg.classList.remove("show")
-            window.location.href = "./login.html"
           }
 
         }
@@ -313,7 +311,7 @@ fetch('http://localhost:5145/api/Paises',{
           }
 
           closeError.onclick = function(){
-            modalObj.style.display = "none"
+            modalObjError.style.display = "none"
             bgError.classList.remove("modal-backdrop")
             bgError.classList.remove("fade")
             bgError.classList.remove("show")

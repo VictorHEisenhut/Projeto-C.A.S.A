@@ -1,26 +1,24 @@
 let token = localStorage.getItem('token')
 
-function parseJwt (token) {
-    var base64Url = token.split('.')[1];
-    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
-
-    return JSON.parse(jsonPayload);
-}
-
-let info = parseJwt(token);
-
-
-
 function dadosEndereco() {
     let cep = document.getElementById('cep').value
     fetch(`https://viacep.com.br/ws/${cep}/json/`)
         .then((dados) => dados.json())
         .then((response) => {
             document.getElementById('rua').value = response.logradouro
+            if(response.logradouro == ""){
+              document.getElementById("rua").removeAttribute("disabled");
+            }
+            else{
+              document.getElementById("rua").setAttribute("disabled","");
+            }
             document.getElementById('bairro').value = response.bairro
+            if(response.bairro == ""){
+              document.getElementById("bairro").removeAttribute("disabled");
+            }
+            else{
+              document.getElementById("bairro").setAttribute("disabled","");
+            }
             document.getElementById('cidade').value = response.localidade
             document.getElementById("estado").value = response.uf
         }
@@ -35,7 +33,7 @@ async function cadastrar(){
           corcep.style.borderColor = "red"
         }
         else{
-          corcep.style.borderColor = "#f6f6f6"
+          corcep.style.borderColor = "#181822"
         }
 
         let estado = document.getElementById("estado").value
@@ -44,7 +42,7 @@ async function cadastrar(){
           corestado.style.borderColor = "red"
         }
         else{
-          corestado.style.borderColor = "#f6f6f6"
+          corestado.style.borderColor = "#181822"
         }
 
         let cidade = document.getElementById("cidade").value
@@ -53,7 +51,7 @@ async function cadastrar(){
           corcidade.style.borderColor = "red"
         }
         else{
-          corcidade.style.borderColor = "#f6f6f6"
+          corcidade.style.borderColor = "#181822"
         }
 
         let bairro = document.getElementById("bairro").value
@@ -62,7 +60,7 @@ async function cadastrar(){
           corbairro.style.borderColor = "red"
         }
         else{
-          corbairro.style.borderColor = "#f6f6f6"
+          corbairro.style.borderColor = "#181822"
         }
 
         let rua = document.getElementById("rua").value
@@ -71,7 +69,7 @@ async function cadastrar(){
           corrua.style.borderColor = "red"
         }
         else{
-          corrua.style.borderColor = "#f6f6f6"
+          corrua.style.borderColor = "#181822"
         }
 
         let numero = document.getElementById("numero").value
@@ -81,7 +79,7 @@ async function cadastrar(){
           cornumero.style.borderColor = "red"
         }
         else{
-          cornumero.style.borderColor = "#f6f6f6"
+          cornumero.style.borderColor = "#181822"
         }
 
         let nome = document.getElementById("nome").value
@@ -90,7 +88,7 @@ async function cadastrar(){
             nomecor.style.borderColor = "red"
         }
         else{
-            nomecor.style.borderColor = "#f6f6f6"
+            nomecor.style.borderColor = "#181822"
         }
 
         let telefone = document.getElementById("telefone").value
@@ -99,7 +97,7 @@ async function cadastrar(){
             cortelefone.style.borderColor = "red"
         }
         else{
-            cortelefone.style.borderColor = "#f6f6f6"
+            cortelefone.style.borderColor = "#181822"
         }
 
         let email = document.getElementById("email").value
@@ -108,7 +106,7 @@ async function cadastrar(){
             coremail.style.borderColor = "red"
         }
         else{
-            coremail.style.borderColor = "#f6f6f6"
+            coremail.style.borderColor = "#181822"
         }
 
         let obj = {
@@ -121,7 +119,7 @@ async function cadastrar(){
         }
         console.log(obj)
         if(cep == ""|| estado == ""|| cidade == ""|| rua == ""|| bairro == ""|| numero < 0 || email == ""||telefone == ""||nome == ""){
-            alert("Erro")
+          showErrorModal()
         }
         else{
             await fetch('http://localhost:5145/api/Enderecos',
@@ -153,3 +151,4 @@ async function cadastroConsulados(){
                 body: JSON.stringify(objConsulado)
             })
 }
+
