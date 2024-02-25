@@ -1,4 +1,5 @@
 const prevBtns = document.querySelectorAll(".btn-prev");
+const prev2Btns = document.querySelectorAll(".btn-prev2");
 const nextBtns = document.querySelectorAll(".btn-next");
 const simBtns = document.querySelectorAll(".btn-sim");
 const naoBtns = document.querySelectorAll(".btn-nao");
@@ -19,6 +20,15 @@ nextBtns.forEach((btn) => {
 
 prevBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
+    formStepsNum--;
+    updateFormSteps();
+    updateProgressbar();
+  });
+});
+
+prev2Btns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    formStepsNum--;
     formStepsNum--;
     updateFormSteps();
     updateProgressbar();

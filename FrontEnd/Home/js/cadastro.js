@@ -62,7 +62,7 @@ fetch('http://localhost:5145/api/Paises',{
           cornome.style.borderColor = "red"
         }
         else{
-          cornome.style.borderColor = "#f6f6f6"
+          cornome.style.borderColor = "#181822"
         }
         let sobrenome = document.getElementById("sobrenome").value
         const corsobrenome = document.getElementById("sobrenome")
@@ -70,7 +70,7 @@ fetch('http://localhost:5145/api/Paises',{
           corsobrenome.style.borderColor = "red"
         }
         else{
-          corsobrenome.style.borderColor = "#f6f6f6"
+          corsobrenome.style.borderColor = "#181822"
         }
         let email = document.getElementById("email").value
         const coremail = document.getElementById("email")
@@ -78,7 +78,7 @@ fetch('http://localhost:5145/api/Paises',{
           coremail.style.borderColor = "red"
         }
         else{
-          coremail.style.borderColor = "#f6f6f6"
+          coremail.style.borderColor = "#181822"
         }
         let senha = document.getElementById("senha").value
         let senhaConfirma = document.getElementById("senhaConfirma").value
@@ -97,8 +97,8 @@ fetch('http://localhost:5145/api/Paises',{
           corsenhaC.style.borderColor = "red"
         }
         else{
-          corsenha.style.borderColor = "#f6f6f6"
-          corsenhaC.style.borderColor = "#f6f6f6"
+          corsenha.style.borderColor = "#181822"
+          corsenhaC.style.borderColor = "#181822"
         }
         let dataN = document.getElementById("dataN").value
         const cordataN = document.getElementById("dataN")
@@ -106,7 +106,7 @@ fetch('http://localhost:5145/api/Paises',{
           cordataN.style.borderColor = "red"
         }
         else{
-          cordataN.style.borderColor = "#f6f6f6"
+          cordataN.style.borderColor = "#181822"
         }
         let fone = document.getElementById("fone").value
         const corfone = document.getElementById("fone")
@@ -114,7 +114,7 @@ fetch('http://localhost:5145/api/Paises',{
           corfone.style.borderColor = "red"
         }
         else{
-          corfone.style.borderColor = "#f6f6f6"
+          corfone.style.borderColor = "#181822"
         }
 
         let estadoCivil = document.getElementById("estadoCivil")
@@ -255,26 +255,12 @@ fetch('http://localhost:5145/api/Paises',{
               showModal();
               console.log("Cadastro bem-sucedido.");
             } else {
+              showErrorModal();
               console.log("Erro ao cadastrar:", await response.text());
           }
       } catch (error) {
           console.error("Erro ao cadastrar:", error);
       }
-        
-        //let login ={
-        //  email:email,
-        //  senha:senha
-        //}
-        //await fetch('https://localhost:7288/api/Refugiados/Login',
-        //{
-        //    method: "POST",
-        //    headers: {'Content-Type': 'application/json'},
-        //    body: JSON.stringify(login)
-        //}).then(data => data.json())
-        //.then(resp => {
-        //    localStorage.setItem('token', resp.token)
-        //})
-        //window.location.href = "./perfil.html"       
         }
 
         async function showModal() {
@@ -307,19 +293,46 @@ fetch('http://localhost:5145/api/Paises',{
 
         }
 
+        async function showErrorModal(){
+          var modalObjError = document.getElementById("ErrorModal");
+          var bgError = document.getElementById("modalBackground");
+          var closeError = document.getElementById("modalCloseError");
+          var btnCloseError = document.getElementById("btnModalCloseError");
+
+              modalObjError.style.display = "block"
+
+              bgError.classList.add("modal-backdrop")
+              bgError.classList.add("fade")
+              bgError.classList.add("show")
+
+          btnCloseError.onclick = function(){
+            modalObjError.style.display = "none"
+            bgError.classList.remove("modal-backdrop")
+            bgError.classList.remove("fade")
+            bgError.classList.remove("show")
+          }
+
+          closeError.onclick = function(){
+            modalObj.style.display = "none"
+            bgError.classList.remove("modal-backdrop")
+            bgError.classList.remove("fade")
+            bgError.classList.remove("show")
+          }
+        }
+
     
     const translations = {
         pt: {
-          nameLabel: 'Digite seu nome',
-          sobreLabel:'Digite seu sobrenome',
-          emailLabel: 'Digite seu email',
-          senhaLabel: 'Digite sua senha',
-          nascLabel:'Selecione sua data de nascimento',
-          numeroLabel: 'Digite seu número de telefone',
-          estadoCivilLabel: 'Selecione seu estado civíl',
-          generoLabel:'Selecione seu gênero',
-          escolaridadeLabel:'Selecione sua escolaridade',
-          paisLabel:'Selecione seu país de origem',
+          nameLabel: 'Nome',
+          sobreLabel:'Sobrenome',
+          emailLabel: 'Email',
+          senhaLabel: 'Senha',
+          nascLabel:'Data de nascimento',
+          numeroLabel: 'Telefone',
+          estadoCivilLabel: 'Estado civíl',
+          generoLabel:'Gênero',
+          escolaridadeLabel:'Escolaridade',
+          paisLabel:'País de origem',
           solteiroLabel:'Solteiro/a',
           casadoLabel:'Casado/a',
           viuvoLabel:'Viúvo/a',
@@ -333,24 +346,70 @@ fetch('http://localhost:5145/api/Paises',{
           ensinoMCLabel:'Ensino médio completo',
           ensinoSILabel:'Ensino superior incompleto',
           ensinoSCLabel:'Ensino superior completo',
-          botaoLabel: 'Cadastrar',
-          cpfLabel: 'Digite seu CPF',
-          rgLabel: 'Digite seu rg',
-          cnhLabel:'Digite seu cnh',
-          crnmLabel:'Digite seu crnm',
-          rneLabel:'Digite seu rne',
+          cpfLabel: 'CPF',
+          rgLabel: 'RG',
+          cnhLabel:'CNH',
+          crnmLabel:'CRNM',
+          rneLabel:'RNE',
+          cepLabel:'CEP',
+          estadoLabel:'Estado',
+          cidadeLabel:'Cidade',
+          bairroLabel:'Bairro',
+          ruaLabel:'Rua',
+          numeroCasaLabel:'Número da residência',
+          h1Cadastro:'Cadastro',
+          textoCadastro:'Bem-vindo ao nosso site! Estamos empolgados em tê-lo conosco. Por favor, preencha o formulário abaixo para criar sua conta e aproveitar todos os benefícios oferecidos:',
+          h5Fone:'11 dígitos',
+          h5Email:'Verifique se digitou corretamente seu endereço de email',
+          btnProximo:'Próximo',
+          btnProximo2:'Próximo',
+          btnProximo3:'Próximo',
+          btnProximo4:'Próximo',
+          btnProximo5:'Próximo',
+          btnProximo6:'Próximo',
+          btnAnterior:'Anterior',
+          btnAnterior2:'Anterior',
+          btnAnterior3:'Anterior',
+          btnAnterior4:'Anterior',
+          btnAnterior5:'Anterior',
+          btnAnterior6:'Anterior',
+          btnAnterior7:'Anterior',
+          optionPais:'Selecione seu país',
+          optionGenereo:'Selecione seu gênero',
+          optionEstadoCivil:'Selecione seu estado civíl',
+          optionEscolaridade:'Selecione sua escolaridade',
+          h5Senha:'Deve conter: Mínimo 8 dígitos, Máximo 16 dígitos, Ao menos um número, Ao menos uma letra maiúscula e uma minúscula',
+          h5ConfirmaSenha:'Verifique se ambas as senhas estão iguais',
+          pDocumentos:'Deseja cadastrar documentos?',
+          aSim:'Sim',
+          aNao:'Não',
+          h5Endereco:'Deseja cadastrar endereço?',
+          aSim2:'Sim',
+          aNao2:'Não',
+          h5Cep:'CEP deve conter hífen',
+          pMensagemFinal:'Clique em enviar para confirmar seu cadastro. Caso seja necessário, você poderá alterar suas informações na página do seu perfil. Se deseja conferir suas informações antes de concluir o cadastro clique em voltar.',
+          btnVoltar:'Voltar',
+          btn_submit:'Cadastrar',
+          successModalLabel:'Verificação de conta',
+          mensagemEmail:'Um email com um link de verificação de conta foi enviado para você.',
+          btnModalClose:'Fechar',
+          btnModalReenviar:'Reenviar email',
+          ErrorModalLabel:'Erro!',
+          MensagemErro:'Ocorreu algum erro em seu cadastro verifique se alguma de suas informações foi digitada incorretamente.',
+          btnModalCloseError:'Fechar',
+          senhaConfirmaLabel:'Confirmar Senha'
         },
         en: {
-          nameLabel: 'Enter your name',
-          sobreLabel:'Enter your last name',
-          emailLabel: 'Enter you email',
-          senhaLabel: 'Enter your password',
-          nascLabel:'Enter your birthday',
-          numeroLabel: 'Enter your phone number',
-          estadoCivilLabel: 'Enter your marital status',
-          generoLabel:'Enter your gender',
-          escolaridadeLabel:'Enter your level of education',
-          paisLabel:'Enter you country',
+          nameLabel: 'Name',
+          sobreLabel:'Last name',
+          emailLabel: 'Email',
+          senhaLabel: 'Password',
+          nascLabel:'Birthday',
+          numeroLabel: 'Phone number',
+          estadoCivilLabel: 'Marital status',
+          generoLabel:'Gender',
+          escolaridadeLabel:'Level of education',
+          paisLabel:'Country',
           solteiroLabel:'Single',
           casadoLabel:'Married',
           viuvoLabel:'Widow/er',
@@ -364,105 +423,289 @@ fetch('http://localhost:5145/api/Paises',{
           ensinoMCLabel:'Complete high school',
           ensinoSILabel:'Incomplete college',
           ensinoSCLabel:'Complete college',
-          botaoLabel: 'Sing up',
-          cpfLabel: 'Enter your CPF',
-          rgLabel: 'Enter your rg',
-          cnhLabel:'Enter your cnh',
-          crnmLabel:'Enter your crnm',
-          rneLabel:'Enter your rne',
+          cpfLabel: 'CPF',
+          rgLabel: 'RG',
+          cnhLabel:'CNH',
+          crnmLabel:'CRNM',
+          rneLabel:'RNE',
+          cepLabel: 'ZIP Code',
+          estadoLabel: 'State',
+          cidadeLabel: 'City',
+          bairroLabel: 'Neighborhood',
+          ruaLabel: 'Street',
+          numeroCasaLabel: 'House number',
+          h1Cadastro: 'Sing up',
+          textoCadastro: 'Welcome to our website! We are excited to have you with us. Please fill out the form below to create your account and enjoy all the benefits offered:',
+          h5Fone: '11 digits',
+          h5Email: 'Make sure you have entered your email address correctly',
+          btnProximo:'Next',
+          btnProximo2:'Next',
+          btnProximo3:'Next',
+          btnProximo4:'Next',
+          btnProximo5:'Next',
+          btnProximo6:'Next',
+          btnAnterior: 'Back',
+          btnAnterior2:'Back',
+          btnAnterior3:'Back',
+          btnAnterior4:'Back',
+          btnAnterior5:'Back',
+          btnAnterior6:'Back',
+          btnAnterior7:'Back',
+          optionPais: 'Select your country',
+          optionGenereo: 'Select your gender',
+          optionEstadoCivil: 'Select your marital status',
+          optionEscolaridade: 'Select your level of education',
+          h5Senha: 'Must contain: Minimum 8 characters, Maximum 16 characters, At least one number, At least one uppercase and one lowercase letter',
+          h5ConfirmaSenha: 'Make sure both passwords match',
+          pDocumentos: 'Do you want to register your documents?',
+          aSim: 'Yes',
+          aNao: 'No',
+          h5Endereco:'Do you want to register your address?',
+          aSim2:'Yes',
+          aNao2:'No',
+          h5Cep: 'ZIP Code must contain a hyphen',
+          pMensagemFinal: 'Click submit to confirm your Sing up. If necessary, you can change your information on your profile page. If you want to review your information before completing the registration, click the back button.',
+          btnVoltar: 'Back',
+          btn_submit: 'Sing up',
+          successModalLabel: 'Account Verification',
+          mensagemEmail: 'An email with an account verification link has been sent to you.',
+          btnModalClose: 'Close',
+          btnModalReenviar: 'Resend Email',
+          ErrorModalLabel: 'Error!',
+          MensagemErro: 'An error occurred in your registration. Please check if any of your information was entered incorrectly.',
+          btnModalCloseError: 'Close',
+          senhaConfirmaLabel: 'Confirm Password'
         },
         es: {
-          nameLabel: 'Ingrese su nombre',
-          sobreLabel: 'Ingrese su apellido',
-          emailLabel: 'Ingrese su correo electrónico',
-          senhaLabel: 'Ingrese su contraseña',
-          nascLabel: 'Ingrese su fecha de nacimiento',
-          numeroLabel: 'Ingrese su número de teléfono',
-          estadoCivilLabel: 'Ingrese su estado civil',
-          generoLabel: 'Ingrese su género',
-          escolaridadeLabel: 'Ingrese su nivel de educación',
-          paisLabel: 'Ingrese su país',
-          solteiroLabel: 'Soltero',
-          casadoLabel: 'Casado',
-          viuvoLabel: 'Viudo/a',
-          separadoLabel: 'Separado/a',
-          divorciadoLabel: 'Divorciado/a',
-          masculinoLabel: 'Masculino',
-          femininoLabel: 'Femenino',
-          ensinoFILabel: 'Primaria incompleta',
-          ensinoFCLabel: 'Primaria completa',
-          ensinoMILabel: 'Secundaria incompleta',
-          ensinoMCLabel: 'Secundaria completa',
-          ensinoSILabel: 'Universidad incompleta',
-          ensinoSCLabel: 'Universidad completa',
-          botaoLabel: 'Registrarse',
-          cpfLabel: 'Ingrese su CPF',
-          rgLabel: 'Ingrese su rg',
-          cnhLabel:'Ingrese su cnh',
-          crnmLabel:'Ingrese su crnm',
-          rneLabel:'Ingrese su rne',
+          nameLabel: "Nombre",
+          sobreLabel: "Apellido",
+          emailLabel: "Correo electrónico",
+          senhaLabel: "Contraseña",
+          nascLabel: "Fecha de nacimiento",
+          numeroLabel: "Número de teléfono",
+          estadoCivilLabel: "Estado civil",
+          generoLabel: "Género",
+          escolaridadeLabel: "Nivel de educación",
+          paisLabel: "País",
+          solteiroLabel: "Soltero/a",
+          casadoLabel: "Casado/a",
+          viuvoLabel: "Viudo/a",
+          separadoLabel: "Separado/a",
+          divorciadoLabel: "Divorciado/a",
+          masculinoLabel: "Masculino",
+          femininoLabel: "Femenino",
+          ensinoFILabel: "Educación primaria incompleta",
+          ensinoFCLabel: "Educación primaria completa",
+          ensinoMILabel: "Educación secundaria incompleta",
+          ensinoMCLabel: "Educación secundaria completa",
+          ensinoSILabel: "Educación universitaria incompleta",
+          ensinoSCLabel: "Educación universitaria completa",
+          cpfLabel: "CPF",
+          rgLabel: "RG",
+          cnhLabel: "CNH",
+          crnmLabel: "CRNM",
+          rneLabel: "RNE",
+          cepLabel: 'Código Postal',
+          estadoLabel: 'Estado',
+          cidadeLabel: 'Ciudad',
+          bairroLabel: 'Barrio',
+          ruaLabel: 'Calle',
+          numeroCasaLabel: 'Número de casa',
+          h1Cadastro: 'Registro',
+          textoCadastro: '¡Bienvenido a nuestro sitio web! Estamos emocionados de tenerte con nosotros. Por favor, complete el formulario a continuación para crear su cuenta y disfrutar de todos los beneficios ofrecidos:',
+          h5Fone: '11 dígitos',
+          h5Email: 'Asegúrese de haber ingresado correctamente su dirección de correo electrónico',
+          btnProximo:'Siguiente',
+          btnProximo2:'Siguiente',
+          btnProximo3:'Siguiente',
+          btnProximo4:'Siguiente',
+          btnProximo5:'Siguiente',
+          btnProximo6:'Siguiente',
+          btnAnterior: 'Volver',
+          btnAnterior2:'Volver',
+          btnAnterior3:'Volver',
+          btnAnterior4:'Volver',
+          btnAnterior5:'Volver',
+          btnAnterior6:'Volver',
+          btnAnterior7:'Volver',
+          optionPais: 'Seleccione su país',
+          optionGenereo: 'Seleccione su género',
+          optionEstadoCivil: 'Seleccione su estado civil',
+          optionEscolaridade: 'Seleccione su nivel de educación',
+          h5Senha: 'Debe contener: Mínimo 8 caracteres, Máximo 16 caracteres, Al menos un número, Al menos una letra mayúscula y una minúscula',
+          h5ConfirmaSenha: 'Asegúrese de que ambas contraseñas coincidan',
+          pDocumentos: '¿Desea registrar sus documentos?',
+          aSim: 'Sí',
+          aNao: 'No',
+          h5Endereco:'¿Desea registrar su dirección?',
+          aSim2:'Sí',
+          aNao2:'No',
+          h5Cep: 'El código postal debe contener un guión',
+          pMensagemFinal: 'Haga clic en enviar para confirmar su registro. Si es necesario, puede cambiar su información en la página de su perfil. Si desea revisar su información antes de completar el registro, haga clic en el botón de atrás.',
+          btnVoltar: 'Atrás',
+          btn_submit: 'Registrarse',
+          successModalLabel: 'Verificación de cuenta',
+          mensagemEmail: 'Se ha enviado un correo electrónico con un enlace de verificación de cuenta.',
+          btnModalClose: 'Cerrar',
+          btnModalReenviar: 'Reenviar correo electrónico',
+          ErrorModalLabel: '¡Error!',
+          MensagemErro: 'Se produjo un error en su registro. Por favor, verifique si alguna de sus informaciones fue ingresada incorrectamente.',
+          btnModalCloseError: 'Cerrar',
+          senhaConfirmaLabel: 'Confirmar Contraseña'
         },
       fr: {
-        nameLabel: "Entrez votre nom",
-        sobreLabel: "Entrez votre nom de famille",
-        emailLabel: "Entrez votre adresse e-mail",
-        senhaLabel: "Entrez votre mot de passe",
-        nascLabel: "Entrez votre date de naissance",
-        numeroLabel: "Entrez votre numéro de téléphone",
-        estadoCivilLabel: "Entrez votre état civil",
-        generoLabel: "Entrez votre genre",
-        escolaridadeLabel: "Entrez votre niveau d'éducation",
-        paisLabel: "Entrez votre pays",
+        nameLabel: "Nom",
+        sobreLabel: "Nom de famille",
+        emailLabel: "E-mail",
+        senhaLabel: "Mot de passe",
+        nascLabel: "Date de naissance",
+        numeroLabel: "Numéro de téléphone",
+        estadoCivilLabel: "État civil",
+        generoLabel: "Genre",
+        escolaridadeLabel: "Niveau d'éducation",
+        paisLabel: "Pays",
         solteiroLabel: "Célibataire",
         casadoLabel: "Marié",
         viuvoLabel: "Veuf/Veuve",
         separadoLabel: "Séparé(e)",
         divorciadoLabel: "Divorcé(e)",
-        masculinoLabel: "Homme",
-        femininoLabel: "Femme",
+        masculinoLabel: "Masculin",
+        femininoLabel: "Féminin",
         ensinoFILabel: "École primaire incomplète",
         ensinoFCLabel: "École primaire complète",
         ensinoMILabel: "École secondaire incomplète",
         ensinoMCLabel: "École secondaire complète",
-        ensinoSILabel: "Université incomplète",
-        ensinoSCLabel: "Université complète",
-        botaoLabel: "S'inscrire",
-        cpfLabel: 'Entrez votre CPF',
-        rgLabel: 'Entrez votre rg',
-        cnhLabel:'Entrez votre cnh',
-        crnmLabel:'Entrez votre crnm',
-        rneLabel:'Entrez votre rne',
+        ensinoSILabel: "Collège incomplet",
+        ensinoSCLabel: "Collège complet",
+        cpfLabel: "CPF",
+        rgLabel: "RG",
+        cnhLabel: "CNH",
+        crnmLabel: "CRNM",
+        rneLabel: "RNE",
+        cepLabel: "Code postal",
+        estadoLabel: "État",
+        cidadeLabel: "Ville",
+        bairroLabel: "Quartier",
+        ruaLabel: "Rue",
+        numeroCasaLabel: "Numéro de maison",
+        h1Cadastro: "Inscrivez-vous",
+        textoCadastro: "Bienvenue sur notre site web! Nous sommes ravis de vous avoir avec nous. Veuillez remplir le formulaire ci-dessous pour créer votre compte et profiter de tous les avantages offerts:",
+        h5Fone: "11 chiffres",
+        h5Email: "Assurez-vous d'avoir saisi correctement votre adresse e-mail",
+        btnProximo: "Suivant",
+        btnProximo2: "Suivant",
+        btnProximo3: "Suivant",
+        btnProximo4: "Suivant",
+        btnProximo5: "Suivant",
+        btnProximo6: "Suivant",
+        btnAnterior: "Retour",
+        btnAnterior2: "Retour",
+        btnAnterior3: "Retour",
+        btnAnterior4: "Retour",
+        btnAnterior5: "Retour",
+        btnAnterior6: "Retour",
+        btnAnterior7: "Retour",
+        optionPais: "Sélectionnez votre pays",
+        optionGenereo: "Sélectionnez votre genre",
+        optionEstadoCivil: "Sélectionnez votre état civil",
+        optionEscolaridade: "Sélectionnez votre niveau d'éducation",
+        h5Senha: "Doit contenir : Minimum 8 caractères, Maximum 16 caractères, Au moins un chiffre, Au moins une lettre majuscule et une lettre minuscule",
+        h5ConfirmaSenha: "Assurez-vous que les deux mots de passe correspondent",
+        pDocumentos: "Voulez-vous enregistrer vos documents?",
+        aSim: "Oui",
+        aNao: "Non",
+        h5Endereco: "Voulez-vous enregistrer votre adresse?",
+        aSim2: "Oui",
+        aNao2: "Non",
+        h5Cep: "Le code postal doit contenir un tiret",
+        pMensagemFinal: "Cliquez sur soumettre pour confirmer votre inscription. Si nécessaire, vous pouvez modifier vos informations sur votre page de profil. Si vous souhaitez vérifier vos informations avant de terminer l'inscription, cliquez sur le bouton retour.",
+        btnVoltar: "Retour",
+        btn_submit: "Inscrivez-vous",
+        successModalLabel: "Vérification du compte",
+        mensagemEmail: "Un e-mail avec un lien de vérification de compte vous a été envoyé.",
+        btnModalClose: "Fermer",
+        btnModalReenviar: "Renvoyer l'e-mail",
+        ErrorModalLabel: "Erreur!",
+        MensagemErro: "Une erreur s'est produite lors de votre inscription. Veuillez vérifier si l'une de vos informations a été saisie incorrectement.",
+        btnModalCloseError: "Fermer",
+        senhaConfirmaLabel: 'Confirmer le mot de passe'
       },
       ar: {
-        nameLabel: 'أدخل اسمك',
-        sobreLabel: 'أدخل اسمك الأخير',
-        emailLabel: 'أدخل بريدك الإلكتروني',
-        senhaLabel: 'أدخل كلمة المرور الخاصة بك',
-        nascLabel: 'أدخل تاريخ ميلادك',
-        numeroLabel: 'أدخل رقم هاتفك',
-        estadoCivilLabel: 'أدخل حالتك الزوجية',
-        generoLabel: 'أدخل جنسك',
-        escolaridadeLabel: 'أدخل مستوى تعليمك',
-        paisLabel: 'أدخل بلدك',
-        solteiroLabel: 'أعزب',
-        casadoLabel: 'متزوج',
-        viuvoLabel: 'أرمل/ة',
-        separadoLabel: 'منفصل/ة',
-        divorciadoLabel: 'مطلق/ة',
-        masculinoLabel: 'ذكر',
-        femininoLabel: 'أنثى',
-        ensinoFILabel: 'مدرسة ابتدائية غير مكتملة',
-        ensinoFCLabel: 'مدرسة ابتدائية كاملة',
-        ensinoMILabel: 'مدرسة ثانوية غير مكتملة',
-        ensinoMCLabel: 'مدرسة ثانوية كاملة',
-        ensinoSILabel: 'كلية غير مكتملة',
-        ensinoSCLabel: 'كلية كاملة',
-        botaoLabel: 'تسجيل',
-        cpfLabel: 'أدخل CPF',
-        rgLabel: 'أدخل rg',
-        cnhLabel:'أدخل cnh',
-        crnmLabel:'أدخل crnm',
-        rneLabel:'أدخل rne',
+        nameLabel: "الاسم",
+        sobreLabel: "الاسم الأخير",
+        emailLabel: "البريد الإلكتروني",
+        senhaLabel: "كلمة المرور",
+        nascLabel: "تاريخ الميلاد",
+        numeroLabel: "رقم الهاتف",
+        estadoCivilLabel: "الحالة الاجتماعية",
+        generoLabel: "الجنس",
+        escolaridadeLabel: "المستوى التعليمي",
+        paisLabel: "الدولة",
+        solteiroLabel: "أعزب/عزباء",
+        casadoLabel: "متزوج/متزوجة",
+        viuvoLabel: "أرمل/أرملة",
+        separadoLabel: "منفصل/منفصلة",
+        divorciadoLabel: "مطلق/مطلقة",
+        masculinoLabel: "ذكر",
+        femininoLabel: "أنثى",
+        ensinoFILabel: "التعليم الابتدائي غير كامل",
+        ensinoFCLabel: "التعليم الابتدائي كامل",
+        ensinoMILabel: "التعليم الثانوي غير كامل",
+        ensinoMCLabel: "التعليم الثانوي كامل",
+        ensinoSILabel: "التعليم الجامعي غير كامل",
+        ensinoSCLabel: "التعليم الجامعي كامل",
+        cpfLabel: "CPF",
+        rgLabel: "RG",
+        cnhLabel: "CNH",
+        crnmLabel: "CRNM",
+        rneLabel: "RNE",
+        cepLabel: "الرمز البريدي",
+        estadoLabel: "الولاية",
+        cidadeLabel: "المدينة",
+        bairroLabel: "الحي",
+        ruaLabel: "الشارع",
+        numeroCasaLabel: "رقم المنزل",
+        h1Cadastro: "التسجيل",
+        textoCadastro: "مرحبًا بك في موقعنا على الويب! نحن متحمسون لوجودك معنا. يرجى ملء النموذج أدناه لإنشاء حسابك والاستمتاع بجميع الفوائد المقدمة:",
+        h5Fone: "11 أرقام",
+        h5Email: "تأكد من أنك قد أدخلت عنوان بريدك الإلكتروني بشكل صحيح",
+        btnProximo:"التالي",
+        btnProximo2:"التالي",
+        btnProximo3:"التالي",
+        btnProximo4:"التالي",
+        btnProximo5:"التالي",
+        btnProximo6:"التالي",
+        btnAnterior: "رجوع",
+        btnAnterior2:"رجوع",
+        btnAnterior3:"رجوع",
+        btnAnterior4:"رجوع",
+        btnAnterior5:"رجوع",
+        btnAnterior6:"رجوع",
+        btnAnterior7:"رجوع",
+        optionPais: "اختر بلدك",
+        optionGenereo: "اختر جنسك",
+        optionEstadoCivil: "اختر الحالة الزواجية",
+        optionEscolaridade: "اختر مستوى تعليمك",
+        h5Senha: "يجب أن تحتوي على: الحد الأدنى 8 أحرف ، الحد الأقصى 16 حرفًا ، على الأقل رقم واحد ، على الأقل حرف كبير وحرف صغير واحد",
+        h5ConfirmaSenha: "تأكد من تطابق كلمتي المرور",
+        pDocumentos: "هل ترغب في تسجيل وثائقك؟",
+        aSim: "نعم",
+        aNao: "لا",
+        h5Endereco:"هل ترغب في تسجيل عنوانك؟",
+        aSim2:"نعم",
+        aNao2:"لا",
+        h5Cep: "يجب أن يحتوي الرمز البريدي على شرطة",
+        pMensagemFinal: "انقر فوق إرسال لتأكيد تسجيلك. إذا لزم الأمر ، يمكنك تغيير معلوماتك على صفحة ملفك الشخصي. إذا كنت ترغب في مراجعة معلوماتك قبل إكمال التسجيل ، فانقر فوق الزر الخلفي.",
+        btnVoltar: "رجوع",
+        btn_submit: "التسجيل",
+        successModalLabel: "التحقق من الحساب",
+        mensagemEmail: "تم إرسال بريد إلكتروني يحتوي على رابط التحقق من الحساب إليك.",
+        btnModalClose: "إغلاق",
+        btnModalReenviar: "إعادة إرسال البريد الإلكتروني",
+        ErrorModalLabel: "خطأ!",
+        MensagemErro: "حدث خطأ في تسجيلك. يرجى التحقق مما إذا كانت أي من معلوماتك قد تم إدخالها بشكل غير صحيح.",
+        btnModalCloseError: "إغلاق",
+        senhaConfirmaLabel: 'تأكيد كلمة المرور'
       }
       };
     
