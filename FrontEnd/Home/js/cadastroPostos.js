@@ -25,6 +25,12 @@ function dadosEndereco() {
         )
         .catch((erro) => console.log(erro))
 }
+
+function logout(){
+  localStorage.removeItem('token')
+  window.location.href = "/html/index.html"
+}
+
 let idEndereco = 0;
 async function cadastrar(){
     let cep = document.getElementById('cep').value

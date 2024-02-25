@@ -62,3 +62,16 @@ function scrollToEnviarSugestao(){
     behavior: "smooth" 
   });
 }
+
+function documentosLink(){
+  window.location.href = "./DicasEdocumentos.html"
+}
+function abrigosLink(){
+  window.location.href = "./abrigos.html"
+}
+function consuladosLink(){
+  window.location.href = "./consulados.html"
+}
+function postosLink(){
+  window.location.href = "./postosDeSaude.html"
+}

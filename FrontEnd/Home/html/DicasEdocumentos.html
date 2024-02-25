@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/styleP.css">
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="shortcut icon" type="imagex/png" href="/imagens/iconeCASA.ico">
     <title>Documento necessários</title>
 </head>
@@ -36,7 +36,7 @@
       <button class="openbtn" id="sideBar" onclick="openNav()">&#9776;</button>
     </div>
   </header>
-  <!--<div id="mySidebar" class="sidebar">
+  <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
     <a id="linkPerfil" href="perfil.html">Perfil</a>
     <a id="linkDocumentos" href="/html/documentosPerfil.html">Documentos</a>
@@ -45,7 +45,8 @@
       <div id="div_div_btn_logout">
       <a id="logout" onclick="logout()">Logout</a>
     </div>
-  </div>-->
+  </div>
+</div>
   <section id="opcao_ajuda_documentos" style="margin: 2rem 1rem;">
     <div id="texto_ajuda_documentos">
       <h3 style="color: #4a84b4; font-size: 3rem;">Cuide da sua Documentação!</h3>
@@ -58,11 +59,11 @@
     </div>
     <div>
       <div id="carossel_ajuda_documentos">
-        <div class="opcoes_ajuda_documentos">
+        <div onclick="showCPF()" class="opcoes_ajuda_documentos">
           <span>♦</span>
           <h4>CPF</h4>
         </div>
-        <div class="opcoes_ajuda_documentos">
+        <div onclick="showCNH()" class="opcoes_ajuda_documentos">
           <span>♦</span>
           <h4>CNH</h4>
         </div>
@@ -70,9 +71,9 @@
           <span>♦</span>
           <h4>RG</h4>
         </div>
-        <div class="opcoes_ajuda_documentos">
+        <div onclick="showCRNM()" class="opcoes_ajuda_documentos">
           <span>♦</span>
-          <h4>Idioma</h4>
+          <h4>CRNM</h4>
         </div>
       </div>
       <div id="carossel_ajuda_documentos">
@@ -88,17 +89,120 @@
           <span>♦</span>
           <h4>RG</h4>
         </div>
-        <div class="opcoes_ajuda_documentos">
+        <div onclick="showCTPS()" class="opcoes_ajuda_documentos">
           <span>♦</span>
-          <h4>Idioma</h4>
+          <h4>CTPS</h4>
         </div>
       </div>
     </div>
   </section>
+
+  <div class="modal fade show" id="CNHModal" tabindex="-1" aria-labelledby="CNHModalLabel" style="padding-right: 0px; display: none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="CNHModalLabel" style="color: black;">CNH</h1>
+          <button type="button" class="btn-close" id="CNHClose" aria-label="Close"></button>
+        </div>
+        <div id="mensagemCNH" class="modal-body" style="color: black;">
+          Carteira Nacional de Habilitação (CNH): O que é? A Carteira Nacional de Habilitação (CNH) é um documento essencial que legitima a capacidade de um indivíduo para conduzir veículos automotores e atesta seu conhecimento das normas de trânsito.
+          <br>
+          <br>
+          Passo 1 - Processo de Habilitação: O início do processo envolve a inscrição em uma autoescola, onde o futuro condutor terá aulas teóricas e práticas. Após a conclusão do curso, é necessário realizar exames teóricos e práticos para comprovar sua aptidão para dirigir. 
+          <br>
+          Passo 2 - Solicitação da CNH: Uma vez aprovado, o próximo passo é solicitar a CNH. Isso geralmente é feito no Detran local, onde é necessário apresentar documentos, realizar exames médicos e pagar as taxas associadas.
+          <br>
+          Passo 3 - Permissão Provisória e CNH Definitiva: Ao obter aprovação nos exames, o candidato recebe inicialmente uma Permissão para Dirigir, válida por um período determinado. Após cumprir esse prazo e sem incidentes graves, é possível solicitar a CNH definitiva.
+          <br>
+          Passo 4 - Renovação e Atualização: A CNH precisa ser renovada periodicamente. Durante esse processo, é uma oportunidade para atualizar informações e garantir que o condutor esteja ciente das mudanças nas leis de trânsito. A CNH é mais do que um simples documento; é a chave para a mobilidade e responsabilidade no trânsito. O cumprimento rigoroso dos passos do processo de obtenção e a manutenção atenta do status da habilitação contribuem para um tráfego mais seguro e eficiente nas vias públicas.        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="btnCNHClose">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade show" id="CRNMModal" tabindex="-1" aria-labelledby="CRNMModalLabel" style="padding-right: 0px; display: none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="CRNMModalLabel" style="color: black;">CRNM</h1>
+          <button type="button" class="btn-close" id="CRNMClose" aria-label="Close"></button>
+        </div>
+        <div id="mensagemCRNM" class="modal-body" style="color: black;">
+          CRNM O que é - Todas as pessoas migrantes que querem se estabelecer no Brasil e solicitam autorização autorização de residência no país – inclusive as pessoas refugiadas com situação reconhecida pelo CONARE. 
+          <br>
+          <br>
+          Passo 1- Acessar o site da Polícia Federal para preencher o formulário de Autorização de Residência. É preciso preencher a modalidade escolhida, de acordo com seu local de origem ou motivo de sua permanência (como tratamento de saúde, reunião familiar, etc). Para pessoas migrantes venezuelanas, a modalidade que pode ser escolhida é a de Nacional de país fronteiriço onde não esteja em vigor o acordo de residência para nacionais dos estados partes do Mercosul e países associados. 
+          <br>
+          <br>
+          Passo 2 - Ao finalizar o preenchimento do formulário, agendar o comparecimento na unidade da Polícia Federal mais próxima de sua moradia, com atendimento para migrantes, para apresentar os documentos requeridos e taxas pagas. 
+          <br>
+          <br>
+          Passo 3 - Comparecer à unidade da Polícia Federal para receber a Carteira de Registro Nacional Migratório.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="btnCRNMClose">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade show" id="CTPSModal" tabindex="-1" aria-labelledby="CTPSModalLabel" style="padding-right: 0px; display: none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="CTPSModalLabel" style="color: black;">CTPS</h1>
+          <button type="button" class="btn-close" id="CTPSClose" aria-label="Close"></button>
+        </div>
+        <div id="mensagemCTPS" class="modal-body" style="color: black;">
+          Carteira de Trabalho e Previdência Social (CTPS): O que é? A Carteira de Trabalho e Previdência Social (CTPS) é um documento crucial que registra informações sobre contratos de trabalho, assegurando os direitos trabalhistas concedidos pelo governo aos trabalhadores.
+          <br>
+          <br>
+          Passo 1 - Criação da Conta: O primeiro passo é criar uma conta no sistema do Ministério da Economia por meio do site. Para realizar o cadastro, é necessário ter em mãos o número do CPF.
+          <br>
+          <br>   
+          Passo 2 - Acesso ao Sistema: Em seguida, acesse o site do Ministério da Economia ou faça o download do aplicativo "Carteira de Trabalho Digital" na loja virtual do celular.
+          <br>
+          <br> 
+          Passo 3 - Atualização de Dados: Ao acessar o perfil pessoal, é possível completar e/ou ajustar os dados laborais, garantindo a manutenção de um cadastro atualizado. Essa prática é fundamental para assegurar a precisão das informações relacionadas ao histórico de trabalho. Esses passos proporcionam aos trabalhadores um meio eficiente de manterem registros atualizados de suas atividades laborais, contribuindo para a transparência e garantindo o acesso aos benefícios trabalhistas oferecidos pelo governo.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="btnCTPSClose">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade show" id="CPFModal" tabindex="-1" aria-labelledby="CPFModalLabel" style="padding-right: 0px; display: none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="CPFModalLabel" style="color: black;">CPF</h1>
+          <button type="button" class="btn-close" id="CPFClose" aria-label="Close"></button>
+        </div>
+        <div id="mensagemCPF" class="modal-body" style="color: black;">
+          O CPF é um documento identificador do contribuinte do Imposto de Rende, e é obrigatório para todos os residentes no Brasil. É utilizado para abertura de contas bancárias, emissão de outros documentos, matricula em universidades e cadastro de número telefônico.<br>
+          <br>
+          Passo 1 - Acessar o site da Receita Federal e preencher o formulário com seus dados pessoais, para gerar um protocolo.
+          <br>
+          <br>   
+          Passo 2 - Ir a uma unidade física da Receita Federal, possuindo o protocolo, documento de identidade e comprovante de residência.
+          <br>
+          <br> 
+          Pontos Importantes - Caso você não possua documentos do governo brasileiro, como o Protocolo de Refúgio e a CRNM, é necessário levar documentos de identificação admitidos no país de origem. É Importante levar a certidão de nascimento para comprovar a naturalidade, a filiação e a data de nascimento.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="btnCPFClose">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <!--</div>
       
-      <p>Documentos necessários, para que servem e como emiti-los:</p>
-      <p>Cadastro de Pessoa Física (CPF):</p>
+    
       <p>Para oque serve</p>
       <p>O CPF é um documento identificador do contribuinte do Imposto de Rende, e é obrigatório para todos os residentes no Brasil. É utilizado para abertura de contas bancárias, emissão de outros documentos, matricula em universidades e cadastro de número telefônico</p>
       <p>Como emitir</p>
@@ -107,7 +211,12 @@
       <p>Pontos Importantes:</p>
       <p>Caso você não possua documentos do governo brasileiro, como o Protocolo de Refúgio e a CRNM, é necessário levar documentos de identificação admitidos no país de origem</p>
       <p>É Importante levar a certidão de nascimento para comprovar a naturalidade, a filiação e a data de nascimento.</p>-->
+
+      <div id="modalBackground" class=""></div>
+
+
 </body>
+<script src="/js/DicasDocumentos.js"></script>
 <script src="/js/permissoes.js"></script>
 <script src="/js/rightSideBar.js"></script>-
 </html>

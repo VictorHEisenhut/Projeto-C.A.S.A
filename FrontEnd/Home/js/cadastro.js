@@ -268,25 +268,23 @@ fetch('http://localhost:5145/api/Paises',{
           var bg = document.getElementById("modalBackground");
           var close = document.getElementById("modalClose");
           var btnClose = document.getElementById("btnModalClose");
-
               modalObj.style.display = "block"
-
               bg.classList.add("modal-backdrop")
               bg.classList.add("fade")
               bg.classList.add("show")
-
           btnClose.onclick = function(){
             modalObj.style.display = "none"
             bg.classList.remove("modal-backdrop")
             bg.classList.remove("fade")
             bg.classList.remove("show")
+            window.location.href = "./login.html"
           }
-
           close.onclick = function(){
             modalObj.style.display = "none"
             bg.classList.remove("modal-backdrop")
             bg.classList.remove("fade")
             bg.classList.remove("show")
+            window.location.href = "./login.html"
           }
 
         }
