@@ -144,11 +144,79 @@ async function cadastroConsulados(){
             telefone: telefone 
         }
         console.log(objConsulado)
-        await fetch('http://localhost:5145/api/Consulados',
-            {
-                method: "POST",
-                headers: {/*'Authorization': 'Bearer ' + token,*/'Content-Type': 'application/json'},
-                body: JSON.stringify(objConsulado)
-            })
+
+        try{
+          const response = await fetch('http://localhost:5145/api/Consulados',
+          {
+              method: "POST",
+              headers: {'Authorization': 'Bearer ' + token,'Content-Type': 'application/json'},
+              body: JSON.stringify(objConsulado)
+          })
+          if (await response.ok) {
+            showModal();
+            console.log("Cadastro bem-sucedido.");
+          } else {
+            showErrorModal();
+            console.log("Erro ao cadastrar:", await response.text());
+        }
+        } catch (error) {
+          console.error("Erro ao cadastrar:", error);
+      }
+
+        
 }
 
+async function showModal() {
+  var modalObj = document.getElementById("successModal");
+  var bg = document.getElementById("modalBackground");
+  var close = document.getElementById("modalClose");
+  var btnClose = document.getElementById("btnModalClose");
+
+      modalObj.style.display = "block"
+
+      bg.classList.add("modal-backdrop")
+      bg.classList.add("fade")
+      bg.classList.add("show")
+
+  btnClose.onclick = function(){
+    modalObj.style.display = "none"
+    bg.classList.remove("modal-backdrop")
+    bg.classList.remove("fade")
+    bg.classList.remove("show")
+  }
+
+  close.onclick = function(){
+    modalObj.style.display = "none"
+    bg.classList.remove("modal-backdrop")
+    bg.classList.remove("fade")
+    bg.classList.remove("show")
+  }
+
+}
+
+async function showErrorModal(){
+  var modalObjError = document.getElementById("ErrorModal");
+  var bgError = document.getElementById("modalBackground");
+  var closeError = document.getElementById("modalCloseError");
+  var btnCloseError = document.getElementById("btnModalCloseError");
+
+      modalObjError.style.display = "block"
+
+      bgError.classList.add("modal-backdrop")
+      bgError.classList.add("fade")
+      bgError.classList.add("show")
+
+  btnCloseError.onclick = function(){
+    modalObjError.style.display = "none"
+    bgError.classList.remove("modal-backdrop")
+    bgError.classList.remove("fade")
+    bgError.classList.remove("show")
+  }
+
+  closeError.onclick = function(){
+    modalObjError.style.display = "none"
+    bgError.classList.remove("modal-backdrop")
+    bgError.classList.remove("fade")
+    bgError.classList.remove("show")
+  }
+}
