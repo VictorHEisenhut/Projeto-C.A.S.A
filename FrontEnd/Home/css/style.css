@@ -30,6 +30,41 @@ header select{
     padding: 0.75rem;
 }
 
+.select_languages{
+    padding: 5rem;
+}
+
+#footer_flex{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+
+    margin-left: 2rem;
+}   
+
+.footer_div_flex{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin-left: 4rem;
+}
+
+.footer_div_flex p{
+    width: 80%;
+}
+
+.footer_div_flex h3{
+    font-size: 2rem;
+}
+
+.footer_div_flex a{
+    color: #edecec;
+    text-decoration: none;
+}
 
 
 /*Login*/
