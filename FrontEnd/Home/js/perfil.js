@@ -52,6 +52,7 @@ const result = Promise.resolve(valores);
             document.getElementById("cidade").value = value.endereco.cidade
             document.getElementById("bairro").value = value.endereco.bairro
             document.getElementById("rua").value = value.endereco.rua
+            document.getElementById("complemento").value = value.endereco.complemento
             document.getElementById("numero").value = value.endereco.numero
         })
 
@@ -81,17 +82,103 @@ const result = Promise.resolve(valores);
               .catch((erro) => console.log(erro))
       }
 
-var senhaEditar = document.getElementById('senhaEditar');
-senhaEditar.style.display = 'none';
-var erroAoEditar = document.getElementById('erroAoEditar');
-erroAoEditar.style.display = 'none';
-var voltarDepoideEditar = document.getElementById('voltarDepoideEditar');
-voltarDepoideEditar.style.display = 'none';
-function senhaParaEditar(){
-  senhaEditar.style.display = 'block';
+
+function ModalConfirmEditar(){
+    var modalObj = document.getElementById("ConfirmEditarModal");
+    var bg = document.getElementById("modalBackground");
+    var close = document.getElementById("ConfirmEditarClose");
+    var btnClose = document.getElementById("btnConfirmEditarClose");
+        modalObj.style.display = "block"
+        bg.classList.add("modal-backdrop")
+        bg.classList.add("fade")
+        bg.classList.add("show")
+    btnClose.onclick = function(){
+      modalObj.style.display = "none"
+      bg.classList.remove("modal-backdrop")
+      bg.classList.remove("fade")
+      bg.classList.remove("show")
+    }
+    close.onclick = function(){
+      modalObj.style.display = "none"
+      bg.classList.remove("modal-backdrop")
+      bg.classList.remove("fade")
+      bg.classList.remove("show")
+    }
 }
+
+function showSuccessModal(){
+  document.getElementById("nome").setAttribute("disabled","")
+  document.getElementById("sobrenome").setAttribute("disabled","")
+  document.getElementById("dataNascimento").setAttribute("disabled","")
+  document.getElementById("telefone").setAttribute("disabled","")
+  document.getElementById("estadoCivil").setAttribute("disabled","")
+  document.getElementById("estadoCivil").removeAttribute("hidden")
+  document.getElementById("estadoCivilEditar").setAttribute("hidden","")
+  document.getElementById("genero").setAttribute("disabled","")
+  document.getElementById("genero").removeAttribute("hidden")
+  document.getElementById("generoEditar").setAttribute("hidden","")
+  document.getElementById("escolaridade").setAttribute("disabled","")
+  document.getElementById("escolaridade").removeAttribute("hidden")
+  document.getElementById("escolaridadeEditar").setAttribute("hidden","")
+  document.getElementById("cep").setAttribute("disabled","")
+  document.getElementById("complemento").setAttribute("disabled","")
+  document.getElementById("numero").setAttribute("disabled","")
+  document.getElementById("btnIniciarEditar").removeAttribute("hidden")
+  document.getElementById("btnConfirmar").setAttribute("hidden","")
+
+  var modalObj = document.getElementById("editouModal");
+  var bg = document.getElementById("modalBackground");
+  var close = document.getElementById("editouClose");
+  var btnClose = document.getElementById("btneditouClose");
+      modalObj.style.display = "block"
+      bg.classList.add("modal-backdrop")
+      bg.classList.add("fade")
+      bg.classList.add("show")
+  btnClose.onclick = function(){
+    modalObj.style.display = "none"
+    bg.classList.remove("modal-backdrop")
+    bg.classList.remove("fade")
+    bg.classList.remove("show")
+  }
+  close.onclick = function(){
+    modalObj.style.display = "none"
+    bg.classList.remove("modal-backdrop")
+    bg.classList.remove("fade")
+    bg.classList.remove("show")
+  }
+}
+
+function showErrorModal(){
+  var modalObj = document.getElementById("ErrorModal");
+  var bg = document.getElementById("modalBackground");
+  var close = document.getElementById("ErrorClose");
+  var btnClose = document.getElementById("btnErrorClose");
+      modalObj.style.display = "block"
+      bg.classList.add("modal-backdrop")
+      bg.classList.add("fade")
+      bg.classList.add("show")
+  btnClose.onclick = function(){
+    modalObj.style.display = "none"
+    bg.classList.remove("modal-backdrop")
+    bg.classList.remove("fade")
+    bg.classList.remove("show")
+  }
+  close.onclick = function(){
+    modalObj.style.display = "none"
+    bg.classList.remove("modal-backdrop")
+    bg.classList.remove("fade")
+    bg.classList.remove("show")
+  }
+}
+
+
 function confirmaEditar(){
-  senhaEditar.style.display = 'none';
+  var modalObj = document.getElementById("ConfirmEditarModal");
+  modalObj.style.display = 'none';
+  var bg = document.getElementById("modalBackground");
+  bg.classList.remove("modal-backdrop")
+  bg.classList.remove("fade")
+  bg.classList.remove("show")
   document.getElementById("nome").removeAttribute("disabled")
   document.getElementById("sobrenome").removeAttribute("disabled")
   document.getElementById("dataNascimento").removeAttribute("disabled")
@@ -107,14 +194,9 @@ function confirmaEditar(){
   document.getElementById("escolaridadeEditar").removeAttribute("hidden")
   document.getElementById("cep").removeAttribute("disabled")
   document.getElementById("numero").removeAttribute("disabled")
-
+  document.getElementById("complemento").removeAttribute("disabled")
   document.getElementById("btnConfirmar").removeAttribute("hidden")
   document.getElementById("btnIniciarEditar").setAttribute("hidden","")
-}
-function voltar(){
-  senhaEditar.style.display = 'none';
-  erroAoEditar.style.display = 'none';
-  voltarDepoideEditar.style.display = 'none';
 }
 
 
@@ -242,6 +324,16 @@ async function editar()
           corrua.style.borderColor = "black"
         }
 
+        let complemento = document.getElementById("complemento").value
+        const corcomplemento = document.getElementById("complemento")
+        if(complemento == ""){
+          complemento = null
+          corcomplemento.style.borderColor = "red"
+        }
+        else{
+          corcomplemento.style.borderColor = "black"
+        }
+
         let numero = document.getElementById("numero").value
         const cornumero = document.getElementById("numero")
         var auxN = parseInt(numero);
@@ -268,45 +360,34 @@ async function editar()
               cidade: cidade,
               bairro: bairro,
               rua: rua,
+              complemento:complemento,
               numero: auxN,
               cep:cep
             }
         }
         console.log(obj)
         console.log(idRefugiado.nameid)
-        if(numero <= 0 ||rua == ""||bairro == ""||cidade == ""||estado == ""||cep == ""||escolaridade.value == "Selecione sua escolaridade"||genero.value == "Selecione seu gênero"||estadoCivil.value == "Selecione seu estado civíl"||fone == "" || fone.length != 11||dataN == ""||email == ""||nome == ""||sobrenome == ""){
-          erroAoEditar.style.display = 'block';
-        }
-        else{
-          await fetch(`http://localhost:5145/api/Refugiados/${idRefugiado.nameid}`,
+
+        try{
+          const response = await fetch(`http://localhost:5145/api/Refugiados/${idRefugiado.nameid}`,
           {
               method: "PUT",
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify(obj)
           })
-              document.getElementById("nome").setAttribute("disabled","")
-              document.getElementById("sobrenome").setAttribute("disabled","")
-              document.getElementById("dataNascimento").setAttribute("disabled","")
-              document.getElementById("telefone").setAttribute("disabled","")
-              document.getElementById("estadoCivil").setAttribute("disabled","")
-              document.getElementById("estadoCivil").removeAttribute("hidden")
-              document.getElementById("estadoCivilEditar").setAttribute("hidden","")
-              document.getElementById("genero").setAttribute("disabled","")
-              document.getElementById("genero").removeAttribute("hidden")
-              document.getElementById("generoEditar").setAttribute("hidden","")
-              document.getElementById("escolaridade").setAttribute("disabled","")
-              document.getElementById("escolaridade").removeAttribute("hidden")
-              document.getElementById("escolaridadeEditar").setAttribute("hidden","")
-              document.getElementById("cep").setAttribute("disabled","")
-              document.getElementById("numero").setAttribute("disabled","")
-
-              document.getElementById("btnIniciarEditar").removeAttribute("hidden")
-              document.getElementById("btnConfirmar").setAttribute("hidden","")
-              voltarDepoideEditar.style.display = 'block';
-        }
+              if (await response.ok) {
+                showSuccessModal();
+                console.log("Edição bem-sucedido.");
+              } else {
+                showErrorModal();
+                console.log("Erro ao Editar:", await response.text());
+            }
+        } catch (error) {
+          console.error("Erro ao cadastrar:", error);
+      }
+          
         }
 
-        
         async function confirmaDeletar(){
           await fetch(`http://localhost:5145/api/Refugiados/${idRefugiado.nameid}`,
         {
