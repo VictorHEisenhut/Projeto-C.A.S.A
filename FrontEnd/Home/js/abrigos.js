@@ -45,3 +45,63 @@ window.addEventListener('load', function() {
 function linkEndereco(rua,numero,bairro,cidade,estado,cep){
     window.open(`https://www.google.com.br/maps/place/R.+${rua},+${numero}+${bairro},+${cidade}+${estado},+${cep}`,'_blank')
 }
+
+const translations = {
+  pt: {
+    homeLink: 'Home',
+    documentsLink: 'Documentos',
+    placesLink: 'Locais',
+    languageLink: 'Idioma',
+    donateLink: 'Doe',
+    abrigo_trd:'Abrigos',
+    consulados_trd:'Consulados',
+    posto_trd:'Posto de saúde'
+  },
+  en: {
+    homeLink: 'Home',
+    documentsLink: 'Documents',
+    placesLink: 'Places',
+    languageLink: 'Language',
+    donateLink: 'Donate',
+    abrigo_trd:'Shelters',
+    consulados_trd:'Consulates',
+    posto_trd:'Health Center'    
+  },
+  es: {
+    homeLink: 'Home',
+    documentsLink: 'Documentos',
+    placesLink: 'Lugares',
+    languageLink: 'Idioma',
+    donateLink: 'Donar',
+    abrigo_trd:'Refugios',
+    consulados_trd:'Consulados',
+    posto_trd:'Centro de salud'
+  },
+  fr: {
+    homeLink: 'Accueil',
+    documentsLink: 'Documents',
+    placesLink: 'Lieux',
+    languageLink: 'Langue',
+    donateLink: 'Don',
+    abrigo_trd:'Abris',
+    consulados_trd:'Consulats',
+    posto_trd:'Centre de santé'
+  },
+  ar: {
+    homeLink: 'الصفحة الرئيسية',
+    documentsLink: 'وثائق',
+    placesLink: 'أماكن',
+    languageLink: 'اللغة',
+    donateLink: 'تبرع',
+    abrigo_trd:'الملاجئ',
+    consulados_trd:'القنصليات',
+    posto_trd:'مركز الصحة'
+  }
+};
+
+function changeLanguage(lang) {
+  const elements = Object.keys(translations[lang]);
+  elements.forEach(element => {
+    document.getElementById(element).innerText = translations[lang][element];
+  });
+}
