@@ -86,6 +86,94 @@
       </div>
       <span class="linha_perfil"></span>
       </section>
+
+
+      <div class="line_btn">
+        <div class="div_btn_perfil" id="btnIniciarEditar">
+          <button onclick="ModalConfirmEditar()"  id="btn_alterar" class="btn_perfil">Modificar Conta</button>
+        </div>
+        <div hidden class="div_btn_perfil" id="btnConfirmar">
+          <button onclick="editar()"  id="btn_alterar" class="btn_perfil">Confirmar alterações</button>
+        </div>
+      </div>
+
+
+<div class="modal fade show" id="editouModal" tabindex="-1" aria-labelledby="editouModalLabel" style="padding-right: 0px; display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="editouModalLabel" style="color: black;">Edição realizada com sucesso!</h1>
+        <button type="button" class="btn-close" id="editouClose" aria-label="Close"></button>
+      </div>
+      <div id="mensagemeditou" class="modal-body" style="color: black;">
+        Suas informações foram alteradas.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="btneditouClose">Voltar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade show" id="ErrorModal" tabindex="-1" aria-labelledby="ErrorModalLabel" style="padding-right: 0px; display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="ErrorModalLabel" style="color: black;">Erro!</h1>
+        <button type="button" class="btn-close" id="ErrorClose" aria-label="Close"></button>
+      </div>
+      <div id="mensagemError" class="modal-body" style="color: black;">
+        Confira se preencheu todas as informações.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="btnErrorClose">Voltar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade show" id="ConfirmEditarModal" tabindex="-1" aria-labelledby="ConfirmEditarModalLabel" style="padding-right: 0px; display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="ConfirmEditarModalLabel" style="color: black;">Deseja mesmo editar?</h1>
+        <button type="button" class="btn-close" id="ConfirmEditarClose" aria-label="Close"></button>
+      </div>
+      <div id="mensagemConfirmEditar" class="modal-body" style="color: black;">
+        Você tem certeza que deseja editar suas informações?
+      </div>
+      <div class="modal-footer">
+        <button id="btn_alterar" class="btn btn-primary" onclick="confirmaEditar()">Sim</button>
+        <button type="button" class="btn btn-secondary" id="btnConfirmEditarClose">Não</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade show" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" style="padding-right: 0px; display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="successModalLabel" style="color: black;" ></h1>
+        <button type="button" class="btn-close" id="modalClose" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="divText" style="color: black;">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="btnModalClose">Cancelar</button>
+        <button type="button" class="btn btn-danger" id="btnDelete" onclick="confirmaDeletar()">Deletar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="modalBackground" class=""></div>
+
+
+
 </body>
 <script src="/js/rightSideBar.js"></script>
 <script src="/js/documentos.js"></script>
