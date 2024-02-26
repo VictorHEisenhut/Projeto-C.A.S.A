@@ -293,7 +293,7 @@ align-items: end;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-  margin: 0 0 0.5rem 2rem;
+  margin: 0 0 0rem 2rem;
   max-width: 90%;
 }
 
@@ -303,7 +303,6 @@ align-items: end;
 }
 
 .div_inputs_cad_admin input{
-  padding: 0.5rem 50% 0.5rem 1rem;
   background: transparent;
   border: black 1px solid;
   color: black;
@@ -311,6 +310,22 @@ align-items: end;
 
 .div_inputs_cad_admin label{
   color: black;
+}
+
+.div_enderecos_body_master{
+  width: 80%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: rgb(255, 255, 255);
+  transition: 0.5s;
+}
+
+.card_cons_adm{
+  width: 23rem;
+  height: 25rem;
+  margin: 1rem; 
 }
 
 @media screen and (max-height: 450px) {
