@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="/css/styleP.css">
     <link rel="stylesheet" href="/css/loadingScreen.css">
     <link rel="shortcut icon" type="imagex/png" href="/imagens/iconeCASA.ico">
-    <title>Postos</title>
+    <script src="/js/doacoes.js"></script>
+    <title>Postos de saúde</title>
 </head>
 <body class="fundo">
     <header style="background-image: url('/imagens/ImageHeader.jpeg'); margin-bottom: 3rem;">
@@ -25,7 +26,7 @@
                 <a class="enderecosDropDown" href="postosDeSaude.html">Postos de saúde</a>
             </div>
           </div>
-          <a id="donateLink" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Doe</a>
+          <button id="donateLink" onclick="showDoarModal()" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Doe</button>
           <button id="login"><a href="login.html">Login</a></button>
           <select onchange="changeLanguage(this.value)">
             <option value="pt">Português</option>
@@ -57,6 +58,27 @@
       <div id="postos" class="d-flex justify-content-evenly" style="display: none;">
 
       </div>
+
+      <div id="doacoes" class="d-flex justify-content-evenly"  style="display: none;">
+      </div>
+      <div class="modal fade show" id="doacoesModal" tabindex="-1" aria-labelledby="doacoesModalLabel" style="padding-right: 0px; display: none;">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="doacoesModalLabel" style="color: black;"></h1>
+              <button type="button" class="btn-close" id="doacoesModalClose" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="doacoesDivText" style="color: black;">
+    
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" id="btnDoacoesModalClose">Fechar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="modalBackground" class=""></div>
     
 </body>
 <script src="/js/postosDeSaude.js"></script>
