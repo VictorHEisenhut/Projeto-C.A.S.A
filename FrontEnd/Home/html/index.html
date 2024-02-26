@@ -23,9 +23,9 @@
               <div class="dropdown">
                 <button id="placesLink" class="dropbtn">Endereços</button>
                 <div class="dropdown-content">
-                    <a class="enderecosDropDown" href="abrigos.html">Abrigos</a>
-                    <a class="enderecosDropDown" href="consulados.html">Consulados</a>
-                    <a class="enderecosDropDown" href="postosDeSaude.html">Postos de saúde</a>
+                    <a id="abrigo_trd" class="enderecosDropDown" href="abrigos.html">Abrigos</a>
+                    <a id="cons_trad" class="enderecosDropDown" href="consulados.html">Consulados</a>
+                    <a id="Psaude_trad" class="enderecosDropDown" href="postosDeSaude.html">Postos de saúde</a>
                 </div>
               </div>
               <button id="donateLink" onclick="showDoarModal()" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Doe</button>
@@ -72,7 +72,7 @@
     </section>
 
     <section id="opcao_ajuda_index" style="margin: 2rem 1rem;">
-      <h3 style="color: #4a84b4; font-size: 3rem;">No que podemos te ajudar?</h3>
+      <h3 id="trad_nqajudar" style="color: #4a84b4; font-size: 3rem;">No que podemos te ajudar?</h3>
       <p id="firstParagraph" style="color: rgb(143, 143, 143); font-size: 1rem; width: 50%;">
         Em nosso projeto, disponibilizamos uma ampla gama de serviços para atender às suas necessidades. 
         Nosso objetivo é proporcionar a melhor experiência possível. 
@@ -81,19 +81,19 @@
       <div id="carossel_ajuda">
         <div onclick="documentosLink()" class="opcoes_ajuda">
           <span>♦</span>
-          <h4>Documentos</h4>
+          <h4 id="doc_trad">Documentos</h4>
         </div>
         <div onclick="abrigosLink()" class="opcoes_ajuda">
           <span>♦</span>
-          <h4>Abrigos</h4>
+          <h4 id="abrigo_trd0">Abrigos</h4>
         </div>
         <div onclick="postosLink()" class="opcoes_ajuda">
           <span>♦</span>
-          <h4>Saude</h4>
+          <h4 id="saude_trad">Saude</h4>
         </div>
         <div onclick="consuladosLink()" class="opcoes_ajuda">
           <span>♦</span>
-          <h4>Consulados</h4>
+          <h4 id="cons_trad0">Consulados</h4>
         </div>
       </div>
     </section>
@@ -102,12 +102,12 @@
       <div class="div_index_flex_2">
         <div class="div_index_flex_text">
           <h2>Quem<span class="bluerain">-</span>Somos<span class="bluerain">?</span></h2>
-          <p>
+          <p id="Quem_trad">
             Somos um grupo que tem como objetivo desenvolver e implementar um projeto social inovador para promover e integrar imigrantes e
             refugiados. O foco abrange diversas necessidades, desde a busca por abrigo seguro até o acesso a serviços essenciais
             como ONGs e postos de saúde. 
           </p>
-          <button class="learn_more_btn">Saiba-Mais</button>
+          <button id="Saiba_trad" class="learn_more_btn">Saiba-Mais</button>
         </div>
         <div class="img_div_flex_index">
           <img src="../imagens/Imagem_QS.png" style="width: 50%; margin-left: 25%;">
@@ -118,7 +118,7 @@
 
     <section class="section_index section_num_index">
       <div class="div_index_num">
-        <h2>Refugiados Ajudados</h2>
+        <h2 id="refq_trad">Refugiados Ajudados</h2>
         <span>1000+</span>
       </div>
     </section>
@@ -126,15 +126,15 @@
     <section class="section_index" id="quero_ajudar_index">
       <div class="div_index_flex_1">
         <div class="div_index_flex_text">
-          <h2>Como posso ajudar<span class="bluerain">?</span></h2>
-          <p>
+          <h2 id="ajuda_trad">Como posso ajudar<span class="bluerain">?</span></h2>
+          <p id="textoajuda_trad">
             Contamos com o seu valioso apoio para aprimorar a qualidade de vida dos refugiados. 
             Sua colaboração é fundamental para impulsionar iniciativas que fazem a diferença e proporcionam esperança a quem mais precisa.
             Junte-se a nós nessa causa humanitária doando ou nos enviado sugestões e faça parte do impacto positivo que podemos gerar juntos.
           </p>
           <div style="display: flex;">
-            <button class="learn_more_btn" onclick="showDoarModal()" style="margin-right: 10px;">Doe</button>
-            <button class="learn_more_btn" onclick="scrollToEnviarSugestao()">Envie uma sugestão</button>
+            <button id="donateLink" class="learn_more_btn" onclick="showDoarModal()" style="margin-right: 10px;">Doe</button>
+            <button id="Sugestao_trad" class="learn_more_btn" onclick="scrollToEnviarSugestao()">Envie uma sugestão</button>
           </div>
 
         </div>
@@ -147,13 +147,13 @@
     <section class="section_index">
       <div class="div_index_flex_2">
         <div class="div_index_flex_text">
-          <h2>Nossos Parceiros<span class="bluerain">!</span></h2>
-          <p>
+          <h2 id="parceirosh_trad">Nossos Parceiros<span class="bluerain">!</span></h2>
+          <p id="parceirosp_trad">
             Conscientes da importância de não apenas reconhecer, mas também agir diante de desafios significativos,
             nosso grupo estabeleceu parcerias com indivíduos que compartilham a mesma nobre causa: auxiliar os refugiados.
             Juntos, estamos empenhados em fazer a diferença e contribuir positivamente para a vida daqueles que mais precisam. 
           </p>
-          <button class="learn_more_btn">Saiba-Mais</button>
+          <button id="Saiba_trad" class="learn_more_btn">Saiba-Mais</button>
         </div>
         <div class="img_div_flex_index">
           <!--<img src="../imagens/Imagem_Lorem_2.png">-->
@@ -162,7 +162,7 @@
 
       <section class="section_index section_num_index">
         <div class="div_index_num">
-          <h2>Dinheiro Arrecadado</h2>
+          <h2 id="Dinheiro_trad">Dinheiro Arrecadado</h2>
           <span>1000+</span>
         </div>
       </section>
@@ -171,7 +171,7 @@
     <section class="section_index section_form_index" id="sugestao_index">
       <div class="div_index_flex_1">
         <div class="div_index_flex_text">
-          <h2>Contate-nos<span class="bluerain">!</span></h2>
+          <h2 id="cont_trad">Contate-nos<span class="bluerain">!</span></h2>
           <form id="form_index" name="meu_form" action="https://formsubmit.co/entra21.projeto.casa@gmail.com" method="POST">
             <div class="div_inputs_login">
               <label class="label_inputs_login" id="nameLabel">Nome</label>
@@ -181,7 +181,7 @@
             <div class="div_inputs_login">
               <label class="label_inputs_login" id="emailLabel">Email</label>
               <input type="email" name="email">
-              <h5>Verifique se digitou corretamente seu endereço de email</h5>
+              <h5 id="verifique_trad">Verifique se digitou corretamente seu endereço de email</h5>
           </div>
 
           <!-- <div class="div_inputs_login">
@@ -229,16 +229,16 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at velit a est pulvinar rutrum eu a diam. Phasellus gravida vestibulum lacinia. Proin magna eros, dapibus at condimentum quis, mattis nec erat.</p>
         </div>
         <div class="footer_div_flex">
-          <h3>Menu</h3>
+          <h3 id="Menu_trad">Menu</h3>
           <a class="footer_menu_items" href="index.html" id="homeLink">Home</a>
           <a class="footer_menu_items" id="documentsLink" href="DicasEdocumentos.html">Documentos</a>
           <a class="footer_menu_items" id="languageLink" href="#">Idioma</a>
-          <a class="footer_menu_items" href="abrigos.html">Abrigos</a>
-          <a class="footer_menu_items" href="consulados.html">Consulados</a>
-          <a class="footer_menu_items" href="postosDeSaude.html">Postos de saúde</a>
+          <a class="footer_menu_items" id="abrigo_trd1" href="abrigos.html">Abrigos</a>
+          <a class="footer_menu_items" id="cons_trad1" href="consulados.html">Consulados</a>
+          <a class="footer_menu_items" id="Psaude_trad1" href="postosDeSaude.html">Postos de saúde</a>
         </div>
         <div class="footer_div_flex">
-          <h3>Integrantes</h3>
+          <h3 id="Integrantes_trad">Integrantes</h3>
           <a class="footer_menu_items">Felipe Senna Soares</a>
           <a class="footer_menu_items">Lucas Loterio</a>
           <a class="footer_menu_items">Pedro França Carvalho</a>
