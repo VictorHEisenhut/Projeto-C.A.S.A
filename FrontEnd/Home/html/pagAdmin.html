@@ -12,22 +12,22 @@
 
   <div class="div_admin_header">
     <div class="div_admin_cards">
-      <div class="div_admin_infos">
+      <div onclick="refugiadosTabela()" class="div_admin_infos">
         <img src="/imagens/ico_refugiados.png" alt="" width="30%">
         <p id="p_refugiados_numero">Carregando...</p>
         <p class="div_admin_p">Refugiados cadastrados</p>
       </div>
-      <div class="div_admin_infos">
+      <div onclick="abrigosTable()" class="div_admin_infos">
         <img src="/imagens/ico_abrigo.png" alt="" width="30%">
         <p id="p_abrigos_numero">Carregando...</p>
         <p class="div_admin_p">Abrigos cadastrados</p>
       </div>
-      <div class="div_admin_infos">
+      <div onclick="consuladosTable()" class="div_admin_infos">
         <img src="/imagens/ico_consulado.png" alt="" width="30%">
         <p id="p_consulados_numero">Carregando...</p>
         <p class="div_admin_p">Consulados cadastrados</p>
       </div>
-      <div class="div_admin_infos">
+      <div onclick="postosTable()" class="div_admin_infos">
         <img src="/imagens/ico_saude.png" alt="" width="30%">
         <p id="p_postos_numero">Carregando...</p>
         <p class="div_admin_p">Postos de saúde cadastrados</p>
@@ -39,7 +39,7 @@
     <div class="div_admin_body">
   
         <table class="table table-bordered">
-          <thead>
+          <thead id="thead_admin">
               <tr class="table-dark">
                   <th>Id</th>
                   <th>Nome</th>
@@ -50,7 +50,7 @@
                   <th>Excluir</th>
               </tr>
           </thead>
-          <tbody id="div_admin_refugiados">
+          <tbody id="tbody_admin">
   
           </tbody>
       </table>
@@ -65,7 +65,7 @@
         <a href="pagAdmin.html">Página admin</a>
         <a href="cadastroAbrigos.html">Cadastro abrigos</a>
         <a href="cadastroConsulados.html">Cadastro consulados</a>
-        <a href="cadastroPostos.html">Cadastro Postos de saúde</a>
+        <a href="cadastroPostos.html">Cadastro postos de saúde</a>
         <div id="div_btn_logout">
           <div id="div_div_btn_logout">
           <a id="logout" onclick="logout()">Logout</a>

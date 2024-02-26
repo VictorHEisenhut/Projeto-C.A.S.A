@@ -27,6 +27,7 @@ let InfoConta = parseJwt(tokenInfo);
 
 if(InfoConta.role == "admin"){
     let linkDocumentos = document.getElementById("linkDocumentos").style.display = "none";
+
 }
 else{
     let linkAdmin = document.getElementById("linkAdmin").style.display = "none";
