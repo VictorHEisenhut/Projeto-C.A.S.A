@@ -40,7 +40,7 @@ window.addEventListener('load', function() {
               
             });
             for (let i = 0; i < post.totalPages; i++) {
-              btnPageNumbers = `<button id="btnPagination${i}" onclick="load(this.innerHTML)">${i}</button>`
+              btnPageNumbers = `<button class="numberPageButtons" id="btnPagination${i}" onclick="load(this.innerHTML)">${i}</button>`
               pageNumbers.innerHTML += btnPageNumbers
             }          
           });   
@@ -87,9 +87,22 @@ function load(pageNumber) {
             });
 
             for (let i = 0; i < post.totalPages; i++) {
-                document.getElementById(`btnPagination${i}`).style.backgroundColor = "white"
-                if (i == pageNumber) {
-                document.getElementById(`btnPagination${i}`).style.backgroundColor = "green"
+              if (i == pageNumber) {
+                document.getElementById(`btnPagination${i}`).style.backgroundColor = "rgb(53, 117, 212)"
+                document.getElementById(`btnPagination${i}`).style.color = "white"
+              }
+              else{
+                let button =document.getElementById(`btnPagination${i}`)
+                button.style.backgroundColor = "white"
+                button.style.color = "rgb(53, 117, 212)"
+                button.addEventListener('mouseover', () => {
+                button.style.backgroundColor = 'rgb(53, 117, 212)';
+                button.style.color = "white"
+              });
+                button.addEventListener('mouseout', () => {
+                button.style.backgroundColor = 'white';
+                button.style.color = "rgb(53, 117, 212)"
+              });
               }
             }           
         });   

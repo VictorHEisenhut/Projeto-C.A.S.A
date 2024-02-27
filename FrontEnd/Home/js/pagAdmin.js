@@ -202,7 +202,7 @@ async function showModalAbrigos(status, id) {
   }
 
   async function confirmaDeletarPostos(id){
-    await fetch(`http://localhost:5145/api/Abrigos/${id}`,
+    await fetch(`http://localhost:5145/api/PostoDeSaude/${id}`,
   {
       method: "DELETE",
       headers: {'Authorization': 'Bearer ' + token,'Content-Type': 'application/json'},
@@ -241,16 +241,16 @@ async function showModalAbrigos(status, id) {
   
       if(status == null){
           label.innerHTML = "Você tem certeza?"
-          div.innerHTML = "Ao clicar em deletar, este abrigo e todos seus dados serão excluídos!"
+          div.innerHTML = "Ao clicar em deletar, este posto e todos seus dados serão excluídos!"
   }  
       else if(status == false){
           label.innerHTML = "Erro"
-          div.innerHTML = "Falha ao deletar abrigo."
+          div.innerHTML = "Falha ao deletar posto."
           btnDelete.setAttribute("hidden", "hidden")
   }
       else{
         label.innerHTML = "Sucesso"
-        div.innerHTML = "Abrigo deletada com sucesso."
+        div.innerHTML = "Posto deletada com sucesso."
         btnDelete.setAttribute("hidden", "hidden")
       }
   

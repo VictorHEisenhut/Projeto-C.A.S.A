@@ -2,6 +2,15 @@ const slider = document.querySelectorAll('.slider');
 const btnPrev = document.getElementById('prev-button');
 const btnNext = document.getElementById('next-button');
 
+let numeroRefugiados = document.querySelector("#numeroRefugiados")
+fetch('http://localhost:5145/api/Refugiados/Total',{
+                headers: {'Content-Type': 'application/json'}
+              })
+        .then(data => {return data.json();})
+        .then(post => {
+          numeroRefugiados.innerHTML =  post
+        }); 
+
 let currentSlide = 0;
 
 function hideSlider() {
