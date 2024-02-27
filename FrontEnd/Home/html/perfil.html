@@ -9,24 +9,25 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>    <link rel="stylesheet" href="/css/styleP.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" type="imagex/png" href="/imagens/iconeCASA.ico">
+    <script src="/js/doacoes.js"></script>
     <title>Perfil</title>
 </head>
 <body>
   <header style="background-image: url('../imagens/ImageHeader.jpeg'); margin-bottom: 3rem;">
-    <a href="/html/index.html"><img src="/imagens/png logo branca.png" width="100px"></a>
+    <a href="index.html"><img src="../imagens/png logo branca.png" width="100px"></a> 
     <div>
       <a href="index.html" id="homeLink">Home</a>
-          <a id="documentsLink" href="DicasEdocumentos.html">Documentos</a>
-          <a id="languageLink" href="#">Idioma</a>
-          <div class="dropdown">
-            <button class="dropbtn">Endereços</button>
-            <div class="dropdown-content">
-                <a class="enderecosDropDown" href="abrigos.html">Abrigos</a>
-                <a class="enderecosDropDown" href="consulados.html">Consulados</a>
-                <a class="enderecosDropDown" href="postosDeSaude.html">Postos de saúde</a>
-            </div>
-          </div>
-      <a id="donateLink" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Doe</a>
+      <a id="documentsLink" href="DicasEdocumentos.html">Documentos</a>
+      <a id="languageLink" href="#">Idioma</a>
+      <div class="dropdown">
+        <button id="placesLink" class="dropbtn">Endereços</button>
+        <div class="dropdown-content">
+            <a id="abrigo_trd" class="enderecosDropDown" href="abrigos.html">Abrigos</a>
+            <a id="cons_trad" class="enderecosDropDown" href="consulados.html">Consulados</a>
+            <a id="posto_trd" class="enderecosDropDown" href="postosDeSaude.html">Postos de saúde</a>
+        </div>
+      </div>
+      <button id="donateLink" onclick="showDoarModal()" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Doe</button>
       <button id="login"><a href="login.html">Login</a></button>
       <select id="lingua_trad" onchange="changeLanguage(this.value)">
         <option value="pt">Português</option>
@@ -51,9 +52,8 @@
   </div>
       
       <div class="text_div_perfil">
-        <h1>Informações Gerais</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <h1 id="informa_trad">Informações Gerais</h1>
+        <p id="pinforma_trad">Aqui estão as suas informações, e você tem total liberdade para editá-las da maneira que preferir. </p>
       </div>
       <section class="section_perfil">
         <div class="line_inputs">
@@ -88,7 +88,7 @@
             <input disabled id="genero" type="text">
             <div hidden class="div_inputs_perfil" id="generoEditar">
               <select id="generoSelect">
-                <option>Selecione seu gênero</option>
+                <option id="selec_trad">Selecione seu gênero</option>
                 <option value= 1 id="masculinoLabel">Masculino</option>
                 <option value= 2 id="femininoLabel">Feminino</option>
               </select>
@@ -102,7 +102,7 @@
             <input disabled id="estadoCivil" type="text">
             <div hidden class="div_inputs_perfil" id="estadoCivilEditar">
               <select id="estadoCivilSelect">
-                  <option>Selecione seu estado civíl</option>
+                  <option id="selec_ec_trad">Selecione seu estado civíl</option>
                   <option value= 1  id="solteiroLabel">Solteiro/a</option>
                   <option value= 2  id="casadoLabel">Casado/a</option>
                   <option value= 3  id="separadoLabel">Separado/a</option>
@@ -117,7 +117,7 @@
             <input disabled id="escolaridade" type="text">
             <div hidden class="div_inputs_perfil" id="escolaridadeEditar">
               <select id="escolaridadeSelect">
-                <option>Selecione sua escolaridade</option>
+                <option id="selec_es_trad">Selecione sua escolaridade</option>
                 <option value= 1 id="ensinoFCLabel">Ensino fundamental completo</option>
                 <option value= 2 id="ensinoFILabel">Ensino fundamental incompleto</option>
                 <option value= 3 id="ensinoMCLabel">Ensino médio completo</option>
@@ -138,9 +138,8 @@
 
       
       <div class="text_div_perfil">
-        <h1>Endereço</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <h1 id="Endereço_trad">Endereço</h1>
+        <p id="Pendereco_trad">Neste espaço, você tem a oportunidade de criar novos documentos ou editar aqueles já existentes.</p>
       </div>
 
       <section class="section_perfil">
@@ -150,33 +149,33 @@
             <input disabled id="cep" type="text" onblur="dadosEndereco()">
           </div>
           <div class="div_inputs_perfil">
-            <label for="estado" class="label_inputs_perfil">Estado</label>
+            <label for="estado" id="estado_trad" class="label_inputs_perfil">Estado</label>
             <input disabled id="estado" type="text">
           </div>
         </div>
         
         <div class="line_inputs">
           <div class="div_inputs_perfil">
-            <label for="cidade" class="label_inputs_perfil">Cidade</label>
+            <label for="cidade" id="cidade_trad" class="label_inputs_perfil">Cidade</label>
             <input disabled id="cidade" type="text">
           </div>
           <div class="div_inputs_perfil">
-            <label for="bairro" class="label_inputs_perfil">Bairro</label>
+            <label for="bairro" id="bairro_trad" class="label_inputs_perfil">Bairro</label>
             <input disabled id="bairro" type="text">
           </div>
         </div>
       
         <div class="line_inputs">
           <div class="div_inputs_perfil">
-            <label for="rua" class="label_inputs_perfil">Rua</label>
+            <label for="rua" id="rua_trad" class="label_inputs_perfil">Rua</label>
             <input disabled id="rua" type="text">
           </div>
           <div class="div_inputs_perfil">
-            <label for="complemento" class="label_inputs_perfil">Complemento</label>
+            <label for="complemento" id="complemento_trad" class="label_inputs_perfil">Complemento</label>
             <input disabled id="complemento" type="text">
           </div>
           <div class="div_inputs_perfil">
-            <label for="numero" class="label_inputs_perfil">Numero</label>
+            <label for="numero" id="numero_trad" class="label_inputs_perfil">Numero</label>
             <input disabled id="numero" type="text">
           </div>
         </div>
@@ -242,7 +241,7 @@
         Você tem certeza que deseja editar suas informações?
       </div>
       <div class="modal-footer">
-        <button id="btn_alterar" class="btn btn-primary" onclick="confirmaEditar()">Sim</button>
+        <button id="btn_alterar3" class="btn btn-primary" onclick="confirmaEditar()">Sim</button>
         <button type="button" class="btn btn-secondary" id="btnConfirmEditarClose">Não</button>
       </div>
     </div>
@@ -269,10 +268,27 @@
 
 <div id="modalBackground" class=""></div>
 
+<div id="doacoes" class="d-flex justify-content-evenly"  style="display: none;">
+</div>
+<div class="modal fade show" id="doacoesModal" tabindex="-1" aria-labelledby="doacoesModalLabel" style="padding-right: 0px; display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="doacoesModalLabel" style="color: black;"></h1>
+        <button type="button" class="btn-close" id="doacoesModalClose" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="doacoesDivText" style="color: black;">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="btnDoacoesModalClose">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 
 <script src="/js/perfil.js"></script>
 <script src="/js/rightSideBar.js"></script>
 <script src="/js/permissoes.js"></script> 
-
 </html>
