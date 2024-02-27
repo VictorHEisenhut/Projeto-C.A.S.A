@@ -51,6 +51,7 @@ window.addEventListener('load', function() {
 });
 
 function load(pageNumber) {
+  loadingScreen.style.display = 'flex';
   selectPosto.innerHTML = ""
   fetch(`http://localhost:5145/api/PostoDeSaude/Pages?pageNumber=${pageNumber}`,{
                 headers: { 

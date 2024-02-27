@@ -28,7 +28,7 @@
       </div>
       <button id="donateLink" onclick="showDoarModal()" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Doe</button>
       <button id="login"><a href="login.html">Login</a></button>
-      <select id="lingua_trad" onchange="changeLanguage(this.value)">
+      <select onchange="changeLanguage(this.value)">
         <option value="pt">Português</option>
         <option value="en">English</option>
         <option value="es">Español</option>
@@ -57,6 +57,10 @@
       
       <div id="abrigos" class="d-flex justify-content-evenly"  style="display: none;">
       </div>
+
+      <div id="pageNumbers" style="display: none;">
+      </div>
+
       <div class="modal fade show" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" style="padding-right: 0px; display: none;">
         <div class="modal-dialog">
           <div class="modal-content">

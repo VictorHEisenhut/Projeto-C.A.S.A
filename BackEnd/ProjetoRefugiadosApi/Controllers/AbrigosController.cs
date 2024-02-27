@@ -46,6 +46,23 @@ namespace ProjetoRefugiadosApi.Controllers
             });
         }
 
+        [HttpGet("Pages")]
+        public async Task<ActionResult<IEnumerable<Abrigo>>> GetPagesAbrigos([FromQuery] int pageNumber, [FromQuery] int pageSize = 6)
+        {
+            List<Abrigo> lista = await _context.Abrigos.ToListAsync();
+            var listaPaginada = lista.Skip(pageNumber * pageSize).Take(pageSize);
+            foreach (Abrigo abrigo in listaPaginada)
+            {
+                abrigo.Endereco = await _context.Enderecos.FirstOrDefaultAsync(c => c.Id == abrigo.EnderecoId);
+            }
+            return Ok(new
+            {
+                total = lista.Count,
+                totalPages = (int)Math.Ceiling(((double)lista.Count) / pageSize),
+                data = listaPaginada
+            });
+        }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Abrigo>> GetAbrigo(int id)
         {

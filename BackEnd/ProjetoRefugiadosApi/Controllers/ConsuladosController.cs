@@ -44,6 +44,23 @@ namespace ProjetoRefugiadosApi.Controllers
             });
         }
 
+        [HttpGet("Pages")]
+        public async Task<ActionResult<IEnumerable<Consulado>>> GetPagesConsulados([FromQuery] int pageNumber, [FromQuery] int pageSize = 6)
+        {
+            List<Consulado> lista = await _context.Consulados.ToListAsync();
+            var listaPaginada = lista.Skip(pageNumber * pageSize).Take(pageSize);
+            foreach (Consulado consulado in listaPaginada)
+            {
+                consulado.Endereco = await _context.Enderecos.FirstOrDefaultAsync(c => c.Id == consulado.EnderecoId);
+            }
+            return Ok(new
+            {
+                total = lista.Count,
+                totalPages = (int)Math.Ceiling(((double)lista.Count) / pageSize),
+                data = listaPaginada
+            });
+        }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Consulado>> GetConsulado(int id)
         {
