@@ -13,6 +13,13 @@
     <title>Login</title>
   </head>
   <body id="body_cadNovo">
+    <select id="lingua_trad" onchange="changeLanguage(this.value)">
+      <option value="pt">Português</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+      <option value="fr">Français</option>
+      <option value="ar">العربية</option>
+    </select>
     <div id="form_cadNovo">
       <h1 class="text-center">Login</h1>
 
@@ -22,9 +29,9 @@
           <input type="email" id="email" class="input_login " name="email" ><br>
         </div>
         <div class="input-group">
+          <label for="senha" class="label_inputs_cad" id="senhaLabel" >Senha</label>
             <div class="input-group">
-                <label for="senha" class="label_inputs_cad" id="senhaLabel" >Senha</label>
-              <br>  <input type="password"  id="senha" class="form-control input_login_password" name="senha">
+                <input type="password"  id="senha" class="form-control input_login_password" name="senha">
                 <button type="button" class="btn btn-outline-dark" id="togglePass" onclick="togglePass()">MOSTRAR</button>
             </div>
             <br><a id="esqueci_senha" href="/html/esqueciSenha.html" class="link-dark">Esqueci minha senha</a>
@@ -35,13 +42,6 @@
                 <br><a id="Criar_trad" href="cadastro.html" class="link-dark" style="font-size: 1.15rem;">Criar uma conta</a> 
                 <br><a id="Voltar_trad" href="index.html" class="link-dark" style="font-size: 1.15rem;">Voltar ao Início</a>
                 <br>
-                <select id="lingua_trad" onchange="changeLanguage(this.value)">
-                  <option value="pt">Português</option>
-                  <option value="en">English</option>
-                  <option value="es">Español</option>
-                  <option value="fr">Français</option>
-                  <option value="ar">العربية</option>
-                </select>
             </div>
         </div>
       </div>
