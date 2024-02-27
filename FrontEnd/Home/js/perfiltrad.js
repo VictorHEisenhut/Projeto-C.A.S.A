@@ -59,6 +59,8 @@ const translations = {
     btnModalClose:"Cancelar",
     btnDelete:"Deletar",
     btnDoacoesModalClose:"Fechar",
+  	logout: 'Sair',
+		login: 'Entrar',
   },
   en: {
     homeLink: 'Home',
@@ -120,6 +122,8 @@ const translations = {
     btnModalClose: 'Cancel',
     btnDelete: 'Delete',
     btnDoacoesModalClose: 'Close',
+  	logout: 'Logout',
+		login: 'Login',
   },
   es: {
     homeLink: 'Inicio',
@@ -181,6 +185,8 @@ const translations = {
     btnModalClose: 'Cancelar',
     btnDelete: 'Eliminar',
     btnDoacoesModalClose: 'Cerrar',
+    logout: 'Déconnexion',
+		login: 'Connexion', 
   },
   fr: {
     homeLink: 'Accueil',
@@ -242,6 +248,8 @@ const translations = {
     btnModalClose: 'Annuler',
     btnDelete: 'Supprimer',
     btnDoacoesModalClose: 'Fermer',
+  	logout: 'Déconnexion',
+		login: 'Connexion',
   },
   ar: {
     homeLink: 'الصفحة الرئيسية',
@@ -303,6 +311,8 @@ const translations = {
     btnModalClose: 'إلغاء',
     btnDelete: 'حذف',
     btnDoacoesModalClose: 'إغلاق',
+    logout: 'تسجيل الخروج',
+		login: 'تسجيل الدخول',
   },
 };
 

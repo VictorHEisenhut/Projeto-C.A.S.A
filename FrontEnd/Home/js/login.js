@@ -141,7 +141,10 @@ const translations = {
     togglePass: 'MOSTRAR',
     esqueci_senha: 'Esqueci minha senha',
     Criar_trad: 'Criar uma conta',
-    Voltar_trad:'Voltar ao Início',
+    Voltar_trad: 'Voltar ao Início',
+    btn_login: 'Entrar',
+    emailLabel: 'Email',
+    senhaLabel: 'Senha',
   },
   en: {
     email: 'Email',
@@ -149,7 +152,10 @@ const translations = {
     togglePass: 'SHOW',
     esqueci_senha: 'Forgot my password',
     Criar_trad: 'Create an account',
-    Voltar_trad: 'Back to Home',
+    Voltar_trad: 'Back to Start',
+    btn_login: 'Login',
+    emailLabel: 'Email',
+    senhaLabel: 'Password',
   },
   es: {
     email: 'Email',
@@ -157,16 +163,21 @@ const translations = {
     togglePass: 'MOSTRAR',
     esqueci_senha: 'Olvidé mi contraseña',
     Criar_trad: 'Crear una cuenta',
-    Voltar_trad: 'Volver al Inicio',
-
+    Voltar_trad: 'Volver al inicio',
+    btn_login: 'Iniciar sesión',
+    emailLabel: 'Email',
+    senhaLabel: 'Contraseña',
   },
   fr: {
     email: 'Email',
     senha: 'Mot de passe',
     togglePass: 'MONTRER',
-    esqueci_senha: 'Mot de passe oublié',
+    esqueci_senha: 'J\'ai oublié mon mot de passe',
     Criar_trad: 'Créer un compte',
-    Voltar_trad: 'Retour à l\'accueil',
+    Voltar_trad: 'Retour au début',
+    btn_login: 'Connexion',
+    emailLabel: 'Email',
+    senhaLabel: 'Mot de passe',
   },
   ar: {
     email: 'البريد الإلكتروني',
@@ -174,8 +185,11 @@ const translations = {
     togglePass: 'عرض',
     esqueci_senha: 'نسيت كلمة المرور',
     Criar_trad: 'إنشاء حساب',
-    Voltar_trad: 'العودة إلى الصفحة الرئيسية',
-  }
+    Voltar_trad: 'العودة إلى البداية',
+    btn_login: 'تسجيل الدخول',
+    emailLabel: 'البريد الإلكتروني',
+    senhaLabel: 'كلمة المرور',
+  },
 };
 
 function changeLanguage(lang) {

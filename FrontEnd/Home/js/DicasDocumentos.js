@@ -106,7 +106,9 @@ const translations = {
     mensagemCPF:' O CPF é um documento identificador do contribuinte do Imposto de Rende, e é obrigatório para todos os residentes no Brasil. É utilizado para abertura de contas bancárias, emissão de outros documentos, matricula em universidades e cadastro de número telefônico.   \n   \n Passo 1 - Acessar o site da Receita Federal e preencher o formulário com seus dados pessoais, para gerar um protocolo.      \n      \n       Passo 2 - Ir a uma unidade física da Receita Federal, possuindo o protocolo, documento de identidade e comprovante de residência.     \n     \n     Pontos Importantes - Caso você não possua documentos do governo brasileiro, como o Protocolo de Refúgio e a CRNM, é necessário levar documentos de identificação admitidos no país de origem. É Importante levar a certidão de nascimento para comprovar a naturalidade, a filiação e a data de nascimento.',
     abrigo_trd:'Abrigos',
     consulados_trd:'Consulados',
-    posto_trd:'Posto de saúde'
+    posto_trd:'Posto de saúde',
+    logout: 'Sair',
+    login: 'Entrar',
   },
   en: {
     homeLink: 'Home',
@@ -122,7 +124,9 @@ const translations = {
     mensagemCPF: "The CPF is an identifier for the taxpayer of the Income Tax, and it is mandatory for all residents in Brazil. It is used for opening bank accounts, issuing other documents, enrolling in universities, and registering phone numbers. \n \n Step 1 - Access the Federal Revenue website and fill out the form with your personal information to generate a protocol. \n \n Step 2 - Go to a physical unit of the Federal Revenue, with the protocol, identification document, and proof of residence. \n \n Important Points - If you do not have documents from the Brazilian government, such as the Refugee Protocol and the CRNM, it is necessary to bring identification documents accepted in the country of origin. It is important to bring the birth certificate to prove nationality, parentage, and date of birth.",
     abrigo_trd:'Shelters',
     consulados_trd:'Consulates',
-    posto_trd:'Health Center'    
+    posto_trd:'Health Center',    
+    logout: 'Logout',
+	  login: 'Login',
   },
   es: {
     homeLink: 'Home',
@@ -138,7 +142,9 @@ const translations = {
     mensagemCPF: "El CPF es un documento identificador del contribuyente del Impuesto sobre la Renta, y es obligatorio para todos los residentes en Brasil. Se utiliza para abrir cuentas bancarias, emitir otros documentos, inscribirse en universidades y registrar números de teléfono.\n \n Paso 1 - Acceder al sitio web de la Receita Federal y completar el formulario con sus datos personales para generar un protocolo. \n \n Paso 2 - Ir a una unidad física de la Receita Federal, con el protocolo, documento de identidad y comprobante de domicilio. \n \n Puntos importantes - Si no tiene documentos del gobierno brasileño, como el Protocolo de Refugiado y la CRNM, es necesario llevar documentos de identificación aceptados en el país de origen. Es importante llevar el certificado de nacimiento para demostrar la nacionalidad, filiación y fecha de nacimiento.",
     abrigo_trd:'Refugios',
     consulados_trd:'Consulados',
-    posto_trd:'Centro de salud'
+    posto_trd:'Centro de salud',
+    logout: 'Déconnexion',
+	  login: 'Connexion',
   },
   fr: {
     homeLink: 'Accueil',
@@ -154,7 +160,9 @@ const translations = {
     mensagemCPF: "Le CPF est un identifiant du contribuable de l'impôt sur le revenu et est obligatoire pour tous les résidents au Brésil. Il est utilisé pour ouvrir des comptes bancaires, émettre d'autres documents, s'inscrire à l'université et enregistrer des numéros de téléphone.   \n  \n Étape 1 - Accédez au site de la Receita Federal et remplissez le formulaire avec vos informations personnelles pour générer un protocole.  \n   \n Étape 2 - Rendez-vous dans une unité physique de la Receita Federal, avec le protocole, une pièce d'identité et un justificatif de domicile.  \n   \n Points importants - Si vous n'avez pas de documents du gouvernement brésilien, tels que le Protocole de réfugié et le CRNM, il est nécessaire d'apporter des documents d'identification acceptés dans le pays d'origine. Il est important de présenter l'acte de naissance pour prouver la nationalité, la filiation et la date de naissance.",
     abrigo_trd:'Abris',
     consulados_trd:'Consulats',
-    posto_trd:'Centre de santé'
+    posto_trd:'Centre de santé',
+    logout: 'Déconnexion',
+  	login: 'Connexion',
   },
   ar: {
     homeLink: 'الصفحة الرئيسية',
@@ -170,7 +178,9 @@ const translations = {
     mensagemCPF:"إن CPF هو وثيقة هوية لدافعي ضريبة الدخل، وهو إلزامي لجميع المقيمين في البرازيل. يتم استخدامه لفتح الحسابات المصرفية وإصدار المستندات الأخرى والتسجيل في الجامعات وتسجيل رقم الهاتف.  \n   \n الخطوة 1 - قم بالدخول إلى موقع الإيرادات الفيدرالية وملء النموذج ببياناتك الشخصية، إنشاء بروتوكول.  \n   \n الخطوة 2 - انتقل إلى وحدة الإيرادات الفيدرالية الفعلية، مع البروتوكول ووثيقة الهوية وإثبات الإقامة.  \n   \n نقاط مهمة - إذا لم يكن لديك وثائق حكومية برازيلية، مثل بروتوكول اللاجئين وCRNM، فيجب عليك إحضار وثائق الهوية المقبولة في البلد الأصلي. من المهم إحضار شهادة ميلادك لإثبات مكان ميلادك ونسبك وتاريخ ميلادك.",
     abrigo_trd:'الملاجئ',
     consulados_trd:'القنصليات',
-    posto_trd:'مركز الصحة'
+    posto_trd:'مركز الصحة',
+    logout: 'تسجيل الخروج',
+  	login: 'تسجيل الدخول',
   }
 };
 

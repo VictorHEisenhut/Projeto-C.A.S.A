@@ -121,11 +121,12 @@ const translations = {
     placesLink: 'Locais',
     languageLink: 'Idioma',
     donateLink: 'Doe',
-    abrigo_trd:'Abrigos',
-    consulados_trd:'Consulados',
-    posto_trd:'Posto de saúde',
-    Carregando_trad:"Carregando...",
-
+    abrigo_trd: 'Abrigos',
+    consulados_trd: 'Consulados',
+    posto_trd: 'Posto de saúde',
+    Carregando_trad: 'Carregando...',
+    logout: 'Sair',
+    login: 'Entrar',
   },
   en: {
     homeLink: 'Home',
@@ -133,11 +134,12 @@ const translations = {
     placesLink: 'Places',
     languageLink: 'Language',
     donateLink: 'Donate',
-    abrigo_trd:'Shelters',
-    consulados_trd:'Consulates',
-    posto_trd:'Health Center',    
-    Carregando_trad: "Loading...",
-
+    abrigo_trd: 'Shelters',
+    consulados_trd: 'Consulates',
+    posto_trd: 'Health Center',
+    Carregando_trad: 'Loading...',
+    logout: 'Logout',
+    login: 'Login',
   },
   es: {
     homeLink: 'Home',
@@ -145,11 +147,12 @@ const translations = {
     placesLink: 'Lugares',
     languageLink: 'Idioma',
     donateLink: 'Donar',
-    abrigo_trd:'Refugios',
-    consulados_trd:'Consulados',
-    posto_trd:'Centro de salud',
-    Carregando_trad: "Cargando...",
-
+    abrigo_trd: 'Refugios',
+    consulados_trd: 'Consulados',
+    posto_trd: 'Centro de salud',
+    Carregando_trad: 'Cargando...',
+    logout: 'Cerrar sesión',
+    login: 'Iniciar sesión',
   },
   fr: {
     homeLink: 'Accueil',
@@ -157,10 +160,12 @@ const translations = {
     placesLink: 'Lieux',
     languageLink: 'Langue',
     donateLink: 'Don',
-    abrigo_trd:'Abris',
-    consulados_trd:'Consulats',
-    posto_trd:'Centre de santé',
-    Carregando_trad: "Cargando...",
+    abrigo_trd: 'Abris',
+    consulados_trd: 'Consulats',
+    posto_trd: 'Centre de santé',
+    Carregando_trad: 'Chargement...',
+    logout: 'Déconnexion',
+    login: 'Connexion',
   },
   ar: {
     homeLink: 'الصفحة الرئيسية',
@@ -168,13 +173,15 @@ const translations = {
     placesLink: 'أماكن',
     languageLink: 'اللغة',
     donateLink: 'تبرع',
-    abrigo_trd:'الملاجئ',
-    consulados_trd:'القنصليات',
-    posto_trd:'مركز الصحة',
-    Carregando_trad: "جار التحميل...",
-
+    abrigo_trd: 'الملاجئ',
+    consulados_trd: 'القنصليات',
+    posto_trd: 'مركز الصحة',
+    Carregando_trad: 'جار التحميل...',
+    logout: 'تسجيل الخروج',
+    login: 'تسجيل الدخول',
   }
 };
+
 
 function changeLanguage(lang) {
   const elements = Object.keys(translations[lang]);

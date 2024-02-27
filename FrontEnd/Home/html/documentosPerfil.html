@@ -26,7 +26,7 @@
         </div>
       </div>
       <button id="donateLink" onclick="showDoarModal()" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Doe</button>
-      <button id="login"><a href="login.html">Login</a></button>
+      <button id="login"><a href="login.html">Entrar</a></button>
       <select id="lingua_trad" onchange="changeLanguage(this.value)">
         <option value="pt">Português</option>
         <option value="en">English</option>
@@ -44,7 +44,7 @@
         <a id="linkAdmin" href="pagAdmin.html">Página admin</a>
         <div id="div_btn_logout">
           <div id="div_div_btn_logout">
-          <a id="logout" onclick="logout()">Logout</a>
+          <a id="logout" onclick="logout()">Sair</a>
         </div>
       </div>
       </div>
@@ -92,7 +92,7 @@
           <button onclick="ModalConfirmEditar()"  id="btn_alterar" class="btn_perfil">Modificar Conta</button>
         </div>
         <div hidden class="div_btn_perfil" id="btnConfirmar">
-          <button onclick="editar()"  id="btn_alterar" class="btn_perfil">Confirmar alterações</button>
+          <button onclick="editar()"  id="btn_alterar_trad" class="btn_perfil">Confirmar alterações</button>
         </div>
       </div>
 
@@ -144,7 +144,7 @@
         Você tem certeza que deseja editar suas informações?
       </div>
       <div class="modal-footer">
-        <button id="btn_alterar" class="btn btn-primary" onclick="confirmaEditar()">Sim</button>
+        <button id="btn_alterar_sim" class="btn btn-primary" onclick="confirmaEditar()">Sim</button>
         <button type="button" class="btn btn-secondary" id="btnConfirmEditarClose">Não</button>
       </div>
     </div>

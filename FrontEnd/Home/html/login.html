@@ -18,17 +18,19 @@
 
       <div class="form-step form-step-active" style="margin-top: 2rem;">
         <div class="input-group">
-            <input type="email" id="email" class="input_login " name="email" placeholder="Email">
+          <label for="email" class="label_inputs_cad"  id="emailLabel" >Email</label>
+          <input type="email" id="email" class="input_login " name="email" ><br>
         </div>
         <div class="input-group">
             <div class="input-group">
-                <input type="password"  id="senha" class="form-control input_login_password" name="senha" placeholder="Senha">
+                <label for="senha" class="label_inputs_cad" id="senhaLabel" >Senha</label>
+                <input type="password"  id="senha" class="form-control input_login_password" name="senha">
                 <button type="button" class="btn btn-outline-dark" id="togglePass" onclick="togglePass()">MOSTRAR</button>
             </div>
             <br><a id="esqueci_senha" href="/html/esqueciSenha.html" class="link-dark">Esqueci minha senha</a>
         </div>
         <div id="btn_cad" class="btns-group">
-            <div class="justify-content-center"><button id="btn_login" onclick="logar()">Logar</button></div>
+            <div class="justify-content-center"><button id="btn_login" onclick="logar()">Entrar</button></div>
             <div class="div_form_login_flex_links">
                 <br><a id="Criar_trad" href="cadastro.html" class="link-dark" style="font-size: 1.15rem;">Criar uma conta</a> 
                 <br><a id="Voltar_trad" href="index.html" class="link-dark" style="font-size: 1.15rem;">Voltar ao Início</a>
