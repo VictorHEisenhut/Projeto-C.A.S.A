@@ -14,7 +14,7 @@ window.addEventListener('load', function() {
                 
                 consulados = `<div class="card border-secondary card_cons">
                 <div class="card-body">
-                <h5 class="card-title">Consulados</h5>
+                <h5 class="card_title">Consulados</h5>
                 <p class="card-text">${element.nome}</p>
               </div>
               <ul class="list-group list-group-flush">
@@ -44,4 +44,88 @@ window.addEventListener('load', function() {
 
 function linkEndereco(rua,numero,bairro,cidade,estado,cep){
     window.open(`https://www.google.com.br/maps/place/R.+${rua},+${numero}+${bairro},+${cidade}+${estado},+${cep}`,'_blank')
+}
+
+const translations = {
+  pt: {
+    homeLink: 'Home',
+    documentsLink: 'Documentos',
+    placesLink: 'Locais',
+    languageLink: 'Idioma',
+    donateLink: 'Doe',
+    abrigo_trd:'Abrigos',
+    consulados_trd:'Consulados',
+    posto_trd:'Posto de saúde',
+    Carregando_trad:"Carregando...",
+    btnModalClose:"Cancelar",
+    btnDelete:"Deletar",
+    card_title:"Consulados",
+  },
+  en: {
+    homeLink: 'Home',
+    documentsLink: 'Documents',
+    placesLink: 'Places',
+    languageLink: 'Language',
+    donateLink: 'Donate',
+    abrigo_trd:'Shelters',
+    consulados_trd:'Consulates',
+    posto_trd:'Health Center',
+    Carregando_trad: "Loading...",
+    btnModalClose: "Cancel",
+    btnDelete: "Delete",
+    card_title:"Consulates",
+  },
+  es: {
+    homeLink: 'Home',
+    documentsLink: 'Documentos',
+    placesLink: 'Lugares',
+    languageLink: 'Idioma',
+    donateLink: 'Donar',
+    abrigo_trd:'Refugios',
+    consulados_trd:'Consulados',
+    posto_trd:'Centro de salud',
+    Carregando_trad: "Cargando...",
+    btnModalClose: "Cancelar",
+    btnDelete: "Eliminar",
+    card_title:"Consulados",
+  },
+  fr: {
+    homeLink: 'Accueil',
+    documentsLink: 'Documents',
+    placesLink: 'Lieux',
+    languageLink: 'Langue',
+    donateLink: 'Don',
+    abrigo_trd:'Abris',
+    consulados_trd:'Consulats',
+    posto_trd:'Centre de santé',
+    Carregando_trad: "Cargando...",
+    btnModalClose: "Cancelar",
+    btnDelete: "Eliminar",
+    Carregando_trad: "Chargement...",
+    btnModalClose: "Annuler",
+    btnDelete: "Supprimer",
+    card_title:"Consulats",
+
+  },
+  ar: {
+    homeLink: 'الصفحة الرئيسية',
+    documentsLink: 'وثائق',
+    placesLink: 'أماكن',
+    languageLink: 'اللغة',
+    donateLink: 'تبرع',
+    abrigo_trd:'الملاجئ',
+    consulados_trd:'القنصليات',
+    posto_trd:'مركز الصحة',
+    Carregando_trad: "جار التحميل...",
+    btnModalClose: "إلغاء",
+    btnDelete: "حذف",
+    card_title:"القنصليات",
+  }
+};
+
+function changeLanguage(lang) {
+  const elements = Object.keys(translations[lang]);
+  elements.forEach(element => {
+    document.getElementById(element).innerText = translations[lang][element];
+  });
 }

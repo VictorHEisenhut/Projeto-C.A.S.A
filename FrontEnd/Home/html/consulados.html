@@ -12,32 +12,32 @@
     <title>Consulados</title>
 </head>
 <body class="fundo">
-    <header style="background-image: url('/imagens/ImageHeader.jpeg'); margin-bottom: 3rem;">
-      <a href="index.html"><img src="../imagens/png logo branca.png" width="100px"></a> 
-      <div>
-          <a href="index.html" id="homeLink">Home</a>
-          <a id="documentsLink" href="DicasEdocumentos.html">Documentos</a>
-          <a id="languageLink" href="#">Idioma</a>
-          <div class="dropdown">
-            <button class="dropbtn">Endereços</button>
-            <div class="dropdown-content">
-                <a class="enderecosDropDown" href="abrigos.html">Abrigos</a>
-                <a class="enderecosDropDown" href="consulados.html">Consulados</a>
-                <a class="enderecosDropDown" href="postosDeSaude.html">Postos de saúde</a>
-            </div>
-          </div>
-          <button id="donateLink" onclick="showDoarModal()" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Doe</button>
-          <button id="login"><a href="login.html">Login</a></button>
-          <select onchange="changeLanguage(this.value)">
-            <option value="pt">Português</option>
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="fr">Français</option>
-            <option value="ar">العربية</option>
-          </select>
-          <button class="openbtn" id="sideBar" onclick="openNav()">&#9776;</button>
+  <header style="background-image: url('../imagens/ImageHeader.jpeg'); margin-bottom: 3rem;">
+    <a href="index.html"><img src="../imagens/png logo branca.png" width="100px"></a> 
+    <div>
+      <a href="index.html" id="homeLink">Home</a>
+      <a id="documentsLink" href="DicasEdocumentos.html">Documentos</a>
+      <a id="languageLink" href="#">Idioma</a>
+      <div class="dropdown">
+        <button id="placesLink" class="dropbtn">Endereços</button>
+        <div class="dropdown-content">
+            <a id="abrigo_trd" class="enderecosDropDown" href="abrigos.html">Abrigos</a>
+            <a id="consulados_trd" class="enderecosDropDown" href="consulados.html">Consulados</a>
+            <a id="posto_trd" class="enderecosDropDown" href="postosDeSaude.html">Postos de saúde</a>
         </div>
-      </header>
+      </div>
+      <button id="donateLink" onclick="showDoarModal()" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Doe</button>
+      <button id="login"><a href="login.html">Login</a></button>
+      <select onchange="changeLanguage(this.value)">
+        <option value="pt">Português</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="ar">العربية</option>
+      </select>
+      <button class="openbtn" id="sideBar" onclick="openNav()">&#9776;</button>
+    </div>
+  </header>
       <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
         <a id="linkPerfil" href="perfil.html">Perfil</a>
@@ -52,7 +52,7 @@
 
       <div class="loading-screen" id="loadingScreen">
         <div class="loading-icon"></div>
-        <p>Carregando...</p>
+        <p id="Carregando_trad">"Carregando..."</p>
     </div>
 
     <div id="consulados" class="d-flex justify-content-evenly" style="display: none;">

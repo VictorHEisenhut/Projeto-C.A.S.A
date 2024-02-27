@@ -55,7 +55,9 @@ const translations = {
     donateLink: 'Doe',
     abrigo_trd:'Abrigos',
     consulados_trd:'Consulados',
-    posto_trd:'Posto de saúde'
+    posto_trd:'Posto de saúde',
+    Carregando_trad:"Carregando...",
+
   },
   en: {
     homeLink: 'Home',
@@ -65,7 +67,9 @@ const translations = {
     donateLink: 'Donate',
     abrigo_trd:'Shelters',
     consulados_trd:'Consulates',
-    posto_trd:'Health Center'    
+    posto_trd:'Health Center',    
+    Carregando_trad: "Loading...",
+
   },
   es: {
     homeLink: 'Home',
@@ -75,7 +79,9 @@ const translations = {
     donateLink: 'Donar',
     abrigo_trd:'Refugios',
     consulados_trd:'Consulados',
-    posto_trd:'Centro de salud'
+    posto_trd:'Centro de salud',
+    Carregando_trad: "Cargando...",
+
   },
   fr: {
     homeLink: 'Accueil',
@@ -85,7 +91,8 @@ const translations = {
     donateLink: 'Don',
     abrigo_trd:'Abris',
     consulados_trd:'Consulats',
-    posto_trd:'Centre de santé'
+    posto_trd:'Centre de santé',
+    Carregando_trad: "Cargando...",
   },
   ar: {
     homeLink: 'الصفحة الرئيسية',
@@ -95,7 +102,9 @@ const translations = {
     donateLink: 'تبرع',
     abrigo_trd:'الملاجئ',
     consulados_trd:'القنصليات',
-    posto_trd:'مركز الصحة'
+    posto_trd:'مركز الصحة',
+    Carregando_trad: "جار التحميل...",
+
   }
 };
 
