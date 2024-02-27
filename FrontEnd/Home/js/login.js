@@ -101,13 +101,36 @@ function togglePass() {
 
   const input = document.getElementById("senha");
   const button = document.getElementById("togglePass");
+  var  lingua = document.getElementById("lingua_trad").value;
+  var palavra = "";
+  var escond = "";
 
+  if(lingua == "pt"){
+    palavra = "Mostrar"
+    escond = "Esconder"
+  }
+  if(lingua == "en"){
+    palavra = "SHOW"
+    escond =  "Hide"
+  }
+  if(lingua == "es"){
+    palavra = "MOSTRAR"
+    escond =  "Esconder"
+  }
+  if(lingua == "fr"){
+    palavra = "MONTRER"
+    escond =  "Cacher"
+  }
+  if(lingua == "ar"){
+    palavra = "عرض"
+    escond =  "إخفاء"
+  }
   if (input.type == "password") {
     input.type = "text";
-    button.innerHTML = "ESCONDER";
+    button.innerHTML = escond;
   } else {
     input.type = "password";
-    button.innerHTML = "MOSTRAR";
+    button.innerHTML = palavra;
   }
 }
 

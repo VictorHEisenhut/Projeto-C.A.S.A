@@ -6,15 +6,30 @@ async function showDoarModal() {
     var btnClose = document.getElementById("btnDoacoesModalClose");
     var div = document.getElementById("doacoesDivText")
     var label = document.getElementById("doacoesModalLabel")
+    var lingua = document.getElementById("lingua_trad").value
 
-
+      console.log(lingua)
         modalObj.style.display = "block"
 
         bg.classList.add("modal-backdrop")
         bg.classList.add("fade")
         bg.classList.add("show")
-
-      label.innerHTML = "Sua ajuda para esta causa será extremamente apreciada!"
+      if(lingua == "pt"){
+        label.innerHTML = "Sua ajuda para esta causa será extremamente apreciada!"
+      }
+      if(lingua == "en"){
+        label.innerHTML = "Your help for this cause will be greatly appreciated!"
+      }
+      if(lingua == "es"){
+        label.innerHTML = "Tu ayuda para esta causa será muy apreciada."
+      }
+      if(lingua == "fr"){
+        label.innerHTML = "Votre aide pour cette cause sera grandement appréciée!"
+      }
+      if(lingua == "ar"){
+        label.innerHTML = "ستكون مساعدتك لهذه القضية موضع تقدير كبير!"
+      }
+      //label.innerHTML = "Sua ajuda para esta causa será extremamente apreciada!"
       div.style.display = "flex"
       div.style.justifyContent = "center"
       div.style.alignItems = "center"
