@@ -111,3 +111,53 @@ function togglePass() {
   }
 }
 
+const translations = {
+  pt: {
+    email: 'Email',
+    senha: 'Senha',
+    togglePass: 'MOSTRAR',
+    esqueci_senha: 'Esqueci minha senha',
+    Criar_trad: 'Criar uma conta',
+    Voltar_trad:'Voltar ao Início',
+  },
+  en: {
+    email: 'Email',
+    senha: 'Password',
+    togglePass: 'SHOW',
+    esqueci_senha: 'Forgot my password',
+    Criar_trad: 'Create an account',
+    Voltar_trad: 'Back to Home',
+  },
+  es: {
+    email: 'Email',
+    senha: 'Contraseña',
+    togglePass: 'MOSTRAR',
+    esqueci_senha: 'Olvidé mi contraseña',
+    Criar_trad: 'Crear una cuenta',
+    Voltar_trad: 'Volver al Inicio',
+
+  },
+  fr: {
+    email: 'Email',
+    senha: 'Mot de passe',
+    togglePass: 'MONTRER',
+    esqueci_senha: 'Mot de passe oublié',
+    Criar_trad: 'Créer un compte',
+    Voltar_trad: 'Retour à l\'accueil',
+  },
+  ar: {
+    email: 'البريد الإلكتروني',
+    senha: 'كلمة المرور',
+    togglePass: 'عرض',
+    esqueci_senha: 'نسيت كلمة المرور',
+    Criar_trad: 'إنشاء حساب',
+    Voltar_trad: 'العودة إلى الصفحة الرئيسية',
+  }
+};
+
+function changeLanguage(lang) {
+  const elements = Object.keys(translations[lang]);
+  elements.forEach(element => {
+    document.getElementById(element).innerText = translations[lang][element];
+  });
+}
