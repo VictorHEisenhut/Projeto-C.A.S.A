@@ -332,3 +332,22 @@ align-items: end;
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
 }
+
+.testeDoBaguio{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.numberPageButtons{
+  height: 40px;
+  width: 40px;
+  border-color: rgb(53, 117, 212);
+  color: rgb(53, 117, 212);
+  background-color: white;
+}
+
+.numberPageButtons:hover{
+  color: white;
+  background-color:  rgb(53, 117, 212);
+}
