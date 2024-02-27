@@ -12,6 +12,52 @@ fetch('http://localhost:5145/api/Paises',{
             });
         });   
 
+
+function paisIdioma(lang){
+  select.innerHTML =""
+  if(lang == "pt"){
+    fetch('http://localhost:5145/api/Paises',{
+                headers: { 
+                           'Content-Type': 'application/json'
+                          }
+              })
+        .then(data => {return data.json();})
+        .then(post => {
+          select.innerHTML = `<option id="optionPais">Selecione seu país</option>`
+            post.forEach(element => {
+                pais = `<option value=${element.id}>${element.pais}</option>`
+                select.innerHTML += pais
+            });
+        });   
+  }
+  else{
+    fetch('http://localhost:5145/api/Paises',{
+                headers: { 
+                           'Content-Type': 'application/json'
+                          }
+              })
+        .then(data => {return data.json();})
+        .then(post => {
+          if(lang == "en"){
+            select.innerHTML = `<option id="optionPais">Select your country</option>`
+          }
+          else if(lang == "es"){
+            select.innerHTML = `<option id="optionPais">Seleccione su país</option>`
+          }
+          else if(lang == "fr"){
+            select.innerHTML = `<option id="optionPais">Sélectionnez votre pays</option>`
+          }
+          else if(lang == "ar"){
+            select.innerHTML = `<option id="optionPais">اختر بلدك</option>`
+          }
+            post.forEach(element => {
+                pais = `<option value=${element.id}>${element.country}</option>`
+                select.innerHTML += pais
+            });
+        });   
+  }
+}
+
         function dadosEndereco() {
           let cep = document.getElementById('cep').value
           fetch(`https://viacep.com.br/ws/${cep}/json/`)
