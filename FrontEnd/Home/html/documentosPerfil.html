@@ -11,32 +11,32 @@
     <title>Documentos</title>
 </head>
 <body>
-    <header style="background-image: url('/imagens/ImageHeader.jpeg'); margin-bottom: 3rem;">
-      <a href="index.html"><img src="../imagens/png logo branca.png" width="100px"></a> 
-      <div>
-          <a href="index.html" id="homeLink">Home</a>
-          <a id="documentsLink" href="DicasEdocumentos.html">Documentos</a>
-          <a id="languageLink" href="#">Idioma</a>
-          <div class="dropdown">
-            <button class="dropbtn">Endereços</button>
-            <div class="dropdown-content">
-                <a class="enderecosDropDown" href="abrigos.html">Abrigos</a>
-                <a class="enderecosDropDown" href="consulados.html">Consulados</a>
-                <a class="enderecosDropDown" href="postosDeSaude.html">Postos de saúde</a>
-            </div>
-          </div>
-          <a id="donateLink" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Doe</a>
-          <button id="login"><a href="login.html">Login</a></button>
-          <select id="lingua_trad" onchange="changeLanguage(this.value)">
-            <option value="pt">Português</option>
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="fr">Français</option>
-            <option value="ar">العربية</option>
-          </select>
-          <button class="openbtn" id="sideBar" onclick="openNav()">&#9776;</button>
+  <header style="background-image: url('../imagens/ImageHeader.jpeg'); margin-bottom: 3rem;">
+    <a href="index.html"><img src="../imagens/png logo branca.png" width="100px"></a> 
+    <div>
+      <a href="index.html" id="homeLink">Home</a>
+      <a id="documentsLink" href="DicasEdocumentos.html">Documentos</a>
+      <a id="languageLink" href="#">Idioma</a>
+      <div class="dropdown">
+        <button id="placesLink" class="dropbtn">Endereços</button>
+        <div class="dropdown-content">
+            <a id="abrigo_trd" class="enderecosDropDown" href="abrigos.html">Abrigos</a>
+            <a id="consulados_trd" class="enderecosDropDown" href="consulados.html">Consulados</a>
+            <a id="posto_trd" class="enderecosDropDown" href="postosDeSaude.html">Postos de saúde</a>
         </div>
-      </header>
+      </div>
+      <button id="donateLink" onclick="showDoarModal()" style="background-color: #75cdff; padding: 0.5rem; color: #fcfcfc;">Doe</button>
+      <button id="login"><a href="login.html">Login</a></button>
+      <select id="lingua_trad" onchange="changeLanguage(this.value)">
+        <option value="pt">Português</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="ar">العربية</option>
+      </select>
+      <button class="openbtn" id="sideBar" onclick="openNav()">&#9776;</button>
+    </div>
+  </header>
       <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
         <a id="linkPerfil" href="perfil.html">Perfil</a>
@@ -50,9 +50,8 @@
       </div>
 
       <div class="text_div_perfil">
-        <h1>Documentos</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <h1 id="Hdocumentos_trad">Documentos</h1>
+        <p id="Pdocumentos_trad">Neste espaço, você tem a oportunidade de criar novos documentos ou editar aqueles já existentes.</p>
       </div>
 
       <section class="section_perfil">
@@ -172,10 +171,29 @@
 
 <div id="modalBackground" class=""></div>
 
+<div id="doacoes" class="d-flex justify-content-evenly"  style="display: none;">
+</div>
+<div class="modal fade show" id="doacoesModal" tabindex="-1" aria-labelledby="doacoesModalLabel" style="padding-right: 0px; display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="doacoesModalLabel" style="color: black;"></h1>
+        <button type="button" class="btn-close" id="doacoesModalClose" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="doacoesDivText" style="color: black;">
 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="btnDoacoesModalClose">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
+<script src="/js/doacoes.js"></script>
 <script src="/js/rightSideBar.js"></script>
 <script src="/js/documentos.js"></script>
 <script src="/js/permissoes.js"></script>
+<script src="/js/DocTrad.js"></script>
 </html>
