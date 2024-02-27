@@ -62,6 +62,16 @@ namespace ProjetoRefugiadosApi.Controllers
 
         }
 
+        [HttpGet("Total")]
+        public async Task<ActionResult<IEnumerable<Refugiado>>> GetRefugiadosCount()
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            return Ok(_context.Refugiados.ToList().Count);
+
+        }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Refugiado>> GetRefugiado(int id)
         {
