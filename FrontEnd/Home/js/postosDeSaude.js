@@ -131,6 +131,7 @@ function load(pageNumber) {
             Carregando_trad: 'Carregando...',
             logout: 'Sair',
             login: 'Entrar',
+            btnDoacoesModalClose: 'Fechar',
           },
           en: {
             homeLink: 'Home',
@@ -144,9 +145,10 @@ function load(pageNumber) {
             Carregando_trad: 'Loading...',
             logout: 'Logout',
             login: 'Login',
+            btnDoacoesModalClose: 'Close',
           },
           es: {
-            homeLink: 'Home',
+            homeLink: 'Inicio',
             documentsLink: 'Documentos',
             placesLink: 'Lugares',
             languageLink: 'Idioma',
@@ -157,6 +159,7 @@ function load(pageNumber) {
             Carregando_trad: 'Cargando...',
             logout: 'Cerrar sesión',
             login: 'Iniciar sesión',
+            btnDoacoesModalClose: 'Cerrar',
           },
           fr: {
             homeLink: 'Accueil',
@@ -170,6 +173,7 @@ function load(pageNumber) {
             Carregando_trad: 'Chargement...',
             logout: 'Déconnexion',
             login: 'Connexion',
+            btnDoacoesModalClose: 'Fermer',
           },
           ar: {
             homeLink: 'الصفحة الرئيسية',
@@ -183,6 +187,7 @@ function load(pageNumber) {
             Carregando_trad: 'جار التحميل...',
             logout: 'تسجيل الخروج',
             login: 'تسجيل الدخول',
+            btnDoacoesModalClose: 'إغلاق',
           }
         };
         

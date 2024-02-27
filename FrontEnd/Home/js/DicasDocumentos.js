@@ -109,6 +109,7 @@ const translations = {
     posto_trd:'Posto de saúde',
     logout: 'Sair',
     login: 'Entrar',
+    btnDoacoesModalClose: 'Fechar',
   },
   en: {
     homeLink: 'Home',
@@ -127,6 +128,7 @@ const translations = {
     posto_trd:'Health Center',    
     logout: 'Logout',
 	  login: 'Login',
+    btnDoacoesModalClose: 'Close',
   },
   es: {
     homeLink: 'Home',
@@ -145,6 +147,7 @@ const translations = {
     posto_trd:'Centro de salud',
     logout: 'Déconnexion',
 	  login: 'Connexion',
+    btnDoacoesModalClose: 'Cerrar',
   },
   fr: {
     homeLink: 'Accueil',
@@ -163,6 +166,7 @@ const translations = {
     posto_trd:'Centre de santé',
     logout: 'Déconnexion',
   	login: 'Connexion',
+    btnDoacoesModalClose: 'Fermer',
   },
   ar: {
     homeLink: 'الصفحة الرئيسية',
@@ -181,6 +185,7 @@ const translations = {
     posto_trd:'مركز الصحة',
     logout: 'تسجيل الخروج',
   	login: 'تسجيل الدخول',
+    btnDoacoesModalClose: 'إغلاق',
   }
 };
 

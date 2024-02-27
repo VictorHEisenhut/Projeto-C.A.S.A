@@ -127,6 +127,7 @@ const translations = {
     Carregando_trad: 'Carregando...',
     logout: 'Sair',
     login: 'Entrar',
+    btnDoacoesModalClose: 'Fechar',
   },
   en: {
     homeLink: 'Home',
@@ -140,9 +141,10 @@ const translations = {
     Carregando_trad: 'Loading...',
     logout: 'Logout',
     login: 'Login',
+    btnDoacoesModalClose: 'Close',
   },
   es: {
-    homeLink: 'Home',
+    homeLink: 'Inicio',
     documentsLink: 'Documentos',
     placesLink: 'Lugares',
     languageLink: 'Idioma',
@@ -153,6 +155,7 @@ const translations = {
     Carregando_trad: 'Cargando...',
     logout: 'Cerrar sesión',
     login: 'Iniciar sesión',
+    btnDoacoesModalClose: 'Cerrar',
   },
   fr: {
     homeLink: 'Accueil',
@@ -166,6 +169,7 @@ const translations = {
     Carregando_trad: 'Chargement...',
     logout: 'Déconnexion',
     login: 'Connexion',
+    btnDoacoesModalClose: 'Fermer',
   },
   ar: {
     homeLink: 'الصفحة الرئيسية',
@@ -179,6 +183,7 @@ const translations = {
     Carregando_trad: 'جار التحميل...',
     logout: 'تسجيل الخروج',
     login: 'تسجيل الدخول',
+    btnDoacoesModalClose: 'إغلاق',
   }
 };
 

@@ -130,7 +130,7 @@ const translations = {
     login: 'Entrar',
     btnModalClose:"Cancelar",
     btnDelete:"Deletar",
-    card_title:"Consulados",
+    btnDoacoesModalClose: 'Fechar',
   },
   en: {
     homeLink: 'Home',
@@ -146,7 +146,7 @@ const translations = {
     login: 'Login',
     btnModalClose: "Cancel",
     btnDelete: "Delete",
-    card_title:"Consulates",
+    btnDoacoesModalClose: 'Close',
   },
   es: {
     homeLink: 'Home',
@@ -162,7 +162,8 @@ const translations = {
     login: 'Iniciar sesión',
     btnModalClose: "Cancelar",
     btnDelete: "Eliminar",
-    card_title:"Consulados",
+    btnDoacoesModalClose: 'Cerrar',
+
   },
   fr: {
     homeLink: 'Accueil',
@@ -179,8 +180,7 @@ const translations = {
     btnModalClose: "Cancelar",
     btnModalClose: "Annuler",
     btnDelete: "Supprimer",
-    card_title:"Consulats",
-
+    btnDoacoesModalClose: 'Fermer',
   },
   ar: {
     homeLink: 'الصفحة الرئيسية',
@@ -196,7 +196,7 @@ const translations = {
     login: 'تسجيل الدخول',
     btnModalClose: "إلغاء",
     btnDelete: "حذف",
-    card_title:"القنصليات",
+    btnDoacoesModalClose: 'إغلاق',
   }
 };
 
