@@ -40,7 +40,9 @@ const translations = {
     Menu_trad:"Menu",
     logout: 'Sair',
     login: 'Entrar',
-    Integrantes_trad:"Integrantes"
+    Integrantes_trad:"Integrantes",
+    bem_vindo:`Bem-Vindo`,
+    quemSomos:"Quem-Somos?"
   },
   en: {
     homeLink: 'Home',
@@ -84,6 +86,8 @@ const translations = {
     logout: 'Logout',
 	  login: 'Login',
     Integrantes_trad: "Members",
+    bem_vindo:`Welcome`,
+    quemSomos:"Who we are?"
   },
   es: {
     homeLink: 'Inicio',
@@ -127,6 +131,8 @@ const translations = {
     logout: 'Déconnexion',
 	  login: 'Connexion',
     Integrantes_trad: "Miembros",
+    bem_vindo:`bienvenido`,
+    quemSomos:"¿Quienes somos?"
   },
   fr: {
     homeLink: 'Accueil',
@@ -170,6 +176,8 @@ const translations = {
     Integrantes_trad: "Membres",
     logout: 'Déconnexion',
 	  login: 'Connexion',
+    bem_vindo:`Bienvenue`,
+    quemSomos:"Qui nous sommes?"
   },
   ar: {
     homeLink: 'الصفحة الرئيسية',
@@ -213,6 +221,8 @@ const translations = {
     logout: 'تسجيل الخروج',
 	  login: 'تسجيل الدخول',
     Integrantes_trad: "الأعضاء",
+    bem_vindo:`مرحباً`,
+    quemSomos:"من نحن؟"
   },
 };
 
