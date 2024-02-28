@@ -58,6 +58,9 @@ const translations = {
     btnModalClose:"Cancelar",
     btnDelete:"Deletar",
     btnDoacoesModalClose:"Fechar",
+    linkPerfil: 'Perfil',
+    linkDocumentos: 'Documentos',
+    linkAdmin: 'Página admin',
   },
   en: {
     homeLink: 'Home',
@@ -118,6 +121,9 @@ const translations = {
     btnModalClose: 'Cancel',
     btnDelete: 'Delete',
     btnDoacoesModalClose: 'Close',
+    linkPerfil: 'Profile',
+    linkDocumentos: 'Documents',
+    linkAdmin: 'Admin Page',
   },
   es: {
     homeLink: 'Inicio',
@@ -178,6 +184,9 @@ const translations = {
     btnModalClose: 'Cancelar',
     btnDelete: 'Eliminar',
     btnDoacoesModalClose: 'Cerrar',
+    linkPerfil: 'Perfil',
+    linkDocumentos: 'Documentos',
+    linkAdmin: 'Página de administrador',
   },
   fr: {
     homeLink: 'Accueil',
@@ -238,6 +247,9 @@ const translations = {
     btnModalClose: 'Annuler',
     btnDelete: 'Supprimer',
     btnDoacoesModalClose: 'Fermer',
+    linkPerfil: 'Profil',
+    linkDocumentos: 'Documents',
+    linkAdmin: 'Page d\'administration', 
   },
   ar: {
     homeLink: 'الصفحة الرئيسية',
@@ -298,6 +310,9 @@ const translations = {
     btnModalClose: 'إلغاء',
     btnDelete: 'حذف',
     btnDoacoesModalClose: 'إغلاق',
+    linkPerfil: 'الملف الشخصي',
+    linkDocumentos: 'وثائق',
+    linkAdmin: 'صفحة الإدارة',
   },
 };
 

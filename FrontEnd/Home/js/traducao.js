@@ -38,7 +38,10 @@ const translations = {
     Menu_trad:"Menu",
     Integrantes_trad:"Integrantes",
     bem_vindo:`Bem-Vindo`,
-    quemSomos:"Quem-Somos?"
+    quemSomos:"Quem-Somos?",
+    linkPerfil: 'Perfil',
+    linkDocumentos: 'Documentos',
+    linkAdmin: 'Página admin',
   },
   en: {
     homeLink: 'Home',
@@ -79,7 +82,10 @@ const translations = {
     Menu_trad: "Menu",
     Integrantes_trad: "Members",
     bem_vindo:`Welcome`,
-    quemSomos:"Who we are?"
+    quemSomos:"Who we are?",
+    linkPerfil: 'Profile',
+    linkDocumentos: 'Documents',
+    linkAdmin: 'Admin Page',
   },
   es: {
     homeLink: 'Inicio',
@@ -120,7 +126,10 @@ const translations = {
     Menu_trad: "Menú",
     Integrantes_trad: "Miembros",
     bem_vindo:`bienvenido`,
-    quemSomos:"¿Quienes somos?"
+    quemSomos:"¿Quienes somos?",
+    linkPerfil: 'Perfil',
+    linkDocumentos: 'Documentos',
+    linkAdmin: 'Página de administrador',
   },
   fr: {
     homeLink: 'Accueil',
@@ -161,7 +170,10 @@ const translations = {
     Menu_trad: "Menu",
     Integrantes_trad: "Membres",
     bem_vindo:`Bienvenue`,
-    quemSomos:"Qui nous sommes?"
+    quemSomos:"Qui nous sommes?",
+    linkPerfil: 'Profil',
+    linkDocumentos: 'Documents',
+    linkAdmin: 'Page d\'administration',    
   },
   ar: {
     homeLink: 'الصفحة الرئيسية',
@@ -202,7 +214,10 @@ const translations = {
     Menu_trad: "القائمة",
     Integrantes_trad: "الأعضاء",
     bem_vindo:`مرحباً`,
-    quemSomos:"من نحن؟"
+    quemSomos:"من نحن؟",
+    linkPerfil: 'الملف الشخصي',
+    linkDocumentos: 'وثائق',
+    linkAdmin: 'صفحة الإدارة',
   },
 };
 

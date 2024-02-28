@@ -129,6 +129,9 @@ function load(pageNumber) {
             posto_trd: 'Posto de saúde',
             Carregando_trad: 'Carregando...',
             btnDoacoesModalClose: 'Fechar',
+            linkPerfil: 'Perfil',
+            linkDocumentos: 'Documentos',
+            linkAdmin: 'Página admin',
           },
           en: {
             homeLink: 'Home',
@@ -140,6 +143,9 @@ function load(pageNumber) {
             posto_trd: 'Health Center',
             Carregando_trad: 'Loading...',
             btnDoacoesModalClose: 'Close',
+            linkPerfil: 'Profile',
+            linkDocumentos: 'Documents',
+            linkAdmin: 'Admin Page',
           },
           es: {
             homeLink: 'Inicio',
@@ -151,6 +157,9 @@ function load(pageNumber) {
             posto_trd: 'Centro de salud',
             Carregando_trad: 'Cargando...',
             btnDoacoesModalClose: 'Cerrar',
+            linkPerfil: 'Perfil',
+            linkDocumentos: 'Documentos',
+            linkAdmin: 'Página de administrador',
           },
           fr: {
             homeLink: 'Accueil',
@@ -162,6 +171,9 @@ function load(pageNumber) {
             posto_trd: 'Centre de santé',
             Carregando_trad: 'Chargement...',
             btnDoacoesModalClose: 'Fermer',
+            linkPerfil: 'Profil',
+            linkDocumentos: 'Documents',
+            linkAdmin: 'Page d\'administration', 
           },
           ar: {
             homeLink: 'الصفحة الرئيسية',
@@ -173,6 +185,9 @@ function load(pageNumber) {
             posto_trd: 'مركز الصحة',
             Carregando_trad: 'جار التحميل...',
             btnDoacoesModalClose: 'إغلاق',
+            linkPerfil: 'الملف الشخصي',
+            linkDocumentos: 'وثائق',
+            linkAdmin: 'صفحة الإدارة',
           }
         };
         

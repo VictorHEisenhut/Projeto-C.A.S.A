@@ -124,8 +124,10 @@ const translations = {
     consulados_trd: 'Consulados',
     posto_trd: 'Posto de saúde',
     Carregando_trad: 'Carregando...',
-    login: 'Entrar',
     btnDoacoesModalClose: 'Fechar',
+    linkPerfil: 'Perfil',
+    linkDocumentos: 'Documentos',
+    linkAdmin: 'Página admin',
   },
   en: {
     homeLink: 'Home',
@@ -136,8 +138,10 @@ const translations = {
     consulados_trd: 'Consulates',
     posto_trd: 'Health Center',
     Carregando_trad: 'Loading...',
-    login: 'Login',
     btnDoacoesModalClose: 'Close',
+    linkPerfil: 'Profile',
+    linkDocumentos: 'Documents',
+    linkAdmin: 'Admin Page',
   },
   es: {
     homeLink: 'Inicio',
@@ -148,8 +152,10 @@ const translations = {
     consulados_trd: 'Consulados',
     posto_trd: 'Centro de salud',
     Carregando_trad: 'Cargando...',
-    login: 'Iniciar sesión',
     btnDoacoesModalClose: 'Cerrar',
+    linkPerfil: 'Perfil',
+    linkDocumentos: 'Documentos',
+    linkAdmin: 'Página de administrador',
   },
   fr: {
     homeLink: 'Accueil',
@@ -160,8 +166,10 @@ const translations = {
     consulados_trd: 'Consulats',
     posto_trd: 'Centre de santé',
     Carregando_trad: 'Chargement...',
-    login: 'Connexion',
     btnDoacoesModalClose: 'Fermer',
+    linkPerfil: 'Profil',
+    linkDocumentos: 'Documents',
+    linkAdmin: 'Page d\'administration', 
   },
   ar: {
     homeLink: 'الصفحة الرئيسية',
@@ -172,8 +180,10 @@ const translations = {
     consulados_trd: 'القنصليات',
     posto_trd: 'مركز الصحة',
     Carregando_trad: 'جار التحميل...',
-    login: 'تسجيل الدخول',
     btnDoacoesModalClose: 'إغلاق',
+    linkPerfil: 'الملف الشخصي',
+    linkDocumentos: 'وثائق',
+    linkAdmin: 'صفحة الإدارة',
   }
 };
 
