@@ -50,7 +50,7 @@ async function logar(){
       
       if (localStorage.getItem('token') != null && localStorage.getItem('token') != "undefined" ) {
         
-        window.location.href = "./perfil.html"
+        window.location.href = "./index.html"
       }
   }
 
